@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>553FA018-2360-4A50-B969-A3FD30A47C36</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AirEscape</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>56D1984A-1E28-4FC1-8ADA-557772268921</key>
+		<string>ssh://github.com/istratehoratiu/AirEscape.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AirEscape.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>56D1984A-1E28-4FC1-8ADA-557772268921</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/istratehoratiu/AirEscape.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>56D1984A-1E28-4FC1-8ADA-557772268921</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>56D1984A-1E28-4FC1-8ADA-557772268921</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AirEscape</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
+		EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */; };
+		EB87BD1F18E09E220080FA55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1E18E09E220080FA55 /* UIKit.framework */; };
+		EB87BD2118E09E220080FA55 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD2018E09E220080FA55 /* SpriteKit.framework */; };
+		EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD2518E09E220080FA55 /* InfoPlist.strings */; };
+		EB87BD2918E09E220080FA55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD2818E09E220080FA55 /* main.m */; };
+		EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */; };
+		EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD2E18E09E220080FA55 /* Main_iPhone.storyboard */; };
+		EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD3118E09E220080FA55 /* Main_iPad.storyboard */; };
+		EB87BD3618E09E220080FA55 /* AEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD3518E09E220080FA55 /* AEViewController.m */; };
+		EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD3818E09E220080FA55 /* AEMyScene.m */; };
+		EB87BD3B18E09E220080FA55 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD3A18E09E220080FA55 /* Spaceship.png */; };
+		EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD3C18E09E220080FA55 /* Images.xcassets */; };
+		EB87BD4418E09E220080FA55 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD4318E09E220080FA55 /* XCTest.framework */; };
+		EB87BD4518E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
+		EB87BD4618E09E220080FA55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1E18E09E220080FA55 /* UIKit.framework */; };
+		EB87BD4E18E09E220080FA55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD4C18E09E220080FA55 /* InfoPlist.strings */; };
+		EB87BD5018E09E220080FA55 /* AirEscapeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD4F18E09E220080FA55 /* AirEscapeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB87BD4718E09E220080FA55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB87BD0F18E09E220080FA55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB87BD1618E09E220080FA55;
+			remoteInfo = AirEscape;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB87BD1718E09E220080FA55 /* AirEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB87BD1A18E09E220080FA55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB87BD1E18E09E220080FA55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EB87BD2018E09E220080FA55 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		EB87BD2418E09E220080FA55 /* AirEscape-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirEscape-Info.plist"; sourceTree = "<group>"; };
+		EB87BD2618E09E220080FA55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB87BD2818E09E220080FA55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB87BD2A18E09E220080FA55 /* AirEscape-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirEscape-Prefix.pch"; sourceTree = "<group>"; };
+		EB87BD2B18E09E220080FA55 /* AEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEAppDelegate.h; sourceTree = "<group>"; };
+		EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEAppDelegate.m; sourceTree = "<group>"; };
+		EB87BD2F18E09E220080FA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		EB87BD3218E09E220080FA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		EB87BD3418E09E220080FA55 /* AEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEViewController.h; sourceTree = "<group>"; };
+		EB87BD3518E09E220080FA55 /* AEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEViewController.m; sourceTree = "<group>"; };
+		EB87BD3718E09E220080FA55 /* AEMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMyScene.h; sourceTree = "<group>"; };
+		EB87BD3818E09E220080FA55 /* AEMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMyScene.m; sourceTree = "<group>"; };
+		EB87BD3A18E09E220080FA55 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		EB87BD3C18E09E220080FA55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB87BD4218E09E220080FA55 /* AirEscapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirEscapeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB87BD4318E09E220080FA55 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EB87BD4B18E09E220080FA55 /* AirEscapeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirEscapeTests-Info.plist"; sourceTree = "<group>"; };
+		EB87BD4D18E09E220080FA55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB87BD4F18E09E220080FA55 /* AirEscapeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirEscapeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB87BD1418E09E220080FA55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */,
+				EB87BD1F18E09E220080FA55 /* UIKit.framework in Frameworks */,
+				EB87BD2118E09E220080FA55 /* SpriteKit.framework in Frameworks */,
+				EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB87BD3F18E09E220080FA55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB87BD4418E09E220080FA55 /* XCTest.framework in Frameworks */,
+				EB87BD4618E09E220080FA55 /* UIKit.framework in Frameworks */,
+				EB87BD4518E09E220080FA55 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB87BD0E18E09E220080FA55 = {
+			isa = PBXGroup;
+			children = (
+				EB87BD2218E09E220080FA55 /* AirEscape */,
+				EB87BD4918E09E220080FA55 /* AirEscapeTests */,
+				EB87BD1918E09E220080FA55 /* Frameworks */,
+				EB87BD1818E09E220080FA55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB87BD1818E09E220080FA55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD1718E09E220080FA55 /* AirEscape.app */,
+				EB87BD4218E09E220080FA55 /* AirEscapeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB87BD1918E09E220080FA55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD1A18E09E220080FA55 /* Foundation.framework */,
+				EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */,
+				EB87BD1E18E09E220080FA55 /* UIKit.framework */,
+				EB87BD2018E09E220080FA55 /* SpriteKit.framework */,
+				EB87BD4318E09E220080FA55 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB87BD2218E09E220080FA55 /* AirEscape */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD2B18E09E220080FA55 /* AEAppDelegate.h */,
+				EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */,
+				EB87BD2E18E09E220080FA55 /* Main_iPhone.storyboard */,
+				EB87BD3118E09E220080FA55 /* Main_iPad.storyboard */,
+				EB87BD3418E09E220080FA55 /* AEViewController.h */,
+				EB87BD3518E09E220080FA55 /* AEViewController.m */,
+				EB87BD3718E09E220080FA55 /* AEMyScene.h */,
+				EB87BD3818E09E220080FA55 /* AEMyScene.m */,
+				EB87BD3A18E09E220080FA55 /* Spaceship.png */,
+				EB87BD3C18E09E220080FA55 /* Images.xcassets */,
+				EB87BD2318E09E220080FA55 /* Supporting Files */,
+			);
+			path = AirEscape;
+			sourceTree = "<group>";
+		};
+		EB87BD2318E09E220080FA55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD2418E09E220080FA55 /* AirEscape-Info.plist */,
+				EB87BD2518E09E220080FA55 /* InfoPlist.strings */,
+				EB87BD2818E09E220080FA55 /* main.m */,
+				EB87BD2A18E09E220080FA55 /* AirEscape-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB87BD4918E09E220080FA55 /* AirEscapeTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD4F18E09E220080FA55 /* AirEscapeTests.m */,
+				EB87BD4A18E09E220080FA55 /* Supporting Files */,
+			);
+			path = AirEscapeTests;
+			sourceTree = "<group>";
+		};
+		EB87BD4A18E09E220080FA55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD4B18E09E220080FA55 /* AirEscapeTests-Info.plist */,
+				EB87BD4C18E09E220080FA55 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB87BD1618E09E220080FA55 /* AirEscape */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB87BD5318E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscape" */;
+			buildPhases = (
+				EB87BD1318E09E220080FA55 /* Sources */,
+				EB87BD1418E09E220080FA55 /* Frameworks */,
+				EB87BD1518E09E220080FA55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirEscape;
+			productName = AirEscape;
+			productReference = EB87BD1718E09E220080FA55 /* AirEscape.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB87BD4118E09E220080FA55 /* AirEscapeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB87BD5618E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscapeTests" */;
+			buildPhases = (
+				EB87BD3E18E09E220080FA55 /* Sources */,
+				EB87BD3F18E09E220080FA55 /* Frameworks */,
+				EB87BD4018E09E220080FA55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB87BD4818E09E220080FA55 /* PBXTargetDependency */,
+			);
+			name = AirEscapeTests;
+			productName = AirEscapeTests;
+			productReference = EB87BD4218E09E220080FA55 /* AirEscapeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB87BD0F18E09E220080FA55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AE;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Horatiu Istrate";
+				TargetAttributes = {
+					EB87BD4118E09E220080FA55 = {
+						TestTargetID = EB87BD1618E09E220080FA55;
+					};
+				};
+			};
+			buildConfigurationList = EB87BD1218E09E220080FA55 /* Build configuration list for PBXProject "AirEscape" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB87BD0E18E09E220080FA55;
+			productRefGroup = EB87BD1818E09E220080FA55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB87BD1618E09E220080FA55 /* AirEscape */,
+				EB87BD4118E09E220080FA55 /* AirEscapeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB87BD1518E09E220080FA55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB87BD3B18E09E220080FA55 /* Spaceship.png in Resources */,
+				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
+				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
+				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
+				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB87BD4018E09E220080FA55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB87BD4E18E09E220080FA55 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB87BD1318E09E220080FA55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */,
+				EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */,
+				EB87BD3618E09E220080FA55 /* AEViewController.m in Sources */,
+				EB87BD2918E09E220080FA55 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB87BD3E18E09E220080FA55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB87BD5018E09E220080FA55 /* AirEscapeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB87BD4818E09E220080FA55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB87BD1618E09E220080FA55 /* AirEscape */;
+			targetProxy = EB87BD4718E09E220080FA55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB87BD2518E09E220080FA55 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB87BD2618E09E220080FA55 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EB87BD2E18E09E220080FA55 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB87BD2F18E09E220080FA55 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		EB87BD3118E09E220080FA55 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB87BD3218E09E220080FA55 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		EB87BD4C18E09E220080FA55 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB87BD4D18E09E220080FA55 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB87BD5118E09E220080FA55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB87BD5218E09E220080FA55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB87BD5418E09E220080FA55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
+				INFOPLIST_FILE = "AirEscape/AirEscape-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EB87BD5518E09E220080FA55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
+				INFOPLIST_FILE = "AirEscape/AirEscape-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EB87BD5718E09E220080FA55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AirEscape.app/AirEscape";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AirEscapeTests/AirEscapeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EB87BD5818E09E220080FA55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AirEscape.app/AirEscape";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
+				INFOPLIST_FILE = "AirEscapeTests/AirEscapeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB87BD1218E09E220080FA55 /* Build configuration list for PBXProject "AirEscape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB87BD5118E09E220080FA55 /* Debug */,
+				EB87BD5218E09E220080FA55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB87BD5318E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB87BD5418E09E220080FA55 /* Debug */,
+				EB87BD5518E09E220080FA55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB87BD5618E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscapeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB87BD5718E09E220080FA55 /* Debug */,
+				EB87BD5818E09E220080FA55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB87BD0F18E09E220080FA55 /* Project object */;
+}
