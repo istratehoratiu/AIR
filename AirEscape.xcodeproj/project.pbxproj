@@ -25,6 +25,17 @@
 		EB87BD4618E09E220080FA55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1E18E09E220080FA55 /* UIKit.framework */; };
 		EB87BD4E18E09E220080FA55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD4C18E09E220080FA55 /* InfoPlist.strings */; };
 		EB87BD5018E09E220080FA55 /* AirEscapeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD4F18E09E220080FA55 /* AirEscapeTests.m */; };
+		EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD5B18E0DD9F0080FA55 /* SKSpriteNode+Additions.m */; };
+		EB87BD6118E0DE770080FA55 /* PPMainAirplane.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD5E18E0DE770080FA55 /* PPMainAirplane.m */; };
+		EB87BD6218E0DE770080FA55 /* PPMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6018E0DE770080FA55 /* PPMissile.m */; };
+		EB87BD6518E0DE960080FA55 /* PPSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6418E0DE960080FA55 /* PPSpriteNode.m */; };
+		EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6718E0DEA60080FA55 /* PPMath.m */; };
+		EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6918E0DEA60080FA55 /* PPConstants.m */; };
+		EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */; };
+		EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */; };
+		EB87BD7518E0E7510080FA55 /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7218E0E7510080FA55 /* sprite.atlas */; };
+		EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */; };
+		EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7418E0E7510080FA55 /* Clouds.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +73,25 @@
 		EB87BD4B18E09E220080FA55 /* AirEscapeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirEscapeTests-Info.plist"; sourceTree = "<group>"; };
 		EB87BD4D18E09E220080FA55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB87BD4F18E09E220080FA55 /* AirEscapeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirEscapeTests.m; sourceTree = "<group>"; };
+		EB87BD5A18E0DD9F0080FA55 /* SKSpriteNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKSpriteNode+Additions.h"; sourceTree = "<group>"; };
+		EB87BD5B18E0DD9F0080FA55 /* SKSpriteNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKSpriteNode+Additions.m"; sourceTree = "<group>"; };
+		EB87BD5D18E0DE770080FA55 /* PPMainAirplane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMainAirplane.h; sourceTree = "<group>"; };
+		EB87BD5E18E0DE770080FA55 /* PPMainAirplane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMainAirplane.m; sourceTree = "<group>"; };
+		EB87BD5F18E0DE770080FA55 /* PPMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMissile.h; sourceTree = "<group>"; };
+		EB87BD6018E0DE770080FA55 /* PPMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMissile.m; sourceTree = "<group>"; };
+		EB87BD6318E0DE960080FA55 /* PPSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpriteNode.h; sourceTree = "<group>"; };
+		EB87BD6418E0DE960080FA55 /* PPSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpriteNode.m; sourceTree = "<group>"; };
+		EB87BD6618E0DEA60080FA55 /* PPMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMath.h; sourceTree = "<group>"; };
+		EB87BD6718E0DEA60080FA55 /* PPMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMath.m; sourceTree = "<group>"; };
+		EB87BD6818E0DEA60080FA55 /* PPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPConstants.h; sourceTree = "<group>"; };
+		EB87BD6918E0DEA60080FA55 /* PPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPConstants.m; sourceTree = "<group>"; };
+		EB87BD6A18E0DEA60080FA55 /* SKButtonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKButtonNode.h; sourceTree = "<group>"; };
+		EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButtonNode.m; sourceTree = "<group>"; };
+		EB87BD6F18E0DF8F0080FA55 /* SKEmitterNode+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+Utilities.h"; sourceTree = "<group>"; };
+		EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+Utilities.m"; sourceTree = "<group>"; };
+		EB87BD7218E0E7510080FA55 /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
+		EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EXPLOSION.atlas; sourceTree = "<group>"; };
+		EB87BD7418E0E7510080FA55 /* Clouds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Clouds.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,14 +153,27 @@
 		EB87BD2218E09E220080FA55 /* AirEscape */ = {
 			isa = PBXGroup;
 			children = (
+				EB87BD5918E0DD950080FA55 /* Categories */,
 				EB87BD2B18E09E220080FA55 /* AEAppDelegate.h */,
 				EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */,
+				EB87BD6618E0DEA60080FA55 /* PPMath.h */,
+				EB87BD6718E0DEA60080FA55 /* PPMath.m */,
+				EB87BD6818E0DEA60080FA55 /* PPConstants.h */,
+				EB87BD6918E0DEA60080FA55 /* PPConstants.m */,
+				EB87BD6A18E0DEA60080FA55 /* SKButtonNode.h */,
+				EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */,
 				EB87BD2E18E09E220080FA55 /* Main_iPhone.storyboard */,
 				EB87BD3118E09E220080FA55 /* Main_iPad.storyboard */,
 				EB87BD3418E09E220080FA55 /* AEViewController.h */,
 				EB87BD3518E09E220080FA55 /* AEViewController.m */,
 				EB87BD3718E09E220080FA55 /* AEMyScene.h */,
 				EB87BD3818E09E220080FA55 /* AEMyScene.m */,
+				EB87BD6318E0DE960080FA55 /* PPSpriteNode.h */,
+				EB87BD6418E0DE960080FA55 /* PPSpriteNode.m */,
+				EB87BD5D18E0DE770080FA55 /* PPMainAirplane.h */,
+				EB87BD5E18E0DE770080FA55 /* PPMainAirplane.m */,
+				EB87BD5F18E0DE770080FA55 /* PPMissile.h */,
+				EB87BD6018E0DE770080FA55 /* PPMissile.m */,
 				EB87BD3A18E09E220080FA55 /* Spaceship.png */,
 				EB87BD3C18E09E220080FA55 /* Images.xcassets */,
 				EB87BD2318E09E220080FA55 /* Supporting Files */,
@@ -141,6 +184,9 @@
 		EB87BD2318E09E220080FA55 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB87BD7218E0E7510080FA55 /* sprite.atlas */,
+				EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */,
+				EB87BD7418E0E7510080FA55 /* Clouds.atlas */,
 				EB87BD2418E09E220080FA55 /* AirEscape-Info.plist */,
 				EB87BD2518E09E220080FA55 /* InfoPlist.strings */,
 				EB87BD2818E09E220080FA55 /* main.m */,
@@ -165,6 +211,17 @@
 				EB87BD4C18E09E220080FA55 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB87BD5918E0DD950080FA55 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EB87BD5A18E0DD9F0080FA55 /* SKSpriteNode+Additions.h */,
+				EB87BD5B18E0DD9F0080FA55 /* SKSpriteNode+Additions.m */,
+				EB87BD6F18E0DF8F0080FA55 /* SKEmitterNode+Utilities.h */,
+				EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,9 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB87BD3B18E09E220080FA55 /* Spaceship.png in Resources */,
+				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
+				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
+				EB87BD7518E0E7510080FA55 /* sprite.atlas in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,8 +328,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */,
+				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
+				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
 				EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */,
+				EB87BD6118E0DE770080FA55 /* PPMainAirplane.m in Sources */,
+				EB87BD6218E0DE770080FA55 /* PPMissile.m in Sources */,
 				EB87BD3618E09E220080FA55 /* AEViewController.m in Sources */,
+				EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */,
+				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
+				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
+				EB87BD6518E0DE960080FA55 /* PPSpriteNode.m in Sources */,
 				EB87BD2918E09E220080FA55 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
