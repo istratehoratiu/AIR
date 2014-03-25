@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
 		EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
 		EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */; };
 		EB87BD1F18E09E220080FA55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1E18E09E220080FA55 /* UIKit.framework */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		EB87BD1718E09E220080FA55 /* AirEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB87BD1A18E09E220080FA55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -192,6 +194,7 @@
 		EB87BD2318E09E220080FA55 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */,
 				EBA6298718E0EBD0004DAD8F /* trail.sks */,
 				EBA6298818E0EBD0004DAD8F /* explosion.sks */,
 				EBA6298918E0EBD0004DAD8F /* bulletHit.sks */,
@@ -322,6 +325,7 @@
 				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,
 				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
+				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
 				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
