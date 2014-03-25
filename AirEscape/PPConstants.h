@@ -8,9 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-#define kPPUserAirplaneHealth 1
-#define kPPHunterAirplaneHealth 50
-#define kPPBomberHealth 300
+
+#define kAEMainAirplaneManevrability    1.5
+#define kAEMainAirplaneSpeed            100
+#define kAEMissileManevrability         .5
+#define kAEMissileSpeed                 150
 
 static const NSUInteger userAirplaneCategory              =  4;
 static const NSUInteger missileCategory                   =  5;

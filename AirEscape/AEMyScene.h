@@ -14,6 +14,7 @@
 @class PPHunterAirplane;
 @class PPPositionIndicator;
 @class SKButtonNode;
+@class JCImageJoystick;
 
 @interface AEMyScene : SKScene {
     
@@ -34,6 +35,11 @@
     BOOL _gameIsPaused;
     SKButtonNode *_pauseButton;
     SKButtonNode *_numberOfMissileOnScreen;
+    
+    SKButtonNode *missileSpeedIndicator;
+    SKButtonNode *missileManevrabilityIndicator;
+    SKButtonNode *airplaneSpeedIndicator;
+    SKButtonNode *aicraftManevrabilityIndicator;
 }
 
 @property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;
@@ -53,5 +59,7 @@
 @property (nonatomic, retain) NSMutableArray *arrayOfEnemyBombers;
 @property NSMutableArray *cloudsTextures;
 @property NSMutableArray *explosionTextures;
+@property (strong, nonatomic) JCImageJoystick *imageJoystick;
+
 
 @end

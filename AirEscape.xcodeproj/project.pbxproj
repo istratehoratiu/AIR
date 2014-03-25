@@ -41,6 +41,11 @@
 		EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298718E0EBD0004DAD8F /* trail.sks */; };
 		EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298818E0EBD0004DAD8F /* explosion.sks */; };
 		EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298918E0EBD0004DAD8F /* bulletHit.sks */; };
+		EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */; };
+		EBD57B8418E2244700D5A61E /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8318E2244700D5A61E /* minus.png */; };
+		EBD57B8718E23C0700D5A61E /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */; };
+		EBD57B8A18E23D0A00D5A61E /* redStick.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8818E23D0A00D5A61E /* redStick.png */; };
+		EBD57B8B18E23D0A00D5A61E /* stickbase.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8918E23D0A00D5A61E /* stickbase.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +108,13 @@
 		EBA6298718E0EBD0004DAD8F /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
 		EBA6298818E0EBD0004DAD8F /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		EBA6298918E0EBD0004DAD8F /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
+		EBD57B8018E21CAD00D5A61E /* AEActorsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEActorsManager.h; sourceTree = "<group>"; };
+		EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEActorsManager.m; sourceTree = "<group>"; };
+		EBD57B8318E2244700D5A61E /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minus.png; path = sprite.atlas/minus.png; sourceTree = "<group>"; };
+		EBD57B8518E23C0700D5A61E /* JCImageJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCImageJoystick.h; sourceTree = "<group>"; };
+		EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCImageJoystick.m; sourceTree = "<group>"; };
+		EBD57B8818E23D0A00D5A61E /* redStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redStick.png; sourceTree = "<group>"; };
+		EBD57B8918E23D0A00D5A61E /* stickbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickbase.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +197,12 @@
 				EB87BD5E18E0DE770080FA55 /* PPMainAirplane.m */,
 				EB87BD5F18E0DE770080FA55 /* PPMissile.h */,
 				EB87BD6018E0DE770080FA55 /* PPMissile.m */,
+				EBD57B8018E21CAD00D5A61E /* AEActorsManager.h */,
+				EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */,
+				EBD57B8518E23C0700D5A61E /* JCImageJoystick.h */,
+				EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */,
+				EBD57B8818E23D0A00D5A61E /* redStick.png */,
+				EBD57B8918E23D0A00D5A61E /* stickbase.png */,
 				EB87BD3C18E09E220080FA55 /* Images.xcassets */,
 				EB87BD2318E09E220080FA55 /* Supporting Files */,
 			);
@@ -194,6 +212,7 @@
 		EB87BD2318E09E220080FA55 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EBD57B8318E2244700D5A61E /* minus.png */,
 				EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */,
 				EBA6298718E0EBD0004DAD8F /* trail.sks */,
 				EBA6298818E0EBD0004DAD8F /* explosion.sks */,
@@ -319,7 +338,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
+				EBD57B8B18E23D0A00D5A61E /* stickbase.png in Resources */,
 				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
+				EBD57B8A18E23D0A00D5A61E /* redStick.png in Resources */,
+				EBD57B8418E2244700D5A61E /* minus.png in Resources */,
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
 				EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */,
 				EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */,
@@ -349,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */,
+				EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */,
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
@@ -359,6 +382,7 @@
 				EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */,
 				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
 				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
+				EBD57B8718E23C0700D5A61E /* JCImageJoystick.m in Sources */,
 				EB87BD6518E0DE960080FA55 /* PPSpriteNode.m in Sources */,
 				EB87BD2918E09E220080FA55 /* main.m in Sources */,
 			);

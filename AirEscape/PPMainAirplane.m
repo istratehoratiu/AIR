@@ -15,9 +15,8 @@
 #import "AEMyScene.h"
 #import "NSObject+Additions.h"
 #import "AEAppDelegate.h"
+#import "AEActorsManager.h"
 
-#define kPPMainAirplaneRotationSpeed 1.5
-#define kPPMissileRotationSpeed 1.5
 
 
 @implementation PPMainAirplane
@@ -30,9 +29,7 @@
     
     if (self) {
         
-        self.health = kPPUserAirplaneHealth;
-        self.speed =
-        self.manevrability = kPPMainAirplaneRotationSpeed;
+        self.health = 100;
         self.damage = 10;
         self.rateOfFire = .2;
         self.numberOfRockets = 10;
@@ -102,8 +99,7 @@
     
     CGPoint targetVector =  normalizeVector(offset);
 
-    float POINTS_PER_SECOND = 100;
-    CGPoint targetPerSecond = skPointsMultiply(targetVector, POINTS_PER_SECOND);
+    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] mainAirplaneSpeed]);
 
     CGPoint actualTarget = skPointsAdd(self.position, skPointsMultiply(targetPerSecond, dt));
     
@@ -120,12 +116,12 @@
     
     if (_flightDirection == kPPTurnLeft) {
         
-        [self setZRotation:self.zRotation + (kPPMainAirplaneRotationSpeed * dt)];
+        [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
         self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
         
     } else {
         
-        [self setZRotation:self.zRotation - (kPPMainAirplaneRotationSpeed * dt)];
+        [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
         self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
     }
     

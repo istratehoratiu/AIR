@@ -10,14 +10,12 @@
 #import "SKSpriteNode+Additions.h"
 #import "PPMath.h"
 #import "PPConstants.h"
+#import "AEActorsManager.h"
 
 
 @implementation PPMissile
 
 @synthesize targetAirplane  = _targetAirplane;
-
-#define kPPMainAirplaneRotationSpeed 1.5
-#define kPPMissileRotationSpeed .5
 
 - (id)initMissileNode {
     
@@ -34,7 +32,6 @@
 
 - (void)updateMove:(CFTimeInterval)dt {
 
-    CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
     CGPoint lineEnd = [self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
     
     CGPoint destinationPoint = lineEnd;//[self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
@@ -43,8 +40,8 @@
     
     CGPoint targetVector =  normalizeVector(offset);
     // 5
-    float POINTS_PER_SECOND = 150;
-    CGPoint targetPerSecond = skPointsMultiply(targetVector, POINTS_PER_SECOND);
+    //float POINTS_PER_SECOND = 150;
+    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] missileSpeed]);
     // 6
     //CGPoint actualTarget = ccpAdd(self.position, ccpMult(targetPerSecond, dt));
     CGPoint actualTarget = skPointsAdd(self.position, skPointsMultiply(targetPerSecond, dt));
@@ -70,14 +67,9 @@
     CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
     CGPoint lineEnd = [self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
     
-    CGPoint airplaneCenter = [self.parent convertPoint:_targetAirplane.position fromNode:self];
-    CGPoint airplaneDirection = [self.parent convertPoint:CGPointMake(_targetAirplane.size.width, 0) fromNode:self];
-    
-    CGPoint intersectionPoint = getIntersectionOfLinesGivenByPoints(lineSource, lineEnd, airplaneCenter, airplaneDirection);
-    
     if (checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
         
-        [self setZRotation:self.zRotation + (kPPMissileRotationSpeed * dt)];
+        [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] missileManevrability] * dt)];
         
         
         CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
@@ -85,17 +77,17 @@
         
         if (!checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
             
-            [self setZRotation:self.zRotation - (kPPMissileRotationSpeed * dt)];
+            [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] missileManevrability] * dt)];
             
             _spriteFinishedOrientationRotation = YES;
         }
     } else {
         
-        [self setZRotation:self.zRotation - (kPPMissileRotationSpeed * dt)];
+        [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] missileManevrability] * dt)];
         
         if (checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
             
-            [self setZRotation:self.zRotation + (kPPMissileRotationSpeed * dt)];
+            [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] missileManevrability] * dt)];
             
             _spriteFinishedOrientationRotation = YES;
         }
