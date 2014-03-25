@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-#define kPPUserAirplaneHealth 100
+#define kPPUserAirplaneHealth 1
 #define kPPHunterAirplaneHealth 50
 #define kPPBomberHealth 300
 

@@ -27,6 +27,7 @@
 @synthesize positionIndicator               = _positionIndicator;
 @synthesize gameIsPaused                    = _gameIsPaused;
 @synthesize pauseButton                     = _pauseButton;
+@synthesize numberOfMissileOnScreen         = _numberOfMissileOnScreen;
 
 
 -(id)initWithSize:(CGSize)size {
@@ -49,9 +50,9 @@
         
         //init several sizes used in all scene
         _screenRect = [[UIScreen mainScreen] bounds];
-        _screenHeight = _screenRect.size.height;
-        _screenWidth = _screenRect.size.width;
-        
+//        _screenHeight = _screenRect.size.height;
+//        _screenWidth = _screenRect.size.width;
+//        
         // Main Actor
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
         _userAirplane.scale = 0.15;
@@ -68,7 +69,7 @@
         
         
         //schedule enemies
-        SKAction *wait = [SKAction waitForDuration:2];
+        SKAction *wait = [SKAction waitForDuration:3];
         SKAction *callClouds = [SKAction runBlock:^{
             [self addEnemyMissile];
         }];
@@ -93,45 +94,41 @@
         backButton.zPosition = 1000;
         [self addChild:backButton];
         
-        SKButtonNode *launchMissile = [[SKButtonNode alloc] initWithImageNamedNormal:@"glossy_red_button.png" selected:@"glossy_red_button.png"];
-        [launchMissile setPosition:CGPointMake(100, 500)];
-        [launchMissile.title setFontName:@"Chalkduster"];
-        [launchMissile.title setFontSize:10.0];
-        [launchMissile.title setText:@""];
-        [launchMissile setTouchUpInsideTarget:self action:@selector(launchMissileFromMainAicraft)];
-        launchMissile.zPosition = 1000;
-        [self addChild:launchMissile];
+        _numberOfMissileOnScreen = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        [_numberOfMissileOnScreen setPosition:CGPointMake(self.size.width - 100, 100)];
+        [_numberOfMissileOnScreen.title setFontName:@"Chalkduster"];
+        [_numberOfMissileOnScreen.title setFontSize:40.0];
+        [_numberOfMissileOnScreen.title setText:@"0"];
+        _numberOfMissileOnScreen.zPosition = 1000;
+        [self addChild:_numberOfMissileOnScreen];
         
         _pauseButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"play.png" selected:@"play.png"];
         [_pauseButton setPosition:CGPointMake(self.size.width - 100, self.size.height - 100)];
         [_pauseButton.title setFontName:@"Chalkduster"];
         [_pauseButton.title setFontSize:10.0];
-        [_pauseButton.title setText:@"PAUSE"];
+        [_pauseButton.title setText:@""];
         [_pauseButton setTouchUpInsideTarget:self action:@selector(pauseGame)];
         _pauseButton.zPosition = 1000;
         [self addChild:_pauseButton];
         
-        //_gameIsPaused = YES;
+        _gameIsPaused = YES;
     }
     return self;
 }
 
 - (void)restartScene {
     
-    _gameIsPaused = YES;
+    [self pauseGame];
     
-    [_userAirplane stopFiring];
     _userAirplane.health = kPPUserAirplaneHealth;
+    
     _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+
     for (PPSpriteNode *item in _arrayOfCurrentMissilesOnScreen) {
         [item removeFromParent];
     }
-    for (PPSpriteNode *item in _arrayOfEnemyBombers) {
-        [item removeFromParent];
-    }
-    for (PPSpriteNode *item in _arrayOfEnemyHunterAirplanes) {
-        [item removeFromParent];
-    }
+    
+    [_arrayOfCurrentMissilesOnScreen removeAllObjects];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -150,12 +147,14 @@
     [_userAirplane updateOrientationVector];
     [_userAirplane updateMove:_deltaTime];
     [_userAirplane updateRotation:_deltaTime];
-
+    [self checkWithMarginsOfScreenActor:_userAirplane];
+    
     for (PPSpriteNode *missile in _arrayOfCurrentMissilesOnScreen) {
         [missile updateMove:_deltaTime];
         [missile updateRotation:_deltaTime];
         [missile setTargetPoint:_userAirplane.position];
         [missile updateOrientationVector];
+        [self checkWithMarginsOfScreenActor:missile];
     }
 }
 
@@ -189,9 +188,7 @@
     }
 }
 
-- (void)didEndContact:(SKPhysicsContact *)contact
-{
-    // 1
+- (void)didEndContact:(SKPhysicsContact *)contact {
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -223,8 +220,12 @@
 #pragma mark Helper Methods
 
 - (void)addEnemyMissile {
+    
+    if (_gameIsPaused) {
+        return;
+    }
+    
     PPMissile *missile = [[PPMissile alloc] initMissileNode];
-    missile.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
     missile.targetAirplane = _userAirplane;
     missile.scale = 0.1;
     
@@ -234,9 +235,39 @@
     missile.physicsBody.contactTestBitMask = userAirplaneCategory; // 4
     missile.physicsBody.collisionBitMask = 0; // 5
     
-    [self addChild:missile];
+
     
+    // Get the wall from witch the missile will launch
+    switch (getRandomNumberBetween(0, 3)) {
+        // Left Wall
+        case 0: {
+            missile.position = CGPointMake(0, getRandomNumberBetween(0, self.size.height));
+            break;
+        }
+        // Top Wall
+        case 1: {
+            missile.position = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
+            break;
+        }
+        // Right Wall
+        case 2: {
+            missile.position = CGPointMake(self.size.width, getRandomNumberBetween(0, self.size.height));
+            break;
+        }
+        // Bottom Wall
+        case 3: {
+            missile.position = CGPointMake(getRandomNumberBetween(0, self.size.width), 0);
+            break;
+        }
+        default:
+            break;
+    }
+    
+    [self addChild:missile];
     [_arrayOfCurrentMissilesOnScreen addObject:missile];
+    
+    [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%d", [_arrayOfCurrentMissilesOnScreen count]]];
+    
     [missile updateOrientationVector];
 }
 
@@ -249,6 +280,29 @@
     } else {
         _pauseButton.normalTexture = [SKTexture textureWithImageNamed:@"play.png"];
         _pauseButton.selectedTexture = [SKTexture textureWithImageNamed:@"play.png"];
+    }
+}
+
+- (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {
+    // Check with X
+    if (actor.position.x < 0) {
+        actor.position = CGPointMake(self.size.width - 10 , actor.position.y);
+        return;
+    }
+    // Check with X + Width
+    if (actor.position.x > self.size.width) {
+        actor.position = CGPointMake(10.0, actor.position.y);
+        return;
+    }
+    // Check with Y
+    if (actor.position.y < 0) {
+        actor.position = CGPointMake(actor.position.x, self.size.height - 10);
+        return;
+    }
+    //Check with Y + Height
+    if (actor.position.y > self.size.height) {
+        actor.position = CGPointMake(actor.position.x, 10);
+        return;
     }
 }
 

@@ -29,14 +29,14 @@
     CGFloat _screenWidth;
     
     NSMutableArray *_arrayOfCurrentMissilesOnScreen;
-    NSMutableArray *_arrayOfEnemyHunterAirplanes;
-    NSMutableArray *_arrayOfEnemyBombers;
     
     PPPositionIndicator *_positionIndicator;
     BOOL _gameIsPaused;
     SKButtonNode *_pauseButton;
+    SKButtonNode *_numberOfMissileOnScreen;
 }
 
+@property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;
 @property (nonatomic, retain)SKButtonNode* pauseButton;
 @property (nonatomic, assign) BOOL gameIsPaused;
 @property (nonatomic, retain) PPPositionIndicator *positionIndicator;

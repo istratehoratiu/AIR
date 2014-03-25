@@ -33,9 +33,13 @@
 		EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6918E0DEA60080FA55 /* PPConstants.m */; };
 		EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */; };
 		EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */; };
-		EB87BD7518E0E7510080FA55 /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7218E0E7510080FA55 /* sprite.atlas */; };
 		EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */; };
 		EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7418E0E7510080FA55 /* Clouds.atlas */; };
+		EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298318E0EBC7004DAD8F /* Fire.sks */; };
+		EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */; };
+		EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298718E0EBD0004DAD8F /* trail.sks */; };
+		EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298818E0EBD0004DAD8F /* explosion.sks */; };
+		EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298918E0EBD0004DAD8F /* bulletHit.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,9 +93,13 @@
 		EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButtonNode.m; sourceTree = "<group>"; };
 		EB87BD6F18E0DF8F0080FA55 /* SKEmitterNode+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+Utilities.h"; sourceTree = "<group>"; };
 		EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+Utilities.m"; sourceTree = "<group>"; };
-		EB87BD7218E0E7510080FA55 /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EXPLOSION.atlas; sourceTree = "<group>"; };
 		EB87BD7418E0E7510080FA55 /* Clouds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Clouds.atlas; sourceTree = "<group>"; };
+		EBA6298318E0EBC7004DAD8F /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DamageSmoke.sks; sourceTree = "<group>"; };
+		EBA6298718E0EBD0004DAD8F /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
+		EBA6298818E0EBD0004DAD8F /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
+		EBA6298918E0EBD0004DAD8F /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +192,11 @@
 		EB87BD2318E09E220080FA55 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EB87BD7218E0E7510080FA55 /* sprite.atlas */,
+				EBA6298718E0EBD0004DAD8F /* trail.sks */,
+				EBA6298818E0EBD0004DAD8F /* explosion.sks */,
+				EBA6298918E0EBD0004DAD8F /* bulletHit.sks */,
+				EBA6298318E0EBC7004DAD8F /* Fire.sks */,
+				EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */,
 				EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */,
 				EB87BD7418E0E7510080FA55 /* Clouds.atlas */,
 				EB87BD2418E09E220080FA55 /* AirEscape-Info.plist */,
@@ -301,13 +313,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
 				EB87BD3B18E09E220080FA55 /* Spaceship.png in Resources */,
 				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
+				EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */,
+				EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */,
+				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,
 				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
-				EB87BD7518E0E7510080FA55 /* sprite.atlas in Resources */,
+				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,8 +492,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
 				INFOPLIST_FILE = "AirEscape/AirEscape-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -490,8 +508,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
 				INFOPLIST_FILE = "AirEscape/AirEscape-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -555,6 +575,7 @@
 				EB87BD5518E09E220080FA55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB87BD5618E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscapeTests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +584,7 @@
 				EB87BD5818E09E220080FA55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

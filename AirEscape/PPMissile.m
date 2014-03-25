@@ -25,7 +25,7 @@
     
     if (self) {
         
-        NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"trail" ofType:@"sks"];
+        NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"Fire" ofType:@"sks"];
         self.smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
     }
     
