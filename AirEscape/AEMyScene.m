@@ -283,7 +283,7 @@
     [_arrayOfCurrentMissilesOnScreen removeAllObjects];
     
     
-    [[AEActorsManager sharedManager] setActorsDefaultProprietiesValues];
+//    [[AEActorsManager sharedManager] setActorsDefaultProprietiesValues];
     
 //    missileSpeedIndicator.title.text = [NSString stringWithFormat:@"M Speed:%.0f",[[AEActorsManager sharedManager] missileSpeed]];
 //    missileManevrabilityIndicator.title.text = [NSString stringWithFormat:@"M Mane:%.1f",[[AEActorsManager sharedManager] missileManevrability]];
