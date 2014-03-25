@@ -46,6 +46,7 @@
 		EBD57B8718E23C0700D5A61E /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */; };
 		EBD57B8A18E23D0A00D5A61E /* redStick.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8818E23D0A00D5A61E /* redStick.png */; };
 		EBD57B8B18E23D0A00D5A61E /* stickbase.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8918E23D0A00D5A61E /* stickbase.png */; };
+		EBD57B8D18E2491200D5A61E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8C18E2491200D5A61E /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCImageJoystick.m; sourceTree = "<group>"; };
 		EBD57B8818E23D0A00D5A61E /* redStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redStick.png; sourceTree = "<group>"; };
 		EBD57B8918E23D0A00D5A61E /* stickbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickbase.png; sourceTree = "<group>"; };
+		EBD57B8C18E2491200D5A61E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		EB87BD2218E09E220080FA55 /* AirEscape */ = {
 			isa = PBXGroup;
 			children = (
+				EBD57B8C18E2491200D5A61E /* spark.png */,
 				EB87BD5918E0DD950080FA55 /* Categories */,
 				EB87BD2B18E09E220080FA55 /* AEAppDelegate.h */,
 				EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */,
@@ -350,6 +353,7 @@
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
+				EBD57B8D18E2491200D5A61E /* spark.png in Resources */,
 				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 			);
