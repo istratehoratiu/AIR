@@ -10,9 +10,12 @@
 
 @implementation AEAppDelegate
 
+@synthesize     atlas = _atlas;
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    _atlas = [SKTextureAtlas atlasNamed:@"sprite"];
     return YES;
 }
 							

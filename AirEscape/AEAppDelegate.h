@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 
-@interface AEAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AEAppDelegate : UIResponder <UIApplicationDelegate> {
+
+    SKTextureAtlas* _atlas;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, strong) SKTextureAtlas* atlas;
 @end

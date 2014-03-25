@@ -147,6 +147,7 @@
     [_userAirplane updateOrientationVector];
     [_userAirplane updateMove:_deltaTime];
     [_userAirplane updateRotation:_deltaTime];
+    
     [self checkWithMarginsOfScreenActor:_userAirplane];
     
     for (PPSpriteNode *missile in _arrayOfCurrentMissilesOnScreen) {

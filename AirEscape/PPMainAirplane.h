@@ -10,6 +10,7 @@
 
 @interface PPMainAirplane : PPSpriteNode {
     SKEmitterNode *_smokeEmitter;
+    
 }
 
 @property (nonatomic, strong) PPSpriteNode *targetAirplane;
