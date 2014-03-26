@@ -27,6 +27,7 @@
 @synthesize gameIsPaused                    = _gameIsPaused;
 @synthesize pauseButton                     = _pauseButton;
 @synthesize numberOfMissileOnScreen         = _numberOfMissileOnScreen;
+@synthesize scaleAirplane                   = _scaleAirplane;
 
 
 -(id)initWithSize:(CGSize)size {
@@ -54,7 +55,8 @@
 //        
         // Main Actor
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
-        _userAirplane.scale = 0.15;
+        //_userAirplane.scale = 0.15;
+        _scaleAirplane = 1.0;
         _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
         _userAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_userAirplane.size.width * 0.5]; // 1
         _userAirplane.physicsBody.dynamic = YES; // 2
@@ -217,16 +219,77 @@
         [self addChild:plusButtonAircraftManevrability];
         //-----------------------------
         
-        
         self.imageJoystick = [[JCImageJoystick alloc]initWithJoystickImage:(@"redStick.png") baseImage:@"stickbase.png"];
         [self.imageJoystick setPosition:CGPointMake(100, 200)];
         [self addChild:self.imageJoystick];
+
+        //------------- Scale Main Airplane
+        SKButtonNode *minusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
+        [minusScaleAirplane setPosition:CGPointMake(100, 100)];
+        [minusScaleAirplane.title setFontName:@"Chalkduster"];
+        [minusScaleAirplane.title setFontSize:15.0];
+        [minusScaleAirplane setTouchUpInsideTarget:self action:@selector(minusAirplaneScale)];
+        minusScaleAirplane.zPosition = 1000;
+        [self addChild:minusScaleAirplane];
+        
+        mainAircraftScaleIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        [mainAircraftScaleIndicator setPosition:CGPointMake(200, 100)];
+        [mainAircraftScaleIndicator.title setFontName:@"Chalkduster"];
+        [mainAircraftScaleIndicator.title setFontSize:15.0];
+        //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
+        mainAircraftScaleIndicator.zPosition = 1000;
+        mainAircraftScaleIndicator.title.text = [NSString stringWithFormat:@"Scale:%.2f", _scaleAirplane];
+        [self addChild:mainAircraftScaleIndicator];
+        
+        SKButtonNode *plusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
+        [plusScaleAirplane setPosition:CGPointMake(300, 100)];
+        [plusScaleAirplane.title setFontName:@"Chalkduster"];
+        [plusScaleAirplane.title setFontSize:15.0];
+        [plusScaleAirplane setTouchUpInsideTarget:self action:@selector(plusAirplaneScale)];
+        plusScaleAirplane.zPosition = 1000;
+        [self addChild:plusScaleAirplane];
+        
+        aicraftWidthSize = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        [aicraftWidthSize setPosition:CGPointMake(400, 100)];
+        [aicraftWidthSize.title setFontName:@"Chalkduster"];
+        [aicraftWidthSize.title setFontSize:15.0];
+        //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
+        aicraftWidthSize.zPosition = 1000;
+        aicraftWidthSize.title.text = [NSString stringWithFormat:@"Width:%.1f",_userAirplane.size.width];
+        [self addChild:aicraftWidthSize];
+        
+        aicraftHeightSize = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        [aicraftHeightSize setPosition:CGPointMake(500, 100)];
+        [aicraftHeightSize.title setFontName:@"Chalkduster"];
+        [aicraftHeightSize.title setFontSize:15.0];
+        //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
+        aicraftHeightSize.zPosition = 1000;
+        aicraftHeightSize.title.text = [NSString stringWithFormat:@"Height:%.1f",_userAirplane.size.height];
+        [self addChild:aicraftHeightSize];
+        
     }
     return self;
 }
 
 #pragma mark - 
 #pragma mark Button Methods
+
+- (void)minusAirplaneScale {
+    _scaleAirplane = _scaleAirplane - 0.05;
+    _userAirplane.scale = _scaleAirplane;
+    mainAircraftScaleIndicator.title.text = [NSString stringWithFormat:@"Scale:%.2f", _scaleAirplane];
+    aicraftWidthSize.title.text = [NSString stringWithFormat:@"Width:%.1f",_userAirplane.size.width];
+    aicraftHeightSize.title.text = [NSString stringWithFormat:@"Height:%.1f",_userAirplane.size.height];
+}
+
+- (void)plusAirplaneScale {
+
+    _scaleAirplane = _scaleAirplane + 0.05;
+    _userAirplane.scale = _scaleAirplane;
+    mainAircraftScaleIndicator.title.text = [NSString stringWithFormat:@"Scale:%.2f", _scaleAirplane];
+    aicraftWidthSize.title.text = [NSString stringWithFormat:@"Width:%.1f",_userAirplane.size.width];
+    aicraftHeightSize.title.text = [NSString stringWithFormat:@"Height:%.1f",_userAirplane.size.height];
+}
 
 - (void)decreaseMissileSpeed {
     [[AEActorsManager sharedManager] setMissileSpeed:[[AEActorsManager sharedManager] missileSpeed] - 5];

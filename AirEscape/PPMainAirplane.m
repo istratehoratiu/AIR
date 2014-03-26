@@ -29,7 +29,7 @@
     
     if (self) {
         
-        self.health = 100;
+        self.health = 1;
         self.damage = 10;
         self.rateOfFire = .2;
         self.numberOfRockets = 10;
@@ -93,7 +93,7 @@
     _smokeEmitter.position = self.position;
     _smokeEmitter.particleSpeed = self.zRotation;
     
-    CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
+    CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(30, 0) fromNode:self];
     
     CGPoint offset = skPointsSubtract(destinationPoint, self.position);
     

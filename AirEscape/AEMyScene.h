@@ -19,6 +19,7 @@
 @interface AEMyScene : SKScene {
     
     PPMainAirplane *_userAirplane;
+    CGFloat _scaleAirplane;
     PPMainBase *_mainBase;
     //PPHunterAirplane *_hunterAirplane;
     
@@ -40,8 +41,11 @@
     SKButtonNode *missileManevrabilityIndicator;
     SKButtonNode *airplaneSpeedIndicator;
     SKButtonNode *aicraftManevrabilityIndicator;
+    SKButtonNode *mainAircraftScaleIndicator;
+    SKButtonNode *aicraftWidthSize;
+    SKButtonNode *aicraftHeightSize;
 }
-
+@property (nonatomic, assign) CGFloat scaleAirplane;
 @property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;
 @property (nonatomic, retain)SKButtonNode* pauseButton;
 @property (nonatomic, assign) BOOL gameIsPaused;
