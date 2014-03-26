@@ -55,7 +55,7 @@
 //        
         // Main Actor
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
-        //_userAirplane.scale = 0.15;
+        _userAirplane.scale = 0.15;
         _scaleAirplane = 1.0;
         _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
         _userAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_userAirplane.size.width * 0.5]; // 1
@@ -230,7 +230,7 @@
         [minusScaleAirplane.title setFontSize:15.0];
         [minusScaleAirplane setTouchUpInsideTarget:self action:@selector(minusAirplaneScale)];
         minusScaleAirplane.zPosition = 1000;
-        [self addChild:minusScaleAirplane];
+        //[self addChild:minusScaleAirplane];
         
         mainAircraftScaleIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [mainAircraftScaleIndicator setPosition:CGPointMake(200, 100)];
@@ -239,7 +239,7 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         mainAircraftScaleIndicator.zPosition = 1000;
         mainAircraftScaleIndicator.title.text = [NSString stringWithFormat:@"Scale:%.2f", _scaleAirplane];
-        [self addChild:mainAircraftScaleIndicator];
+        //[self addChild:mainAircraftScaleIndicator];
         
         SKButtonNode *plusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
         [plusScaleAirplane setPosition:CGPointMake(300, 100)];
@@ -247,7 +247,7 @@
         [plusScaleAirplane.title setFontSize:15.0];
         [plusScaleAirplane setTouchUpInsideTarget:self action:@selector(plusAirplaneScale)];
         plusScaleAirplane.zPosition = 1000;
-        [self addChild:plusScaleAirplane];
+        //[self addChild:plusScaleAirplane];
         
         aicraftWidthSize = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [aicraftWidthSize setPosition:CGPointMake(400, 100)];
@@ -256,7 +256,7 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         aicraftWidthSize.zPosition = 1000;
         aicraftWidthSize.title.text = [NSString stringWithFormat:@"Width:%.1f",_userAirplane.size.width];
-        [self addChild:aicraftWidthSize];
+        //[self addChild:aicraftWidthSize];
         
         aicraftHeightSize = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [aicraftHeightSize setPosition:CGPointMake(500, 100)];
@@ -265,7 +265,7 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         aicraftHeightSize.zPosition = 1000;
         aicraftHeightSize.title.text = [NSString stringWithFormat:@"Height:%.1f",_userAirplane.size.height];
-        [self addChild:aicraftHeightSize];
+        //[self addChild:aicraftHeightSize];
         
     }
     return self;
@@ -420,11 +420,11 @@
             [secondNode removeFromParent];
         }
         
-        [_userAirplane setHealth:_userAirplane.health - 50];
-        
-        if ([_userAirplane health] <= 0) {
+//        [_userAirplane setHealth:_userAirplane.health - 50];
+//        
+//        if ([_userAirplane health] <= 0) {
             [self restartScene];
-        }
+//        }
     }
 }
 
