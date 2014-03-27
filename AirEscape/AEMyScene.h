@@ -15,6 +15,7 @@
 @class PPPositionIndicator;
 @class SKButtonNode;
 @class JCImageJoystick;
+@class Joystick;
 
 @interface AEMyScene : SKScene {
     
@@ -44,6 +45,8 @@
     SKButtonNode *mainAircraftScaleIndicator;
     SKButtonNode *aicraftWidthSize;
     SKButtonNode *aicraftHeightSize;
+    
+    Joystick *_joistick;
 }
 @property (nonatomic, assign) CGFloat scaleAirplane;
 @property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;

@@ -36,6 +36,9 @@
 		EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */; };
 		EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */; };
 		EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7418E0E7510080FA55 /* Clouds.atlas */; };
+		EBA040C818E3980D004B708A /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA040C418E3980D004B708A /* dpad.png */; };
+		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
+		EBA040CA18E3980D004B708A /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA040C718E3980D004B708A /* joystick.png */; };
 		EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298318E0EBC7004DAD8F /* Fire.sks */; };
 		EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */; };
 		EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298718E0EBD0004DAD8F /* trail.sks */; };
@@ -104,6 +107,10 @@
 		EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+Utilities.m"; sourceTree = "<group>"; };
 		EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EXPLOSION.atlas; sourceTree = "<group>"; };
 		EB87BD7418E0E7510080FA55 /* Clouds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Clouds.atlas; sourceTree = "<group>"; };
+		EBA040C418E3980D004B708A /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
+		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
+		EBA040C718E3980D004B708A /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
 		EBA6298318E0EBC7004DAD8F /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 		EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DamageSmoke.sks; sourceTree = "<group>"; };
 		EBA6298718E0EBD0004DAD8F /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
@@ -179,6 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				EBD57B8C18E2491200D5A61E /* spark.png */,
+				EBA040C418E3980D004B708A /* dpad.png */,
+				EBA040C518E3980D004B708A /* Joystick.h */,
+				EBA040C618E3980D004B708A /* Joystick.m */,
+				EBA040C718E3980D004B708A /* joystick.png */,
 				EB87BD5918E0DD950080FA55 /* Categories */,
 				EB87BD2B18E09E220080FA55 /* AEAppDelegate.h */,
 				EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */,
@@ -354,6 +365,8 @@
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
 				EBD57B8D18E2491200D5A61E /* spark.png in Resources */,
+				EBA040C818E3980D004B708A /* dpad.png in Resources */,
+				EBA040CA18E3980D004B708A /* joystick.png in Resources */,
 				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 			);
@@ -379,6 +392,7 @@
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
+				EBA040C918E3980D004B708A /* Joystick.m in Sources */,
 				EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */,
 				EB87BD6118E0DE770080FA55 /* PPMainAirplane.m in Sources */,
 				EB87BD6218E0DE770080FA55 /* PPMissile.m in Sources */,

@@ -22,7 +22,7 @@ static AEActorsManager *sharedMyManager = nil;
 #pragma mark Singleton Methods
 
 
-+ (id)sharedManager {
++ (AEActorsManager *)sharedManager {
     static AEActorsManager *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

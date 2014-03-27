@@ -22,7 +22,7 @@
 @property (nonatomic, assign) CGFloat mainAirplaneSpeed;
 @property (nonatomic, assign) CGFloat mainAirplaneManevrability;
 
-+ (id)sharedManager;
++ (AEActorsManager *)sharedManager;
 - (void)setActorsDefaultProprietiesValues;
 
 @end
