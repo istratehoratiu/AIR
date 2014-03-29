@@ -73,7 +73,7 @@
         //schedule enemies
         SKAction *wait = [SKAction waitForDuration:3];
         SKAction *callClouds = [SKAction runBlock:^{
-            [self addEnemyMissile];
+            //[self addEnemyMissile];
         }];
         
         SKAction *updateClouds = [SKAction sequence:@[wait,callClouds]];
@@ -228,7 +228,7 @@
         SKSpriteNode *jsBackdrop = [SKSpriteNode spriteNodeWithImageNamed:@"dpad"];
         _joistick = [Joystick joystickWithThumb:jsThumb andBackdrop:jsBackdrop];
         _joistick.position = CGPointMake(jsBackdrop.size.width, jsBackdrop.size.height);
-        //[self addChild:_joistick];
+        [self addChild:_joistick];
         
         //------------- Scale Main Airplane
         SKButtonNode *minusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
@@ -379,6 +379,8 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     
+        [_userAirplane updateRotation:_deltaTime];
+    
     if (_lastUpdateTime) {
         _deltaTime = currentTime - _lastUpdateTime;
     } else {
@@ -392,7 +394,7 @@
     
     [_userAirplane updateOrientationVector];
     [_userAirplane updateMove:_deltaTime];
-    [_userAirplane updateRotation:_deltaTime];
+
     
     [self checkWithMarginsOfScreenActor:_userAirplane];
     

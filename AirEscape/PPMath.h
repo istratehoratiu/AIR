@@ -20,3 +20,4 @@ BOOL checkIfPointIsToTheLeftOfLineGivenByTwoPoints (CGPoint pointToCheck, CGPoin
 CGPoint getIntersectionOfLinesGivenByPoints(CGPoint firstPointOnLine1, CGPoint secondPointOnLine1, CGPoint firstPointOnLine2, CGPoint secondPointOnLine2);
 NSUInteger getRandomNumberBetween(NSUInteger startInterval, NSUInteger endInterval);
 CGFloat distanceBetweenPoint(CGPoint startPoint, CGPoint endPoint);
+CGFloat magnitude (CGPoint vector);

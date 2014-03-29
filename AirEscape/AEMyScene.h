@@ -67,6 +67,6 @@
 @property NSMutableArray *cloudsTextures;
 @property NSMutableArray *explosionTextures;
 @property (strong, nonatomic) JCImageJoystick *imageJoystick;
-
+@property (strong, nonatomic) Joystick *joistick;
 
 @end

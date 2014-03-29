@@ -31,6 +31,10 @@ CGFloat distanceBetweenPoint(CGPoint startPoint, CGPoint endPoint) {
     return sqrt(dx*dx + dy*dy);
 }
 
+CGFloat magnitude (CGPoint vector) {
+    return (sqrt(pow(vector.x, 2) + pow(vector.y, 2)));
+}
+
 CGPoint normalizeVector(CGPoint vector) {
     // Magnitude == Length of Vector.
     CGFloat magnitudine = sqrt(pow(vector.x, 2) + pow(vector.y, 2));

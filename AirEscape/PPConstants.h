@@ -9,10 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 
-#define kAEMainAirplaneManevrability    6
-#define kAEMainAirplaneSpeed            520
-#define kAEMissileManevrability         2
-#define kAEMissileSpeed                 435
+#define kAEMainAirplaneManevrability    3
+#define kAEMainAirplaneSpeed            250
+#define kAEMissileManevrability         1
+#define kAEMissileSpeed                 300
 
 static const NSUInteger userAirplaneCategory              =  4;
 static const NSUInteger missileCategory                   =  5;
