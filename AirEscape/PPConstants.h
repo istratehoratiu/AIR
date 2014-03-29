@@ -10,9 +10,9 @@
 
 
 #define kAEMainAirplaneManevrability    3
-#define kAEMainAirplaneSpeed            250
+#define kAEMainAirplaneSpeed            150
 #define kAEMissileManevrability         1
-#define kAEMissileSpeed                 300
+#define kAEMissileSpeed                 200
 
 static const NSUInteger userAirplaneCategory              =  4;
 static const NSUInteger missileCategory                   =  5;

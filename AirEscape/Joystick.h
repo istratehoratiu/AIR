@@ -16,7 +16,7 @@
     CGPoint travelLimit;
     float angularVelocity;
 }
-
+@property(nonatomic, readonly) SKSpriteNode *thumbNode;
 @property(nonatomic, readonly) CGPoint velocity;
 @property(nonatomic, readonly) float angularVelocity;
 

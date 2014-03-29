@@ -34,7 +34,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"airPlanesBackground"];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background1.jpg"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
@@ -73,7 +73,7 @@
         //schedule enemies
         SKAction *wait = [SKAction waitForDuration:3];
         SKAction *callClouds = [SKAction runBlock:^{
-            //[self addEnemyMissile];
+            [self addEnemyMissile];
         }];
         
         SKAction *updateClouds = [SKAction sequence:@[wait,callClouds]];

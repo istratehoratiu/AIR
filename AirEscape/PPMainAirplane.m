@@ -16,7 +16,7 @@
 #import "NSObject+Additions.h"
 #import "AEAppDelegate.h"
 #import "AEActorsManager.h"
-
+#import "Joystick.h"
 
 
 @implementation PPMainAirplane
@@ -93,13 +93,15 @@
     _smokeEmitter.position = self.position;
     _smokeEmitter.particleSpeed = self.zRotation;
     
-    CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(30, 0) fromNode:self];
+    CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(0, 30) fromNode:self];
     
     CGPoint offset = skPointsSubtract(destinationPoint, self.position);
     
     CGPoint targetVector =  normalizeVector(offset);
-
-    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] mainAirplaneSpeed]);
+    
+    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
+    
+    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] mainAirplaneSpeed] + (4 * magnitude(airplaneParent.joistick.velocity)));
 
     CGPoint actualTarget = skPointsAdd(self.position, skPointsMultiply(targetPerSecond, dt));
     
@@ -108,21 +110,31 @@
 }
 
 - (void)updateRotation:(CFTimeInterval)dt {
+
+    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
     
-    if (_flightDirection == kPPFlyStraight) {
-        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
-        return;
-    }
-    
-    if (_flightDirection == kPPTurnLeft) {
+    if (airplaneParent.joistick.velocity.x != 0 || airplaneParent.joistick.velocity.y != 0) {
         
-        [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
-        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
-        
-    } else {
-        
-        [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
-        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
+        if (self.zRotation < airplaneParent.joistick.angularVelocity) {
+
+            [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+            
+            self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
+            
+            if (self.zRotation > airplaneParent.joistick.angularVelocity) {
+                self.zRotation = airplaneParent.joistick.angularVelocity;
+                self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+            }
+        } else if (self.zRotation > airplaneParent.joistick.angularVelocity) {
+            [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+            
+            self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
+            
+            if (self.zRotation < airplaneParent.joistick.angularVelocity) {
+                self.zRotation = airplaneParent.joistick.angularVelocity;
+                self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+            }
+        }
     }
     
     _shadow.zRotation = self.zRotation;
