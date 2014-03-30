@@ -19,6 +19,7 @@
 
 @interface AEMyScene : SKScene {
     
+    SKSpriteNode *background;
     PPMainAirplane *_userAirplane;
     CGFloat _scaleAirplane;
     PPMainBase *_mainBase;

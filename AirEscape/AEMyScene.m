@@ -34,7 +34,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background1.jpg"];
+        background = [SKSpriteNode spriteNodeWithImageNamed:@"background1.jpg"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
@@ -395,6 +395,33 @@
     [_userAirplane updateOrientationVector];
     [_userAirplane updateMove:_deltaTime];
 
+    CGPoint directionOfAirplane = skPointsSubtract(CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)), self.userAirplane.position);
+    
+    CGPoint normalizedDirectionOfAirplane = normalizeVector(directionOfAirplane);
+    
+    CGPoint opositeVectorOfAirplaneDirection = skPointsMultiply(normalizedDirectionOfAirplane, -1);
+    
+    CGPoint targetPerSecond = skPointsMultiply(opositeVectorOfAirplaneDirection, 40);
+    
+    CGPoint actualTarget = skPointsAdd(background.position, skPointsMultiply(targetPerSecond, _deltaTime));
+    
+    background.position = actualTarget;
+    
+    if (background.position.x > CGRectGetMidX(self.frame) + 40) {
+        background.position = CGPointMake(CGRectGetMidX(self.frame) + 40, background.position.y);
+    }
+    
+    if (background.position.x < CGRectGetMidX(self.frame) - 40) {
+        background.position = CGPointMake(CGRectGetMidX(self.frame) - 40, background.position.y);
+    }
+    
+    if (background.position.y > CGRectGetMidY(self.frame) + 40) {
+        background.position = CGPointMake(background.position.y, CGRectGetMidY(self.frame) + 40);
+    }
+    
+    if (background.position.y < CGRectGetMidY(self.frame) - 40) {
+        background.position = CGPointMake(background.position.y, CGRectGetMidY(self.frame) - 40);
+    }
     
     [self checkWithMarginsOfScreenActor:_userAirplane];
     

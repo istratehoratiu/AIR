@@ -10,7 +10,8 @@
 
 @interface PPMainAirplane : PPSpriteNode {
     SKEmitterNode *_smokeEmitter;
-    
+    CGFloat _lastAngle;
+    CGFloat _playerAngle;
 }
 
 @property (nonatomic, strong) PPSpriteNode *targetAirplane;
