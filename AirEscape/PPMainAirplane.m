@@ -68,7 +68,7 @@
 }
 
 - (void)setHealth:(CGFloat)health {
-    if (health < _health * 0.5) {
+    if (health <= _health * 0.5) {
         if (!_smokeEmitter.parent) {
             _smokeEmitter = [SKEmitterNode emitterNamed:@"DamageSmoke"];
             _smokeEmitter.position = CGPointMake(0, 30);
