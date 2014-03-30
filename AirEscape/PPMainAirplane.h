@@ -12,8 +12,12 @@
     SKEmitterNode *_smokeEmitter;
     CGFloat _lastAngle;
     CGFloat _playerAngle;
+    SKShapeNode *circle;
+    
+    CGPoint _normalizedDirectionVector;
 }
 
+@property (nonatomic, assign) CGPoint normaliedDirectonVector;
 @property (nonatomic, strong) PPSpriteNode *targetAirplane;
 
 - (id)initMainAirplane ;

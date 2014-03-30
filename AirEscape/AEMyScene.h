@@ -48,6 +48,19 @@
     SKButtonNode *aicraftHeightSize;
     
     Joystick *_joistick;
+    
+    
+    SKButtonNode * minusButtonMissileSpeed;
+    SKButtonNode * plusButtonMissileSpeed;
+    SKButtonNode * minusButtonMissileManevrability;
+    SKButtonNode * plusButtonMissileManevrability;
+    SKButtonNode * minusButtonAirplaneSpeed;
+    SKButtonNode * plusButtonAircraftSpeed;
+    SKButtonNode * minusButtonAirplaneManevrability;
+    SKButtonNode * aicraftManevrabilityIndicato;
+    SKButtonNode * plusButtonAircraftManevrability;
+    SKButtonNode * minusScaleAirplane;
+    SKButtonNode * plusScaleAirplane;
 }
 @property (nonatomic, assign) CGFloat scaleAirplane;
 @property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;

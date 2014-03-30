@@ -17,19 +17,22 @@
 #import "AEAppDelegate.h"
 #import "AEActorsManager.h"
 #import "Joystick.h"
+#import "SKShapeNode+Additions.h"
 
 
 @implementation PPMainAirplane
 
 
 @synthesize targetAirplane  = _targetAirplane;
+@synthesize normaliedDirectonVector = _normalizedDirectionVector;
+
 
 - (id)initMainAirplane {
     self = [super initWithTexture:[[[self appDelegate] atlas] textureNamed:@"plane_N.png"]];
     
     if (self) {
         
-        self.health = 1;
+        self.health = 90;
         self.damage = 10;
         self.rateOfFire = .2;
         self.numberOfRockets = 10;
@@ -54,15 +57,37 @@
         _shadow = [[SKSpriteNode alloc] initWithTexture:[[[self appDelegate] atlas] textureNamed:@"plane_shadow.png"]];
         
         _flightDirection = kPPFlyStraight;
+        
+        circle = [[SKShapeNode alloc] init];
+        [self addChild:circle];
+        circle.physicsBody.dynamic = NO;
+        [circle drawCircleAtPoint:CGPointZero withRadius:10];
     }
 
     return self;
 }
 
 - (void)setHealth:(CGFloat)health {
-    [super setHealth:health];
+    if (health < _health * 0.5) {
+        if (!_smokeEmitter.parent) {
+            _smokeEmitter = [SKEmitterNode emitterNamed:@"DamageSmoke"];
+            _smokeEmitter.position = CGPointMake(0, 30);
+            [_smokeEmitter setParticleColor:[SKColor whiteColor]];
+            //_smokeEmitter.particleSpeed = self.zRotation;
+            [self.parent addChild:_smokeEmitter];
+            _smokeEmitter.targetNode = self.parent;
+        }
+    }
     
     _health = health;
+    
+    if (_health <= 0) {
+        [self addExplosionEmitter];
+        [_smokeEmitter removeFromParent];
+    } else {
+        [self addBulletHitEmitter];
+    }
+    
 }
 
 - (void)stopFiring {
@@ -81,23 +106,18 @@
     
     _shadow.position = CGPointMake(self.position.x + 10, self.position.y + 10);
     
-    if (!_smokeEmitter.parent) {
-        _smokeEmitter = [SKEmitterNode emitterNamed:@"DamageSmoke"];
-        _smokeEmitter.position = CGPointMake(0, 30);
-        [_smokeEmitter setParticleColor:[SKColor whiteColor]];
-        //_smokeEmitter.particleSpeed = self.zRotation;
-        [self.parent addChild:_smokeEmitter];
-        _smokeEmitter.targetNode = self.parent;
+    if (_smokeEmitter.parent) {
+        _smokeEmitter.position = self.position;
+        _smokeEmitter.particleSpeed = self.zRotation;
     }
-    
-    _smokeEmitter.position = self.position;
-    _smokeEmitter.particleSpeed = self.zRotation;
     
     CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(0, 30) fromNode:self];
     
     CGPoint offset = skPointsSubtract(destinationPoint, self.position);
     
     CGPoint targetVector =  normalizeVector(offset);
+    
+    _normalizedDirectionVector = targetVector;
     
     AEMyScene *airplaneParent = (AEMyScene *)self.parent;
     
@@ -113,29 +133,21 @@
 
     AEMyScene *airplaneParent = (AEMyScene *)self.parent;
     
-    if (airplaneParent.joistick.velocity.x != 0 || airplaneParent.joistick.velocity.y != 0) {
+    if (_flightDirection == kPPFlyStraight) {
         
-        if (self.zRotation < airplaneParent.joistick.angularVelocity) {
+        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+        
+    } else if (_flightDirection == kPPTurnLeft) {
 
             [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
             
             self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
             
-            if (self.zRotation > airplaneParent.joistick.angularVelocity) {
-                self.zRotation = airplaneParent.joistick.angularVelocity;
-                self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
-            }
-        } else if (self.zRotation > airplaneParent.joistick.angularVelocity) {
+        } else if (_flightDirection == kPPTurnRight) {
             [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
             
             self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
-            
-            if (self.zRotation < airplaneParent.joistick.angularVelocity) {
-                self.zRotation = airplaneParent.joistick.angularVelocity;
-                self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
-            }
         }
-    }
     
     _shadow.zRotation = self.zRotation;
 }

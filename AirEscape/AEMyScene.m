@@ -116,13 +116,13 @@
         _gameIsPaused = YES;
         
         //------------- Missile Speed
-        SKButtonNode *minusButtonMissileSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
+        minusButtonMissileSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
         [minusButtonMissileSpeed setPosition:CGPointMake(50, 50)];
         [minusButtonMissileSpeed.title setFontName:@"Chalkduster"];
         [minusButtonMissileSpeed.title setFontSize:20.0];
         [minusButtonMissileSpeed setTouchUpInsideTarget:self action:@selector(decreaseMissileSpeed)];
         minusButtonMissileSpeed.zPosition = 1000;
-        //[self addChild:minusButtonMissileSpeed];
+        [self addChild:minusButtonMissileSpeed];
         
         missileSpeedIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [missileSpeedIndicator setPosition:CGPointMake(100, 15)];
@@ -131,24 +131,24 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         missileSpeedIndicator.zPosition = 1000;
         missileSpeedIndicator.title.text = [NSString stringWithFormat:@"M Speed:%.0f",[[AEActorsManager sharedManager] missileSpeed]];
-        //[self addChild:missileSpeedIndicator];
+        [self addChild:missileSpeedIndicator];
         
-        SKButtonNode *plusButtonMissileSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
+        plusButtonMissileSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
         [plusButtonMissileSpeed setPosition:CGPointMake(150, 50)];
         [plusButtonMissileSpeed.title setFontName:@"Chalkduster"];
         [plusButtonMissileSpeed.title setFontSize:20.0];
         [plusButtonMissileSpeed setTouchUpInsideTarget:self action:@selector(increaseMissileSpeed)];
         plusButtonMissileSpeed.zPosition = 1000;
-        //[self addChild:plusButtonMissileSpeed];
+        [self addChild:plusButtonMissileSpeed];
         
         //------------- Missile Manevrability
-        SKButtonNode *minusButtonMissileManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
+        minusButtonMissileManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
         [minusButtonMissileManevrability setPosition:CGPointMake(250, 50)];
         [minusButtonMissileManevrability.title setFontName:@"Chalkduster"];
         [minusButtonMissileManevrability.title setFontSize:20.0];
         [minusButtonMissileManevrability setTouchUpInsideTarget:self action:@selector(decreaseMissileManevrability)];
         minusButtonMissileManevrability.zPosition = 1000;
-        //[self addChild:minusButtonMissileManevrability];
+        [self addChild:minusButtonMissileManevrability];
         
         missileManevrabilityIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [missileManevrabilityIndicator setPosition:CGPointMake(300, 15)];
@@ -157,24 +157,24 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         missileManevrabilityIndicator.zPosition = 1000;
         missileManevrabilityIndicator.title.text = [NSString stringWithFormat:@"M Mane:%.1f",[[AEActorsManager sharedManager] missileManevrability]];
-        //[self addChild:missileManevrabilityIndicator];
+        [self addChild:missileManevrabilityIndicator];
         
-        SKButtonNode *plusButtonMissileManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
+        plusButtonMissileManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
         [plusButtonMissileManevrability setPosition:CGPointMake(350, 50)];
         [plusButtonMissileManevrability.title setFontName:@"Chalkduster"];
         [plusButtonMissileManevrability.title setFontSize:20.0];
         [plusButtonMissileManevrability setTouchUpInsideTarget:self action:@selector(increaseMissileManevrability)];
         plusButtonMissileManevrability.zPosition = 1000;
-        //[self addChild:plusButtonMissileManevrability];
+        [self addChild:plusButtonMissileManevrability];
         
         //------------- Airplane Speed
-        SKButtonNode *minusButtonAirplaneSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
+        minusButtonAirplaneSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
         [minusButtonAirplaneSpeed setPosition:CGPointMake(450, 50)];
         [minusButtonAirplaneSpeed.title setFontName:@"Chalkduster"];
         [minusButtonAirplaneSpeed.title setFontSize:20.0];
         [minusButtonAirplaneSpeed setTouchUpInsideTarget:self action:@selector(decreaseAircraftSpeed)];
         minusButtonAirplaneSpeed.zPosition = 1000;
-        //[self addChild:minusButtonAirplaneSpeed];
+        [self addChild:minusButtonAirplaneSpeed];
         
         airplaneSpeedIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [airplaneSpeedIndicator setPosition:CGPointMake(500, 15)];
@@ -183,24 +183,24 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         airplaneSpeedIndicator.zPosition = 1000;
         airplaneSpeedIndicator.title.text = [NSString stringWithFormat:@"A Speed:%.0f",[[AEActorsManager sharedManager] mainAirplaneSpeed]];
-        //[self addChild:airplaneSpeedIndicator];
+        [self addChild:airplaneSpeedIndicator];
         
-        SKButtonNode *plusButtonAircraftSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
+        plusButtonAircraftSpeed = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
         [plusButtonAircraftSpeed setPosition:CGPointMake(550, 50)];
         [plusButtonAircraftSpeed.title setFontName:@"Chalkduster"];
         [plusButtonAircraftSpeed.title setFontSize:20.0];
         [plusButtonAircraftSpeed setTouchUpInsideTarget:self action:@selector(increaseAircraftSpeed)];
         plusButtonAircraftSpeed.zPosition = 1000;
-        //[self addChild:plusButtonAircraftSpeed];
+        [self addChild:plusButtonAircraftSpeed];
         
         //------------- Airplane Manevrability
-        SKButtonNode *minusButtonAirplaneManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
+        minusButtonAirplaneManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
         [minusButtonAirplaneManevrability setPosition:CGPointMake(650, 50)];
         [minusButtonAirplaneManevrability.title setFontName:@"Chalkduster"];
         [minusButtonAirplaneManevrability.title setFontSize:20.0];
         [minusButtonAirplaneManevrability setTouchUpInsideTarget:self action:@selector(decreaseAircraftManevrability)];
         minusButtonAirplaneManevrability.zPosition = 1000;
-        //[self addChild:minusButtonAirplaneManevrability];
+        [self addChild:minusButtonAirplaneManevrability];
         
         aicraftManevrabilityIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [aicraftManevrabilityIndicator setPosition:CGPointMake(700, 15)];
@@ -209,15 +209,15 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         aicraftManevrabilityIndicator.zPosition = 1000;
         aicraftManevrabilityIndicator.title.text = [NSString stringWithFormat:@"A Mane:%.1f",[[AEActorsManager sharedManager] mainAirplaneManevrability]];
-        //[self addChild:aicraftManevrabilityIndicator];
+        [self addChild:aicraftManevrabilityIndicator];
         
-        SKButtonNode *plusButtonAircraftManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
+        plusButtonAircraftManevrability = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
         [plusButtonAircraftManevrability setPosition:CGPointMake(750, 50)];
         [plusButtonAircraftManevrability.title setFontName:@"Chalkduster"];
         [plusButtonAircraftManevrability.title setFontSize:20.0];
         [plusButtonAircraftManevrability setTouchUpInsideTarget:self action:@selector(increasedAircraftManevrability)];
         plusButtonAircraftManevrability.zPosition = 1000;
-        //[self addChild:plusButtonAircraftManevrability];
+        [self addChild:plusButtonAircraftManevrability];
         //-----------------------------
         
 //        self.imageJoystick = [[JCImageJoystick alloc]initWithJoystickImage:(@"redStick.png") baseImage:@"stickbase.png"];
@@ -228,16 +228,16 @@
         SKSpriteNode *jsBackdrop = [SKSpriteNode spriteNodeWithImageNamed:@"dpad"];
         _joistick = [Joystick joystickWithThumb:jsThumb andBackdrop:jsBackdrop];
         _joistick.position = CGPointMake(jsBackdrop.size.width, jsBackdrop.size.height);
-        [self addChild:_joistick];
+        //[self addChild:_joistick];
         
         //------------- Scale Main Airplane
-        SKButtonNode *minusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
+        minusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
         [minusScaleAirplane setPosition:CGPointMake(100, 100)];
         [minusScaleAirplane.title setFontName:@"Chalkduster"];
         [minusScaleAirplane.title setFontSize:15.0];
         [minusScaleAirplane setTouchUpInsideTarget:self action:@selector(minusAirplaneScale)];
         minusScaleAirplane.zPosition = 1000;
-        //[self addChild:minusScaleAirplane];
+        [self addChild:minusScaleAirplane];
         
         mainAircraftScaleIndicator = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [mainAircraftScaleIndicator setPosition:CGPointMake(200, 100)];
@@ -246,15 +246,15 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         mainAircraftScaleIndicator.zPosition = 1000;
         mainAircraftScaleIndicator.title.text = [NSString stringWithFormat:@"Scale:%.2f", _scaleAirplane];
-        //[self addChild:mainAircraftScaleIndicator];
+        [self addChild:mainAircraftScaleIndicator];
         
-        SKButtonNode *plusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
+        plusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"plus.png" selected:@"plus.png"];
         [plusScaleAirplane setPosition:CGPointMake(300, 100)];
         [plusScaleAirplane.title setFontName:@"Chalkduster"];
         [plusScaleAirplane.title setFontSize:15.0];
         [plusScaleAirplane setTouchUpInsideTarget:self action:@selector(plusAirplaneScale)];
         plusScaleAirplane.zPosition = 1000;
-        //[self addChild:plusScaleAirplane];
+        [self addChild:plusScaleAirplane];
         
         aicraftWidthSize = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [aicraftWidthSize setPosition:CGPointMake(400, 100)];
@@ -263,7 +263,7 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         aicraftWidthSize.zPosition = 1000;
         aicraftWidthSize.title.text = [NSString stringWithFormat:@"Width:%.1f",_userAirplane.size.width];
-        //[self addChild:aicraftWidthSize];
+        [self addChild:aicraftWidthSize];
         
         aicraftHeightSize = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [aicraftHeightSize setPosition:CGPointMake(500, 100)];
@@ -272,7 +272,7 @@
         //[backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
         aicraftHeightSize.zPosition = 1000;
         aicraftHeightSize.title.text = [NSString stringWithFormat:@"Height:%.1f",_userAirplane.size.height];
-        //[self addChild:aicraftHeightSize];
+        [self addChild:aicraftHeightSize];
         
     }
     return self;
@@ -364,6 +364,24 @@
 - (void)pauseGame {
     _gameIsPaused = !_gameIsPaused;
     
+    [minusButtonMissileSpeed setHidden:!_gameIsPaused];
+    [missileSpeedIndicator setHidden:!_gameIsPaused];
+    [plusButtonMissileSpeed setHidden:!_gameIsPaused];
+    [minusButtonMissileManevrability setHidden:!_gameIsPaused];
+    [missileManevrabilityIndicator setHidden:!_gameIsPaused];
+    [plusButtonMissileManevrability setHidden:!_gameIsPaused];
+    [minusButtonAirplaneSpeed setHidden:!_gameIsPaused];
+    [airplaneSpeedIndicator setHidden:!_gameIsPaused];
+    [plusButtonAircraftSpeed setHidden:!_gameIsPaused];
+    [minusButtonAirplaneManevrability setHidden:!_gameIsPaused];
+    [aicraftManevrabilityIndicator setHidden:!_gameIsPaused];
+    [plusButtonAircraftManevrability setHidden:!_gameIsPaused];
+    [minusScaleAirplane setHidden:!_gameIsPaused];
+    [mainAircraftScaleIndicator setHidden:!_gameIsPaused];
+    [plusScaleAirplane setHidden:!_gameIsPaused];
+    [aicraftWidthSize setHidden:!_gameIsPaused];
+    [aicraftHeightSize setHidden:!_gameIsPaused];
+    
     if (!_gameIsPaused) {
         _pauseButton.normalTexture = [SKTexture textureWithImageNamed:@"pause.png"];
         _pauseButton.selectedTexture = [SKTexture textureWithImageNamed:@"pause.png"];
@@ -395,17 +413,12 @@
     [_userAirplane updateOrientationVector];
     [_userAirplane updateMove:_deltaTime];
 
-    CGPoint directionOfAirplane = skPointsSubtract(CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)), self.userAirplane.position);
+    CGPoint bgVelocity = skPointsMultiply(_userAirplane.normaliedDirectonVector,-10);//CGPointMake(-50.0, 0);
     
-    CGPoint normalizedDirectionOfAirplane = normalizeVector(directionOfAirplane);
-    
-    CGPoint opositeVectorOfAirplaneDirection = skPointsMultiply(normalizedDirectionOfAirplane, -1);
-    
-    CGPoint targetPerSecond = skPointsMultiply(opositeVectorOfAirplaneDirection, 40);
-    
-    CGPoint actualTarget = skPointsAdd(background.position, skPointsMultiply(targetPerSecond, _deltaTime));
-    
-    background.position = actualTarget;
+    CGPoint amountToMove = skPointsMultiply(bgVelocity,_deltaTime);
+    background.position = skPointsAdd(background.position,amountToMove);
+
+    [self checkWithMarginsOfScreenActor:_userAirplane];
     
     if (background.position.x > CGRectGetMidX(self.frame) + 40) {
         background.position = CGPointMake(CGRectGetMidX(self.frame) + 40, background.position.y);
@@ -414,16 +427,16 @@
     if (background.position.x < CGRectGetMidX(self.frame) - 40) {
         background.position = CGPointMake(CGRectGetMidX(self.frame) - 40, background.position.y);
     }
-    
+
     if (background.position.y > CGRectGetMidY(self.frame) + 40) {
-        background.position = CGPointMake(background.position.y, CGRectGetMidY(self.frame) + 40);
+        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) + 40);
     }
     
     if (background.position.y < CGRectGetMidY(self.frame) - 40) {
-        background.position = CGPointMake(background.position.y, CGRectGetMidY(self.frame) - 40);
+        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) - 40);
     }
     
-    [self checkWithMarginsOfScreenActor:_userAirplane];
+    
     
     for (PPSpriteNode *missile in _arrayOfCurrentMissilesOnScreen) {
         [missile updateMove:_deltaTime];
@@ -456,11 +469,11 @@
             [secondNode removeFromParent];
         }
         
-//        [_userAirplane setHealth:_userAirplane.health - 50];
-//        
-//        if ([_userAirplane health] <= 0) {
+        [_userAirplane setHealth:_userAirplane.health - 50];
+        
+        if ([_userAirplane health] <= 0) {
             [self restartScene];
-//        }
+        }
     }
 }
 

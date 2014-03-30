@@ -16,8 +16,13 @@ CGPoint normalizeVector (CGPoint vector);
 CGPoint getSpriteOrientationForRadians(CGFloat radians);
 CGFloat degreesToRadians(CGFloat degrees);
 CGFloat radiansToDegrees(CGFloat radians);
+
 BOOL checkIfPointIsToTheLeftOfLineGivenByTwoPoints (CGPoint pointToCheck, CGPoint firstLinePoint, CGPoint secondLinePoint);
+
 CGPoint getIntersectionOfLinesGivenByPoints(CGPoint firstPointOnLine1, CGPoint secondPointOnLine1, CGPoint firstPointOnLine2, CGPoint secondPointOnLine2);
+
 NSUInteger getRandomNumberBetween(NSUInteger startInterval, NSUInteger endInterval);
+
 CGFloat distanceBetweenPoint(CGPoint startPoint, CGPoint endPoint);
+
 CGFloat magnitude (CGPoint vector);

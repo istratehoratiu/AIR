@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB2F342818E76CDE0043FAAE /* background1.jpg */; };
+		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
 		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
 		EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */; };
 		EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
@@ -65,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		EB2F342818E76CDE0043FAAE /* background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background1.jpg; sourceTree = "<group>"; };
+		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
+		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
 		EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		EB7966D018E1FF5D00D2669C /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */,
 				EBD57B8818E23D0A00D5A61E /* redStick.png */,
 				EBD57B8918E23D0A00D5A61E /* stickbase.png */,
+				EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */,
+				EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */,
 				EB87BD3C18E09E220080FA55 /* Images.xcassets */,
 				EB87BD2318E09E220080FA55 /* Supporting Files */,
 			);
@@ -393,6 +398,7 @@
 			files = (
 				EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */,
 				EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */,
+				EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */,
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
