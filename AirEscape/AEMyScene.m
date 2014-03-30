@@ -342,7 +342,7 @@
     
     [self pauseGame];
     
-    _userAirplane.health = 100;
+    _userAirplane.health = 90;
     
     _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
 
