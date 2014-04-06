@@ -99,7 +99,7 @@
     
     if (!_shadow.parent) {
         
-        _shadow.scale = .15;
+        _shadow.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
         _shadow.zPosition = 0;
         [self.parent addChild:_shadow];
     }

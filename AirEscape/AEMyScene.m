@@ -56,7 +56,7 @@
 //        
         // Main Actor
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
-        _userAirplane.scale = 0.15;
+        _userAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
         _scaleAirplane = 1.0;
         _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
         _userAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_userAirplane.size.width * 0.5]; // 1
@@ -353,7 +353,7 @@
     [_arrayOfCurrentMissilesOnScreen removeAllObjects];
     
     
-    [[AEActorsManager sharedManager] setActorsDefaultProprietiesValues];
+//    [[AEActorsManager sharedManager] setActorsDefaultProprietiesValues];
     
 //    missileSpeedIndicator.title.text = [NSString stringWithFormat:@"M Speed:%.0f",[[AEActorsManager sharedManager] missileSpeed]];
 //    missileManevrabilityIndicator.title.text = [NSString stringWithFormat:@"M Mane:%.1f",[[AEActorsManager sharedManager] missileManevrability]];

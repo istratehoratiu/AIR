@@ -32,7 +32,7 @@
 
 - (void)updateMove:(CFTimeInterval)dt {
 
-    CGPoint lineEnd = [self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
+    CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
     
     CGPoint destinationPoint = lineEnd;//[self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
     
@@ -73,7 +73,7 @@
         
         
         CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
-        CGPoint lineEnd = [self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
+        CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
         
         if (!checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
             
