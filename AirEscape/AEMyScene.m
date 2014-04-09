@@ -105,7 +105,7 @@
         [self addChild:_numberOfMissileOnScreen];
         
         _pauseButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"play.png" selected:@"play.png"];
-        [_pauseButton setPosition:CGPointMake(self.size.width - 100, self.size.height - 100)];
+        [_pauseButton setPosition:CGPointMake(self.size.width - (_pauseButton.size.width * 0.5), self.size.height - (_pauseButton.size.height * 0.5))];
         [_pauseButton.title setFontName:@"Chalkduster"];
         [_pauseButton.title setFontSize:10.0];
         [_pauseButton.title setText:@""];
@@ -382,6 +382,25 @@
     [aicraftWidthSize setHidden:!_gameIsPaused];
     [aicraftHeightSize setHidden:!_gameIsPaused];
     
+    [minusButtonMissileSpeed setUserInteractionEnabled:_gameIsPaused];
+    [missileSpeedIndicator setUserInteractionEnabled:_gameIsPaused];
+    [plusButtonMissileSpeed setUserInteractionEnabled:_gameIsPaused];
+    [minusButtonMissileManevrability setUserInteractionEnabled:_gameIsPaused];
+    [missileManevrabilityIndicator setUserInteractionEnabled:_gameIsPaused];
+    [plusButtonMissileManevrability setUserInteractionEnabled:_gameIsPaused];
+    [minusButtonAirplaneSpeed setUserInteractionEnabled:_gameIsPaused];
+    [airplaneSpeedIndicator setUserInteractionEnabled:_gameIsPaused];
+    [plusButtonAircraftSpeed setUserInteractionEnabled:_gameIsPaused];
+    [minusButtonAirplaneManevrability setUserInteractionEnabled:_gameIsPaused];
+    [aicraftManevrabilityIndicator setUserInteractionEnabled:_gameIsPaused];
+    [plusButtonAircraftManevrability setUserInteractionEnabled:_gameIsPaused];
+    [minusScaleAirplane setUserInteractionEnabled:_gameIsPaused];
+    [mainAircraftScaleIndicator setUserInteractionEnabled:_gameIsPaused];
+    [plusScaleAirplane setUserInteractionEnabled:_gameIsPaused];
+    [aicraftWidthSize setUserInteractionEnabled:_gameIsPaused];
+    [aicraftHeightSize setUserInteractionEnabled:_gameIsPaused];
+    
+    
     if (!_gameIsPaused) {
         _pauseButton.normalTexture = [SKTexture textureWithImageNamed:@"pause.png"];
         _pauseButton.selectedTexture = [SKTexture textureWithImageNamed:@"pause.png"];
@@ -420,20 +439,20 @@
 
     [self checkWithMarginsOfScreenActor:_userAirplane];
     
-    if (background.position.x > CGRectGetMidX(self.frame) + 40) {
-        background.position = CGPointMake(CGRectGetMidX(self.frame) + 40, background.position.y);
+    if (background.position.x > CGRectGetMidX(self.frame) + kAEParllaxDeviationValue) {
+        background.position = CGPointMake(CGRectGetMidX(self.frame) + kAEParllaxDeviationValue, background.position.y);
     }
     
-    if (background.position.x < CGRectGetMidX(self.frame) - 40) {
-        background.position = CGPointMake(CGRectGetMidX(self.frame) - 40, background.position.y);
+    if (background.position.x < CGRectGetMidX(self.frame) - kAEParllaxDeviationValue) {
+        background.position = CGPointMake(CGRectGetMidX(self.frame) - kAEParllaxDeviationValue, background.position.y);
     }
 
-    if (background.position.y > CGRectGetMidY(self.frame) + 40) {
-        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) + 40);
+    if (background.position.y > CGRectGetMidY(self.frame) + kAEParllaxDeviationValue) {
+        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) + kAEParllaxDeviationValue);
     }
     
-    if (background.position.y < CGRectGetMidY(self.frame) - 40) {
-        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) - 40);
+    if (background.position.y < CGRectGetMidY(self.frame) - kAEParllaxDeviationValue) {
+        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) - kAEParllaxDeviationValue);
     }
     
     

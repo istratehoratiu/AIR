@@ -14,6 +14,8 @@
 #define kAEMissileManevrability         1
 #define kAEMissileSpeed                 200
 
+#define kAEParllaxDeviationValue        80
+
 static const NSUInteger userAirplaneCategory              =  4;
 static const NSUInteger missileCategory                   =  5;
 static const NSUInteger enemyMissileCategory              =  7;
