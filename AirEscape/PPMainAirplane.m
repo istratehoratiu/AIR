@@ -130,31 +130,16 @@
 }
 
 - (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
-    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
-    
     [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
     
     self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
-    
-    if (self.zRotation == airplaneParent.joistick.angularVelocity) {
-        self.zRotation = airplaneParent.joistick.angularVelocity;
-        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
-    }
 }
 
-
 - (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
-    
-    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
     
     [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
     
     self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
-    
-    if (self.zRotation == airplaneParent.joistick.angularVelocity) {
-        self.zRotation = airplaneParent.joistick.angularVelocity;
-        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
-    }
 }
 
 - (void)updateRotation:(CFTimeInterval)dt {
@@ -167,8 +152,19 @@
                 
             if (self.zRotation < airplaneParent.joistick.angularVelocity) {
                 [self rotateToLeftIfAllowedOrGoStraight:dt];
+                
+                if (self.zRotation >= airplaneParent.joistick.angularVelocity) {
+                    self.zRotation = airplaneParent.joistick.angularVelocity;
+                    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+                }
+                
             } else if (self.zRotation > airplaneParent.joistick.angularVelocity) {
                 [self rotateToRightIfAllowedOrGoStraight:dt];
+                
+                if (self.zRotation <= airplaneParent.joistick.angularVelocity) {
+                    self.zRotation = airplaneParent.joistick.angularVelocity;
+                    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+                }
             }
             
         } else {
@@ -178,7 +174,6 @@
             if (distance > M_PI) {
                 if (self.zRotation < 0) {
                     [self rotateToRightIfAllowedOrGoStraight:dt];
-                    
                 } else {
                     [self rotateToLeftIfAllowedOrGoStraight:dt];
                 }
