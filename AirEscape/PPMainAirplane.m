@@ -119,9 +119,9 @@
     
     _normalizedDirectionVector = targetVector;
     
-    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
-    
-    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] mainAirplaneSpeed] + (4 * magnitude(airplaneParent.joistick.velocity)));
+    // Uncomment following comments in order to change speed depending on joystic position
+    //AEMyScene *airplaneParent = (AEMyScene *)self.parent;
+    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] mainAirplaneSpeed]);// + (4 * magnitude(airplaneParent.joistick.velocity)));
 
     CGPoint actualTarget = skPointsAdd(self.position, skPointsMultiply(targetPerSecond, dt));
     
@@ -129,25 +129,68 @@
     
 }
 
+- (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
+    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
+    
+    [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+    
+    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
+    
+    if (self.zRotation == airplaneParent.joistick.angularVelocity) {
+        self.zRotation = airplaneParent.joistick.angularVelocity;
+        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+    }
+}
+
+
+- (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
+    
+    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
+    
+    [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+    
+    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
+    
+    if (self.zRotation == airplaneParent.joistick.angularVelocity) {
+        self.zRotation = airplaneParent.joistick.angularVelocity;
+        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+    }
+}
+
 - (void)updateRotation:(CFTimeInterval)dt {
 
     AEMyScene *airplaneParent = (AEMyScene *)self.parent;
     
-    if (_flightDirection == kPPFlyStraight) {
+    if (airplaneParent.joistick.velocity.x != 0 || airplaneParent.joistick.velocity.y != 0) {
         
-        self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
-        
-    } else if (_flightDirection == kPPTurnLeft) {
-
-            [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+        if ((self.zRotation > 0 && airplaneParent.joistick.angularVelocity > 0 ) || (self.zRotation < 0 && airplaneParent.joistick.angularVelocity < 0 )) {
+                
+            if (self.zRotation < airplaneParent.joistick.angularVelocity) {
+                [self rotateToLeftIfAllowedOrGoStraight:dt];
+            } else if (self.zRotation > airplaneParent.joistick.angularVelocity) {
+                [self rotateToRightIfAllowedOrGoStraight:dt];
+            }
             
-            self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
+        } else {
             
-        } else if (_flightDirection == kPPTurnRight) {
-            [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+            CGFloat distance = fabsf(self.zRotation) + fabsf(airplaneParent.joistick.angularVelocity);
             
-            self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
+            if (distance > M_PI) {
+                if (self.zRotation < 0) {
+                    [self rotateToRightIfAllowedOrGoStraight:dt];
+                    
+                } else {
+                    [self rotateToLeftIfAllowedOrGoStraight:dt];
+                }
+            } else {
+                if (self.zRotation < 0) {
+                    [self rotateToLeftIfAllowedOrGoStraight:dt];
+                } else {
+                    [self rotateToRightIfAllowedOrGoStraight:dt];
+                }
+            }
         }
+    }
     
     _shadow.zRotation = self.zRotation;
 }

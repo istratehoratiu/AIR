@@ -93,10 +93,6 @@
         
         angularVelocity = -atan2(thumbNode.position.x - self.anchorPointInPoints.x, thumbNode.position.y - self.anchorPointInPoints.y);
     }
-    
-    
-    //NSLog(@"Angular Velocity: %f", angularVelocity);
-    //NSLog(@"Velocity %f - %f  Magnitude:%f",velocity.x, velocity.y, magnitude(velocity));
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

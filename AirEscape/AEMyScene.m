@@ -227,8 +227,8 @@
         SKSpriteNode *jsThumb = [SKSpriteNode spriteNodeWithImageNamed:@"joystick"];
         SKSpriteNode *jsBackdrop = [SKSpriteNode spriteNodeWithImageNamed:@"dpad"];
         _joistick = [Joystick joystickWithThumb:jsThumb andBackdrop:jsBackdrop];
-        _joistick.position = CGPointMake(jsBackdrop.size.width, jsBackdrop.size.height);
-        //[self addChild:_joistick];
+        _joistick.position = CGPointMake(jsBackdrop.size.width, jsBackdrop.size.height + 200);
+        [self addChild:_joistick];
         
         //------------- Scale Main Airplane
         minusScaleAirplane = [[SKButtonNode alloc] initWithImageNamedNormal:@"minus.png" selected:@"minus.png"];
