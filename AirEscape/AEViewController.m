@@ -8,6 +8,7 @@
 
 #import "AEViewController.h"
 #import "AEMyScene.h"
+#import "AEMenuScene.h"
 
 @implementation AEViewController
 
@@ -22,7 +23,7 @@
         skView.showsNodeCount = YES;
         
         // Create and configure the scene.
-        SKScene * scene = [AEMyScene sceneWithSize:skView.bounds.size];
+        SKScene * scene = [AEMenuScene sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         
         // Present the scene.

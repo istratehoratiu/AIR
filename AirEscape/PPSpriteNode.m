@@ -37,7 +37,8 @@
 @synthesize shadow = _shadow;
 @synthesize missileRange = _missileRange;
 @synthesize isInProcessOfLockingIn = _isInProcessOfLockingIn;
-
+@synthesize lastOrientation = _lastOrientation;
+@synthesize isDecorActor = _isDecorActor;
 
 - (id)initWithImageNamed:(NSString *)name {
     
@@ -54,6 +55,7 @@
         [self setUserInteractionEnabled:YES];
         
         _lockOnAnimation = [SKAction group:@[zoom, oneRevolution]];
+        _isDecorActor = NO;
     }
     
     return self;

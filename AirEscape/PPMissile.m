@@ -39,6 +39,26 @@
     CGPoint offset = skPointsSubtract(destinationPoint, self.position);
     
     CGPoint targetVector =  normalizeVector(offset);
+    
+//    if (_lastOrientation != self.zRotation) {
+//        NSLog(@">>>>>>>>>>>>>");
+//        [AEActorsManager sharedManager].missileSpeed -= kAEMissileAcceleration * dt;
+//        
+//        if ([AEActorsManager sharedManager].missileSpeed < kAEMinimumMissileSpeed) {
+//            [AEActorsManager sharedManager].missileSpeed = kAEMinimumMissileSpeed;
+//        }
+//        
+//        
+//    } else {
+//        NSLog(@"<<<<<<<<<<");
+//        [AEActorsManager sharedManager].missileSpeed += kAEMissileAcceleration * dt;
+//        
+//        if ([AEActorsManager sharedManager].missileSpeed > kAEMaxMissileSpeed) {
+//            [AEActorsManager sharedManager].missileSpeed = kAEMinimumMissileSpeed;
+//        }
+//    }
+    
+    _lastOrientation = self.zRotation;
     // 5
     //float POINTS_PER_SECOND = 150;
     CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] missileSpeed]);
@@ -92,6 +112,8 @@
             _spriteFinishedOrientationRotation = YES;
         }
     }
+    
+    
 }
 
 - (void)startLockOnAnimation {

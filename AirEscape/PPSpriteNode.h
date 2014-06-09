@@ -34,12 +34,17 @@
     BOOL _isInProcessOfLockingIn;
     BOOL _isLockedOnByEnemy;
     BOOL _hasLockOnByEnemy;
+    BOOL _isDecorActor;
     
     SKAction *_lockOnAnimation;
     SKEmitterNode *_smokeTrail;
     SKSpriteNode *_shadow;
+    
+    CGFloat _lastOrientation;
 }
 
+@property (nonatomic, assign) BOOL isDecorActor;
+@property (nonatomic, assign) CGFloat lastOrientation;
 @property (nonatomic, retain) SKAction *lockOnAnimation;
 @property (nonatomic, assign) PPFlightDirection flightDirection;
 @property (nonatomic, retain) SKSpriteNode *fireRange;

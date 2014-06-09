@@ -19,7 +19,6 @@
 #import "Joystick.h"
 #import "SKShapeNode+Additions.h"
 
-
 @implementation PPMainAirplane
 
 
@@ -145,6 +144,10 @@
 - (void)updateRotation:(CFTimeInterval)dt {
 
     AEMyScene *airplaneParent = (AEMyScene *)self.parent;
+    
+    if (_isDecorActor) {
+        return;
+    }
     
     if (airplaneParent.joistick.velocity.x != 0 || airplaneParent.joistick.velocity.y != 0) {
         
