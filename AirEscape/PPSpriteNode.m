@@ -19,26 +19,26 @@
 @implementation PPSpriteNode
 
 @dynamic targetPoint;
-@synthesize flightDirection = _flightDirection;
-@synthesize spriteFinishedOrientationRotation = _spriteFinishedOrientationRotation;
-@synthesize health = _health;
-@synthesize isFiringBullets = _isFiringBullets;
-@synthesize fireRange = _fireRange;
-@synthesize speed = _speed;
-@synthesize manevrability = _manevrability;
-@synthesize rateOfFire = _rateOfFire;
-@synthesize damage = _damage;
-@synthesize isLockedOnByEnemy = _isLockedOnByEnemy;
-@synthesize hasLockOnByEnemy = _hasLockOnByEnemy;
-@synthesize lockOnCrosshair = _lockOnCrosshair;
-@synthesize lockOnAnimation = _lockOnAnimation;
-@synthesize numberOfRockets = _numberOfRockects;
-@synthesize smokeTrail = _smokeTrail;
-@synthesize shadow = _shadow;
-@synthesize missileRange = _missileRange;
-@synthesize isInProcessOfLockingIn = _isInProcessOfLockingIn;
-@synthesize lastOrientation = _lastOrientation;
-@synthesize isDecorActor = _isDecorActor;
+@synthesize isAutopilotON                       = _isAutopilotON;
+@synthesize flightDirection                     = _flightDirection;
+@synthesize spriteFinishedOrientationRotation   = _spriteFinishedOrientationRotation;
+@synthesize health                              = _health;
+@synthesize isFiringBullets                     = _isFiringBullets;
+@synthesize fireRange                           = _fireRange;
+@synthesize speed                               = _speed;
+@synthesize manevrability                       = _manevrability;
+@synthesize rateOfFire                          = _rateOfFire;
+@synthesize damage                              = _damage;
+@synthesize isLockedOnByEnemy                   = _isLockedOnByEnemy;
+@synthesize hasLockOnByEnemy                    = _hasLockOnByEnemy;
+@synthesize lockOnCrosshair                     = _lockOnCrosshair;
+@synthesize lockOnAnimation                     = _lockOnAnimation;
+@synthesize numberOfRockets                     = _numberOfRockects;
+@synthesize smokeTrail                          = _smokeTrail;
+@synthesize shadow                              = _shadow;
+@synthesize missileRange                        = _missileRange;
+@synthesize isInProcessOfLockingIn              = _isInProcessOfLockingIn;
+@synthesize lastOrientation                     = _lastOrientation;
 
 - (id)initWithImageNamed:(NSString *)name {
     
@@ -49,13 +49,15 @@
         
         _lockOnCrosshair = [[SKSpriteNode alloc] initWithImageNamed:@"crosshair.png"];
         
-        SKAction *zoom = [SKAction scaleTo:.5 duration:1];
+        SKAction *zoom          = [SKAction scaleTo:.5 duration:1];
         SKAction *oneRevolution = [SKAction rotateByAngle:-M_PI*2 duration:1];
         
         [self setUserInteractionEnabled:YES];
         
-        _lockOnAnimation = [SKAction group:@[zoom, oneRevolution]];
-        _isDecorActor = NO;
+        _lockOnAnimation    = [SKAction group:@[zoom, oneRevolution]];
+        
+        _isAutopilotON              = NO;
+        _startedUpdatingAutopilot   = NO;
     }
     
     return self;
@@ -101,7 +103,35 @@
 }
 
 - (void)updateRotation:(CFTimeInterval)dt {
-    
+    if (_isAutopilotON) {
+        
+        if (!_startedUpdatingAutopilot) {
+            
+            _startedUpdatingAutopilot = YES;
+            
+            SKAction *wait = [SKAction waitForDuration:getRandomNumberBetween(0, 3)];
+            SKAction *updateRotationAction = [SKAction runBlock:^{
+                [self updateRotationDirectionOfAutoPilot];
+            }];
+            
+            SKAction *updateRotationAfterWaiting = [SKAction sequence:@[wait,updateRotationAction]];
+            [self runAction:updateRotationAfterWaiting];
+        }
+        
+        switch (_flightDirection) {
+            case kPPTurnLeft:
+                [self rotateToLeftIfAllowedOrGoStraight:dt];
+                break;
+            case kPPTurnRight:
+                [self rotateToRightIfAllowedOrGoStraight:dt];
+                break;
+            default:
+                [self flyStraight];
+                break;
+        }
+        
+        return;
+    }
 }
 
 - (void)startLockOnAnimation {
@@ -131,8 +161,51 @@
 }
 
 
+#pragma mark -
+#pragma mark Rotation Methods - Override if needed
 
-#pragma mark - 
+- (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
+    
+}
+
+- (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
+    
+}
+
+- (void)flyStraight {
+    [self setZRotation:self.zRotation];
+    
+    _shadow.zRotation = self.zRotation;
+}
+
+- (void)updateRotationDirectionOfAutoPilot {
+    // Change direction of movement.
+    NSInteger randomFlightDirection = getRandomNumberBetween(0, 2);
+    
+    switch (randomFlightDirection) {
+        case kPPTurnLeft:
+            _flightDirection = kPPTurnLeft;
+            break;
+        case kPPTurnRight:
+            _flightDirection = kPPTurnRight;
+            break;
+        default:
+            _flightDirection = kPPFlyStraight;
+            break;
+    }
+    
+    // Prepare next direction change.
+    SKAction *wait = [SKAction waitForDuration:getRandomNumberBetween(0, 3)];
+    SKAction *updateRotationAction = [SKAction runBlock:^{
+        [self updateRotationDirectionOfAutoPilot];
+    }];
+    
+    SKAction *updateRotationAfterWaiting = [SKAction sequence:@[wait,updateRotationAction]];
+    [self runAction:updateRotationAfterWaiting];
+}
+
+
+#pragma mark -
 #pragma mark Help Methods
 
 - (void)addExplosionEmitter {
@@ -215,6 +288,5 @@
 - (CGVector)getSpriteOrientationForRadians:(CGFloat)radians {
     return CGVectorMake(cosf(radians), sinf(radians));
 }
-
 
 @end

@@ -18,7 +18,6 @@
     // point to which the sprite point to. the target of the movement(touch) in case of the main airplane
     CGPoint _targetPoint;
     BOOL _spriteFinishedOrientationRotation;
-    
     BOOL _isFiringBullets;
     
     PPFlightDirection _flightDirection;
@@ -34,7 +33,7 @@
     BOOL _isInProcessOfLockingIn;
     BOOL _isLockedOnByEnemy;
     BOOL _hasLockOnByEnemy;
-    BOOL _isDecorActor;
+    BOOL _isAutopilotON;
     
     SKAction *_lockOnAnimation;
     SKEmitterNode *_smokeTrail;
@@ -43,7 +42,8 @@
     CGFloat _lastOrientation;
 }
 
-@property (nonatomic, assign) BOOL isDecorActor;
+@property (nonatomic, assign) BOOL isAutopilotON;
+@property (nonatomic, assign) BOOL startedUpdatingAutopilot;
 @property (nonatomic, assign) CGFloat lastOrientation;
 @property (nonatomic, retain) SKAction *lockOnAnimation;
 @property (nonatomic, assign) PPFlightDirection flightDirection;

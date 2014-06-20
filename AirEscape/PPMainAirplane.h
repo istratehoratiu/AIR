@@ -7,12 +7,18 @@
 //
 
 #import "PPSpriteNode.h"
+#import "SKBlade.h"
 
 @interface PPMainAirplane : PPSpriteNode {
     SKEmitterNode *_smokeEmitter;
     CGFloat _lastAngle;
     CGFloat _playerAngle;
     SKShapeNode *circle;
+    
+    // This will help us to easily access our blade
+    SKBlade *blade;
+    // This will help us to update the position of the blade
+    CGPoint _delta;
     
     CGPoint _normalizedDirectionVector;
 }

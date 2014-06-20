@@ -41,6 +41,7 @@
 		EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */; };
 		EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */; };
 		EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7418E0E7510080FA55 /* Clouds.atlas */; };
+		EB88BEAA1954DA9200DE3852 /* SKBlade.m in Sources */ = {isa = PBXBuildFile; fileRef = EB88BEA91954DA9200DE3852 /* SKBlade.m */; };
 		EBA040C818E3980D004B708A /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA040C418E3980D004B708A /* dpad.png */; };
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
 		EBA040CA18E3980D004B708A /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA040C718E3980D004B708A /* joystick.png */; };
@@ -120,6 +121,8 @@
 		EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+Utilities.m"; sourceTree = "<group>"; };
 		EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EXPLOSION.atlas; sourceTree = "<group>"; };
 		EB87BD7418E0E7510080FA55 /* Clouds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Clouds.atlas; sourceTree = "<group>"; };
+		EB88BEA81954DA9200DE3852 /* SKBlade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBlade.h; sourceTree = "<group>"; };
+		EB88BEA91954DA9200DE3852 /* SKBlade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBlade.m; sourceTree = "<group>"; };
 		EBA040C418E3980D004B708A /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
 		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 		EB87BD2218E09E220080FA55 /* AirEscape */ = {
 			isa = PBXGroup;
 			children = (
+				EB88BEA81954DA9200DE3852 /* SKBlade.h */,
+				EB88BEA91954DA9200DE3852 /* SKBlade.m */,
 				EB212E391945E072000D1A3E /* Actors */,
 				EB212E381945E061000D1A3E /* Scenes */,
 				EBD57B8C18E2491200D5A61E /* spark.png */,
@@ -432,6 +437,7 @@
 				EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */,
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
+				EB88BEAA1954DA9200DE3852 /* SKBlade.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
 				EBA040C918E3980D004B708A /* Joystick.m in Sources */,
 				EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */,

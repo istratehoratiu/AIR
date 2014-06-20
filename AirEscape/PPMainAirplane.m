@@ -132,6 +132,8 @@
     [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
     
     self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
+    
+    _shadow.zRotation = self.zRotation;
 }
 
 - (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
@@ -139,13 +141,17 @@
     [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
     
     self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
+    
+    _shadow.zRotation = self.zRotation;
 }
 
 - (void)updateRotation:(CFTimeInterval)dt {
 
+    [super updateRotation:dt];
+    
     AEMyScene *airplaneParent = (AEMyScene *)self.parent;
     
-    if (_isDecorActor) {
+    if (_isAutopilotON) {
         return;
     }
     

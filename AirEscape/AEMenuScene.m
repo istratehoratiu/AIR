@@ -10,7 +10,10 @@
 #import "AEMyScene.h"
 #import "SKButtonNode.h"
 #import "PPMainAirplane.h"
+#import "PPMath.h"
 
+
+#define kNumberOfDecorAirplanes 5
 
 @implementation AEMenuScene
 
@@ -23,6 +26,9 @@
         [self addChild:background];
     }
     
+    
+    _arrayOfDecorAirplanes = [NSMutableArray array];
+    
     startGame = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
     [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
     [startGame.title setFontName:@"Chalkduster"];
@@ -30,18 +36,19 @@
     startGame.title.text = @"Tap to start";
     startGame.zPosition = 1000;
     [self addChild:startGame];
-    
-    decorAirplane = [[PPMainAirplane alloc] initMainAirplane];
-    decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
-    decorAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-    decorAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:decorAirplane.size.width * 0.5]; // 1
-    decorAirplane.physicsBody.dynamic = YES; // 2
-    decorAirplane.physicsBody.categoryBitMask = userAirplaneCategory; // 3
-    decorAirplane.physicsBody.contactTestBitMask = missileCategory; // 4
-    decorAirplane.physicsBody.collisionBitMask = 0; // 5
-    decorAirplane.isDecorActor = YES;
-    
-    [self addChild:decorAirplane];
+
+    for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
+        PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplane];
+        decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
+        decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
+        decorAirplane.zRotation = getRandomNumberBetween(0, 3);
+        //decorAirplane.isDecorActor = YES;
+        decorAirplane.isAutopilotON = YES;
+        
+        [_arrayOfDecorAirplanes addObject:decorAirplane];
+        
+        [self addChild:decorAirplane];
+    }
     
     return self;
 }
@@ -60,9 +67,11 @@
 }
 
 -(void)update:(CFTimeInterval)currentTime {
-    
-    [decorAirplane updateRotation:_deltaTime];
-    
+    for (PPMainAirplane *airplane in _arrayOfDecorAirplanes) {
+        [airplane updateRotation:_deltaTime];
+        [airplane updateMove:_deltaTime];
+        [self checkWithMarginsOfScreenActor:airplane];
+    }
     if (_lastUpdateTime) {
         _deltaTime = currentTime - _lastUpdateTime;
     } else {
@@ -70,8 +79,6 @@
     }
     _lastUpdateTime = currentTime;
     
-    [decorAirplane updateMove:_deltaTime];
-    [self checkWithMarginsOfScreenActor:decorAirplane];
     
 }
 

@@ -82,35 +82,48 @@
     [super removeFromParent];
 }
 
-- (void)updateRotation:(CFTimeInterval)dt {
-
+- (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
+    
+    [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] missileManevrability] * dt)];
+    
+    
     CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
     CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
+    
+    if (!checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
+        
+        [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] missileManevrability] * dt)];
+        
+        _spriteFinishedOrientationRotation = YES;
+    }
+}
+
+- (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
+    
+    CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
+    CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
+    
+    [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] missileManevrability] * dt)];
     
     if (checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
         
         [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] missileManevrability] * dt)];
         
-        
-        CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
-        CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
-        
-        if (!checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
-            
-            [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] missileManevrability] * dt)];
-            
-            _spriteFinishedOrientationRotation = YES;
-        }
+        _spriteFinishedOrientationRotation = YES;
+    }
+}
+
+- (void)updateRotation:(CFTimeInterval)dt {
+
+    [super updateRotation:dt];
+    
+    CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
+    CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
+    
+    if (checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
+        [self rotateToLeftIfAllowedOrGoStraight:dt];
     } else {
-        
-        [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] missileManevrability] * dt)];
-        
-        if (checkIfPointIsToTheLeftOfLineGivenByTwoPoints(_targetAirplane.position, lineSource, lineEnd)) {
-            
-            [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] missileManevrability] * dt)];
-            
-            _spriteFinishedOrientationRotation = YES;
-        }
+        [self rotateToRightIfAllowedOrGoStraight:dt];
     }
     
     

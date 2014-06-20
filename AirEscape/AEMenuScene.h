@@ -11,15 +11,17 @@
 
 @class SKButtonNode;
 @class PPMainAirplane;
+@class SKBlade;
 
 @interface AEMenuScene : SKScene {
 
     SKSpriteNode *background;
     SKButtonNode *startGame;
     
-    PPMainAirplane *decorAirplane;
     CFTimeInterval _lastUpdateTime;
     CFTimeInterval _deltaTime;
+    
+    NSMutableArray *_arrayOfDecorAirplanes;
 }
 
 @end

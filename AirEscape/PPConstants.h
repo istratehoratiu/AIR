@@ -10,9 +10,9 @@
 
 
 #define kAEMainAirplaneManevrability    3
-#define kAEMainAirplaneSpeed            150
-#define kAEMissileManevrability         1.5
-#define kAEMissileSpeed                 200
+#define kAEMainAirplaneSpeed            200
+#define kAEMissileManevrability         1
+#define kAEMissileSpeed                 250
 #define kAEMaxMissileSpeed              200
 #define kAEMinimumMissileSpeed          120
 #define kAEMissileAcceleration          100

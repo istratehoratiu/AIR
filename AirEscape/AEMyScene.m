@@ -439,7 +439,7 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     
-        [_userAirplane updateRotation:_deltaTime];
+    [_userAirplane updateRotation:_deltaTime];
     
     if (_lastUpdateTime) {
         _deltaTime = currentTime - _lastUpdateTime;
