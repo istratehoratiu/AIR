@@ -38,36 +38,16 @@
     BOOL _gameIsPaused;
     SKButtonNode *_pauseButton;
     SKButtonNode *_numberOfMissileOnScreen;
-    
-    SKButtonNode *missileSpeedIndicator;
-    SKButtonNode *missileManevrabilityIndicator;
-    SKButtonNode *airplaneSpeedIndicator;
-    SKButtonNode *aicraftManevrabilityIndicator;
-    SKButtonNode *mainAircraftScaleIndicator;
-    SKButtonNode *aicraftWidthSize;
-    SKButtonNode *aicraftHeightSize;
+    SKButtonNode *_playButton;
     
     Joystick *_joistick;
-    
-    
-    SKButtonNode * minusButtonMissileSpeed;
-    SKButtonNode * plusButtonMissileSpeed;
-    SKButtonNode * minusButtonMissileManevrability;
-    SKButtonNode * plusButtonMissileManevrability;
-    SKButtonNode * minusButtonAirplaneSpeed;
-    SKButtonNode * plusButtonAircraftSpeed;
-    SKButtonNode * minusButtonAirplaneManevrability;
-    SKButtonNode * aicraftManevrabilityIndicato;
-    SKButtonNode * plusButtonAircraftManevrability;
-    SKButtonNode * minusScaleAirplane;
-    SKButtonNode * plusScaleAirplane;
 }
 @property (nonatomic, assign) CGFloat scaleAirplane;
 @property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;
 @property (nonatomic, retain)SKButtonNode* pauseButton;
+@property (nonatomic, retain)SKButtonNode* playButton;
 @property (nonatomic, assign) BOOL gameIsPaused;
 @property (nonatomic, retain) PPPositionIndicator *positionIndicator;
-//@property (nonatomic, retain) PPHunterAirplane *hunterAirplane;
 @property (nonatomic, retain) PPMainAirplane *userAirplane;
 @property (nonatomic, retain) PPMainBase *mainBase;
 @property (nonatomic, assign) CGRect screenRect;
@@ -78,8 +58,8 @@
 @property (nonatomic, retain) NSMutableArray *arrayOfCurrentMissilesOnScreen;
 @property (nonatomic, retain) NSMutableArray *arrayOfEnemyHunterAirplanes;
 @property (nonatomic, retain) NSMutableArray *arrayOfEnemyBombers;
-@property NSMutableArray *cloudsTextures;
-@property NSMutableArray *explosionTextures;
+@property (nonatomic, retain) NSMutableArray *cloudsTextures;
+@property (nonatomic, retain) NSMutableArray *explosionTextures;
 @property (strong, nonatomic) JCImageJoystick *imageJoystick;
 @property (strong, nonatomic) Joystick *joistick;
 

@@ -45,11 +45,14 @@
 		EBA040C818E3980D004B708A /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA040C418E3980D004B708A /* dpad.png */; };
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
 		EBA040CA18E3980D004B708A /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA040C718E3980D004B708A /* joystick.png */; };
+		EBA4B2451959EC1700C8193A /* transparentButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA4B2441959EC1700C8193A /* transparentButton.png */; };
 		EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298318E0EBC7004DAD8F /* Fire.sks */; };
 		EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */; };
 		EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298718E0EBD0004DAD8F /* trail.sks */; };
 		EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298818E0EBD0004DAD8F /* explosion.sks */; };
 		EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298918E0EBD0004DAD8F /* bulletHit.sks */; };
+		EBB2665819566E7300BD4890 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2665719566E7300BD4890 /* bg.jpg */; };
+		EBB2665A19566F7600BD4890 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2665919566F7600BD4890 /* bg@2x.jpg */; };
 		EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */; };
 		EBD57B8418E2244700D5A61E /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8318E2244700D5A61E /* minus.png */; };
 		EBD57B8718E23C0700D5A61E /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8618E23C0700D5A61E /* JCImageJoystick.m */; };
@@ -127,11 +130,14 @@
 		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
 		EBA040C718E3980D004B708A /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
+		EBA4B2441959EC1700C8193A /* transparentButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparentButton.png; sourceTree = "<group>"; };
 		EBA6298318E0EBC7004DAD8F /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 		EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DamageSmoke.sks; sourceTree = "<group>"; };
 		EBA6298718E0EBD0004DAD8F /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
 		EBA6298818E0EBD0004DAD8F /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		EBA6298918E0EBD0004DAD8F /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
+		EBB2665719566E7300BD4890 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		EBB2665919566F7600BD4890 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		EBD57B8018E21CAD00D5A61E /* AEActorsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEActorsManager.h; sourceTree = "<group>"; };
 		EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEActorsManager.m; sourceTree = "<group>"; };
 		EBD57B8318E2244700D5A61E /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minus.png; path = sprite.atlas/minus.png; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 		EB87BD2218E09E220080FA55 /* AirEscape */ = {
 			isa = PBXGroup;
 			children = (
+				EBA4B2441959EC1700C8193A /* transparentButton.png */,
+				EBB2665919566F7600BD4890 /* bg@2x.jpg */,
 				EB88BEA81954DA9200DE3852 /* SKBlade.h */,
 				EB88BEA91954DA9200DE3852 /* SKBlade.m */,
 				EB212E391945E072000D1A3E /* Actors */,
@@ -238,6 +246,7 @@
 				EBA040C518E3980D004B708A /* Joystick.h */,
 				EBA040C618E3980D004B708A /* Joystick.m */,
 				EBA040C718E3980D004B708A /* joystick.png */,
+				EBB2665719566E7300BD4890 /* bg.jpg */,
 				EB87BD5918E0DD950080FA55 /* Categories */,
 				EB87BD2B18E09E220080FA55 /* AEAppDelegate.h */,
 				EB87BD2C18E09E220080FA55 /* AEAppDelegate.m */,
@@ -396,6 +405,7 @@
 				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
 				EBD57B8B18E23D0A00D5A61E /* stickbase.png in Resources */,
 				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
+				EBB2665A19566F7600BD4890 /* bg@2x.jpg in Resources */,
 				EBD57B8A18E23D0A00D5A61E /* redStick.png in Resources */,
 				EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */,
 				EBD57B8418E2244700D5A61E /* minus.png in Resources */,
@@ -412,6 +422,8 @@
 				EBA040C818E3980D004B708A /* dpad.png in Resources */,
 				EBA040CA18E3980D004B708A /* joystick.png in Resources */,
 				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
+				EBB2665819566E7300BD4890 /* bg.jpg in Resources */,
+				EBA4B2451959EC1700C8193A /* transparentButton.png in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

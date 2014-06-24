@@ -20,7 +20,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        background = [SKSpriteNode spriteNodeWithImageNamed:@"background1.jpg"];
+        background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.jpg"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
@@ -30,11 +30,11 @@
     _arrayOfDecorAirplanes = [NSMutableArray array];
     
     startGame = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
-    [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
+    [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 + 200)];
     [startGame.title setFontName:@"Chalkduster"];
-    [startGame.title setFontSize:20.0];
-    startGame.title.text = @"Tap to start";
-    startGame.zPosition = 1000;
+    [startGame.title setFontSize:45.0];
+    startGame.title.text = @"Missile Evasion";
+    startGame.zPosition = 1;
     [self addChild:startGame];
 
     for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
@@ -50,6 +50,16 @@
         [self addChild:decorAirplane];
     }
     
+    SKButtonNode *playButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
+    [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 100)];
+    [playButton.title setFontName:@"Chalkduster"];
+    [playButton.title setFontSize:40.0];
+    [playButton.title setText:@"Play"];
+    [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
+    playButton.zPosition = 1000;
+    
+    [self addChild:playButton];
+    
     return self;
 }
 
@@ -57,14 +67,18 @@
 #pragma mark -
 #pragma mark Handle touches
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)startGame {
 
-    SKTransition *crossFade = [SKTransition fadeWithDuration:0];
+    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
     AEMyScene *newScene = [[AEMyScene alloc] initWithSize: self.size];
     //  Optionally, insert code to configure the new scene.
     [self.scene.view presentScene: newScene transition: crossFade];
 }
+
+
+#pragma mark -
+#pragma mark Update scene
 
 -(void)update:(CFTimeInterval)currentTime {
     for (PPMainAirplane *airplane in _arrayOfDecorAirplanes) {
@@ -84,23 +98,23 @@
 
 - (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {
     // Check with X
-    if (actor.position.x < 0) {
-        actor.position = CGPointMake(self.size.width - 10 , actor.position.y);
+    if (actor.position.x < 45) {
+        actor.position = CGPointMake(self.size.width - 55 , actor.position.y);
         return;
     }
     // Check with X + Width
-    if (actor.position.x > self.size.width) {
-        actor.position = CGPointMake(10.0, actor.position.y);
+    if (actor.position.x > self.size.width - 45) {
+        actor.position = CGPointMake(110.0, actor.position.y);
         return;
     }
     // Check with Y
-    if (actor.position.y < 0) {
-        actor.position = CGPointMake(actor.position.x, self.size.height - 10);
+    if (actor.position.y < 45) {
+        actor.position = CGPointMake(actor.position.x, self.size.height - 55);
         return;
     }
     //Check with Y + Height
-    if (actor.position.y > self.size.height) {
-        actor.position = CGPointMake(actor.position.x, 10);
+    if (actor.position.y > self.size.height - 45) {
+        actor.position = CGPointMake(actor.position.x, 55);
         return;
     }
 }
