@@ -24,12 +24,14 @@
 @property (nonatomic, readwrite, strong) SKTexture *selectedTexture;
 @property (nonatomic, readwrite, strong) SKTexture *disabledTexture;
 
+- (id)initWithTextureNormal:(SKTexture *)normal selected:(SKTexture *)selected disabled:(SKTexture *)disabled titleVerticalAlignmentMode:(SKLabelVerticalAlignmentMode)verticalAlignmentMode;
+
 - (id)initWithTextureNormal:(SKTexture *)normal selected:(SKTexture *)selected;
 - (id)initWithTextureNormal:(SKTexture *)normal selected:(SKTexture *)selected disabled:(SKTexture *)disabled; // Designated Initializer
 
 - (id)initWithImageNamedNormal:(NSString *)normal selected:(NSString *)selected;
 - (id)initWithImageNamedNormal:(NSString *)normal selected:(NSString *)selected disabled:(NSString *)disabled;
-
+- (id)initWithImageNamedNormal:(NSString *)normal selected:(NSString *)selected disabled:(NSString *)disabled itleVerticalAlignmentMode:(SKLabelVerticalAlignmentMode)verticalAlignmentMode;
 /** Sets the target-action pair, that is called when the Button is tapped.
  "target" won't be retained.
  */

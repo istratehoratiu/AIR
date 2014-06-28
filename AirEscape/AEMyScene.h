@@ -38,7 +38,6 @@
     BOOL _gameIsPaused;
     SKButtonNode *_pauseButton;
     SKButtonNode *_numberOfMissileOnScreen;
-    SKButtonNode *_playButton;
     
     Joystick *_joistick;
 }

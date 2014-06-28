@@ -10,6 +10,14 @@
 		EB212E3119434752000D1A3E /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = EB212E3019434752000D1A3E /* Untitled.png */; };
 		EB212E341945A748000D1A3E /* AEMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB212E331945A748000D1A3E /* AEMenuScene.m */; };
 		EB212E371945E053000D1A3E /* AEGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB212E361945E053000D1A3E /* AEGameOverScene.m */; };
+		EB26ED13195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */; };
+		EB26ED14195C82F8008FF5A1 /* gameOverMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED0F195C82F8008FF5A1 /* gameOverMenuBackground.png */; };
+		EB26ED15195C82F8008FF5A1 /* highMedal.png in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED10195C82F8008FF5A1 /* highMedal.png */; };
+		EB26ED16195C82F8008FF5A1 /* SKButtonNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB26ED12195C82F8008FF5A1 /* SKButtonNode+Additions.m */; };
+		EB26ED7D195C8343008FF5A1 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = EB26ED18195C8343008FF5A1 /* Appirater.m */; };
+		EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED19195C8343008FF5A1 /* Appirater.podspec */; };
+		EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED21195C8343008FF5A1 /* CHANGELOG.md */; };
+		EB26ED96195C8343008FF5A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED5E195C8343008FF5A1 /* README.md */; };
 		EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB2F342818E76CDE0043FAAE /* background1.jpg */; };
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
 		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
@@ -77,6 +85,18 @@
 		EB212E331945A748000D1A3E /* AEMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEMenuScene.m; sourceTree = "<group>"; };
 		EB212E351945E053000D1A3E /* AEGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEGameOverScene.h; path = ../AEGameOverScene.h; sourceTree = "<group>"; };
 		EB212E361945E053000D1A3E /* AEGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEGameOverScene.m; path = ../AEGameOverScene.m; sourceTree = "<group>"; };
+		EB26ED0D195C82F8008FF5A1 /* AEGameOverStatisticsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEGameOverStatisticsSprite.h; path = AirEscape/AEGameOverStatisticsSprite.h; sourceTree = "<group>"; };
+		EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEGameOverStatisticsSprite.m; path = AirEscape/AEGameOverStatisticsSprite.m; sourceTree = "<group>"; };
+		EB26ED0F195C82F8008FF5A1 /* gameOverMenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameOverMenuBackground.png; path = AirEscape/gameOverMenuBackground.png; sourceTree = "<group>"; };
+		EB26ED10195C82F8008FF5A1 /* highMedal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = highMedal.png; path = AirEscape/highMedal.png; sourceTree = "<group>"; };
+		EB26ED11195C82F8008FF5A1 /* SKButtonNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKButtonNode+Additions.h"; sourceTree = "<group>"; };
+		EB26ED12195C82F8008FF5A1 /* SKButtonNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKButtonNode+Additions.m"; sourceTree = "<group>"; };
+		EB26ED17195C8343008FF5A1 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		EB26ED18195C8343008FF5A1 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		EB26ED19195C8343008FF5A1 /* Appirater.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appirater.podspec; sourceTree = "<group>"; };
+		EB26ED1A195C8343008FF5A1 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		EB26ED21195C8343008FF5A1 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		EB26ED5E195C8343008FF5A1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EB2F342818E76CDE0043FAAE /* background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background1.jpg; sourceTree = "<group>"; };
 		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
 		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
@@ -204,6 +224,16 @@
 		EB87BD0E18E09E220080FA55 = {
 			isa = PBXGroup;
 			children = (
+				EB26ED17195C8343008FF5A1 /* Appirater.h */,
+				EB26ED18195C8343008FF5A1 /* Appirater.m */,
+				EB26ED19195C8343008FF5A1 /* Appirater.podspec */,
+				EB26ED1A195C8343008FF5A1 /* AppiraterDelegate.h */,
+				EB26ED21195C8343008FF5A1 /* CHANGELOG.md */,
+				EB26ED5E195C8343008FF5A1 /* README.md */,
+				EB26ED0D195C82F8008FF5A1 /* AEGameOverStatisticsSprite.h */,
+				EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */,
+				EB26ED0F195C82F8008FF5A1 /* gameOverMenuBackground.png */,
+				EB26ED10195C82F8008FF5A1 /* highMedal.png */,
 				EB87BD2218E09E220080FA55 /* AirEscape */,
 				EB87BD4918E09E220080FA55 /* AirEscapeTests */,
 				EB87BD1918E09E220080FA55 /* Frameworks */,
@@ -315,6 +345,8 @@
 		EB87BD5918E0DD950080FA55 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				EB26ED11195C82F8008FF5A1 /* SKButtonNode+Additions.h */,
+				EB26ED12195C82F8008FF5A1 /* SKButtonNode+Additions.m */,
 				EB87BD5A18E0DD9F0080FA55 /* SKSpriteNode+Additions.h */,
 				EB87BD5B18E0DD9F0080FA55 /* SKSpriteNode+Additions.m */,
 				EB87BD6F18E0DF8F0080FA55 /* SKEmitterNode+Utilities.h */,
@@ -385,6 +417,37 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nb,
+				nl,
+				pl,
+				"pt-BR",
+				pt,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = EB87BD0E18E09E220080FA55;
 			productRefGroup = EB87BD1818E09E220080FA55 /* Products */;
@@ -402,9 +465,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB26ED14195C82F8008FF5A1 /* gameOverMenuBackground.png in Resources */,
 				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
+				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
+				EB26ED15195C82F8008FF5A1 /* highMedal.png in Resources */,
 				EBD57B8B18E23D0A00D5A61E /* stickbase.png in Resources */,
 				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
+				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
+				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBB2665A19566F7600BD4890 /* bg@2x.jpg in Resources */,
 				EBD57B8A18E23D0A00D5A61E /* redStick.png in Resources */,
 				EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */,
@@ -450,14 +518,17 @@
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB88BEAA1954DA9200DE3852 /* SKBlade.m in Sources */,
+				EB26ED16195C82F8008FF5A1 /* SKButtonNode+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
 				EBA040C918E3980D004B708A /* Joystick.m in Sources */,
 				EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */,
 				EB87BD6118E0DE770080FA55 /* PPMainAirplane.m in Sources */,
+				EB26ED7D195C8343008FF5A1 /* Appirater.m in Sources */,
 				EB212E371945E053000D1A3E /* AEGameOverScene.m in Sources */,
 				EB87BD6218E0DE770080FA55 /* PPMissile.m in Sources */,
 				EB87BD3618E09E220080FA55 /* AEViewController.m in Sources */,
 				EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */,
+				EB26ED13195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m in Sources */,
 				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
 				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
 				EBD57B8718E23C0700D5A61E /* JCImageJoystick.m in Sources */,

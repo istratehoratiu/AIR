@@ -28,6 +28,10 @@
  * This is the designated Initializer
  */
 - (id)initWithTextureNormal:(SKTexture *)normal selected:(SKTexture *)selected disabled:(SKTexture *)disabled {
+    return [self initWithTextureNormal:normal selected:selected disabled:disabled titleVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+}
+
+- (id)initWithTextureNormal:(SKTexture *)normal selected:(SKTexture *)selected disabled:(SKTexture *)disabled titleVerticalAlignmentMode:(SKLabelVerticalAlignmentMode)verticalAlignmentMode {
     self = [super initWithTexture:normal color:[UIColor whiteColor] size:normal.size];
     if (self) {
         [self setNormalTexture:normal];
@@ -37,7 +41,7 @@
         [self setIsSelected:NO];
         
         _title = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        [_title setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+        [_title setVerticalAlignmentMode:verticalAlignmentMode];
         [_title setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         
         [self addChild:_title];
@@ -53,6 +57,10 @@
 }
 
 - (id)initWithImageNamedNormal:(NSString *)normal selected:(NSString *)selected disabled:(NSString *)disabled {
+    return [self initWithImageNamedNormal:normal selected:selected disabled:disabled itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+}
+
+- (id)initWithImageNamedNormal:(NSString *)normal selected:(NSString *)selected disabled:(NSString *)disabled itleVerticalAlignmentMode:(SKLabelVerticalAlignmentMode)verticalAlignmentMode{
     SKTexture *textureNormal = nil;
     if (normal) {
         textureNormal = [SKTexture textureWithImageNamed:normal];
@@ -68,7 +76,7 @@
         textureDisabled = [SKTexture textureWithImageNamed:disabled];
     }
     
-    return [self initWithTextureNormal:textureNormal selected:textureSelected disabled:textureDisabled];
+    return [self initWithTextureNormal:textureNormal selected:textureSelected disabled:textureDisabled titleVerticalAlignmentMode:verticalAlignmentMode];
 }
 
 

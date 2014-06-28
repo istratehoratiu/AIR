@@ -18,6 +18,7 @@
 #import "JCImageJoystick.h"
 #import "Joystick.h"
 #import "AEMenuScene.h"
+#import "AEGameOverScene.h"
 
 
 @implementation AEMyScene
@@ -130,9 +131,9 @@
     
     SKTransition *crossFade = [SKTransition fadeWithDuration:0];
     
-    AEMenuScene *newScene = [[AEMenuScene alloc] initWithSize: self.size];
+    AEGameOverScene *gameOverScene = [[AEGameOverScene alloc] initWithSize: self.size score:[_arrayOfCurrentMissilesOnScreen count]];
     //  Optionally, insert code to configure the new scene.
-    [self.scene.view presentScene: newScene transition: crossFade];
+    [self.scene.view presentScene:gameOverScene transition: crossFade];
     
 }
 

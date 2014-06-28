@@ -9,6 +9,7 @@
 #import "AEViewController.h"
 #import "AEMyScene.h"
 #import "AEMenuScene.h"
+#import "AEGameOverScene.h"
 
 @implementation AEViewController
 
@@ -23,7 +24,7 @@
         skView.showsNodeCount = YES;
         
         // Create and configure the scene.
-        SKScene * scene = [AEMenuScene sceneWithSize:skView.bounds.size];
+        SKScene * scene = [[AEGameOverScene alloc] initWithSize:skView.bounds.size score:10];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         
         // Present the scene.

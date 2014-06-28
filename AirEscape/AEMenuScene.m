@@ -11,6 +11,7 @@
 #import "SKButtonNode.h"
 #import "PPMainAirplane.h"
 #import "PPMath.h"
+#import "SKButtonNode+Additions.h"
 
 
 #define kNumberOfDecorAirplanes 5
@@ -50,13 +51,9 @@
         [self addChild:decorAirplane];
     }
     
-    SKButtonNode *playButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
+    SKButtonNode *playButton = [SKButtonNode getPlayButton];
     [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 100)];
-    [playButton.title setFontName:@"Chalkduster"];
-    [playButton.title setFontSize:40.0];
-    [playButton.title setText:@"Play"];
     [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
-    playButton.zPosition = 1000;
     
     [self addChild:playButton];
     

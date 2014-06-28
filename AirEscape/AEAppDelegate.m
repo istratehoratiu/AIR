@@ -7,6 +7,8 @@
 //
 
 #import "AEAppDelegate.h"
+#import "Appirater.h"
+
 
 @implementation AEAppDelegate
 
@@ -16,6 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     _atlas = [SKTextureAtlas atlasNamed:@"sprite"];
+    
+    [Appirater setAppId:@"552035781"];
+    //[Appirater userDidSignificantEvent:NO];
+    
     return YES;
 }
 							

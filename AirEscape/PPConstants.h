@@ -28,3 +28,5 @@ typedef enum {
     kPPTurnRight,
     kPPFlyStraight
 } PPFlightDirection;
+
+extern NSString *const kSGBestScoreKey;
