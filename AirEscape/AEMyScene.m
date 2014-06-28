@@ -19,6 +19,7 @@
 #import "Joystick.h"
 #import "AEMenuScene.h"
 #import "AEGameOverScene.h"
+#import "PPMissile.h"
 
 
 @implementation AEMyScene
@@ -71,15 +72,24 @@
         
         [_userAirplane updateOrientationVector];
         
-        
         //schedule enemies
         SKAction *wait = [SKAction waitForDuration:3];
-        SKAction *callClouds = [SKAction runBlock:^{
+        SKAction *addMissile = [SKAction runBlock:^{
             [self addEnemyMissile];
         }];
         
-        SKAction *updateClouds = [SKAction sequence:@[wait,callClouds]];
-        [self runAction:[SKAction repeatActionForever:updateClouds]];
+        SKAction *updateClouds = [SKAction sequence:@[wait,addMissile]];
+        [self runAction:[SKAction repeatAction:updateClouds count:20]];
+        
+        // Schedule missile haywire
+        SKAction *waitForMissileHaywire = [SKAction waitForDuration:10];
+        SKAction *haywireMissile = [SKAction runBlock:^{
+            [self missileGoesHaywire];
+        }];
+        
+        SKAction *updateMissileStatus = [SKAction sequence:@[waitForMissileHaywire,haywireMissile]];
+        
+        [self runAction:[SKAction repeatActionForever:updateMissileStatus]];
         
         //load explosions
         SKTextureAtlas *explosionAtlas = [SKTextureAtlas atlasNamed:@"EXPLOSION"];
@@ -163,40 +173,15 @@
         _deltaTime = 0;
     }
     _lastUpdateTime = currentTime;
-    
 
-    
     [_userAirplane updateOrientationVector];
     [_userAirplane updateMove:_deltaTime];
 
     if (_gameIsPaused) {
         return;
     }
-    
-//    CGPoint bgVelocity = skPointsMultiply(_userAirplane.normaliedDirectonVector,-10);//CGPointMake(-50.0, 0);
-//    
-//    CGPoint amountToMove = skPointsMultiply(bgVelocity,_deltaTime);
-//    background.position = skPointsAdd(background.position,amountToMove);
 
     [self checkWithMarginsOfScreenActor:_userAirplane];
-    
-//    if (background.position.x > CGRectGetMidX(self.frame) + kAEParllaxDeviationValue) {
-//        background.position = CGPointMake(CGRectGetMidX(self.frame) + kAEParllaxDeviationValue, background.position.y);
-//    }
-//    
-//    if (background.position.x < CGRectGetMidX(self.frame) - kAEParllaxDeviationValue) {
-//        background.position = CGPointMake(CGRectGetMidX(self.frame) - kAEParllaxDeviationValue, background.position.y);
-//    }
-//
-//    if (background.position.y > CGRectGetMidY(self.frame) + kAEParllaxDeviationValue) {
-//        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) + kAEParllaxDeviationValue);
-//    }
-//    
-//    if (background.position.y < CGRectGetMidY(self.frame) - kAEParllaxDeviationValue) {
-//        background.position = CGPointMake(background.position.x, CGRectGetMidY(self.frame) - kAEParllaxDeviationValue);
-//    }
-    
-    
     
     for (PPSpriteNode *missile in _arrayOfCurrentMissilesOnScreen) {
         [missile updateMove:_deltaTime];
@@ -251,11 +236,13 @@
         CGPoint location = [touch locationInNode:self];
         
         self.joistick.position = location;
+        
+        [self.joistick touchesBegan:touches withEvent:event];
     }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-
+    [self.joistick touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -265,6 +252,15 @@
 
 #pragma mark -
 #pragma mark Helper Methods
+
+- (void)missileGoesHaywire {
+    for (PPMissile *missile in _arrayOfCurrentMissilesOnScreen) {
+        if (!missile.missileHasGoneHaywire) {
+            [missile setMissileHasGoneHaywire:YES];
+            return;
+        }
+    }
+}
 
 - (void)addEnemyMissile {
     
@@ -318,7 +314,7 @@
     [self addChild:missile];
     [_arrayOfCurrentMissilesOnScreen addObject:missile];
     
-    [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
+    //[_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
     
     [missile updateOrientationVector];
 }

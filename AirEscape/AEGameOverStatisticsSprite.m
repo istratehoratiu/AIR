@@ -27,7 +27,7 @@
         [medalLabel setPosition:CGPointMake(-(self.size.width * 0.5) + 20, self.size.height - 20)];
         [self addChild:medalLabel];
         
-        NSString *medalImageName = nil;
+        NSString *medalImageName = @"";
         
         if (newScoreIsTheBest) {
             medalImageName = @"highMedal.png";

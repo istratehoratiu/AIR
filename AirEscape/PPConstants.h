@@ -9,13 +9,26 @@
 #import <SpriteKit/SpriteKit.h>
 
 
-#define kAEMainAirplaneManevrability    3
-#define kAEMainAirplaneSpeed            200
-#define kAEMissileManevrability         1
-#define kAEMissileSpeed                 250
-#define kAEMaxMissileSpeed              200
-#define kAEMinimumMissileSpeed          120
-#define kAEMissileAcceleration          100
+static const CGFloat kAEMainAirplaneManevrability    = 1.5;
+static const CGFloat kAEMaxMainAirplaneManevrability = 3.5;
+
+static const CGFloat kAEMissileManevrability        = 2;
+static const CGFloat kAEMaxMissileManevrability     = 3;
+
+static const CGFloat kAEMainAirplaneSpeed           = 200;
+static const CGFloat kAEMaxMainAirplaneSpeed        = 375;
+
+static const CGFloat kAEMissileSpeed                = 250;
+static const CGFloat kAEMaxMissileSpeed             = 400;
+
+static const CGFloat kAEMissileAcceleration         = 50;
+static const CGFloat kAEMainAirplaneAcceleration    = 75;
+
+static const CGFloat kAEMinimumMissileSpeed         = 100;
+static const CGFloat kAEMinimumMainAirplaneSpeed    = 100;
+
+static const CGFloat kAEMissileHaywireSpeed         = 400;
+static const CGFloat kAEMissileHaywireManevrability = 0.5;
 
 #define kAEParllaxDeviationValue        80
 

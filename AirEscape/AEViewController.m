@@ -24,7 +24,7 @@
         skView.showsNodeCount = YES;
         
         // Create and configure the scene.
-        SKScene * scene = [[AEGameOverScene alloc] initWithSize:skView.bounds.size score:10];
+        SKScene * scene = [[AEMyScene alloc] initWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         
         // Present the scene.

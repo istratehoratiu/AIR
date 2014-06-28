@@ -11,9 +11,11 @@
 @interface PPMissile : PPSpriteNode {
     // A pointer to the airplane that the missile is targeting.
     PPSpriteNode *_targetAirplane;
+    BOOL _missileHasGoneHaywire;
 }
 
 @property (nonatomic, strong) PPSpriteNode *targetAirplane;
+@property (nonatomic, assign) BOOL missileHasGoneHaywire;
 
 - (id)initMissileNode;
 
