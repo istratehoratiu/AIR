@@ -19,16 +19,16 @@ static const CGFloat kAEMainAirplaneSpeed           = 200;
 static const CGFloat kAEMaxMainAirplaneSpeed        = 375;
 
 static const CGFloat kAEMissileSpeed                = 250;
-static const CGFloat kAEMaxMissileSpeed             = 400;
+static const CGFloat kAEMaxMissileSpeed             = 425;
 
-static const CGFloat kAEMissileAcceleration         = 50;
+static const CGFloat kAEMissileAcceleration         = 75;
 static const CGFloat kAEMainAirplaneAcceleration    = 75;
 
 static const CGFloat kAEMinimumMissileSpeed         = 100;
 static const CGFloat kAEMinimumMainAirplaneSpeed    = 100;
 
 static const CGFloat kAEMissileHaywireSpeed         = 400;
-static const CGFloat kAEMissileHaywireManevrability = 0.5;
+static const CGFloat kAEMissileHaywireManevrability = 0.4;
 
 #define kAEParllaxDeviationValue        80
 

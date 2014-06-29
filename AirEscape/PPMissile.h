@@ -14,6 +14,8 @@
     BOOL _missileHasGoneHaywire;
 }
 
+@property (nonatomic, assign) CGFloat randomSpeed;
+@property (nonatomic, assign) CGFloat randomManverability;
 @property (nonatomic, strong) PPSpriteNode *targetAirplane;
 @property (nonatomic, assign) BOOL missileHasGoneHaywire;
 

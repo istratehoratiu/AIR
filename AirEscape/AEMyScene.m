@@ -78,8 +78,8 @@
             [self addEnemyMissile];
         }];
         
-        SKAction *updateClouds = [SKAction sequence:@[wait,addMissile]];
-        [self runAction:[SKAction repeatAction:updateClouds count:20]];
+        SKAction *addMissilesForever = [SKAction sequence:@[wait,addMissile]];
+        [self runAction:[SKAction repeatActionForever:addMissilesForever]];
         
         // Schedule missile haywire
         SKAction *waitForMissileHaywire = [SKAction waitForDuration:10];
@@ -268,11 +268,6 @@
         return;
     }
     
-    //NSLog(@">>>>>> %f --  %f", [AEActorsManager sharedManager].mainAirplaneSpeed, [AEActorsManager sharedManager].missileSpeed);
-    [[AEActorsManager sharedManager] setMainAirplaneSpeed:[AEActorsManager sharedManager].mainAirplaneSpeed * 1.02];
-    [[AEActorsManager sharedManager] setMissileSpeed:[AEActorsManager sharedManager].missileSpeed * 1.01];
-    //NSLog(@"<<<<<< %f --  %f", [AEActorsManager sharedManager].mainAirplaneSpeed, [AEActorsManager sharedManager].missileSpeed);
-    
     PPMissile *missile = [[PPMissile alloc] initMissileNode];
     missile.targetAirplane = _userAirplane;
     missile.scale = 0.1;
@@ -282,9 +277,7 @@
     missile.physicsBody.categoryBitMask = enemyMissileCategory; // 3
     missile.physicsBody.contactTestBitMask = userAirplaneCategory; // 4
     missile.physicsBody.collisionBitMask = 0; // 5
-    
 
-    
     // Get the wall from witch the missile will launch
     switch (getRandomNumberBetween(0, 3)) {
         // Left Wall
@@ -314,7 +307,7 @@
     [self addChild:missile];
     [_arrayOfCurrentMissilesOnScreen addObject:missile];
     
-    //[_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
+    [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
     
     [missile updateOrientationVector];
 }

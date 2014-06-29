@@ -54,7 +54,6 @@
         _smokeTrail.targetNode = self.parent;
     }
     _smokeTrail.position = actualTarget;
-    
 
 }
 
@@ -68,7 +67,6 @@
     CGFloat missileManevrability = _missileHasGoneHaywire ? kAEMissileHaywireManevrability : [[AEActorsManager sharedManager] missileManevrability];
     
     [self setZRotation:self.zRotation + (missileManevrability * dt)];
-    
     
     CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
     CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];

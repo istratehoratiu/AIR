@@ -76,7 +76,6 @@ static AEActorsManager *sharedMyManager = nil;
         _missileSpeed = kAEMissileSpeed;
     }
     
-    NSLog(@" SPPED : %f", _missileSpeed);
     return _missileSpeed;
 }
 
