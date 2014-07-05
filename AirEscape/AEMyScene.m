@@ -133,6 +133,40 @@
         [self addChild:_joistick];
         
         _gameIsPaused = NO;
+        
+        SKAction *enlarge = [SKAction scaleTo:1 duration:1];
+        
+        SKSpriteNode *firstNumber = [SKSpriteNode spriteNodeWithImageNamed:@"1.png"];
+        [firstNumber setScale:0];
+        firstNumber.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+        [self addChild:firstNumber];
+        
+        SKSpriteNode *secondNumber = [SKSpriteNode spriteNodeWithImageNamed:@"2.png"];
+        [secondNumber setScale:0];
+        secondNumber.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+        [self addChild:secondNumber];
+        
+        SKSpriteNode *thirdNumber = [SKSpriteNode spriteNodeWithImageNamed:@"3.png"];
+        [thirdNumber setScale:0];
+        thirdNumber.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+        [self addChild:thirdNumber];
+        
+        
+        [firstNumber runAction:enlarge completion:^{
+            
+            [firstNumber removeFromParent];
+            
+            [secondNumber runAction:enlarge completion:^{
+                
+                [secondNumber removeFromParent];
+                
+                [thirdNumber runAction:enlarge completion:^{
+                    [thirdNumber removeFromParent];
+                }];
+                
+            }];
+            
+        }];
     }
     return self;
 }
@@ -217,7 +251,8 @@
         [_userAirplane setHealth:_userAirplane.health - 50];
         
         if ([_userAirplane health] <= 0) {
-            [self restartScene];
+            [_userAirplane removeFromParent];
+            [self performSelector:@selector(restartScene) withObject:nil afterDelay:2];
         }
     }
 }

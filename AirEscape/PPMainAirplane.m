@@ -67,6 +67,11 @@
     return self;
 }
 
+- (void)removeFromParent {
+    [_shadow removeFromParent];
+    [super removeFromParent];
+}
+
 - (void)setHealth:(CGFloat)health {
     
     _health = health;
