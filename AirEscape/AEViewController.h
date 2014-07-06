@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface AEViewController : UIViewController
+@interface AEViewController : UIViewController {
+
+}
+
+- (void)showADDS;
+- (void)hideADDS;
 
 @end

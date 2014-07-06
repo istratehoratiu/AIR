@@ -303,48 +303,74 @@
         return;
     }
     
-    PPMissile *missile = [[PPMissile alloc] initMissileNode];
-    missile.targetAirplane = _userAirplane;
-    missile.scale = 0.1;
+    CGPoint missileStartingPosition = CGPointZero;
+    CGPoint missileAlertPosition = CGPointZero;
     
-    missile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:missile.frame.size]; // 1
-    missile.physicsBody.dynamic = YES; // 2
-    missile.physicsBody.categoryBitMask = enemyMissileCategory; // 3
-    missile.physicsBody.contactTestBitMask = userAirplaneCategory; // 4
-    missile.physicsBody.collisionBitMask = 0; // 5
-
     // Get the wall from witch the missile will launch
     switch (getRandomNumberBetween(0, 3)) {
-        // Left Wall
+            // Left Wall
         case 0: {
-            missile.position = CGPointMake(0, getRandomNumberBetween(0, self.size.height));
+            missileStartingPosition = CGPointMake(0, getRandomNumberBetween(0, self.size.height));
+            missileAlertPosition = missileStartingPosition;
+            
             break;
         }
-        // Top Wall
+            // Top Wall
         case 1: {
-            missile.position = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
+            missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
+            missileAlertPosition = missileStartingPosition;
             break;
         }
-        // Right Wall
+            // Right Wall
         case 2: {
-            missile.position = CGPointMake(self.size.width, getRandomNumberBetween(0, self.size.height));
+            missileStartingPosition = CGPointMake(self.size.width, getRandomNumberBetween(0, self.size.height));
+            missileAlertPosition = missileStartingPosition;
             break;
         }
-        // Bottom Wall
+            // Bottom Wall
         case 3: {
-            missile.position = CGPointMake(getRandomNumberBetween(0, self.size.width), 0);
+            missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), 0);
+            missileAlertPosition = missileStartingPosition;
             break;
         }
         default:
             break;
     }
     
-    [self addChild:missile];
-    [_arrayOfCurrentMissilesOnScreen addObject:missile];
+    SKSpriteNode *alertSprite = [SKSpriteNode spriteNodeWithImageNamed:@"alert.png"];
+    alertSprite.position = missileAlertPosition;
+    [self addChild:alertSprite];
     
-    [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:0.1];
+    SKAction *fadeOut = [SKAction fadeOutWithDuration:0.1];
     
-    [missile updateOrientationVector];
+    SKAction *fadeInFadeOut = [SKAction sequence:@[fadeIn,fadeOut,fadeIn,fadeOut,fadeIn,fadeOut,fadeIn,fadeOut]];
+    
+    [alertSprite runAction:fadeInFadeOut completion:^{
+        
+        [alertSprite removeFromParent];
+        
+        PPMissile *missile = [[PPMissile alloc] initMissileNode];
+        missile.targetAirplane = _userAirplane;
+        missile.scale = 0.1;
+        
+        missile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:missile.frame.size]; // 1
+        missile.physicsBody.dynamic = YES; // 2
+        missile.physicsBody.categoryBitMask = enemyMissileCategory; // 3
+        missile.physicsBody.contactTestBitMask = userAirplaneCategory; // 4
+        missile.physicsBody.collisionBitMask = 0; // 5
+        missile.position = missileStartingPosition;
+        
+        
+        [self addChild:missile];
+        [_arrayOfCurrentMissilesOnScreen addObject:missile];
+        
+        [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
+        
+        [missile updateOrientationVector];
+    }];
+    
+
 }
 
 - (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {

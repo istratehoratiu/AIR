@@ -13,6 +13,7 @@
 		EB251F991968AD8F005BB13D /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = EB251F961968AD8F005BB13D /* 3.png */; };
 		EB251F9A1968AD8F005BB13D /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB251F971968AD8F005BB13D /* 2.png */; };
 		EB251F9B1968AD8F005BB13D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB251F981968AD8F005BB13D /* 1.png */; };
+		EB251F9D1968B8E2005BB13D /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = EB251F9C1968B8E2005BB13D /* alert.png */; };
 		EB26ED13195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */; };
 		EB26ED14195C82F8008FF5A1 /* gameOverMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED0F195C82F8008FF5A1 /* gameOverMenuBackground.png */; };
 		EB26ED15195C82F8008FF5A1 /* highMedal.png in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED10195C82F8008FF5A1 /* highMedal.png */; };
@@ -92,6 +93,7 @@
 		EB251F961968AD8F005BB13D /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		EB251F971968AD8F005BB13D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		EB251F981968AD8F005BB13D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		EB251F9C1968B8E2005BB13D /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert.png; sourceTree = "<group>"; };
 		EB26ED0D195C82F8008FF5A1 /* AEGameOverStatisticsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEGameOverStatisticsSprite.h; path = AirEscape/AEGameOverStatisticsSprite.h; sourceTree = "<group>"; };
 		EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEGameOverStatisticsSprite.m; path = AirEscape/AEGameOverStatisticsSprite.m; sourceTree = "<group>"; };
 		EB26ED0F195C82F8008FF5A1 /* gameOverMenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameOverMenuBackground.png; path = AirEscape/gameOverMenuBackground.png; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				EB251F961968AD8F005BB13D /* 3.png */,
 				EB251F971968AD8F005BB13D /* 2.png */,
 				EB251F981968AD8F005BB13D /* 1.png */,
+				EB251F9C1968B8E2005BB13D /* alert.png */,
 				EBA040C518E3980D004B708A /* Joystick.h */,
 				EBA040C618E3980D004B708A /* Joystick.m */,
 				EBA040C718E3980D004B708A /* joystick.png */,
@@ -498,6 +501,7 @@
 				EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */,
 				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,
 				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
+				EB251F9D1968B8E2005BB13D /* alert.png in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
