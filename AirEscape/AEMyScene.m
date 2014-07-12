@@ -15,7 +15,6 @@
 #import "PPMissile.h"
 #import "PPConstants.h"
 #import "AEActorsManager.h"
-#import "JCImageJoystick.h"
 #import "Joystick.h"
 #import "AEMenuScene.h"
 #import "AEGameOverScene.h"
