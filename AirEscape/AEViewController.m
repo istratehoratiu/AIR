@@ -7,10 +7,13 @@
 //
 
 #import "AEViewController.h"
-#import "AEMyScene.h"
+#import "AEGameScene.h"
 #import "AEMenuScene.h"
 #import "AEGameOverScene.h"
 #import <iAd/iAd.h>
+
+#define ADDBannerWidth 320
+#define ADDBannerHeight 50
 
 @interface 	AEViewController () <ADBannerViewDelegate>
 
@@ -31,9 +34,9 @@
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        _banner = [[ADBannerView alloc] initWithFrame:CGRectZero];
+        _banner = [[ADBannerView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
         _banner.delegate = self;
-        [_banner setFrame:CGRectMake(200, -50, 320, 50)];
+        //[_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
         _addBannerIsHidden = YES;
         
         // Create and configure the scene.
@@ -76,35 +79,35 @@
 }
 
 - (void)showADDS {
-    if (_addBannerIsHidden) {
-        
-        SKView * skView = (SKView *)self.view;
-        if (
-            [skView.scene isKindOfClass:[AEMyScene class]]) {
-            return;
-        }
-        
-        [self.view addSubview:_banner];
-        
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        // Assumes the banner view is just off the bottom of the screen.
-        _banner.frame = CGRectMake(200, 0, 320, 50);
-        
-        _addBannerIsHidden = NO;
-        [UIView commitAnimations];
-    }
+//    if (_addBannerIsHidden) {
+//        
+//        SKView * skView = (SKView *)self.view;
+//        if (
+//            [skView.scene isKindOfClass:[AEMyScene class]]) {
+//            return;
+//        }
+//        
+//        [self.view addSubview:_banner];
+//        
+//        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+//        // Assumes the banner view is just off the bottom of the screen.
+//        _banner.frame = CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, _banner.frame.size.width, _banner.frame.size.height);
+//        
+//        _addBannerIsHidden = NO;
+//        [UIView commitAnimations];
+//    }
 }
 
 - (void)hideADDS {
-    if (!_addBannerIsHidden) {
-        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-        // Assumes the banner view is placed at the bottom of the screen.
-        [_banner setFrame:CGRectMake(200, -50, 320, 50)];
-        
-        _addBannerIsHidden = YES;
-        
-        [UIView commitAnimations];
-    }
+//    if (!_addBannerIsHidden) {
+//        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+//        // Assumes the banner view is placed at the bottom of the screen.
+//        [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
+//        
+//        _addBannerIsHidden = YES;
+//        
+//        [UIView commitAnimations];
+//    }
 }
 
 @end

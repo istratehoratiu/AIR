@@ -25,7 +25,7 @@
         [medalLabel setFontSize:40];
         [medalLabel setText:@"Medal"];
         [medalLabel setPosition:CGPointMake(-(self.size.width * 0.5) + 20, self.size.height - 20)];
-        [self addChild:medalLabel];
+        //[self addChild:medalLabel];
         
         NSString *medalImageName = @"";
         
@@ -39,20 +39,20 @@
         
         SKSpriteNode *medal = [SKSpriteNode spriteNodeWithImageNamed:medalImageName];
         [medal setPosition:CGPointMake(20, self.size.height - 110)];
-        [self addChild:medal];
+        //[self addChild:medal];
         
         //-----------
         
         SKLabelNode *currentScoreText = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         [currentScoreText setFontSize:40];
         [currentScoreText setText:@"Score"];
-        [currentScoreText setPosition:CGPointMake(self.size.width - 100, self.size.height - 20)];
+        [currentScoreText setPosition:CGPointMake(-150, self.size.height - 180)];
         [self addChild:currentScoreText];
         
         SKLabelNode *currentScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         [currentScoreLabel setFontSize:40];
         [currentScoreLabel setText:[NSString stringWithFormat:@"%ld", (long)currentScore]];
-        [currentScoreLabel setPosition:CGPointMake(self.size.width - 100, self.size.height - 110)];
+        [currentScoreLabel setPosition:CGPointMake(-150, self.size.height - 240)];
         [self addChild:currentScoreLabel];
         
         //-----------
@@ -60,13 +60,13 @@
         SKLabelNode *bestScoreText = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         [bestScoreText setFontSize:40];
         [bestScoreText setText:newScoreIsTheBest ? @"New Best" : @"Best"];
-        [bestScoreText setPosition:CGPointMake(self.size.width / 2, self.size.height - 100)];
+        [bestScoreText setPosition:CGPointMake(150, self.size.height - 180)];
         [self addChild:bestScoreText];
         
         SKLabelNode *bestScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         [bestScoreLabel setFontSize:40];
         [bestScoreLabel setText:[NSString stringWithFormat:@"%ld", newScoreIsTheBest ? (long)currentScore : (long)currentBestScore]];
-        [bestScoreLabel setPosition:CGPointMake(self.size.width / 2, self.size.height - 210)];
+        [bestScoreLabel setPosition:CGPointMake(150, self.size.height - 240)];
         [self addChild:bestScoreLabel];
         
 

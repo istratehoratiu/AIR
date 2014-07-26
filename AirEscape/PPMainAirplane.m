@@ -12,7 +12,7 @@
 #import "PPMath.h"
 #import "PPConstants.h"
 #import "PPMissile.h"
-#import "AEMyScene.h"
+#import "AEGameScene.h"
 #import "NSObject+Additions.h"
 #import "AEAppDelegate.h"
 #import "AEActorsManager.h"

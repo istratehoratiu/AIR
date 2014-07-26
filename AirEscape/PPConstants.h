@@ -8,7 +8,21 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+// Shop
+typedef enum {
+    AEShopItemBuyRockets,
+    AEShopItemBuyLowRocket,
+    AEShopItemBuyMediumRocket,
+    AEShopItemBuyHighRocket,
+    AEShopItemBuyLowSmoke,
+    AEShopItemBuyMediumSmoke,
+    AEShopItemBuyHighSmoke,
+    AEShopItemBuyLowAirplane,
+    AEShopItemBuyMediumAirplane,
+    AEShopItemBuyHighAirplane
+} AEShopItem;
 
+// Gameplay
 static const CGFloat kAEMainAirplaneManevrability    = 1.5;
 static const CGFloat kAEMaxMainAirplaneManevrability = 3.5;
 

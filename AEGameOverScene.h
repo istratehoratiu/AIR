@@ -12,16 +12,11 @@
 @class AEGameOverStatisticsSprite;
 
 @interface AEGameOverScene : SKScene {
-    SKButtonNode *_restartButton;
-    SKButtonNode *_rankingsButton;
-    SKButtonNode *_ratebutton;
-    AEGameOverStatisticsSprite *_gameOverStatistic;
-    SKLabelNode *_gameOverLabel;
     
 }
 
 @property (nonatomic, retain) SKButtonNode *restartButton;
-@property (nonatomic, retain) SKButtonNode *rankingsButton;
+@property (nonatomic, retain) SKButtonNode *hangarButton;
 @property (nonatomic, retain) SKButtonNode *ratebutton;
 @property (nonatomic, retain) AEGameOverStatisticsSprite *gameOverStatistic;
 @property (nonatomic, retain) SKLabelNode *gameOverLabel;

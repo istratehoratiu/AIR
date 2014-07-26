@@ -7,12 +7,14 @@
 //
 
 #import "AEMenuScene.h"
-#import "AEMyScene.h"
+#import "AEGameScene.h"
 #import "SKButtonNode.h"
 #import "PPMainAirplane.h"
 #import "PPMath.h"
 #import "SKButtonNode+Additions.h"
-
+#import "AEHangarViewController.h"
+#import "AEGameOverScene.h"
+#import "AEGameScene.h"
 
 #define kNumberOfDecorAirplanes 5
 
@@ -21,7 +23,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.jpg"];
+        background = [SKSpriteNode spriteNodeWithImageNamed:@"background.jpg"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];

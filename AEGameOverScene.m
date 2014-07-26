@@ -9,24 +9,25 @@
 #import "AEGameOverScene.h"
 #import "SKButtonNode+Additions.h"
 #import "AEGameOverStatisticsSprite.h"
-#import "AEMyScene.h"
+#import "AEGameScene.h"
 #import "Appirater.h"
+#import "AEHangarViewController.h"
 
 
 #define kAEDurationOfGameOverLabelAnimation 1
 
 @implementation AEGameOverScene
 
-@synthesize restartButton = _restartButton;
-@synthesize rankingsButton = _rankingsButton;
-@synthesize ratebutton = _ratebutton;
-@synthesize gameOverStatistic = _gameOverStatistic;
-@synthesize gameOverLabel = _gameOverLabel;
+//@synthesize restartButton = _restartButton;
+//@synthesize rankingsButton = _rankingsButton;
+//@synthesize ratebutton = _ratebutton;
+//@synthesize gameOverStatistic = _gameOverStatistic;
+//@synthesize gameOverLabel = _gameOverLabel;
 
 -(id)initWithSize:(CGSize)size score:(NSInteger)score {
     if (self = [super initWithSize:size]) {
         
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.jpg"];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background.jpg"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
@@ -46,12 +47,12 @@
     [self addChild:_restartButton];
     [_restartButton runAction:[SKAction fadeInWithDuration:1]];
     
-    _rankingsButton = [SKButtonNode getRankButton];
-    [_rankingsButton setPosition:CGPointMake(self.size.width / 2 + 200, self.size.height / 2 - 200)];
-    [_rankingsButton setAlpha:0.0];
-    [_rankingsButton setTouchUpInsideTarget:self action:@selector(showRankings)];
-    [self addChild:_rankingsButton];
-    [_rankingsButton runAction:[SKAction fadeInWithDuration:1]];
+    _hangarButton = [SKButtonNode getHangarButton];
+    [_hangarButton setPosition:CGPointMake(self.size.width / 2 + 200, self.size.height / 2 - 200)];
+    [_hangarButton setAlpha:0.0];
+    [_hangarButton setTouchUpInsideTarget:self action:@selector(showHangar)];
+    [self addChild:_hangarButton];
+    [_hangarButton runAction:[SKAction fadeInWithDuration:1]];
 
     //--------
     _gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -62,8 +63,8 @@
     
     
     //schedule game over label;
-    SKAction *wait = [SKAction waitForDuration:1];
-    SKAction *moveToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height /2 ) duration:kAEDurationOfGameOverLabelAnimation];
+    SKAction *wait = [SKAction waitForDuration:0.5];
+    SKAction *moveToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, 600 ) duration:kAEDurationOfGameOverLabelAnimation];
     SKAction *moveGameOverLabelAfterWaiting = [SKAction sequence:@[wait,moveToPosition]];
     
     [_gameOverLabel runAction:moveGameOverLabelAfterWaiting];
@@ -73,7 +74,7 @@
     [_gameOverStatistic setPosition:CGPointMake(self.size.width / 2, -200)];
     [self addChild:_gameOverStatistic];
     
-    SKAction *moveStatisticsToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height /2 - 200 ) duration:kAEDurationOfGameOverLabelAnimation];
+    SKAction *moveStatisticsToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height /2 ) duration:kAEDurationOfGameOverLabelAnimation];
     SKAction *moveStatiscticsAfterWaiting = [SKAction sequence:@[wait,moveStatisticsToPosition]];
     
     [_gameOverStatistic runAction:moveStatiscticsAfterWaiting];
@@ -84,8 +85,10 @@
 
 #pragma mark Handle touches
 
-- (void)showRankings {
-
+- (void)showHangar {
+    AEHangarViewController *_hangarViewController = [[AEHangarViewController alloc] init];
+    
+    [self.view.window.rootViewController presentViewController:_hangarViewController animated:YES completion:nil];
 }
 
 - (void)restartGame {

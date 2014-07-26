@@ -11,7 +11,7 @@
 @interface SKButtonNode (Additions)
 
 + (SKButtonNode *)getPlayButton;
-+ (SKButtonNode *)getRankButton;
++ (SKButtonNode *)getHangarButton;
 + (SKButtonNode *)getRateButton;
 
 @end

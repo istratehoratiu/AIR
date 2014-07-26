@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB16159219718EF900B9C35C /* AEHangarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16159119718EF900B9C35C /* AEHangarViewController.m */; };
+		EB1615991971B59000B9C35C /* AEHangarItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */; };
+		EB16159A1971B59000B9C35C /* AEHangarItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1615981971B59000B9C35C /* AEHangarItemTableViewCell.xib */; };
+		EB16159C1971B81400B9C35C /* checkMark.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EB16159B1971B81400B9C35C /* checkMark.jpeg */; };
+		EB16159E19729C9800B9C35C /* ShoptItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB16159D19729C9800B9C35C /* ShoptItems.plist */; };
+		EB1615A11972A71100B9C35C /* AEShopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1615A01972A71100B9C35C /* AEShopItem.m */; };
+		EB1615A31972C72D00B9C35C /* PLANE 1 N.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1615A21972C72D00B9C35C /* PLANE 1 N.png */; };
+		EB1615A51974775200B9C35C /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1615A41974775200B9C35C /* missile.png */; };
 		EB212E3119434752000D1A3E /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = EB212E3019434752000D1A3E /* Untitled.png */; };
 		EB212E341945A748000D1A3E /* AEMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB212E331945A748000D1A3E /* AEMenuScene.m */; };
 		EB212E371945E053000D1A3E /* AEGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB212E361945E053000D1A3E /* AEGameOverScene.m */; };
@@ -25,6 +33,7 @@
 		EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB2F342818E76CDE0043FAAE /* background1.jpg */; };
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
 		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
+		EB4B7B9719839E2F001CCE85 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB4B7B9619839E2F001CCE85 /* background.jpg */; };
 		EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */; };
 		EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
 		EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */; };
@@ -36,7 +45,7 @@
 		EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD2E18E09E220080FA55 /* Main_iPhone.storyboard */; };
 		EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD3118E09E220080FA55 /* Main_iPad.storyboard */; };
 		EB87BD3618E09E220080FA55 /* AEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD3518E09E220080FA55 /* AEViewController.m */; };
-		EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD3818E09E220080FA55 /* AEMyScene.m */; };
+		EB87BD3918E09E220080FA55 /* AEGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD3818E09E220080FA55 /* AEGameScene.m */; };
 		EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD3C18E09E220080FA55 /* Images.xcassets */; };
 		EB87BD4418E09E220080FA55 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD4318E09E220080FA55 /* XCTest.framework */; };
 		EB87BD4518E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
@@ -81,6 +90,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB16159019718EF900B9C35C /* AEHangarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEHangarViewController.h; sourceTree = "<group>"; };
+		EB16159119718EF900B9C35C /* AEHangarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarViewController.m; sourceTree = "<group>"; };
+		EB1615961971B59000B9C35C /* AEHangarItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEHangarItemTableViewCell.h; sourceTree = "<group>"; };
+		EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarItemTableViewCell.m; sourceTree = "<group>"; };
+		EB1615981971B59000B9C35C /* AEHangarItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AEHangarItemTableViewCell.xib; sourceTree = "<group>"; };
+		EB16159B1971B81400B9C35C /* checkMark.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = checkMark.jpeg; sourceTree = "<group>"; };
+		EB16159D19729C9800B9C35C /* ShoptItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShoptItems.plist; sourceTree = "<group>"; };
+		EB16159F1972A71100B9C35C /* AEShopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEShopItem.h; sourceTree = "<group>"; };
+		EB1615A01972A71100B9C35C /* AEShopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEShopItem.m; sourceTree = "<group>"; };
+		EB1615A21972C72D00B9C35C /* PLANE 1 N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE 1 N.png"; sourceTree = "<group>"; };
+		EB1615A41974775200B9C35C /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missile.png; path = sprite.atlas/missile.png; sourceTree = "<group>"; };
 		EB212E3019434752000D1A3E /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
 		EB212E321945A748000D1A3E /* AEMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEMenuScene.h; sourceTree = "<group>"; };
 		EB212E331945A748000D1A3E /* AEMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEMenuScene.m; sourceTree = "<group>"; };
@@ -106,6 +126,7 @@
 		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
 		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
 		EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
+		EB4B7B9619839E2F001CCE85 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		EB7966D018E1FF5D00D2669C /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		EB87BD1718E09E220080FA55 /* AirEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,8 +144,8 @@
 		EB87BD3218E09E220080FA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		EB87BD3418E09E220080FA55 /* AEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEViewController.h; sourceTree = "<group>"; };
 		EB87BD3518E09E220080FA55 /* AEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEViewController.m; sourceTree = "<group>"; };
-		EB87BD3718E09E220080FA55 /* AEMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEMyScene.h; sourceTree = "<group>"; };
-		EB87BD3818E09E220080FA55 /* AEMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEMyScene.m; sourceTree = "<group>"; };
+		EB87BD3718E09E220080FA55 /* AEGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEGameScene.h; sourceTree = "<group>"; };
+		EB87BD3818E09E220080FA55 /* AEGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEGameScene.m; sourceTree = "<group>"; };
 		EB87BD3C18E09E220080FA55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB87BD4218E09E220080FA55 /* AirEscapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirEscapeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB87BD4318E09E220080FA55 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -227,6 +248,8 @@
 			children = (
 				EB87BD3418E09E220080FA55 /* AEViewController.h */,
 				EB87BD3518E09E220080FA55 /* AEViewController.m */,
+				EB16159019718EF900B9C35C /* AEHangarViewController.h */,
+				EB16159119718EF900B9C35C /* AEHangarViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -242,11 +265,23 @@
 			name = "Supporting Classes";
 			sourceTree = "<group>";
 		};
+		EB1615931971B53800B9C35C /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EB1615961971B59000B9C35C /* AEHangarItemTableViewCell.h */,
+				EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */,
+				EB1615981971B59000B9C35C /* AEHangarItemTableViewCell.xib */,
+				EB16159F1972A71100B9C35C /* AEShopItem.h */,
+				EB1615A01972A71100B9C35C /* AEShopItem.m */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		EB212E381945E061000D1A3E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				EB87BD3718E09E220080FA55 /* AEMyScene.h */,
-				EB87BD3818E09E220080FA55 /* AEMyScene.m */,
+				EB87BD3718E09E220080FA55 /* AEGameScene.h */,
+				EB87BD3818E09E220080FA55 /* AEGameScene.m */,
 				EB212E321945A748000D1A3E /* AEMenuScene.h */,
 				EB212E331945A748000D1A3E /* AEMenuScene.m */,
 				EB212E351945E053000D1A3E /* AEGameOverScene.h */,
@@ -273,6 +308,8 @@
 		EB87BD0E18E09E220080FA55 = {
 			isa = PBXGroup;
 			children = (
+				EB1615A21972C72D00B9C35C /* PLANE 1 N.png */,
+				EB16159D19729C9800B9C35C /* ShoptItems.plist */,
 				EB87BD2218E09E220080FA55 /* AirEscape */,
 				EB87BD4918E09E220080FA55 /* AirEscapeTests */,
 				EB87BD1918E09E220080FA55 /* Frameworks */,
@@ -305,11 +342,14 @@
 		EB87BD2218E09E220080FA55 /* AirEscape */ = {
 			isa = PBXGroup;
 			children = (
+				EB4B7B9619839E2F001CCE85 /* background.jpg */,
+				EB1615931971B53800B9C35C /* Table View Cells */,
 				EB16158F1971626D00B9C35C /* Supporting Classes */,
 				EB16158E1971624100B9C35C /* View Controllers */,
 				EB16158D197161CB00B9C35C /* Widgets */,
 				EB16158C197161B000B9C35C /* Third Party */,
 				EBA4B2441959EC1700C8193A /* transparentButton.png */,
+				EB16159B1971B81400B9C35C /* checkMark.jpeg */,
 				EB26ED0F195C82F8008FF5A1 /* gameOverMenuBackground.png */,
 				EB26ED10195C82F8008FF5A1 /* highMedal.png */,
 				EBB2665919566F7600BD4890 /* bg@2x.jpg */,
@@ -340,6 +380,7 @@
 				EB2F342818E76CDE0043FAAE /* background1.jpg */,
 				EBD57B8318E2244700D5A61E /* minus.png */,
 				EB212E3019434752000D1A3E /* Untitled.png */,
+				EB1615A41974775200B9C35C /* missile.png */,
 				EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */,
 				EBA6298718E0EBD0004DAD8F /* trail.sks */,
 				EBA6298818E0EBD0004DAD8F /* explosion.sks */,
@@ -505,9 +546,12 @@
 				EB26ED15195C82F8008FF5A1 /* highMedal.png in Resources */,
 				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
+				EB16159E19729C9800B9C35C /* ShoptItems.plist in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBB2665A19566F7600BD4890 /* bg@2x.jpg in Resources */,
+				EB4B7B9719839E2F001CCE85 /* background.jpg in Resources */,
 				EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */,
+				EB16159C1971B81400B9C35C /* checkMark.jpeg in Resources */,
 				EB251F991968AD8F005BB13D /* 3.png in Resources */,
 				EB251F9A1968AD8F005BB13D /* 2.png in Resources */,
 				EBD57B8418E2244700D5A61E /* minus.png in Resources */,
@@ -518,10 +562,13 @@
 				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,
 				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
 				EB251F9D1968B8E2005BB13D /* alert.png in Resources */,
+				EB1615A51974775200B9C35C /* missile.png in Resources */,
+				EB1615A31972C72D00B9C35C /* PLANE 1 N.png in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
 				EBD57B8D18E2491200D5A61E /* spark.png in Resources */,
+				EB16159A1971B59000B9C35C /* AEHangarItemTableViewCell.xib in Resources */,
 				EBA040C818E3980D004B708A /* dpad.png in Resources */,
 				EBA040CA18E3980D004B708A /* joystick.png in Resources */,
 				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
@@ -547,11 +594,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB87BD3918E09E220080FA55 /* AEMyScene.m in Sources */,
+				EB1615991971B59000B9C35C /* AEHangarItemTableViewCell.m in Sources */,
+				EB87BD3918E09E220080FA55 /* AEGameScene.m in Sources */,
 				EB212E341945A748000D1A3E /* AEMenuScene.m in Sources */,
 				EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */,
 				EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */,
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
+				EB16159219718EF900B9C35C /* AEHangarViewController.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB26ED16195C82F8008FF5A1 /* SKButtonNode+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
@@ -567,6 +616,7 @@
 				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
 				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
 				EB87BD6518E0DE960080FA55 /* PPSpriteNode.m in Sources */,
+				EB1615A11972A71100B9C35C /* AEShopItem.m in Sources */,
 				EB87BD2918E09E220080FA55 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,11 +20,11 @@
     return playButton;
 }
 
-+ (SKButtonNode *)getRankButton {
++ (SKButtonNode *)getHangarButton {
     SKButtonNode *playButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
     [playButton.title setFontName:@"Chalkduster"];
     [playButton.title setFontSize:40.0];
-    [playButton.title setText:@"Rank"];
+    [playButton.title setText:@"Hangar"];
     playButton.zPosition = 1000;
     
     return playButton;
