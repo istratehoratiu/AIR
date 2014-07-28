@@ -18,7 +18,7 @@
         _title = [dictionary valueForKey:@"title"];
         _isBought = [[dictionary valueForKey:@"isBought"] boolValue];
         _isUsed = [[dictionary valueForKey:@"isUsed"] boolValue];
-        _thumbnails = [dictionary valueForKey:@"thumbnails"];
+        _thumbnails = [dictionary valueForKey:@"thumbnailImage"];
     }
     
     return self;

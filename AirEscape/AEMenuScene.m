@@ -23,7 +23,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        background = [SKSpriteNode spriteNodeWithImageNamed:@"background.jpg"];
+        background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
@@ -68,11 +68,15 @@
 
 - (void)startGame {
 
-    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
+//    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
+//    
+//    AEMyScene *newScene = [[AEMyScene alloc] initWithSize: self.size];
+//    //  Optionally, insert code to configure the new scene.
+//    [self.scene.view presentScene: newScene transition: crossFade];
     
-    AEMyScene *newScene = [[AEMyScene alloc] initWithSize: self.size];
-    //  Optionally, insert code to configure the new scene.
-    [self.scene.view presentScene: newScene transition: crossFade];
+    AEHangarViewController *_hangarViewController = [[AEHangarViewController alloc] init];
+    
+    [self.view.window.rootViewController presentViewController:_hangarViewController animated:YES completion:nil];
 }
 
 

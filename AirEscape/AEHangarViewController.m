@@ -8,6 +8,9 @@
 
 #import "AEHangarViewController.h"
 #import "AEHangarItemTableViewCell.h"
+#import "AEShopItem.h"
+#import "PPConstants.h"
+
 
 
 #define TOP_VIEW_HEIGHT 60
@@ -33,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg.jpg"]];
+    _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
     [self.view addSubview:_backgroundView];
     
     
@@ -62,7 +65,8 @@
     [_titleOfScreen setText:@"Hangar"];
     [self.view addSubview:_titleOfScreen];
     
-    _shopItemsDictionary = [NSDictionary dictionaryWithContentsOfFile:@"ShopItems.plist"];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"ShopItems" ofType:@"plist"];
+    _shopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,7 +75,7 @@
     
     [_topView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, TOP_VIEW_HEIGHT)];
     [_tableView setFrame:CGRectMake(0, 0, 800 , 600)];
-    [_tableView setCenter:self.view.center];
+    [_tableView setCenter:CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.5)];
     
     [_titleOfScreen setFrame:CGRectMake((self.view.bounds.size.width - TOP_VIEW_TITLE_WIDTH) * 0.5, 0, TOP_VIEW_TITLE_WIDTH, TOP_VIEW_HEIGHT)];
     
@@ -99,11 +103,14 @@
     static NSString *simpleTableIdentifier = @"CustomCell";
     
     AEHangarItemTableViewCell *cell = (AEHangarItemTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil)
-    {
-    
+    if (cell == nil) {
         cell = [[AEHangarItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+    
+    NSString *keyOfItem = getKeyForShopItem(indexPath.row);
+    
+    AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_shopItemsDictionary objectForKey:keyOfItem]];
+    [cell setShopItem:currentItem];
     return cell;
 }
 
@@ -116,6 +123,41 @@
 
 - (void)backButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Helper Methods -
+
+NSString* getKeyForShopItem(NSUInteger shopItemType) {
+    switch (shopItemType) {
+        case AEShopItemBuyLowAirplane:
+            return @"Airplane Low";
+            break;
+        case AEShopItemBuyMediumAirplane:
+            return @"Airplane Medium";
+            break;
+        case AEShopItemBuyHighAirplane:
+            return @"Airplane High";
+            break;
+        case AEShopItemBuyLowSmoke:
+            return @"Smoke Low";
+            break;
+        case AEShopItemBuyMediumSmoke:
+            return @"Smoke Medium";
+            break;
+        case AEShopItemBuyHighSmoke:
+            return @"Smoke High";
+            break;
+        case AEShopItemBuyMissiles:
+            return @"Buy Missiles";
+            break;
+        case AEShopItemBuyRemoveAds:
+            return @"Remove Ads";
+            break;
+        default:
+            return @"";
+            break;
+    }
 }
 
 @end

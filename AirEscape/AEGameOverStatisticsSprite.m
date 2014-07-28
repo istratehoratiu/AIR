@@ -21,26 +21,6 @@
         NSInteger currentBestScore = [[NSUserDefaults standardUserDefaults] integerForKey:kSGBestScoreKey];
         BOOL newScoreIsTheBest = currentScore > currentBestScore;
         
-        SKLabelNode *medalLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        [medalLabel setFontSize:40];
-        [medalLabel setText:@"Medal"];
-        [medalLabel setPosition:CGPointMake(-(self.size.width * 0.5) + 20, self.size.height - 20)];
-        //[self addChild:medalLabel];
-        
-        NSString *medalImageName = @"";
-        
-        if (newScoreIsTheBest) {
-            medalImageName = @"highMedal.png";
-        } else if (currentBestScore - newScoreIsTheBest < 5) {
-            medalImageName = @"mediumMedal.png";
-        } else if (currentBestScore - newScoreIsTheBest < 10) {
-             medalImageName = @"minimumMedal.png";
-        }
-        
-        SKSpriteNode *medal = [SKSpriteNode spriteNodeWithImageNamed:medalImageName];
-        [medal setPosition:CGPointMake(20, self.size.height - 110)];
-        //[self addChild:medal];
-        
         //-----------
         
         SKLabelNode *currentScoreText = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -72,6 +52,7 @@
 
         if (newScoreIsTheBest) {
             [[NSUserDefaults standardUserDefaults] setInteger:currentScore forKey:kSGBestScoreKey];
+            
         }
     }
     

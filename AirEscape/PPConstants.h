@@ -8,19 +8,23 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+typedef enum {
+    kPPTurnLeft,
+    kPPTurnRight,
+    kPPFlyStraight
+} PPFlightDirection;
+
 // Shop
 typedef enum {
-    AEShopItemBuyRockets,
-    AEShopItemBuyLowRocket,
-    AEShopItemBuyMediumRocket,
-    AEShopItemBuyHighRocket,
+    AEShopItemBuyMissiles,
+    AEShopItemBuyLowAirplane,
+    AEShopItemBuyMediumAirplane,
+    AEShopItemBuyHighAirplane,
     AEShopItemBuyLowSmoke,
     AEShopItemBuyMediumSmoke,
     AEShopItemBuyHighSmoke,
-    AEShopItemBuyLowAirplane,
-    AEShopItemBuyMediumAirplane,
-    AEShopItemBuyHighAirplane
-} AEShopItem;
+    AEShopItemBuyRemoveAds
+} AEShopItemType;
 
 // Gameplay
 static const CGFloat kAEMainAirplaneManevrability    = 1.5;
@@ -49,11 +53,5 @@ static const CGFloat kAEMissileHaywireManevrability = 0.4;
 static const NSUInteger userAirplaneCategory              =  4;
 static const NSUInteger missileCategory                   =  5;
 static const NSUInteger enemyMissileCategory              =  7;
-
-typedef enum {
-    kPPTurnLeft,
-    kPPTurnRight,
-    kPPFlyStraight
-} PPFlightDirection;
 
 extern NSString *const kSGBestScoreKey;

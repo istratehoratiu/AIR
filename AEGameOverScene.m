@@ -27,7 +27,7 @@
 -(id)initWithSize:(CGSize)size score:(NSInteger)score {
     if (self = [super initWithSize:size]) {
         
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background.jpg"];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];

@@ -18,4 +18,6 @@
 @property (nonatomic, assign) BOOL isUsed;
 @property (nonatomic, strong) NSString *thumbnails;
 
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

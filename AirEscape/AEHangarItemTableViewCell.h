@@ -16,12 +16,12 @@
 
 @property (nonatomic, strong) AEShopItem *shopItem;
 
-@property (nonatomic, retain) IBOutlet UILabel *itemNameLabel;
-@property (nonatomic, retain) IBOutlet UIButton *buyItemButton;
-@property (nonatomic, retain) IBOutlet UIImageView *currentSelectionCheckMark;
-@property (nonatomic, retain) IBOutlet UIImageView *itemThumbnails;
+@property (nonatomic, retain) UILabel *itemNameLabel;
+@property (nonatomic, retain) UIButton *buyItemButton;
+@property (nonatomic, retain) UIImageView *currentSelectionCheckMark;
+@property (nonatomic, retain) UIImageView *itemThumbnails;
 
 
-- (IBAction)buyOrUseItem:(id)sender;
+- (void)buyOrUseItem:(id)sender;
 
 @end

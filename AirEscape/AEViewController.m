@@ -79,35 +79,35 @@
 }
 
 - (void)showADDS {
-//    if (_addBannerIsHidden) {
-//        
-//        SKView * skView = (SKView *)self.view;
-//        if (
-//            [skView.scene isKindOfClass:[AEMyScene class]]) {
-//            return;
-//        }
-//        
-//        [self.view addSubview:_banner];
-//        
-//        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-//        // Assumes the banner view is just off the bottom of the screen.
-//        _banner.frame = CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, _banner.frame.size.width, _banner.frame.size.height);
-//        
-//        _addBannerIsHidden = NO;
-//        [UIView commitAnimations];
-//    }
+    if (_addBannerIsHidden) {
+        
+        SKView * skView = (SKView *)self.view;
+        if (
+            [skView.scene isKindOfClass:[AEMyScene class]]) {
+            return;
+        }
+        
+        [self.view addSubview:_banner];
+        
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        // Assumes the banner view is just off the bottom of the screen.
+        _banner.frame = CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, _banner.frame.size.width, _banner.frame.size.height);
+        
+        _addBannerIsHidden = NO;
+        [UIView commitAnimations];
+    }
 }
 
 - (void)hideADDS {
-//    if (!_addBannerIsHidden) {
-//        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-//        // Assumes the banner view is placed at the bottom of the screen.
-//        [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
-//        
-//        _addBannerIsHidden = YES;
-//        
-//        [UIView commitAnimations];
-//    }
+    if (!_addBannerIsHidden) {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        // Assumes the banner view is placed at the bottom of the screen.
+        [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
+        
+        _addBannerIsHidden = YES;
+        
+        [UIView commitAnimations];
+    }
 }
 
 @end
