@@ -12,6 +12,7 @@
 #import "AEGameScene.h"
 #import "Appirater.h"
 #import "AEHangarViewController.h"
+#import "AEHangarScene.h"
 
 
 #define kAEDurationOfGameOverLabelAnimation 1
@@ -32,6 +33,8 @@
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
     }
+    
+    self.score = score;
     
     _ratebutton = [SKButtonNode getRateButton];
     [_ratebutton setPosition:CGPointMake(self.size.width / 2 - 200, self.size.height / 2 - 200)];
@@ -86,15 +89,18 @@
 #pragma mark Handle touches
 
 - (void)showHangar {
-    AEHangarViewController *_hangarViewController = [[AEHangarViewController alloc] init];
+    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
-    [self.view.window.rootViewController presentViewController:_hangarViewController animated:YES completion:nil];
+    AEHangarScene *newScene = [[AEHangarScene alloc] initWithSize: self.size];
+    newScene.score = _score;
+    //  Optionally, insert code to configure the new scene.
+    [self.scene.view presentScene: newScene transition: crossFade];
 }
 
 - (void)restartGame {
     SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
-    AEMyScene *newScene = [[AEMyScene alloc] initWithSize: self.size];
+    AEGameScene *newScene = [[AEGameScene alloc] initWithSize: self.size];
     //  Optionally, insert code to configure the new scene.
     [self.scene.view presentScene: newScene transition: crossFade];
 }

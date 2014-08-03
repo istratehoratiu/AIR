@@ -15,6 +15,7 @@
     
 }
 
+@property (nonatomic, assign) NSUInteger score;
 @property (nonatomic, retain) SKButtonNode *restartButton;
 @property (nonatomic, retain) SKButtonNode *hangarButton;
 @property (nonatomic, retain) SKButtonNode *ratebutton;

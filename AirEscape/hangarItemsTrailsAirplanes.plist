@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>ID</key>
+		<integer>9</integer>
+		<key>title</key>
+		<string>Sptifire</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 2 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>ID</key>
+		<integer>10</integer>
+		<key>title</key>
+		<string>Albatros</string>
+		<key>thumbnailImage</key>
+		<string>plane_N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<true/>
+		<key>isUsed</key>
+		<true/>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>5</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>6</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>7</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>8</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>9</key>
+	<dict>
+		<key>ID</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>F22</string>
+		<key>thumbnailImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>price</key>
+		<integer>0</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

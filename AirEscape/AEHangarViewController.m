@@ -107,10 +107,10 @@
         cell = [[AEHangarItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    NSString *keyOfItem = getKeyForShopItem(indexPath.row);
-    
-    AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_shopItemsDictionary objectForKey:keyOfItem]];
-    [cell setShopItem:currentItem];
+//    NSString *keyOfItem = getKeyForShopItem(indexPath.row);
+//    
+//    AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_shopItemsDictionary objectForKey:keyOfItem]];
+//    [cell setShopItem:currentItem];
     return cell;
 }
 
@@ -128,36 +128,36 @@
 
 #pragma mark - Helper Methods -
 
-NSString* getKeyForShopItem(NSUInteger shopItemType) {
-    switch (shopItemType) {
-        case AEShopItemBuyLowAirplane:
-            return @"Airplane Low";
-            break;
-        case AEShopItemBuyMediumAirplane:
-            return @"Airplane Medium";
-            break;
-        case AEShopItemBuyHighAirplane:
-            return @"Airplane High";
-            break;
-        case AEShopItemBuyLowSmoke:
-            return @"Smoke Low";
-            break;
-        case AEShopItemBuyMediumSmoke:
-            return @"Smoke Medium";
-            break;
-        case AEShopItemBuyHighSmoke:
-            return @"Smoke High";
-            break;
-        case AEShopItemBuyMissiles:
-            return @"Buy Missiles";
-            break;
-        case AEShopItemBuyRemoveAds:
-            return @"Remove Ads";
-            break;
-        default:
-            return @"";
-            break;
-    }
-}
+//NSString* getKeyForShopItem(NSUInteger shopItemType) {
+//    switch (shopItemType) {
+//        case AEShopItemBuyLowAirplane:
+//            return @"Airplane Low";
+//            break;
+//        case AEShopItemBuyMediumAirplane:
+//            return @"Airplane Medium";
+//            break;
+//        case AEShopItemBuyHighAirplane:
+//            return @"Airplane High";
+//            break;
+//        case AEShopItemBuyLowSmoke:
+//            return @"Smoke Low";
+//            break;
+//        case AEShopItemBuyMediumSmoke:
+//            return @"Smoke Medium";
+//            break;
+//        case AEShopItemBuyHighSmoke:
+//            return @"Smoke High";
+//            break;
+//        case AEShopItemBuyMissiles:
+//            return @"Buy Missiles";
+//            break;
+//        case AEShopItemBuyRemoveAds:
+//            return @"Remove Ads";
+//            break;
+//        default:
+//            return @"";
+//            break;
+//    }
+//}
 
 @end

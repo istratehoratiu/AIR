@@ -15,6 +15,9 @@
 #import "AEHangarViewController.h"
 #import "AEGameOverScene.h"
 #import "AEGameScene.h"
+#import "AEHangarScene.h"
+#import "Appirater.h"
+
 
 #define kNumberOfDecorAirplanes 5
 
@@ -23,7 +26,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
+        background = [SKSpriteNode spriteNodeWithImageNamed:@"background.png"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
@@ -57,7 +60,18 @@
     [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 100)];
     [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
     
+    SKButtonNode *hangarButton = [SKButtonNode getHangarButton];
+    [hangarButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 200)];
+    [hangarButton setTouchUpInsideTarget:self action:@selector(goToHangar)];
+    
+    
+    SKButtonNode *rateButton = [SKButtonNode getRateButton];
+    [rateButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 300)];
+    [rateButton setTouchUpInsideTarget:self action:@selector(rateGame)];
+    
     [self addChild:playButton];
+    [self addChild:hangarButton];
+    [self addChild:rateButton];
     
     return self;
 }
@@ -68,17 +82,25 @@
 
 - (void)startGame {
 
-//    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
-//    
-//    AEMyScene *newScene = [[AEMyScene alloc] initWithSize: self.size];
-//    //  Optionally, insert code to configure the new scene.
-//    [self.scene.view presentScene: newScene transition: crossFade];
+    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
-    AEHangarViewController *_hangarViewController = [[AEHangarViewController alloc] init];
-    
-    [self.view.window.rootViewController presentViewController:_hangarViewController animated:YES completion:nil];
+    AEGameScene *newScene = [[AEGameScene alloc] initWithSize: self.size];
+    //  Optionally, insert code to configure the new scene.
+    [self.scene.view presentScene: newScene transition: crossFade];
 }
 
+- (void)goToHangar {
+    
+    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
+    
+    AEHangarScene *newScene = [[AEHangarScene alloc] initWithSize: self.size];
+    //  Optionally, insert code to configure the new scene.
+    [self.scene.view presentScene: newScene transition: crossFade];
+}
+
+- (void)rateGame {
+    [Appirater rateApp];
+}
 
 #pragma mark -
 #pragma mark Update scene

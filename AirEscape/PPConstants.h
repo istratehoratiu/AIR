@@ -16,14 +16,9 @@ typedef enum {
 
 // Shop
 typedef enum {
-    AEShopItemBuyMissiles,
-    AEShopItemBuyLowAirplane,
-    AEShopItemBuyMediumAirplane,
-    AEShopItemBuyHighAirplane,
-    AEShopItemBuyLowSmoke,
-    AEShopItemBuyMediumSmoke,
-    AEShopItemBuyHighSmoke,
-    AEShopItemBuyRemoveAds
+    AEShopItemBuyCredits1,
+    AEShopItemBuyAirplane1,
+    AEShopItemBuyTrails1,
 } AEShopItemType;
 
 // Gameplay

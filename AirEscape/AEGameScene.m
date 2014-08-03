@@ -21,7 +21,7 @@
 #import "PPMissile.h"
 
 
-@implementation AEMyScene
+@implementation AEGameScene
 
 @synthesize arrayOfEnemyBombers             = _arrayOfEnemyBombers;
 @synthesize arrayOfEnemyHunterAirplanes     = _arrayOfEnemyHunterAirplanes;
@@ -122,7 +122,7 @@
         [_pauseButton.title setText:@""];
         [_pauseButton setTouchUpInsideTarget:self action:@selector(pauseGame)];
         _pauseButton.zPosition = 1000;
-        [self addChild:_pauseButton];
+        //[self addChild:_pauseButton];
         
         
         SKSpriteNode *jsThumb = [SKSpriteNode spriteNodeWithImageNamed:@"joystick"];

@@ -17,7 +17,7 @@
 @class JCImageJoystick;
 @class Joystick;
 
-@interface AEMyScene : SKScene {
+@interface AEGameScene : SKScene {
     
     SKSpriteNode *background;
     PPMainAirplane *_userAirplane;

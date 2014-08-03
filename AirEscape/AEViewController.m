@@ -83,7 +83,7 @@
         
         SKView * skView = (SKView *)self.view;
         if (
-            [skView.scene isKindOfClass:[AEMyScene class]]) {
+            [skView.scene isKindOfClass:[AEGameScene class]]) {
             return;
         }
         

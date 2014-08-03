@@ -151,7 +151,7 @@
 
     [super updateRotation:dt];
     
-    AEMyScene *airplaneParent = (AEMyScene *)self.parent;
+    AEGameScene *airplaneParent = (AEGameScene *)self.parent;
     
     if (_isAutopilotON) {
         return;
