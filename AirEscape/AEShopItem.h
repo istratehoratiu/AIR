@@ -12,6 +12,8 @@
 
 }
 
+@property (nonatomic, strong) NSDictionary *representedDictionary;
+@property (nonatomic, strong) NSString *keyValue;
 @property (nonatomic, assign) AEShopItem *typeOfRepresentedItem;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL isBought;

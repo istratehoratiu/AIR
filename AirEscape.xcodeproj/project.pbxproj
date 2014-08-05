@@ -10,7 +10,6 @@
 		EB16159219718EF900B9C35C /* AEHangarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16159119718EF900B9C35C /* AEHangarViewController.m */; };
 		EB1615991971B59000B9C35C /* AEHangarItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */; };
 		EB16159C1971B81400B9C35C /* checkMark.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EB16159B1971B81400B9C35C /* checkMark.jpeg */; };
-		EB16159E19729C9800B9C35C /* ShopItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB16159D19729C9800B9C35C /* ShopItems.plist */; };
 		EB1615A31972C72D00B9C35C /* PLANE 1 N.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1615A21972C72D00B9C35C /* PLANE 1 N.png */; };
 		EB1615A51974775200B9C35C /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1615A41974775200B9C35C /* missile.png */; };
 		EB212E3119434752000D1A3E /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = EB212E3019434752000D1A3E /* Untitled.png */; };
@@ -34,6 +33,12 @@
 		EB48A2EF1986C1AC003EE36C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EB48A2EE1986C1AC003EE36C /* background.png */; };
 		EB48A2F11986C37E003EE36C /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB48A2F01986C37E003EE36C /* background@2x.png */; };
 		EB48A2F41986C6A5003EE36C /* AEShopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48A2F31986C6A5003EE36C /* AEShopItem.m */; };
+		EB66E8A1198959A700690375 /* AEHangarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB66E8A0198959A700690375 /* AEHangarScene.m */; };
+		EB743D16198CFD4800E5CE3D /* AEHangarItemSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EB743D15198CFD4800E5CE3D /* AEHangarItemSprite.m */; };
+		EB743D18198D1C9400E5CE3D /* shopItemBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EB743D17198D1C9400E5CE3D /* shopItemBackground.png */; };
+		EB743D1C198D2FC600E5CE3D /* hangarItemsCredits.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB743D19198D2FC600E5CE3D /* hangarItemsCredits.plist */; };
+		EB743D1D198D2FC600E5CE3D /* hangarItemsTrails.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB743D1A198D2FC600E5CE3D /* hangarItemsTrails.plist */; };
+		EB743D1E198D2FC600E5CE3D /* hangarItemsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB743D1B198D2FC600E5CE3D /* hangarItemsAirplanes.plist */; };
 		EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */; };
 		EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
 		EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */; };
@@ -95,7 +100,6 @@
 		EB1615961971B59000B9C35C /* AEHangarItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEHangarItemTableViewCell.h; sourceTree = "<group>"; };
 		EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarItemTableViewCell.m; sourceTree = "<group>"; };
 		EB16159B1971B81400B9C35C /* checkMark.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = checkMark.jpeg; sourceTree = "<group>"; };
-		EB16159D19729C9800B9C35C /* ShopItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ShopItems.plist; path = ../ShopItems.plist; sourceTree = "<group>"; };
 		EB1615A21972C72D00B9C35C /* PLANE 1 N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PLANE 1 N.png"; path = "../PLANE 1 N.png"; sourceTree = "<group>"; };
 		EB1615A41974775200B9C35C /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missile.png; path = sprite.atlas/missile.png; sourceTree = "<group>"; };
 		EB212E3019434752000D1A3E /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
@@ -127,6 +131,14 @@
 		EB48A2F01986C37E003EE36C /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		EB48A2F21986C6A5003EE36C /* AEShopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEShopItem.h; sourceTree = "<group>"; };
 		EB48A2F31986C6A5003EE36C /* AEShopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEShopItem.m; sourceTree = "<group>"; };
+		EB66E89F198959A700690375 /* AEHangarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEHangarScene.h; sourceTree = "<group>"; };
+		EB66E8A0198959A700690375 /* AEHangarScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarScene.m; sourceTree = "<group>"; };
+		EB743D14198CFD4800E5CE3D /* AEHangarItemSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEHangarItemSprite.h; path = AirEscape/AEHangarItemSprite.h; sourceTree = "<group>"; };
+		EB743D15198CFD4800E5CE3D /* AEHangarItemSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEHangarItemSprite.m; path = AirEscape/AEHangarItemSprite.m; sourceTree = "<group>"; };
+		EB743D17198D1C9400E5CE3D /* shopItemBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopItemBackground.png; sourceTree = "<group>"; };
+		EB743D19198D2FC600E5CE3D /* hangarItemsCredits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsCredits.plist; sourceTree = "<group>"; };
+		EB743D1A198D2FC600E5CE3D /* hangarItemsTrails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsTrails.plist; sourceTree = "<group>"; };
+		EB743D1B198D2FC600E5CE3D /* hangarItemsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsAirplanes.plist; sourceTree = "<group>"; };
 		EB7966D018E1FF5D00D2669C /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		EB87BD1718E09E220080FA55 /* AirEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +250,8 @@
 				EBA040C618E3980D004B708A /* Joystick.m */,
 				EB26ED0D195C82F8008FF5A1 /* AEGameOverStatisticsSprite.h */,
 				EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */,
+				EB743D14198CFD4800E5CE3D /* AEHangarItemSprite.h */,
+				EB743D15198CFD4800E5CE3D /* AEHangarItemSprite.m */,
 			);
 			name = Widgets;
 			path = ..;
@@ -279,6 +293,8 @@
 		EB212E381945E061000D1A3E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EB66E89F198959A700690375 /* AEHangarScene.h */,
+				EB66E8A0198959A700690375 /* AEHangarScene.m */,
 				EB87BD3718E09E220080FA55 /* AEGameScene.h */,
 				EB87BD3818E09E220080FA55 /* AEGameScene.m */,
 				EB212E321945A748000D1A3E /* AEMenuScene.h */,
@@ -339,10 +355,13 @@
 		EB87BD2218E09E220080FA55 /* AirEscape */ = {
 			isa = PBXGroup;
 			children = (
+				EB743D19198D2FC600E5CE3D /* hangarItemsCredits.plist */,
+				EB743D1A198D2FC600E5CE3D /* hangarItemsTrails.plist */,
+				EB743D1B198D2FC600E5CE3D /* hangarItemsAirplanes.plist */,
 				EB1615A21972C72D00B9C35C /* PLANE 1 N.png */,
-				EB16159D19729C9800B9C35C /* ShopItems.plist */,
 				EB48A2F01986C37E003EE36C /* background@2x.png */,
 				EB48A2EE1986C1AC003EE36C /* background.png */,
+				EB743D17198D1C9400E5CE3D /* shopItemBackground.png */,
 				EB1615931971B53800B9C35C /* Table View Cells */,
 				EB16158F1971626D00B9C35C /* Supporting Classes */,
 				EB16158E1971624100B9C35C /* View Controllers */,
@@ -540,13 +559,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB743D1C198D2FC600E5CE3D /* hangarItemsCredits.plist in Resources */,
 				EB26ED14195C82F8008FF5A1 /* gameOverMenuBackground.png in Resources */,
 				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
 				EB26ED15195C82F8008FF5A1 /* highMedal.png in Resources */,
 				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
+				EB743D18198D1C9400E5CE3D /* shopItemBackground.png in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
-				EB16159E19729C9800B9C35C /* ShopItems.plist in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBB2665A19566F7600BD4890 /* bg@2x.jpg in Resources */,
 				EB2F342918E76CDE0043FAAE /* background1.jpg in Resources */,
@@ -562,6 +582,7 @@
 				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,
 				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
 				EB48A2EF1986C1AC003EE36C /* background.png in Resources */,
+				EB743D1D198D2FC600E5CE3D /* hangarItemsTrails.plist in Resources */,
 				EB251F9D1968B8E2005BB13D /* alert.png in Resources */,
 				EB1615A51974775200B9C35C /* missile.png in Resources */,
 				EB1615A31972C72D00B9C35C /* PLANE 1 N.png in Resources */,
@@ -576,6 +597,7 @@
 				EBA4B2451959EC1700C8193A /* transparentButton.png in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 				EB251F9B1968AD8F005BB13D /* 1.png in Resources */,
+				EB743D1E198D2FC600E5CE3D /* hangarItemsAirplanes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,8 +635,10 @@
 				EB87BD3618E09E220080FA55 /* AEViewController.m in Sources */,
 				EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */,
 				EB26ED13195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m in Sources */,
+				EB66E8A1198959A700690375 /* AEHangarScene.m in Sources */,
 				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
 				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
+				EB743D16198CFD4800E5CE3D /* AEHangarItemSprite.m in Sources */,
 				EB87BD6518E0DE960080FA55 /* PPSpriteNode.m in Sources */,
 				EB48A2F41986C6A5003EE36C /* AEShopItem.m in Sources */,
 				EB87BD2918E09E220080FA55 /* main.m in Sources */,

@@ -14,11 +14,13 @@
     self = [super init];
     
     if (self) {
-        _typeOfRepresentedItem = [dictionary valueForKey:@"ID"];
-        _title = [dictionary valueForKey:@"title"];
-        _isBought = [[dictionary valueForKey:@"isBought"] boolValue];
-        _isUsed = [[dictionary valueForKey:@"isUsed"] boolValue];
-        _thumbnails = [dictionary valueForKey:@"thumbnailImage"];
+        
+        self.representedDictionary = dictionary;
+        self.typeOfRepresentedItem = [dictionary valueForKey:@"ID"];
+        self.title = [dictionary valueForKey:@"title"];
+        self.isBought = [[dictionary valueForKey:@"isBought"] boolValue];
+        self.isUsed = [[dictionary valueForKey:@"isUsed"] boolValue];
+        self.thumbnails = [dictionary valueForKey:@"thumbnailImage"];
     }
     
     return self;

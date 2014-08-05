@@ -50,3 +50,5 @@ static const NSUInteger missileCategory                   =  5;
 static const NSUInteger enemyMissileCategory              =  7;
 
 extern NSString *const kSGBestScoreKey;
+
+extern NSString *const kSGUpdateHangarScreenNotification;
