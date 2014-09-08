@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB16159219718EF900B9C35C /* AEHangarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16159119718EF900B9C35C /* AEHangarViewController.m */; };
-		EB1615991971B59000B9C35C /* AEHangarItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */; };
 		EB16159C1971B81400B9C35C /* checkMark.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EB16159B1971B81400B9C35C /* checkMark.jpeg */; };
 		EB1615A31972C72D00B9C35C /* PLANE 1 N.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1615A21972C72D00B9C35C /* PLANE 1 N.png */; };
 		EB1615A51974775200B9C35C /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1615A41974775200B9C35C /* missile.png */; };
@@ -78,7 +76,7 @@
 		EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298918E0EBD0004DAD8F /* bulletHit.sks */; };
 		EBB2665819566E7300BD4890 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2665719566E7300BD4890 /* bg.jpg */; };
 		EBB2665A19566F7600BD4890 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2665919566F7600BD4890 /* bg@2x.jpg */; };
-		EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */; };
+		EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEGameManager.m */; };
 		EBD57B8418E2244700D5A61E /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8318E2244700D5A61E /* minus.png */; };
 		EBD57B8D18E2491200D5A61E /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD57B8C18E2491200D5A61E /* spark.png */; };
 		EBF88FD719603A05007B8812 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF88FD619603A05007B8812 /* iAd.framework */; };
@@ -95,10 +93,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB16159019718EF900B9C35C /* AEHangarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEHangarViewController.h; sourceTree = "<group>"; };
-		EB16159119718EF900B9C35C /* AEHangarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarViewController.m; sourceTree = "<group>"; };
-		EB1615961971B59000B9C35C /* AEHangarItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEHangarItemTableViewCell.h; sourceTree = "<group>"; };
-		EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarItemTableViewCell.m; sourceTree = "<group>"; };
 		EB16159B1971B81400B9C35C /* checkMark.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = checkMark.jpeg; sourceTree = "<group>"; };
 		EB1615A21972C72D00B9C35C /* PLANE 1 N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PLANE 1 N.png"; path = "../PLANE 1 N.png"; sourceTree = "<group>"; };
 		EB1615A41974775200B9C35C /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missile.png; path = sprite.atlas/missile.png; sourceTree = "<group>"; };
@@ -194,8 +188,8 @@
 		EBA6298918E0EBD0004DAD8F /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
 		EBB2665719566E7300BD4890 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		EBB2665919566F7600BD4890 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
-		EBD57B8018E21CAD00D5A61E /* AEActorsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEActorsManager.h; sourceTree = "<group>"; };
-		EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEActorsManager.m; sourceTree = "<group>"; };
+		EBD57B8018E21CAD00D5A61E /* AEGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEGameManager.h; sourceTree = "<group>"; };
+		EBD57B8118E21CAD00D5A61E /* AEGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEGameManager.m; sourceTree = "<group>"; };
 		EBD57B8318E2244700D5A61E /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minus.png; path = sprite.atlas/minus.png; sourceTree = "<group>"; };
 		EBD57B8C18E2491200D5A61E /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		EBF88FD619603A05007B8812 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -262,8 +256,6 @@
 			children = (
 				EB87BD3418E09E220080FA55 /* AEViewController.h */,
 				EB87BD3518E09E220080FA55 /* AEViewController.m */,
-				EB16159019718EF900B9C35C /* AEHangarViewController.h */,
-				EB16159119718EF900B9C35C /* AEHangarViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -284,8 +276,6 @@
 		EB1615931971B53800B9C35C /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				EB1615961971B59000B9C35C /* AEHangarItemTableViewCell.h */,
-				EB1615971971B59000B9C35C /* AEHangarItemTableViewCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -308,8 +298,8 @@
 		EB212E391945E072000D1A3E /* Actors */ = {
 			isa = PBXGroup;
 			children = (
-				EBD57B8018E21CAD00D5A61E /* AEActorsManager.h */,
-				EBD57B8118E21CAD00D5A61E /* AEActorsManager.m */,
+				EBD57B8018E21CAD00D5A61E /* AEGameManager.h */,
+				EBD57B8118E21CAD00D5A61E /* AEGameManager.m */,
 				EB87BD6318E0DE960080FA55 /* PPSpriteNode.h */,
 				EB87BD6418E0DE960080FA55 /* PPSpriteNode.m */,
 				EB87BD5D18E0DE770080FA55 /* PPMainAirplane.h */,
@@ -616,13 +606,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB1615991971B59000B9C35C /* AEHangarItemTableViewCell.m in Sources */,
 				EB87BD3918E09E220080FA55 /* AEGameScene.m in Sources */,
 				EB212E341945A748000D1A3E /* AEMenuScene.m in Sources */,
-				EBD57B8218E21CAD00D5A61E /* AEActorsManager.m in Sources */,
+				EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */,
 				EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */,
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
-				EB16159219718EF900B9C35C /* AEHangarViewController.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB26ED16195C82F8008FF5A1 /* SKButtonNode+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,

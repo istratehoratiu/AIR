@@ -14,7 +14,7 @@
 #import "PPMainAirplane.h"
 #import "PPMissile.h"
 #import "PPConstants.h"
-#import "AEActorsManager.h"
+#import "AEGameManager.h"
 #import "Joystick.h"
 #import "AEMenuScene.h"
 #import "AEGameOverScene.h"
@@ -35,6 +35,8 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        [[AEGameManager sharedManager] setCurrentScene:AESceneGame];
         
         background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
@@ -89,15 +91,6 @@
         SKAction *updateMissileStatus = [SKAction sequence:@[waitForMissileHaywire,haywireMissile]];
         
         [self runAction:[SKAction repeatActionForever:updateMissileStatus]];
-        
-        //load explosions
-        SKTextureAtlas *explosionAtlas = [SKTextureAtlas atlasNamed:@"EXPLOSION"];
-        NSArray *textureNames = [explosionAtlas textureNames];
-        _explosionTextures = [NSMutableArray new];
-        for (NSString *name in textureNames) {
-            SKTexture *texture = [explosionAtlas textureNamed:name];
-            [_explosionTextures addObject:texture];
-        }
         
         SKButtonNode *backButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"restart.png" selected:@"restart_down.png"];
         [backButton setPosition:CGPointMake(self.size.width - 100, 150)];

@@ -15,6 +15,8 @@
 #import "AEHangarItemSprite.h"
 #import "NSObject+Additions.h"
 #import "AEAppDelegate.h"
+#import "AEGameManager.h"
+
 
 #define SHOP_ITEMS_DISTANCE 30
 
@@ -22,6 +24,8 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        [[AEGameManager sharedManager] setCurrentScene:AESceneHangar];
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background.png"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));

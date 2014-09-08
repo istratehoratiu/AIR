@@ -14,6 +14,14 @@ typedef enum {
     kPPFlyStraight
 } PPFlightDirection;
 
+
+typedef enum {
+    AESceneMenu,
+    AESceneGame,
+    AESceneGameOver,
+    AESceneHangar
+} AEScene;
+
 // Shop
 typedef enum {
     AEShopItemBuyCredits1,

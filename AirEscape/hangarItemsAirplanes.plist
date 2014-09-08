@@ -4,6 +4,12 @@
 <dict>
 	<key>0</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -19,6 +25,12 @@
 	</dict>
 	<key>1</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>9</integer>
 		<key>title</key>
@@ -34,6 +46,12 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>10</integer>
 		<key>title</key>
@@ -49,6 +67,12 @@
 	</dict>
 	<key>3</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -64,6 +88,12 @@
 	</dict>
 	<key>4</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -79,6 +109,12 @@
 	</dict>
 	<key>5</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -94,6 +130,12 @@
 	</dict>
 	<key>6</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -109,6 +151,12 @@
 	</dict>
 	<key>7</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -124,6 +172,12 @@
 	</dict>
 	<key>8</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>
@@ -139,6 +193,12 @@
 	</dict>
 	<key>9</key>
 	<dict>
+		<key>straightFlyImage</key>
+		<string>PLANE 1 N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_R.png</string>
 		<key>ID</key>
 		<integer>8</integer>
 		<key>title</key>

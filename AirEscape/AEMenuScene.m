@@ -12,11 +12,11 @@
 #import "PPMainAirplane.h"
 #import "PPMath.h"
 #import "SKButtonNode+Additions.h"
-#import "AEHangarViewController.h"
 #import "AEGameOverScene.h"
 #import "AEGameScene.h"
 #import "AEHangarScene.h"
 #import "Appirater.h"
+#import "AEGameManager.h"
 
 
 #define kNumberOfDecorAirplanes 5
@@ -25,6 +25,8 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        [[AEGameManager sharedManager] setCurrentScene:AESceneMenu];
         
         background = [SKSpriteNode spriteNodeWithImageNamed:@"background.png"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));

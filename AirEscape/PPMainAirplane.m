@@ -15,7 +15,7 @@
 #import "AEGameScene.h"
 #import "NSObject+Additions.h"
 #import "AEAppDelegate.h"
-#import "AEActorsManager.h"
+#import "AEGameManager.h"
 #import "Joystick.h"
 #import "SKShapeNode+Additions.h"
 
@@ -27,7 +27,7 @@
 
 
 - (id)initMainAirplane {
-    self = [super initWithTexture:[[[self appDelegate] atlas] textureNamed:@"plane_N.png"]];
+    self = [super initWithTexture:[AEGameManager sharedManager].straighFlightTexture];
     
     if (self) {
         
@@ -122,7 +122,7 @@
     
     _normalizedDirectionVector = targetVector;
     
-    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEActorsManager sharedManager] getMainAirplaneSpeed]);
+    CGPoint targetPerSecond = skPointsMultiply(targetVector, [[AEGameManager sharedManager] getMainAirplaneSpeed]);
 
     CGPoint actualTarget = skPointsAdd(self.position, skPointsMultiply(targetPerSecond, dt));
     
@@ -131,18 +131,18 @@
 }
 
 - (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
-    [self setZRotation:self.zRotation + ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+    [self setZRotation:self.zRotation + ([[AEGameManager sharedManager] mainAirplaneManevrability] * dt)];
     
-    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_L.png"];
+    self.texture = [AEGameManager sharedManager].leftFlightTexture;
     
     _shadow.zRotation = self.zRotation;
 }
 
 - (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
     
-    [self setZRotation:self.zRotation - ([[AEActorsManager sharedManager] mainAirplaneManevrability] * dt)];
+    [self setZRotation:self.zRotation - ([[AEGameManager sharedManager] mainAirplaneManevrability] * dt)];
     
-    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_R.png"];
+    self.texture = [AEGameManager sharedManager].rightFlightTexture;
     
     _shadow.zRotation = self.zRotation;
 }
@@ -166,7 +166,7 @@
                 
                 if (self.zRotation >= airplaneParent.joistick.angularVelocity) {
                     self.zRotation = airplaneParent.joistick.angularVelocity;
-                    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+                    self.texture = [AEGameManager sharedManager].straighFlightTexture;
                 }
                 
             } else if (self.zRotation > airplaneParent.joistick.angularVelocity) {
@@ -174,7 +174,7 @@
                 
                 if (self.zRotation <= airplaneParent.joistick.angularVelocity) {
                     self.zRotation = airplaneParent.joistick.angularVelocity;
-                    self.texture = [[[self appDelegate] atlas] textureNamed:@"plane_N.png"];
+                    self.texture = [AEGameManager sharedManager].straighFlightTexture;
                 }
             }
             
@@ -207,11 +207,11 @@
             differenceBetweenCurrentAndLastAngle = 1;
         }
         
-        [[AEActorsManager sharedManager] setMainAirplaneAcceleration: (kAEMainAirplaneAcceleration * dt)];
-        [[AEActorsManager sharedManager] setMainAirplaneManevrability: [AEActorsManager sharedManager].mainAirplaneManevrability + (kAEMainAirplaneManevrability * (0.3 * dt))];
+        [[AEGameManager sharedManager] setMainAirplaneAcceleration: (kAEMainAirplaneAcceleration * dt)];
+        [[AEGameManager sharedManager] setMainAirplaneManevrability: [AEGameManager sharedManager].mainAirplaneManevrability + (kAEMainAirplaneManevrability * (0.3 * dt))];
     } else {
-        [[AEActorsManager sharedManager] setMainAirplaneAcceleration: -(kAEMainAirplaneAcceleration * 1.5 * dt)];
-        [[AEActorsManager sharedManager] setMainAirplaneManevrability:[AEActorsManager sharedManager].mainAirplaneManevrability -(kAEMainAirplaneManevrability * 1.5 * dt)];
+        [[AEGameManager sharedManager] setMainAirplaneAcceleration: -(kAEMainAirplaneAcceleration * 1.5 * dt)];
+        [[AEGameManager sharedManager] setMainAirplaneManevrability:[AEGameManager sharedManager].mainAirplaneManevrability -(kAEMainAirplaneManevrability * 1.5 * dt)];
     }
     
     _lastOrientation = self.zRotation;

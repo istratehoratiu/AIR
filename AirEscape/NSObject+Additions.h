@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class AEAppDelegate;
+#import "AEAppDelegate.h"
 
 @interface NSObject (Additions)
 

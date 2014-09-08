@@ -11,8 +11,8 @@
 #import "AEGameOverStatisticsSprite.h"
 #import "AEGameScene.h"
 #import "Appirater.h"
-#import "AEHangarViewController.h"
 #import "AEHangarScene.h"
+#import "AEGameManager.h"
 
 
 #define kAEDurationOfGameOverLabelAnimation 1
@@ -27,6 +27,8 @@
 
 -(id)initWithSize:(CGSize)size score:(NSInteger)score {
     if (self = [super initWithSize:size]) {
+        
+        [[AEGameManager sharedManager] setCurrentScene:AESceneGameOver];
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));

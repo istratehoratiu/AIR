@@ -20,27 +20,11 @@
 @interface AEGameScene : SKScene {
     
     SKSpriteNode *background;
-    PPMainAirplane *_userAirplane;
-    CGFloat _scaleAirplane;
-    PPMainBase *_mainBase;
-    //PPHunterAirplane *_hunterAirplane;
-    
-    CFTimeInterval _lastUpdateTime;
-    CFTimeInterval _deltaTime;
-    
-    CGRect _screenRect;
-    CGFloat _screenHeight;
-    CGFloat _screenWidth;
-    
-    NSMutableArray *_arrayOfCurrentMissilesOnScreen;
-    
-    PPPositionIndicator *_positionIndicator;
-    BOOL _gameIsPaused;
-    SKButtonNode *_pauseButton;
-    SKButtonNode *_numberOfMissileOnScreen;
     
     Joystick *_joistick;
 }
+
+@property (nonatomic, assign) CGFloat airplaneWidth;
 @property (nonatomic, assign) CGFloat scaleAirplane;
 @property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;
 @property (nonatomic, retain)SKButtonNode* pauseButton;
@@ -48,7 +32,6 @@
 @property (nonatomic, assign) BOOL gameIsPaused;
 @property (nonatomic, retain) PPPositionIndicator *positionIndicator;
 @property (nonatomic, retain) PPMainAirplane *userAirplane;
-@property (nonatomic, retain) PPMainBase *mainBase;
 @property (nonatomic, assign) CGRect screenRect;
 @property (nonatomic, assign) CGFloat screenHeight;
 @property (nonatomic, assign) CGFloat screenWidth;

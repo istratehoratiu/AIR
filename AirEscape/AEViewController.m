@@ -11,6 +11,8 @@
 #import "AEMenuScene.h"
 #import "AEGameOverScene.h"
 #import <iAd/iAd.h>
+#import "AEGameManager.h"
+
 
 #define ADDBannerWidth 320
 #define ADDBannerHeight 50
@@ -24,6 +26,17 @@
 
 @implementation AEViewController
 
+- (void)viewDidLoad {
+
+    [[AEGameManager sharedManager] addObserver:self forKeyPath:@"currentScene" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+}
+
+- (void)dealloc {
+    [[AEGameManager sharedManager] removeObserver:self forKeyPath:@"cuurentScene"];
+}
+
+
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
@@ -34,9 +47,8 @@
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        _banner = [[ADBannerView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
+        _banner = [[ADBannerView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, _banner.frame.size.height, _banner.frame.size.width, _banner.frame.size.height)];
         _banner.delegate = self;
-        //[_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
         _addBannerIsHidden = YES;
         
         // Create and configure the scene.
@@ -79,7 +91,10 @@
 }
 
 - (void)showADDS {
-    if (_addBannerIsHidden) {
+    
+    AEScene currentScene = [AEGameManager sharedManager].currentScene;
+    
+    if (_addBannerIsHidden && (currentScene != AESceneHangar) && (currentScene != AESceneGame)) {
         
         SKView * skView = (SKView *)self.view;
         if (
@@ -102,12 +117,36 @@
     if (!_addBannerIsHidden) {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
         // Assumes the banner view is placed at the bottom of the screen.
-        [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, 0, -_banner.frame.size.width, _banner.frame.size.height)];
+        [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, -_banner.frame.size.height, _banner.frame.size.width, _banner.frame.size.height)];
+        
+        //[_banner removeFromSuperview];
         
         _addBannerIsHidden = YES;
         
         [UIView commitAnimations];
     }
+}
+
+
+#pragma mark - KVO -
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+
+    if ([keyPath isEqualToString:@"currentScene"]) {
+        switch ([object currentScene]) {
+            case AESceneMenu:
+            case AESceneGameOver:
+                [self showADDS];
+                break;
+            case AESceneHangar:
+            case AESceneGame:
+                [self hideADDS];
+                break;
+            default:
+                break;
+        }
+    }
+    
 }
 
 @end

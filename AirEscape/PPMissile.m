@@ -10,7 +10,7 @@
 #import "SKSpriteNode+Additions.h"
 #import "PPMath.h"
 #import "PPConstants.h"
-#import "AEActorsManager.h"
+#import "AEGameManager.h"
 
 
 @implementation PPMissile
@@ -41,7 +41,7 @@
     
     CGPoint targetVector =  normalizeVector(offset);
     
-    CGFloat missileSpeed = _missileHasGoneHaywire ? kAEMissileHaywireSpeed : [[AEActorsManager sharedManager] getMissileSpeed];
+    CGFloat missileSpeed = _missileHasGoneHaywire ? kAEMissileHaywireSpeed : [[AEGameManager sharedManager] getMissileSpeed];
     
     CGPoint targetPerSecond = skPointsMultiply(targetVector, missileSpeed);
 
@@ -64,7 +64,7 @@
 
 - (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
     
-    CGFloat missileManevrability = _missileHasGoneHaywire ? kAEMissileHaywireManevrability : [[AEActorsManager sharedManager] missileManevrability];
+    CGFloat missileManevrability = _missileHasGoneHaywire ? kAEMissileHaywireManevrability : [[AEGameManager sharedManager] missileManevrability];
     
     [self setZRotation:self.zRotation + (missileManevrability * dt)];
     
@@ -81,7 +81,7 @@
 
 - (void)rotateToRightIfAllowedOrGoStraight:(CFTimeInterval)dt {
     
-    CGFloat missileManevrability = _missileHasGoneHaywire ? kAEMissileHaywireManevrability : [[AEActorsManager sharedManager] missileManevrability];
+    CGFloat missileManevrability = _missileHasGoneHaywire ? kAEMissileHaywireManevrability : [[AEGameManager sharedManager] missileManevrability];
     
     CGPoint lineSource = [self.parent convertPoint:CGPointMake(0, 0) fromNode:self];
     CGPoint lineEnd = [self.parent convertPoint:CGPointMake(0, self.size.height) fromNode:self];
@@ -118,11 +118,11 @@
                 differenceBetweenCurrentAndLastAngle = 1;
             }
             
-            [[AEActorsManager sharedManager] setMissileAcceleration: -(kAEMissileAcceleration * dt)];
-            [[AEActorsManager sharedManager] setMissileManevrability: [AEActorsManager sharedManager].missileManevrability + (kAEMissileManevrability * (0.3 * dt))];
+            [[AEGameManager sharedManager] setMissileAcceleration: -(kAEMissileAcceleration * dt)];
+            [[AEGameManager sharedManager] setMissileManevrability: [AEGameManager sharedManager].missileManevrability + (kAEMissileManevrability * (0.3 * dt))];
         } else {
-            [[AEActorsManager sharedManager] setMissileAcceleration: +(kAEMissileAcceleration * dt)];
-            [[AEActorsManager sharedManager] setMissileManevrability:[AEActorsManager sharedManager].missileManevrability -(kAEMissileManevrability * 1.5 * dt)];
+            [[AEGameManager sharedManager] setMissileAcceleration: +(kAEMissileAcceleration * dt)];
+            [[AEGameManager sharedManager] setMissileManevrability:[AEGameManager sharedManager].missileManevrability -(kAEMissileManevrability * 1.5 * dt)];
         }
 
         _lastOrientation = self.zRotation;
