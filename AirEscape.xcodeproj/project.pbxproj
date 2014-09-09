@@ -20,9 +20,6 @@
 		EB48A2F41986C6A5003EE36C /* AEShopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48A2F31986C6A5003EE36C /* AEShopItem.m */; };
 		EB66E8A1198959A700690375 /* AEHangarScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB66E8A0198959A700690375 /* AEHangarScene.m */; };
 		EB743D16198CFD4800E5CE3D /* AEHangarItemSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EB743D15198CFD4800E5CE3D /* AEHangarItemSprite.m */; };
-		EB743D1C198D2FC600E5CE3D /* hangarItemsCredits.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB743D19198D2FC600E5CE3D /* hangarItemsCredits.plist */; };
-		EB743D1D198D2FC600E5CE3D /* hangarItemsTrails.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB743D1A198D2FC600E5CE3D /* hangarItemsTrails.plist */; };
-		EB743D1E198D2FC600E5CE3D /* hangarItemsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB743D1B198D2FC600E5CE3D /* hangarItemsAirplanes.plist */; };
 		EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */; };
 		EB87BD1B18E09E220080FA55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1A18E09E220080FA55 /* Foundation.framework */; };
 		EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */; };
@@ -49,11 +46,12 @@
 		EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6918E0DEA60080FA55 /* PPConstants.m */; };
 		EB87BD6E18E0DEA60080FA55 /* SKButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */; };
 		EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */; };
-		EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */; };
-		EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB87BD7418E0E7510080FA55 /* Clouds.atlas */; };
 		EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */; };
 		EB88F79019BE67CF004E7EAD /* hangarItemsTrails.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F78D19BE67CF004E7EAD /* hangarItemsTrails.plist */; };
-		EB88F79119BE67CF004E7EAD /* hangarItemsTrailsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F78E19BE67CF004E7EAD /* hangarItemsTrailsAirplanes.plist */; };
+		EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */; };
+		EB88F79719BE7A57004E7EAD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB88F79619BE7A57004E7EAD /* spark.png */; };
+		EB88F7A219BE80B5004E7EAD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EB88F7A019BE80B5004E7EAD /* background.png */; };
+		EB88F7A319BE80B5004E7EAD /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB88F7A119BE80B5004E7EAD /* background@2x.png */; };
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
 		EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298318E0EBC7004DAD8F /* Fire.sks */; };
 		EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */; };
@@ -98,9 +96,6 @@
 		EB66E8A0198959A700690375 /* AEHangarScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEHangarScene.m; sourceTree = "<group>"; };
 		EB743D14198CFD4800E5CE3D /* AEHangarItemSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEHangarItemSprite.h; path = AirEscape/AEHangarItemSprite.h; sourceTree = "<group>"; };
 		EB743D15198CFD4800E5CE3D /* AEHangarItemSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AEHangarItemSprite.m; path = AirEscape/AEHangarItemSprite.m; sourceTree = "<group>"; };
-		EB743D19198D2FC600E5CE3D /* hangarItemsCredits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsCredits.plist; sourceTree = "<group>"; };
-		EB743D1A198D2FC600E5CE3D /* hangarItemsTrails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsTrails.plist; sourceTree = "<group>"; };
-		EB743D1B198D2FC600E5CE3D /* hangarItemsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsAirplanes.plist; sourceTree = "<group>"; };
 		EB7966D018E1FF5D00D2669C /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		EB87BD1718E09E220080FA55 /* AirEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,11 +137,12 @@
 		EB87BD6B18E0DEA60080FA55 /* SKButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKButtonNode.m; path = AirEscape/SKButtonNode.m; sourceTree = "<group>"; };
 		EB87BD6F18E0DF8F0080FA55 /* SKEmitterNode+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+Utilities.h"; sourceTree = "<group>"; };
 		EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+Utilities.m"; sourceTree = "<group>"; };
-		EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EXPLOSION.atlas; sourceTree = "<group>"; };
-		EB87BD7418E0E7510080FA55 /* Clouds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Clouds.atlas; sourceTree = "<group>"; };
 		EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsCredits.plist; sourceTree = "<group>"; };
 		EB88F78D19BE67CF004E7EAD /* hangarItemsTrails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsTrails.plist; sourceTree = "<group>"; };
-		EB88F78E19BE67CF004E7EAD /* hangarItemsTrailsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsTrailsAirplanes.plist; sourceTree = "<group>"; };
+		EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsAirplanes.plist; sourceTree = "<group>"; };
+		EB88F79619BE7A57004E7EAD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		EB88F7A019BE80B5004E7EAD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		EB88F7A119BE80B5004E7EAD /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joystick.h; path = AirEscape/Joystick.h; sourceTree = "<group>"; };
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joystick.m; path = AirEscape/Joystick.m; sourceTree = "<group>"; };
 		EBA6298318E0EBC7004DAD8F /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
@@ -330,22 +326,20 @@
 			isa = PBXGroup;
 			children = (
 				EB88F78B19BE67CF004E7EAD /* Plist Files */,
-				EB743D19198D2FC600E5CE3D /* hangarItemsCredits.plist */,
-				EB743D1A198D2FC600E5CE3D /* hangarItemsTrails.plist */,
-				EB743D1B198D2FC600E5CE3D /* hangarItemsAirplanes.plist */,
 				EB87BD3C18E09E220080FA55 /* Images.xcassets */,
 				EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */,
 				EBA6298718E0EBD0004DAD8F /* trail.sks */,
+				EB88F79619BE7A57004E7EAD /* spark.png */,
 				EBA6298818E0EBD0004DAD8F /* explosion.sks */,
 				EBA6298918E0EBD0004DAD8F /* bulletHit.sks */,
 				EBA6298318E0EBC7004DAD8F /* Fire.sks */,
 				EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */,
-				EB87BD7318E0E7510080FA55 /* EXPLOSION.atlas */,
-				EB87BD7418E0E7510080FA55 /* Clouds.atlas */,
 				EB87BD2418E09E220080FA55 /* AirEscape-Info.plist */,
 				EB87BD2518E09E220080FA55 /* InfoPlist.strings */,
 				EB87BD2818E09E220080FA55 /* main.m */,
 				EB87BD2A18E09E220080FA55 /* AirEscape-Prefix.pch */,
+				EB88F7A019BE80B5004E7EAD /* background.png */,
+				EB88F7A119BE80B5004E7EAD /* background@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -388,9 +382,9 @@
 		EB88F78B19BE67CF004E7EAD /* Plist Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */,
 				EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */,
 				EB88F78D19BE67CF004E7EAD /* hangarItemsTrails.plist */,
-				EB88F78E19BE67CF004E7EAD /* hangarItemsTrailsAirplanes.plist */,
 			);
 			path = "Plist Files";
 			sourceTree = "<group>";
@@ -503,27 +497,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB743D1C198D2FC600E5CE3D /* hangarItemsCredits.plist in Resources */,
+				EB88F7A319BE80B5004E7EAD /* background@2x.png in Resources */,
 				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
-				EB87BD7718E0E7510080FA55 /* Clouds.atlas in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */,
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
+				EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */,
+				EB88F7A219BE80B5004E7EAD /* background.png in Resources */,
 				EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */,
 				EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */,
 				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,
-				EB88F79119BE67CF004E7EAD /* hangarItemsTrailsAirplanes.plist in Resources */,
-				EB87BD7618E0E7510080FA55 /* EXPLOSION.atlas in Resources */,
-				EB743D1D198D2FC600E5CE3D /* hangarItemsTrails.plist in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EB88F79019BE67CF004E7EAD /* hangarItemsTrails.plist in Resources */,
 				EB87BD3018E09E220080FA55 /* Main_iPhone.storyboard in Resources */,
 				EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */,
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
-				EB743D1E198D2FC600E5CE3D /* hangarItemsAirplanes.plist in Resources */,
+				EB88F79719BE7A57004E7EAD /* spark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,12 +56,6 @@
         _shadow = [[SKSpriteNode alloc] initWithTexture:[[[self appDelegate] atlas] textureNamed:@"plane_shadow.png"]];
         
         _flightDirection = kPPFlyStraight;
-        
-        circle = [[SKShapeNode alloc] init];
-        [self addChild:circle];
-        circle.physicsBody.dynamic = NO;
-        [circle drawCircleAtPoint:CGPointZero withRadius:10];
-
     }
 
     return self;

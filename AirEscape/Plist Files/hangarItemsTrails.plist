@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Smoke High</key>
+	<key>0</key>
 	<dict>
 		<key>ID</key>
 		<integer>5</integer>
@@ -11,13 +11,13 @@
 		<key>thumbnailImage</key>
 		<string>spark.png</string>
 		<key>price</key>
-		<integer>0</integer>
+		<integer>100</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
 		<false/>
 	</dict>
-	<key>Smoke Medium</key>
+	<key>1</key>
 	<dict>
 		<key>ID</key>
 		<integer>6</integer>
@@ -32,7 +32,7 @@
 		<key>isUsed</key>
 		<false/>
 	</dict>
-	<key>Smoke Low</key>
+	<key>2</key>
 	<dict>
 		<key>ID</key>
 		<integer>7</integer>
@@ -47,44 +47,14 @@
 		<key>isUsed</key>
 		<false/>
 	</dict>
-	<key>Airplane High</key>
+	<key>3</key>
 	<dict>
 		<key>ID</key>
-		<integer>8</integer>
+		<integer>7</integer>
 		<key>Title</key>
 		<string>Title</string>
 		<key>thumbnailImage</key>
-		<string>PLANE 1 N.png</string>
-		<key>price</key>
-		<integer>0</integer>
-		<key>isBought</key>
-		<false/>
-		<key>isUsed</key>
-		<false/>
-	</dict>
-	<key>Airplane Medium</key>
-	<dict>
-		<key>ID</key>
-		<integer>9</integer>
-		<key>Title</key>
-		<string>Title</string>
-		<key>thumbnailImage</key>
-		<string>PLANE 1 N.png</string>
-		<key>price</key>
-		<integer>0</integer>
-		<key>isBought</key>
-		<false/>
-		<key>isUsed</key>
-		<false/>
-	</dict>
-	<key>Airplane Low</key>
-	<dict>
-		<key>ID</key>
-		<integer>10</integer>
-		<key>Title</key>
-		<string>Title</string>
-		<key>thumbnailImage</key>
-		<string>PLANE 1 N.png</string>
+		<string>spark.png</string>
 		<key>price</key>
 		<integer>0</integer>
 		<key>isBought</key>

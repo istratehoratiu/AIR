@@ -24,6 +24,7 @@
     //[Appirater userDidSignificantEvent:NO];
     
     
+    // In order to be able to modify and save a plist we must move to the apps file system, do this at launch if it was not already done.
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
     NSString *documentsDirectory = [paths objectAtIndex:0]; //2
@@ -39,6 +40,7 @@
     }
     
     
+    [[AEGameManager sharedManager] updateMainAirplaneImages];
     return YES;
 }
 							
@@ -62,8 +64,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    [[AEGameManager sharedManager] updateMainAirplaneImages];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
