@@ -32,48 +32,46 @@
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.blendMode = SKBlendModeReplace;
         [self addChild:background];
-    }
-    
-    
-    _arrayOfDecorAirplanes = [NSMutableArray array];
-    
-    startGame = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
-    [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 + 200)];
-    [startGame.title setFontName:@"Chalkduster"];
-    [startGame.title setFontSize:45.0];
-    startGame.title.text = @"Missile Evasion";
-    startGame.zPosition = 1;
-    [self addChild:startGame];
-
-    for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
-        PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplane];
-        decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
-        decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
-        decorAirplane.zRotation = getRandomNumberBetween(0, 3);
-        //decorAirplane.isDecorActor = YES;
-        decorAirplane.isAutopilotON = YES;
         
-        [_arrayOfDecorAirplanes addObject:decorAirplane];
+        _arrayOfDecorAirplanes = [NSMutableArray array];
         
-        [self addChild:decorAirplane];
+        for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
+            PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplane];
+            decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
+            decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
+            decorAirplane.zRotation = getRandomNumberBetween(0, 3);
+            //decorAirplane.isDecorActor = YES;
+            decorAirplane.isAutopilotON = YES;
+            
+            [_arrayOfDecorAirplanes addObject:decorAirplane];
+            
+            [self addChild:decorAirplane];
+        }
+        
+        startGame = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 + 100)];
+        [startGame.title setFontName:@"Chalkduster"];
+        [startGame.title setFontSize:60.0];
+        startGame.title.text = @"Missile Evasion";
+        startGame.zPosition = 1;
+        [self addChild:startGame];
+        
+        SKButtonNode *rateButton = [SKButtonNode getRateButton];
+        [rateButton setPosition:CGPointMake(self.size.width / 2 - 250, self.size.height / 2 - 150)];
+        [rateButton setTouchUpInsideTarget:self action:@selector(rateGame)];
+        
+        SKButtonNode *playButton = [SKButtonNode getPlayButton];
+        [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 150)];
+        [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
+        
+        SKButtonNode *hangarButton = [SKButtonNode getHangarButton];
+        [hangarButton setPosition:CGPointMake(self.size.width / 2 + 250, self.size.height / 2 - 150)];
+        [hangarButton setTouchUpInsideTarget:self action:@selector(goToHangar)];
+        
+        [self addChild:playButton];
+        [self addChild:hangarButton];
+        [self addChild:rateButton];
     }
-    
-    SKButtonNode *playButton = [SKButtonNode getPlayButton];
-    [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 100)];
-    [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
-    
-    SKButtonNode *hangarButton = [SKButtonNode getHangarButton];
-    [hangarButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 200)];
-    [hangarButton setTouchUpInsideTarget:self action:@selector(goToHangar)];
-    
-    
-    SKButtonNode *rateButton = [SKButtonNode getRateButton];
-    [rateButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 300)];
-    [rateButton setTouchUpInsideTarget:self action:@selector(rateGame)];
-    
-    [self addChild:playButton];
-    [self addChild:hangarButton];
-    [self addChild:rateButton];
     
     return self;
 }
@@ -124,24 +122,27 @@
 }
 
 - (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {
+    
+    static NSInteger airplaneOffset = 15;
+    
     // Check with X
-    if (actor.position.x < 45) {
-        actor.position = CGPointMake(self.size.width - 55 , actor.position.y);
+    if (actor.position.x < -airplaneOffset) {
+        actor.position = CGPointMake(self.size.width + airplaneOffset , actor.position.y);
         return;
     }
     // Check with X + Width
-    if (actor.position.x > self.size.width - 45) {
-        actor.position = CGPointMake(110.0, actor.position.y);
+    if (actor.position.x > self.size.width + airplaneOffset) {
+        actor.position = CGPointMake(-airplaneOffset, actor.position.y);
         return;
     }
     // Check with Y
-    if (actor.position.y < 45) {
-        actor.position = CGPointMake(actor.position.x, self.size.height - 55);
+    if (actor.position.y < -airplaneOffset) {
+        actor.position = CGPointMake(actor.position.x, self.size.height + airplaneOffset);
         return;
     }
     //Check with Y + Height
-    if (actor.position.y > self.size.height - 45) {
-        actor.position = CGPointMake(actor.position.x, 55);
+    if (actor.position.y > self.size.height + airplaneOffset) {
+        actor.position = CGPointMake(actor.position.x, -airplaneOffset);
         return;
     }
 }

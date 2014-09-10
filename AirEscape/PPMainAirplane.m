@@ -53,7 +53,7 @@
 
         self.zPosition = 1;
         
-        _shadow = [[SKSpriteNode alloc] initWithTexture:[[[self appDelegate] atlas] textureNamed:@"plane_shadow.png"]];
+        _shadow = [[SKSpriteNode alloc] initWithTexture:[[[self appDelegate] atlas] textureNamed:@"plane_1_shadow.png"]];
         
         _flightDirection = kPPFlyStraight;
     }

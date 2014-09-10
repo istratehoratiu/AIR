@@ -45,17 +45,7 @@
     self = [super initWithImageNamed:name];
     
     if (self) {
-        _flightDirection = kPPFlyStraight;
-        
-        _lockOnCrosshair = [[SKSpriteNode alloc] initWithImageNamed:@"crosshair.png"];
-        
-        SKAction *zoom          = [SKAction scaleTo:.5 duration:1];
-        SKAction *oneRevolution = [SKAction rotateByAngle:-M_PI*2 duration:1];
-        
-        [self setUserInteractionEnabled:YES];
-        
-        _lockOnAnimation    = [SKAction group:@[zoom, oneRevolution]];
-        
+        _flightDirection            = kPPFlyStraight;
         _isAutopilotON              = NO;
         _startedUpdatingAutopilot   = NO;
     }

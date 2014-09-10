@@ -92,30 +92,12 @@
         
         [self runAction:[SKAction repeatActionForever:updateMissileStatus]];
         
-        SKButtonNode *backButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"restart.png" selected:@"restart_down.png"];
-        [backButton setPosition:CGPointMake(self.size.width - 100, 150)];
-        [backButton.title setFontName:@"Chalkduster"];
-        [backButton.title setFontSize:20.0];
-        [backButton setTouchUpInsideTarget:self action:@selector(restartScene)];
-        backButton.zPosition = 1000;
-        //[self addChild:backButton];
-        
         _numberOfMissileOnScreen = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [_numberOfMissileOnScreen setPosition:CGPointMake(self.size.width - 100, 100)];
         [_numberOfMissileOnScreen.title setFontName:@"Chalkduster"];
         [_numberOfMissileOnScreen.title setFontSize:40.0];
         [_numberOfMissileOnScreen.title setText:@"0"];
-        _numberOfMissileOnScreen.zPosition = 1000;
         [self addChild:_numberOfMissileOnScreen];
-        
-        _pauseButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"play.png" selected:@"play.png"];
-        [_pauseButton setPosition:CGPointMake(self.size.width - (_pauseButton.size.width * 0.5), self.size.height - (_pauseButton.size.height * 0.5))];
-        [_pauseButton.title setFontName:@"Chalkduster"];
-        [_pauseButton.title setFontSize:10.0];
-        [_pauseButton.title setText:@""];
-        [_pauseButton setTouchUpInsideTarget:self action:@selector(pauseGame)];
-        _pauseButton.zPosition = 1000;
-        //[self addChild:_pauseButton];
         
         
         SKSpriteNode *jsThumb = [SKSpriteNode spriteNodeWithImageNamed:@"joystick"];

@@ -50,8 +50,6 @@
 		EB88F79019BE67CF004E7EAD /* hangarItemsTrails.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F78D19BE67CF004E7EAD /* hangarItemsTrails.plist */; };
 		EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */; };
 		EB88F79719BE7A57004E7EAD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EB88F79619BE7A57004E7EAD /* spark.png */; };
-		EB88F7A219BE80B5004E7EAD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EB88F7A019BE80B5004E7EAD /* background.png */; };
-		EB88F7A319BE80B5004E7EAD /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB88F7A119BE80B5004E7EAD /* background@2x.png */; };
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
 		EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298318E0EBC7004DAD8F /* Fire.sks */; };
 		EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298418E0EBC7004DAD8F /* DamageSmoke.sks */; };
@@ -59,6 +57,8 @@
 		EBA6298B18E0EBD0004DAD8F /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298818E0EBD0004DAD8F /* explosion.sks */; };
 		EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBA6298918E0EBD0004DAD8F /* bulletHit.sks */; };
 		EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEGameManager.m */; };
+		EBD97DE119BFB1580093DEFC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD97DDF19BFB1580093DEFC /* background.png */; };
+		EBD97DE219BFB1580093DEFC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD97DE019BFB1580093DEFC /* background@2x.png */; };
 		EBF88FD719603A05007B8812 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF88FD619603A05007B8812 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +141,6 @@
 		EB88F78D19BE67CF004E7EAD /* hangarItemsTrails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsTrails.plist; sourceTree = "<group>"; };
 		EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsAirplanes.plist; sourceTree = "<group>"; };
 		EB88F79619BE7A57004E7EAD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		EB88F7A019BE80B5004E7EAD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		EB88F7A119BE80B5004E7EAD /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joystick.h; path = AirEscape/Joystick.h; sourceTree = "<group>"; };
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joystick.m; path = AirEscape/Joystick.m; sourceTree = "<group>"; };
 		EBA6298318E0EBC7004DAD8F /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
@@ -152,6 +150,8 @@
 		EBA6298918E0EBD0004DAD8F /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
 		EBD57B8018E21CAD00D5A61E /* AEGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEGameManager.h; sourceTree = "<group>"; };
 		EBD57B8118E21CAD00D5A61E /* AEGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEGameManager.m; sourceTree = "<group>"; };
+		EBD97DDF19BFB1580093DEFC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		EBD97DE019BFB1580093DEFC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		EBF88FD619603A05007B8812 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -330,6 +330,8 @@
 				EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */,
 				EBA6298718E0EBD0004DAD8F /* trail.sks */,
 				EB88F79619BE7A57004E7EAD /* spark.png */,
+				EBD97DDF19BFB1580093DEFC /* background.png */,
+				EBD97DE019BFB1580093DEFC /* background@2x.png */,
 				EBA6298818E0EBD0004DAD8F /* explosion.sks */,
 				EBA6298918E0EBD0004DAD8F /* bulletHit.sks */,
 				EBA6298318E0EBC7004DAD8F /* Fire.sks */,
@@ -338,8 +340,6 @@
 				EB87BD2518E09E220080FA55 /* InfoPlist.strings */,
 				EB87BD2818E09E220080FA55 /* main.m */,
 				EB87BD2A18E09E220080FA55 /* AirEscape-Prefix.pch */,
-				EB88F7A019BE80B5004E7EAD /* background.png */,
-				EB88F7A119BE80B5004E7EAD /* background@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -497,7 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB88F7A319BE80B5004E7EAD /* background@2x.png in Resources */,
+				EBD97DE219BFB1580093DEFC /* background@2x.png in Resources */,
 				EBA6298518E0EBC7004DAD8F /* Fire.sks in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
@@ -505,7 +505,7 @@
 				EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */,
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
 				EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */,
-				EB88F7A219BE80B5004E7EAD /* background.png in Resources */,
+				EBD97DE119BFB1580093DEFC /* background.png in Resources */,
 				EBA6298A18E0EBD0004DAD8F /* trail.sks in Resources */,
 				EBA6298618E0EBC7004DAD8F /* DamageSmoke.sks in Resources */,
 				EBA6298C18E0EBD0004DAD8F /* bulletHit.sks in Resources */,

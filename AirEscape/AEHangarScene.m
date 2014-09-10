@@ -56,29 +56,20 @@
         [airplanesButton setPosition:CGPointMake(airplanesButton.size.width * 0.5 + 210, size.height - 100)];
         [airplanesButton setTouchUpInsideTarget:self action:@selector(airplanesButton)];
         airplanesButton.zPosition = 1000;
-        [self addChild:airplanesButton];
-        
-        SKButtonNode *enginesButton =  [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [enginesButton.title setFontName:@"Chalkduster"];
-        [enginesButton.title setFontSize:40.0];
-        [enginesButton.title setText:@"Engines"];
-        [enginesButton setPosition:CGPointMake(enginesButton.size.width * 0.5 + 410, size.height - 100)];
-        [enginesButton setTouchUpInsideTarget:self action:@selector(enginesButton)];
-        enginesButton.zPosition = 1000;
-        [self addChild:enginesButton];
+        // Uncomment this to add Airplane tab in Hangar.
+        //[self addChild:airplanesButton];
             
         SKButtonNode *getCreditsButton =  [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
         [getCreditsButton.title setFontName:@"Chalkduster"];
         [getCreditsButton.title setFontSize:40.0];
         [getCreditsButton.title setText:@"Credits"];
-        [getCreditsButton setPosition:CGPointMake(enginesButton.size.width * 0.5 + 810, size.height - 100)];
-        [getCreditsButton setTouchUpInsideTarget:self action:@selector(getCreditsButton)];
+        [getCreditsButton setPosition:CGPointMake(self.size.width - 150, size.height - 100)];
+        [getCreditsButton setTouchUpInsideTarget:self action:@selector(creditsButton)];
         getCreditsButton.zPosition = 1000;
         [self addChild:getCreditsButton];
         
         // Populate the dictionary with the itemSHopt items.
         //NSString *hangarItemsTrailsAirplanesPlistPath = [[NSBundle mainBundle] pathForResource:@"hangarItemsAirplanes" ofType:@"plist"];
-
         
         NSString *hangarItemsTrailsPlistPath = [[NSBundle mainBundle] pathForResource:@"hangarItemsTrails" ofType:@"plist"];
         _trailsShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:hangarItemsTrailsPlistPath];
@@ -89,7 +80,7 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateScreen:) name:kSGUpdateHangarScreenNotification object:nil];
         
-       [self airplanesButton];
+        [self airplanesButton];
     }
     
     return self;
@@ -210,7 +201,7 @@
     [self.scene.view presentScene: newScene transition: crossFade];
 }
 
-- (void)getCreditsButton {
+- (void)creditsButton {
     
     [_airplaneScrollingStrip removeAllChildren];
     

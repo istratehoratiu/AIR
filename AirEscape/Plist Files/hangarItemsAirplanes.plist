@@ -5,17 +5,17 @@
 	<key>0</key>
 	<dict>
 		<key>straightFlyImage</key>
-		<string>PLANE_1_N.png</string>
+		<string>plane_2_N.png</string>
 		<key>leftFlyImage</key>
-		<string>plane_L.png</string>
+		<string>plane_2_N.png</string>
 		<key>rightFlyImage</key>
-		<string>plane_R.png</string>
+		<string>plane_2_N.png</string>
 		<key>ID</key>
 		<integer>0</integer>
 		<key>title</key>
 		<string>F22</string>
 		<key>thumbnailImage</key>
-		<string>PLANE_1_N.png</string>
+		<string>plane_2_N.png</string>
 		<key>price</key>
 		<integer>0</integer>
 		<key>isBought</key>
@@ -26,17 +26,17 @@
 	<key>1</key>
 	<dict>
 		<key>straightFlyImage</key>
-		<string>PLANE_1_N.png</string>
+		<string>plane_3_N.png</string>
 		<key>leftFlyImage</key>
-		<string>plane_L.png</string>
+		<string>plane_3_N.png</string>
 		<key>rightFlyImage</key>
-		<string>plane_R.png</string>
+		<string>plane_3_N.png</string>
 		<key>ID</key>
 		<integer>1</integer>
 		<key>title</key>
 		<string>Sptifire</string>
 		<key>thumbnailImage</key>
-		<string>PLANE_2_N.png</string>
+		<string>plane_3_N.png</string>
 		<key>price</key>
 		<integer>0</integer>
 		<key>isBought</key>
@@ -47,17 +47,17 @@
 	<key>2</key>
 	<dict>
 		<key>straightFlyImage</key>
-		<string>plane_N.png</string>
+		<string>plane_1_N.png</string>
 		<key>leftFlyImage</key>
-		<string>plane_L.png</string>
+		<string>plane_1_L.png</string>
 		<key>rightFlyImage</key>
-		<string>plane_R.png</string>
+		<string>plane_1_R.png</string>
 		<key>ID</key>
 		<integer>2</integer>
 		<key>title</key>
 		<string>Albatros</string>
 		<key>thumbnailImage</key>
-		<string>PLANE_1_N.png</string>
+		<string>plane_1_N.png</string>
 		<key>price</key>
 		<integer>0</integer>
 		<key>isBought</key>
@@ -68,17 +68,17 @@
 	<key>3</key>
 	<dict>
 		<key>straightFlyImage</key>
-		<string>PLANE_1_N.png</string>
+		<string>plane_1_shadow.png</string>
 		<key>leftFlyImage</key>
-		<string>plane_L.png</string>
+		<string>plane_1_shadow.png</string>
 		<key>rightFlyImage</key>
-		<string>plane_R.png</string>
+		<string>plane_1_shadow.png</string>
 		<key>ID</key>
 		<integer>3</integer>
 		<key>title</key>
 		<string>F22</string>
 		<key>thumbnailImage</key>
-		<string>PLANE_1_N.png</string>
+		<string>plane_1_shadow.png</string>
 		<key>price</key>
 		<integer>0</integer>
 		<key>isBought</key>
