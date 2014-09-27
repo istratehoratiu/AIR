@@ -12,11 +12,12 @@
 @class AEButtonNode;
 @class PPMainAirplane;
 @class SKBlade;
+@class ShadowLabelNode;
 
 @interface AEMenuScene : SKScene {
 
     SKSpriteNode *background;
-    AEButtonNode *startGame;
+    ShadowLabelNode *gameNameLabel;
     
     CFTimeInterval _lastUpdateTime;
     CFTimeInterval _deltaTime;

@@ -24,8 +24,11 @@
 @property (nonatomic, assign) CGPoint normaliedDirectonVector;
 @property (nonatomic, strong) PPSpriteNode *targetAirplane;
 
-- (id)initMainAirplane ;
-
+- (id)initMainAirplane;
+- (id)initMainAirplaneOfType:(AEAirplaneType)airplaneType;
 - (CGPoint)currentDirection;
+
++ (SKTexture *)textureForMainAirplaneOfType:(AEAirplaneType)airplaneType;
++ (SKTexture *)textureForMainAirplaneShadowOfType:(AEAirplaneType)airplaneType;
 
 @end

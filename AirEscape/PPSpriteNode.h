@@ -18,21 +18,14 @@
     // point to which the sprite point to. the target of the movement(touch) in case of the main airplane
     CGPoint _targetPoint;
     BOOL _spriteFinishedOrientationRotation;
-    BOOL _isFiringBullets;
-    
+
     PPFlightDirection _flightDirection;
     
     CGFloat _health;
     CGFloat _speed;
     CGFloat _manevrability;
-    CGFloat _rateOfFire;
     CGFloat _damage;
-    NSUInteger _numberOfRockects;
     
-    SKSpriteNode *_lockOnCrosshair;
-    BOOL _isInProcessOfLockingIn;
-    BOOL _isLockedOnByEnemy;
-    BOOL _hasLockOnByEnemy;
     BOOL _isAutopilotON;
     
     SKAction *_lockOnAnimation;

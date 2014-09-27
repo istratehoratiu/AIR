@@ -35,6 +35,12 @@ typedef enum {
     AEHangarItemsCredits,
 } AEHangarItems;
 
+typedef enum {
+    AEAirplaneTypeAlbatros = 0,
+    AEAirplaneTypeSpitfire,
+    AEAirplaneTypeF22
+} AEAirplaneType;
+
 // Gameplay
 static const CGFloat kAEMainAirplaneManevrability    = 1.5;
 static const CGFloat kAEMaxMainAirplaneManevrability = 3.5;

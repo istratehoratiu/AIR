@@ -26,6 +26,24 @@
 @synthesize normaliedDirectonVector = _normalizedDirectionVector;
 
 
+- (id)initMainAirplaneOfType:(AEAirplaneType)airplaneType {
+    self = [super initWithTexture:[PPMainAirplane textureForMainAirplaneOfType:airplaneType]];
+    
+    if (self) {
+        
+        self.health = 1;
+        self.damage = 10;
+        
+        self.zPosition = 1;
+        
+        _shadow = [[SKSpriteNode alloc] initWithTexture:[PPMainAirplane textureForMainAirplaneShadowOfType:airplaneType]];
+        
+        _flightDirection = kPPFlyStraight;
+    }
+    
+    return self;
+}
+
 - (id)initMainAirplane {
     self = [super initWithTexture:[AEGameManager sharedManager].straighFlightTexture];
     
@@ -33,23 +51,6 @@
         
         self.health = 1;
         self.damage = 10;
-        self.rateOfFire = .2;
-        self.numberOfRockets = 10;
-        
-        SKSpriteNode *_propeller = [SKSpriteNode spriteNodeWithImageNamed:@"plane_propeller_1.png"];
-        _propeller.scale = 0.2;
-        _propeller.position = CGPointMake(self.position.x + 105, self.position.y );
-        
-        SKTexture *propeller1 = [[[self appDelegate] atlas] textureNamed:@"plane_propeller_1.png"];
-        SKTexture *propeller2 = [[[self appDelegate] atlas] textureNamed:@"plane_propeller_2.png"];
-        
-        SKAction *spin = [SKAction animateWithTextures:@[propeller1,propeller2] timePerFrame:0.1];
-        SKAction *spinForever = [SKAction repeatActionForever:spin];
-        [_propeller runAction:spinForever];
-        
-        _isFiringBullets = NO;
-        
-        [self addChild:_propeller];
 
         self.zPosition = 1;
         
@@ -79,11 +80,6 @@
     
 }
 
-- (void)stopFiring {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(fireBullet) object:nil];
-    _isFiringBullets = NO;
-}
-
 - (void)updateMove:(CFTimeInterval)dt {
     
     if (!_shadow.parent) {
@@ -101,7 +97,7 @@
         _smokeEmitter.targetNode = self.parent;
     }
     
-    _shadow.position = CGPointMake(self.position.x + 10, self.position.y + 10);
+    _shadow.position = CGPointMake(self.position.x + 20, self.position.y + 20);
     
     if (_smokeEmitter.parent) {
         _smokeEmitter.position = self.position;
@@ -214,5 +210,54 @@
 - (CGPoint)currentDirection {
     return [self.parent convertPoint:CGPointMake(self.size.width, 0) fromNode:self];
 }
+
++ (SKTexture *)textureForMainAirplaneOfType:(AEAirplaneType)airplaneType {
+    
+    SKTexture *mainAirplaneTexture = nil;
+    
+    switch (airplaneType) {
+        case AEAirplaneTypeAlbatros: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_1_N.png"];
+            break;
+        }
+        case AEAirplaneTypeSpitfire: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_2_N.png"];
+            break;
+        }
+        case AEAirplaneTypeF22: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_3_N.png"];
+            break;
+        }
+        default:
+            break;
+    }
+    
+    return mainAirplaneTexture;
+}
+
++ (SKTexture *)textureForMainAirplaneShadowOfType:(AEAirplaneType)airplaneType {
+    
+    SKTexture *mainAirplaneTexture = nil;
+    
+    switch (airplaneType) {
+        case AEAirplaneTypeAlbatros: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow1.png"];
+            break;
+        }
+        case AEAirplaneTypeSpitfire: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow2.png"];
+            break;
+        }
+        case AEAirplaneTypeF22: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow3.png"];
+            break;
+        }
+        default:
+            break;
+    }
+    
+    return mainAirplaneTexture;
+}
+
 
 @end

@@ -17,6 +17,7 @@
 #import "AEHangarScene.h"
 #import "Appirater.h"
 #import "AEGameManager.h"
+#import "ShadowLabelNode.h"
 
 
 #define kNumberOfDecorAirplanes 5
@@ -36,7 +37,7 @@
         _arrayOfDecorAirplanes = [NSMutableArray array];
         
         for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
-            PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplane];
+            PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplaneOfType:(AEAirplaneType)getRandomNumberBetween(0, 2)];
             decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
             decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
             decorAirplane.zRotation = getRandomNumberBetween(0, 3);
@@ -47,25 +48,26 @@
             
             [self addChild:decorAirplane];
         }
-        
-        startGame = [[AEButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
-        [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 + 100)];
-        [startGame.title setFontName:@"Chalkduster"];
-        [startGame.title setFontSize:60.0];
-        startGame.title.text = @"Missile Evasion";
-        startGame.zPosition = 1;
-        [self addChild:startGame];
-        
-        AEButtonNode *rateButton = [AEButtonNode getRateButton];
-        [rateButton setPosition:CGPointMake(self.size.width / 2 - 250, self.size.height / 2 - 150)];
-        [rateButton setTouchUpInsideTarget:self action:@selector(rateGame)];
+
+        gameNameLabel = [[ShadowLabelNode alloc] initWithFontNamed:@"If"];
+        gameNameLabel.text = @"Missile Evasion";
+        gameNameLabel.fontSize = 100;
+        gameNameLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
+        gameNameLabel.position = CGPointMake(self.size.width / 2, self.size.height / 2 + 100);
+        gameNameLabel.zPosition = 1000;
+        gameNameLabel.offset = CGPointMake(5, -5);
+        [self addChild:gameNameLabel];
         
         AEButtonNode *playButton = [AEButtonNode getPlayButton];
-        [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 150)];
+        [playButton setPosition:CGPointMake(self.size.width / 2.0, self.size.height / 2.0 - 150.0)];
         [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
         
+        AEButtonNode *rateButton = [AEButtonNode getRateButton];
+        [rateButton setPosition:CGPointMake(playButton.position.x - 250.0, playButton.position.y)];
+        [rateButton setTouchUpInsideTarget:self action:@selector(rateGame)];
+        
         AEButtonNode *hangarButton = [AEButtonNode getHangarButton];
-        [hangarButton setPosition:CGPointMake(self.size.width / 2 + 250, self.size.height / 2 - 150)];
+        [hangarButton setPosition:CGPointMake(playButton.position.x + 250.0, playButton.position.y)];
         [hangarButton setTouchUpInsideTarget:self action:@selector(goToHangar)];
         
         [self addChild:playButton];

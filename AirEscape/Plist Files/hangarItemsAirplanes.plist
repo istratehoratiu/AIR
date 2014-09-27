@@ -4,6 +4,8 @@
 <dict>
 	<key>0</key>
 	<dict>
+		<key>shadow</key>
+		<string>shadow1.png</string>
 		<key>straightFlyImage</key>
 		<string>plane_1_N.png</string>
 		<key>leftFlyImage</key>
@@ -25,6 +27,8 @@
 	</dict>
 	<key>1</key>
 	<dict>
+		<key>shadow</key>
+		<string>shadow2.png</string>
 		<key>straightFlyImage</key>
 		<string>plane_2_N.png</string>
 		<key>leftFlyImage</key>
@@ -46,6 +50,8 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>shadow</key>
+		<string>shadow3.png</string>
 		<key>straightFlyImage</key>
 		<string>plane_3_N.png</string>
 		<key>leftFlyImage</key>
