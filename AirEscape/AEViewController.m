@@ -46,14 +46,21 @@
     [super viewWillLayoutSubviews];
     
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
+    SKView * skView = (SKView *)self.originalContentView;
     if (!skView.scene) {
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        _banner = [[ADBannerView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, _banner.frame.size.height, _banner.frame.size.width, _banner.frame.size.height)];
-        _banner.delegate = self;
+        _banner = [[ADBannerView alloc] initWithFrame:CGRectZero];
+        [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5,
+                                                                    -_banner.frame.size.height,
+                                                                    _banner.frame.size.width,
+                                                                    _banner.frame.size.height)];
+        self.banner.delegate = self;
+        [self.banner sizeToFit];
         _addBannerIsHidden = YES;
+        [self.view addSubview:_banner];
+        self.canDisplayBannerAds = YES;
         
         // Create and configure the scene.
         SKScene * scene = [[AEMenuScene alloc] initWithSize:skView.bounds.size];
@@ -100,13 +107,11 @@
     
     if (_addBannerIsHidden && (currentScene != AESceneHangar) && (currentScene != AESceneGame)) {
         
-        SKView * skView = (SKView *)self.view;
+        SKView * skView = (SKView *)self.originalContentView;
         if (
             [skView.scene isKindOfClass:[AEGameScene class]]) {
             return;
         }
-        
-        [self.view addSubview:_banner];
         
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
         // Assumes the banner view is just off the bottom of the screen.
@@ -123,8 +128,6 @@
         // Assumes the banner view is placed at the bottom of the screen.
         [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5, -_banner.frame.size.height, _banner.frame.size.width, _banner.frame.size.height)];
         
-        //[_banner removeFromSuperview];
-        
         _addBannerIsHidden = YES;
         
         [UIView commitAnimations];
@@ -140,11 +143,14 @@
         switch ([object currentScene]) {
             case AESceneMenu:
             case AESceneGameOver:
-                [self showADDS];
+
+                [self requestInterstitialAdPresentation];
+                
                 break;
             case AESceneHangar:
             case AESceneGame:
                 [self hideADDS];
+                
                 break;
             default:
                 break;

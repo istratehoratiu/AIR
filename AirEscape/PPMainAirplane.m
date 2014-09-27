@@ -91,8 +91,8 @@
     
     if (!_smokeEmitter.parent) {
         _smokeEmitter = [SKEmitterNode emitterNamed:@"DamageSmoke"];
-        _smokeEmitter.position = CGPointMake(0, 30);
-        [_smokeEmitter setParticleColor:[SKColor whiteColor]];
+        _smokeEmitter.position = CGPointMake(0, 70);
+        [_smokeEmitter setParticleColor:[SKColor blackColor]];
         [self.parent addChild:_smokeEmitter];
         _smokeEmitter.targetNode = self.parent;
     }
@@ -101,7 +101,6 @@
     
     if (_smokeEmitter.parent) {
         _smokeEmitter.position = self.position;
-        _smokeEmitter.particleSpeed = self.zRotation;
     }
     
     CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(0, 30) fromNode:self];
