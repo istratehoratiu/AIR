@@ -39,6 +39,7 @@
         [fileManager copyItemAtPath:bundle toPath: _airplanePListPath error:&error]; //6
     }
     
+    _creditsPlistPath = [documentsDirectory stringByAppendingPathComponent:@"hangarItemsCredits.plist"];
     
     [[AEGameManager sharedManager] updateMainAirplaneImages];
     return YES;

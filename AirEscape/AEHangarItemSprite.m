@@ -7,7 +7,7 @@
 //
 
 #import "AEHangarItemSprite.h"
-#import "SKButtonNode.h"
+#import "AEButtonNode.h"
 #import "AEShopItem.h"
 #import "AEAppDelegate.h"
 #import "NSObject+Additions.h"
@@ -23,14 +23,14 @@
         [_itemNameLabel setFontSize:40];
         [_itemNameLabel setPosition:CGPointMake(0, self.size.height *  0.5 - 60)];
         
-        _buyItemButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
+        _buyItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
         [_buyItemButton setTouchUpInsideTarget:self action:@selector(buyOrSelectShopItem)];
         [_buyItemButton.title setFontName:@"Chalkduster"];
         [_buyItemButton.title setFontSize:40.0];
         [_buyItemButton.title setText:@"Buy"];
         [_buyItemButton setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
         
-        _selectItemButton = [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
+        _selectItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
         [_selectItemButton setTouchUpInsideTarget:self action:@selector(buyOrSelectShopItem)];
         [_selectItemButton.title setFontName:@"Chalkduster"];
         [_selectItemButton.title setFontSize:40.0];

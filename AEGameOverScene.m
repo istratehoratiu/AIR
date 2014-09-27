@@ -7,7 +7,7 @@
 //
 
 #import "AEGameOverScene.h"
-#import "SKButtonNode+Additions.h"
+#import "AEButtonNode+Additions.h"
 #import "AEGameOverStatisticsSprite.h"
 #import "AEGameScene.h"
 #import "Appirater.h"
@@ -38,21 +38,21 @@
     
     self.score = score;
     
-    _ratebutton = [SKButtonNode getRateButton];
+    _ratebutton = [AEButtonNode getRateButton];
     [_ratebutton setPosition:CGPointMake(self.size.width / 2 - 200, self.size.height / 2 - 200)];
     [_ratebutton setAlpha:0.0];
     [_ratebutton setTouchUpInsideTarget:self action:@selector(rateGame)];
     [self addChild:_ratebutton];
     [_ratebutton runAction:[SKAction fadeInWithDuration:1]];
     
-    _restartButton = [SKButtonNode getPlayButton];
+    _restartButton = [AEButtonNode getPlayButton];
     [_restartButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 200)];
     [_restartButton setAlpha:0.0];
     [_restartButton setTouchUpInsideTarget:self action:@selector(restartGame)];
     [self addChild:_restartButton];
     [_restartButton runAction:[SKAction fadeInWithDuration:1]];
     
-    _hangarButton = [SKButtonNode getHangarButton];
+    _hangarButton = [AEButtonNode getHangarButton];
     [_hangarButton setPosition:CGPointMake(self.size.width / 2 + 200, self.size.height / 2 - 200)];
     [_hangarButton setAlpha:0.0];
     [_hangarButton setTouchUpInsideTarget:self action:@selector(showHangar)];

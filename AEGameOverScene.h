@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@class SKButtonNode;
+@class AEButtonNode;
 @class AEGameOverStatisticsSprite;
 
 @interface AEGameOverScene : SKScene {
@@ -16,9 +16,9 @@
 }
 
 @property (nonatomic, assign) NSUInteger score;
-@property (nonatomic, retain) SKButtonNode *restartButton;
-@property (nonatomic, retain) SKButtonNode *hangarButton;
-@property (nonatomic, retain) SKButtonNode *ratebutton;
+@property (nonatomic, retain) AEButtonNode *restartButton;
+@property (nonatomic, retain) AEButtonNode *hangarButton;
+@property (nonatomic, retain) AEButtonNode *ratebutton;
 @property (nonatomic, retain) AEGameOverStatisticsSprite *gameOverStatistic;
 @property (nonatomic, retain) SKLabelNode *gameOverLabel;
 

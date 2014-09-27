@@ -8,10 +8,10 @@
 
 #import "AEMenuScene.h"
 #import "AEGameScene.h"
-#import "SKButtonNode.h"
+#import "AEButtonNode.h"
 #import "PPMainAirplane.h"
 #import "PPMath.h"
-#import "SKButtonNode+Additions.h"
+#import "AEButtonNode+Additions.h"
 #import "AEGameOverScene.h"
 #import "AEGameScene.h"
 #import "AEHangarScene.h"
@@ -37,7 +37,7 @@
         
         for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
             PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplane];
-            decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
+            decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
             decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
             decorAirplane.zRotation = getRandomNumberBetween(0, 3);
             //decorAirplane.isDecorActor = YES;
@@ -48,7 +48,7 @@
             [self addChild:decorAirplane];
         }
         
-        startGame = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        startGame = [[AEButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [startGame setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 + 100)];
         [startGame.title setFontName:@"Chalkduster"];
         [startGame.title setFontSize:60.0];
@@ -56,15 +56,15 @@
         startGame.zPosition = 1;
         [self addChild:startGame];
         
-        SKButtonNode *rateButton = [SKButtonNode getRateButton];
+        AEButtonNode *rateButton = [AEButtonNode getRateButton];
         [rateButton setPosition:CGPointMake(self.size.width / 2 - 250, self.size.height / 2 - 150)];
         [rateButton setTouchUpInsideTarget:self action:@selector(rateGame)];
         
-        SKButtonNode *playButton = [SKButtonNode getPlayButton];
+        AEButtonNode *playButton = [AEButtonNode getPlayButton];
         [playButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 150)];
         [playButton setTouchUpInsideTarget:self action:@selector(startGame)];
         
-        SKButtonNode *hangarButton = [SKButtonNode getHangarButton];
+        AEButtonNode *hangarButton = [AEButtonNode getHangarButton];
         [hangarButton setPosition:CGPointMake(self.size.width / 2 + 250, self.size.height / 2 - 150)];
         [hangarButton setTouchUpInsideTarget:self action:@selector(goToHangar)];
         

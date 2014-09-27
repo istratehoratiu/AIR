@@ -22,12 +22,18 @@ typedef enum {
     AESceneHangar
 } AEScene;
 
-// Shop
+// Shop Items
 typedef enum {
     AEShopItemBuyCredits1,
     AEShopItemBuyAirplane1,
     AEShopItemBuyTrails1,
 } AEShopItemType;
+
+// Shop Page
+typedef enum {
+    AEHangarItemsAirplanes,
+    AEHangarItemsCredits,
+} AEHangarItems;
 
 // Gameplay
 static const CGFloat kAEMainAirplaneManevrability    = 1.5;

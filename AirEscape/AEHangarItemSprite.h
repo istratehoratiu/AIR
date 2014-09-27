@@ -10,7 +10,7 @@
 #import "PPConstants.h"
 
 @class AEShopItem;
-@class SKButtonNode;
+@class AEButtonNode;
 
 @interface AEHangarItemSprite : SKSpriteNode {
 
@@ -20,8 +20,8 @@
 
 
 @property (nonatomic, retain) SKLabelNode *itemNameLabel;
-@property (nonatomic, retain) SKButtonNode *buyItemButton;
-@property (nonatomic, retain) SKButtonNode *selectItemButton;
+@property (nonatomic, retain) AEButtonNode *buyItemButton;
+@property (nonatomic, retain) AEButtonNode *selectItemButton;
 @property (nonatomic, retain) SKLabelNode *selectedItemLabel;
 @property (nonatomic, retain) SKSpriteNode *backgroundSprite;
 @property (nonatomic, retain) SKSpriteNode *itemThumbnailSprite;

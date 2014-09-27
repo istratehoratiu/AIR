@@ -13,7 +13,7 @@
 @class PPMainBase;
 @class PPHunterAirplane;
 @class PPPositionIndicator;
-@class SKButtonNode;
+@class AEButtonNode;
 @class JCImageJoystick;
 @class Joystick;
 
@@ -26,9 +26,9 @@
 
 @property (nonatomic, assign) CGFloat airplaneWidth;
 @property (nonatomic, assign) CGFloat scaleAirplane;
-@property (nonatomic, retain)SKButtonNode* numberOfMissileOnScreen;
-@property (nonatomic, retain)SKButtonNode* pauseButton;
-@property (nonatomic, retain)SKButtonNode* playButton;
+@property (nonatomic, retain)AEButtonNode* numberOfMissileOnScreen;
+@property (nonatomic, retain)AEButtonNode* pauseButton;
+@property (nonatomic, retain)AEButtonNode* playButton;
 @property (nonatomic, assign) BOOL gameIsPaused;
 @property (nonatomic, retain) PPPositionIndicator *positionIndicator;
 @property (nonatomic, retain) PPMainAirplane *userAirplane;

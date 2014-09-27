@@ -7,7 +7,7 @@
 //
 
 #import "AEHangarScene.h"
-#import "SKButtonNode.h"
+#import "AEButtonNode.h"
 #import "AEGameOverScene.h"
 #import "AEMenuScene.h"
 #import "AEShopItem.h"
@@ -24,6 +24,8 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        // At first display the airplanes.
+        _hangarItemsDisplayed = AEHangarItemsCredits;
         
         [[AEGameManager sharedManager] setCurrentScene:AESceneHangar];
         
@@ -40,7 +42,7 @@
 
         [self addChild:_airplaneScrollingStrip];
         
-        SKButtonNode *backButton =  [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        AEButtonNode *backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
         [backButton.title setFontName:@"Chalkduster"];
         [backButton.title setFontSize:40.0];
         [backButton.title setText:@"Back"];
@@ -49,24 +51,15 @@
         backButton.zPosition = 1000;
         [self addChild:backButton];
         
-        SKButtonNode *airplanesButton =  [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [airplanesButton.title setFontName:@"Chalkduster"];
-        [airplanesButton.title setFontSize:40.0];
-        [airplanesButton.title setText:@"Airplane"];
-        [airplanesButton setPosition:CGPointMake(airplanesButton.size.width * 0.5 + 210, size.height - 100)];
-        [airplanesButton setTouchUpInsideTarget:self action:@selector(airplanesButton)];
-        airplanesButton.zPosition = 1000;
-        // Uncomment this to add Airplane tab in Hangar.
-        //[self addChild:airplanesButton];
             
-        SKButtonNode *getCreditsButton =  [[SKButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [getCreditsButton.title setFontName:@"Chalkduster"];
-        [getCreditsButton.title setFontSize:40.0];
-        [getCreditsButton.title setText:@"Credits"];
-        [getCreditsButton setPosition:CGPointMake(self.size.width - 150, size.height - 100)];
-        [getCreditsButton setTouchUpInsideTarget:self action:@selector(creditsButton)];
-        getCreditsButton.zPosition = 1000;
-        [self addChild:getCreditsButton];
+        _changeDisplayedItemsButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        [_changeDisplayedItemsButton.title setFontName:@"Chalkduster"];
+        [_changeDisplayedItemsButton.title setFontSize:40.0];
+        [_changeDisplayedItemsButton.title setText:@"Credits"];
+        [_changeDisplayedItemsButton setPosition:CGPointMake(self.size.width - 150, size.height - 100)];
+        [_changeDisplayedItemsButton setTouchUpInsideTarget:self action:@selector(changeDisplayedItems)];
+        _changeDisplayedItemsButton.zPosition = 1000;
+        [self addChild:_changeDisplayedItemsButton];
         
         // Populate the dictionary with the itemSHopt items.
         //NSString *hangarItemsTrailsAirplanesPlistPath = [[NSBundle mainBundle] pathForResource:@"hangarItemsAirplanes" ofType:@"plist"];
@@ -80,7 +73,7 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateScreen:) name:kSGUpdateHangarScreenNotification object:nil];
         
-        [self airplanesButton];
+        [self changeDisplayedItems];
     }
     
     return self;
@@ -115,7 +108,7 @@
         
         touchLocation = [self convertPointFromView:touchLocation];
         
-        if ([[self nodeAtPoint:touchLocation] isKindOfClass:[SKButtonNode class]]) {
+        if ([[self nodeAtPoint:touchLocation] isKindOfClass:[AEButtonNode class]]) {
             NSLog(@"asdasdasdasdas");
         }
     }
@@ -201,40 +194,24 @@
     [self.scene.view presentScene: newScene transition: crossFade];
 }
 
-- (void)creditsButton {
+- (void)changeDisplayedItems {
     
-    [_airplaneScrollingStrip removeAllChildren];
+    // Update the button and the current displayed items.
     
-    for(int i = 0; i < [[_airplanesShopItemsDictionary allKeys] count]; ++i) {
-        
-        AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_airplanesShopItemsDictionary objectForKey:[NSString stringWithFormat:@"%i", i]]];
-        [currentItem setKeyValue:[NSString stringWithFormat:@"%i", i]];
-        
-        AEHangarItemSprite *shopItem = [[AEHangarItemSprite alloc] init];
-        [shopItem setShopItem:currentItem];
-        
-        [shopItem setPosition:CGPointMake(i * shopItem.size.width + SHOP_ITEMS_DISTANCE, self.size.height / 2)];
-        [_airplaneScrollingStrip addChild:shopItem];
-        
-        if (i == 0) {
-            _leftMarginOFHangarScrollView = shopItem.position.x;
-        } else if ( i == [[_airplanesShopItemsDictionary allKeys] count] - 1) {
-            _rightMarginOFHangarScrollView = shopItem.position.x;
-        }
-    }
-}
-
-- (void)airplanesButton {
+    _hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
     
-    _airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
+    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"Airplanes" : @"Credits"];
+    
+    
+    _shopItemsDictionary = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] creditsPlistPath]]  : [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
     
     [_airplaneScrollingStrip removeAllChildren];
     
     CGFloat xPositionOfLastShopItem = 0;
     
-    for(int i = 0; i < [[_airplanesShopItemsDictionary allKeys] count]; ++i) {
+    for(int i = 0; i < [[_shopItemsDictionary allKeys] count]; ++i) {
 
-        AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_airplanesShopItemsDictionary objectForKey:[NSString stringWithFormat:@"%i", i]]];
+        AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_shopItemsDictionary objectForKey:[NSString stringWithFormat:@"%i", i]]];
         [currentItem setKeyValue:[NSString stringWithFormat:@"%i", i]];
         
         AEHangarItemSprite *shopItem = [[AEHangarItemSprite alloc] init];
@@ -252,29 +229,8 @@
     
         if (i == 0) {
             _leftMarginOFHangarScrollView = shopItem.position.x - (shopItem.size.width * 0.5) - SHOP_ITEMS_DISTANCE;
-        } else if ( i == [[_airplanesShopItemsDictionary allKeys] count] - 1) {
+        } else if ( i == [[_shopItemsDictionary allKeys] count] - 1) {
             _rightMarginOFHangarScrollView = shopItem.position.x + (shopItem.size.width * 0.5) + SHOP_ITEMS_DISTANCE;
-        }
-    }
-}
-
-- (void)enginesButton {
-    
-    [_airplaneScrollingStrip removeAllChildren];
-    
-    for(int i = 0; i < [[_airplanesShopItemsDictionary allKeys] count]; ++i) {
-        
-        AEShopItem *currentItem = [[AEShopItem alloc] initWithDictionary:[_airplanesShopItemsDictionary objectForKey:[NSString stringWithFormat:@"%i", i]]];
-        AEHangarItemSprite *shopItem = [[AEHangarItemSprite alloc] init];
-        [shopItem setShopItem:currentItem];
-        
-        [shopItem setPosition:CGPointMake(i * shopItem.size.width + SHOP_ITEMS_DISTANCE, self.size.height / 2)];
-        [_airplaneScrollingStrip addChild:shopItem];
-        
-        if (i == 0) {
-            _leftMarginOFHangarScrollView = shopItem.position.x;
-        } else if ( i == [[_airplanesShopItemsDictionary allKeys] count] - 1) {
-            _rightMarginOFHangarScrollView = shopItem.position.x;
         }
     }
 }
@@ -291,7 +247,7 @@ CGPoint mult(const CGPoint v, const CGFloat s) {
 
 - (void)updateScreen:(NSNotification *)notif {
     //[self performSelector:@selector(airplanesButton) withObject:nil afterDelay:3];
-    [self airplanesButton];
+    [self changeDisplayedItems];
 }
 
 

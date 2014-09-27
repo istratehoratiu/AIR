@@ -127,7 +127,7 @@
 - (void)rotateToLeftIfAllowedOrGoStraight:(CFTimeInterval)dt {
     [self setZRotation:self.zRotation + ([[AEGameManager sharedManager] mainAirplaneManevrability] * dt)];
     
-    self.texture = [AEGameManager sharedManager].leftFlightTexture;
+//    self.texture = [AEGameManager sharedManager].leftFlightTexture;
     
     _shadow.zRotation = self.zRotation;
 }
@@ -136,7 +136,7 @@
     
     [self setZRotation:self.zRotation - ([[AEGameManager sharedManager] mainAirplaneManevrability] * dt)];
     
-    self.texture = [AEGameManager sharedManager].rightFlightTexture;
+//    self.texture = [AEGameManager sharedManager].rightFlightTexture;
     
     _shadow.zRotation = self.zRotation;
 }

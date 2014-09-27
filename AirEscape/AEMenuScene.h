@@ -9,14 +9,14 @@
 #import <SpriteKit/SpriteKit.h>
 
 
-@class SKButtonNode;
+@class AEButtonNode;
 @class PPMainAirplane;
 @class SKBlade;
 
 @interface AEMenuScene : SKScene {
 
     SKSpriteNode *background;
-    SKButtonNode *startGame;
+    AEButtonNode *startGame;
     
     CFTimeInterval _lastUpdateTime;
     CFTimeInterval _deltaTime;

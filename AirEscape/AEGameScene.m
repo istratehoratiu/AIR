@@ -10,7 +10,7 @@
 #import "SKSpriteNode+Additions.h"
 #import "PPSpriteNode.h"
 #import "PPMath.h"
-#import "SKButtonNode.h"
+#import "AEButtonNode.h"
 #import "PPMainAirplane.h"
 #import "PPMissile.h"
 #import "PPConstants.h"
@@ -60,7 +60,7 @@
 //        
         // Main Actor
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
-        _userAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
+        _userAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
         _scaleAirplane = 1.0;
         _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
         _userAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_userAirplane.size.width * 0.5]; // 1
@@ -92,7 +92,7 @@
         
         [self runAction:[SKAction repeatActionForever:updateMissileStatus]];
         
-        _numberOfMissileOnScreen = [[SKButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
+        _numberOfMissileOnScreen = [[AEButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [_numberOfMissileOnScreen setPosition:CGPointMake(self.size.width - 100, 100)];
         [_numberOfMissileOnScreen.title setFontName:@"Chalkduster"];
         [_numberOfMissileOnScreen.title setFontSize:40.0];
@@ -326,7 +326,7 @@
         
         PPMissile *missile = [[PPMissile alloc] initMissileNode];
         missile.targetAirplane = _userAirplane;
-        missile.scale = 0.1;
+        missile.scale = 0.15;
         
         missile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:missile.frame.size]; // 1
         missile.physicsBody.dynamic = YES; // 2
