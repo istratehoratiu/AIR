@@ -2,6 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>3</key>
+	<dict>
+		<key>shadow</key>
+		<string>shadow4.png</string>
+		<key>straightFlyImage</key>
+		<string>plane_4_N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_4_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_4_R.png</string>
+		<key>ID</key>
+		<integer>4</integer>
+		<key>title</key>
+		<string>Zero</string>
+		<key>thumbnailImage</key>
+		<string>plane_4_N.png</string>
+		<key>price</key>
+		<integer>400</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
 	<key>0</key>
 	<dict>
 		<key>shadow</key>

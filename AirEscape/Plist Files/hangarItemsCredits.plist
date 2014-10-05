@@ -24,7 +24,7 @@
 		<key>Title</key>
 		<string>200</string>
 		<key>thumbnailImage</key>
-		<string>missile.png</string>
+		<string>missile2.png</string>
 		<key>price</key>
 		<integer>200</integer>
 		<key>isBought</key>
@@ -39,24 +39,9 @@
 		<key>Title</key>
 		<string>300</string>
 		<key>thumbnailImage</key>
-		<string>missile.png</string>
+		<string>missile3.png</string>
 		<key>price</key>
 		<integer>300</integer>
-		<key>isBought</key>
-		<false/>
-		<key>isUsed</key>
-		<false/>
-	</dict>
-	<key>3</key>
-	<dict>
-		<key>ID</key>
-		<integer>3</integer>
-		<key>Title</key>
-		<string>400</string>
-		<key>thumbnailImage</key>
-		<string>missile.png</string>
-		<key>price</key>
-		<integer>400</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>

@@ -19,6 +19,7 @@
 @property (nonatomic, assign) BOOL isBought;
 @property (nonatomic, assign) BOOL isUsed;
 @property (nonatomic, strong) NSString *thumbnails;
+@property (nonatomic, strong) NSNumber *price;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -28,10 +28,10 @@
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
     NSString *documentsDirectory = [paths objectAtIndex:0]; //2
-    _airplanePListPath = [documentsDirectory stringByAppendingPathComponent:@"hangarItemsAirplanes.plist"]; //3
-    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
+    /* Load Airplane Items From PLIST */
+    _airplanePListPath = [documentsDirectory stringByAppendingPathComponent:@"hangarItemsAirplanes.plist"]; //3
     if (![fileManager fileExistsAtPath: _airplanePListPath]) //4
     {
         NSString *bundle = [[NSBundle mainBundle] pathForResource:@"hangarItemsAirplanes" ofType:@"plist"]; //5
@@ -39,7 +39,15 @@
         [fileManager copyItemAtPath:bundle toPath: _airplanePListPath error:&error]; //6
     }
     
+    /* Load Credits Items From PLIST */
     _creditsPlistPath = [documentsDirectory stringByAppendingPathComponent:@"hangarItemsCredits.plist"];
+    if (![fileManager fileExistsAtPath: _creditsPlistPath]) //4
+    {
+        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"hangarItemsCredits" ofType:@"plist"]; //5
+        
+        [fileManager copyItemAtPath:bundle toPath: _creditsPlistPath error:&error]; //6
+    }
+    
     
     [[AEGameManager sharedManager] updateMainAirplaneImages];
     return YES;

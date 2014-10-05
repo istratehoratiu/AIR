@@ -21,6 +21,7 @@
         self.isBought = [[dictionary valueForKey:@"isBought"] boolValue];
         self.isUsed = [[dictionary valueForKey:@"isUsed"] boolValue];
         self.thumbnails = [dictionary valueForKey:@"thumbnailImage"];
+        self.price = [dictionary valueForKey:@"price"];
     }
     
     return self;

@@ -57,7 +57,7 @@
         [_changeDisplayedItemsButton.title setFontSize:40.0];
         [_changeDisplayedItemsButton.title setText:@"Credits"];
         [_changeDisplayedItemsButton setPosition:CGPointMake(self.size.width - 150, size.height - 100)];
-        [_changeDisplayedItemsButton setTouchUpInsideTarget:self action:@selector(changeDisplayedItems)];
+        [_changeDisplayedItemsButton setTouchUpInsideTarget:self action:@selector(changeDisplayedItemsButtonPressed)];
         _changeDisplayedItemsButton.zPosition = 1000;
         [self addChild:_changeDisplayedItemsButton];
         
@@ -73,7 +73,7 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateScreen:) name:kSGUpdateHangarScreenNotification object:nil];
         
-        [self changeDisplayedItems];
+        [self changeDisplayedItemsForType:AEHangarItemsAirplanes];
     }
     
     return self;
@@ -194,11 +194,11 @@
     [self.scene.view presentScene: newScene transition: crossFade];
 }
 
-- (void)changeDisplayedItems {
+- (void)changeDisplayedItemsForType:(AEHangarItems)itemTypes {
     
     // Update the button and the current displayed items.
     
-    _hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
+    _hangarItemsDisplayed = itemTypes;
     
     [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"Airplanes" : @"Credits"];
     
@@ -235,6 +235,10 @@
     }
 }
 
+- (void)changeDisplayedItemsButtonPressed {
+    _hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
+    [self changeDisplayedItemsForType:_hangarItemsDisplayed];
+}
 
 #pragma mark - Helper Methods -
 
@@ -247,7 +251,7 @@ CGPoint mult(const CGPoint v, const CGFloat s) {
 
 - (void)updateScreen:(NSNotification *)notif {
     //[self performSelector:@selector(airplanesButton) withObject:nil afterDelay:3];
-    [self changeDisplayedItems];
+    [self changeDisplayedItemsForType:_hangarItemsDisplayed];
 }
 
 
