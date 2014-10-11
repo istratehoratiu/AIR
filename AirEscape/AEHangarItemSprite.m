@@ -25,9 +25,11 @@
         [_itemNameLabel setPosition:CGPointMake(0, self.size.height *  0.5 - 60)];
         _itemNameLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
         
-        _buyItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
+        _buyItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"missileBackgroundButton" selected:@"missileBackgroundButton"];
         [_buyItemButton setTouchUpInsideTarget:self action:@selector(buyOrSelectShopItem)];
         [_buyItemButton.title setFontName:@"Chalkduster"];
+        //[_buyItemButton.title setFontColor:[UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1]];
+        [_buyItemButton.title setFontColor:[UIColor darkGrayColor]];
         [_buyItemButton.title setFontSize:40.0];
         [_buyItemButton.title setText:@"Buy"];
         [_buyItemButton setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
@@ -40,6 +42,7 @@
         [_selectItemButton setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
         
         _selectedItemLabel = [[SKLabelNode alloc] init];
+        [_selectedItemLabel setFontName:@"Chalkduster"];
         [_selectedItemLabel setFontSize:40];
         [_selectedItemLabel setText:@"Selected"];
         [_selectedItemLabel setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
@@ -51,7 +54,7 @@
         [self addChild:_itemNameLabel];
         [self addChild:_buyItemButton];
         [self addChild:_selectItemButton];
-        [self addChild:_missileSprite];
+        //[self addChild:_missileSprite];
     }
     
     return self;
@@ -87,19 +90,32 @@
 
     if (_shopItemType == AEHangarItemsAirplanes) {
         if (!_shopItem.isBought) {
-            NSMutableDictionary *_airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
             
-            NSMutableDictionary *updatedDictionary = [NSMutableDictionary dictionaryWithDictionary:_shopItem.representedDictionary];
-            [updatedDictionary setValue:[NSNumber numberWithBool:YES] forKey:@"isBought"];
+            NSNumber *totalCredits = [[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey];
+            NSInteger totalCreditsInteger = [totalCredits integerValue];
+            NSInteger priceInteger = [_shopItem.price integerValue];
             
-            [_airplanesShopItemsDictionary setValue:updatedDictionary forKey:_shopItem.keyValue];
-            
-            [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
-            
-            [_missileSprite setHidden:YES];
-            
-            [[AEGameManager sharedManager] updateMainAirplaneImages];
-            
+            if (priceInteger < totalCreditsInteger) {
+                
+                NSMutableDictionary *_airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
+                
+                NSMutableDictionary *updatedDictionary = [NSMutableDictionary dictionaryWithDictionary:_shopItem.representedDictionary];
+                [updatedDictionary setValue:[NSNumber numberWithBool:YES] forKey:@"isBought"];
+                
+                [_airplanesShopItemsDictionary setValue:updatedDictionary forKey:_shopItem.keyValue];
+                
+                [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
+                
+                [_missileSprite setHidden:YES];
+                
+                
+                NSNumber *remainingMissiles = [NSNumber numberWithInteger:(totalCreditsInteger - priceInteger)];
+                [[NSUserDefaults standardUserDefaults] setValue:remainingMissiles forKey:kAETotalScoreKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            } else {
+                UIAlertView *notEnoughtCreaditsAlert = [[UIAlertView alloc] initWithTitle:@"Not Enought Missiles" message:@"Get more missiles?" delegate:self.appDelegate cancelButtonTitle:@"Cancel" otherButtonTitles:@"Get Credits", nil];
+                [notEnoughtCreaditsAlert show];
+            }
         } else {
             
             NSMutableDictionary *_airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
@@ -120,6 +136,8 @@
             }
             
             [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
+            
+            [[AEGameManager sharedManager] updateMainAirplaneImages];
         }
     } else {
     

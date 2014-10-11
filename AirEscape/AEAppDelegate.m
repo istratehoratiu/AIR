@@ -23,6 +23,9 @@
     [Appirater setAppId:@"552035781"];
     //[Appirater userDidSignificantEvent:NO];
     
+    NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"defaultPrefs" ofType:@"plist"];
+    NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
     
     // In order to be able to modify and save a plist we must move to the apps file system, do this at launch if it was not already done.
     NSError *error;

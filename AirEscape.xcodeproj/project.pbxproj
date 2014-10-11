@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB11875B19E943AD00994023 /* defaultPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB11875A19E943AD00994023 /* defaultPrefs.plist */; };
 		EB212E341945A748000D1A3E /* AEMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB212E331945A748000D1A3E /* AEMenuScene.m */; };
 		EB212E371945E053000D1A3E /* AEGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB212E361945E053000D1A3E /* AEGameOverScene.m */; };
 		EB26ED13195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = EB26ED0E195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m */; };
@@ -65,9 +66,6 @@
 		EBF8388419D6FEDF00C8E610 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8387D19D6FEDF00C8E610 /* background.png */; };
 		EBF8388519D6FEDF00C8E610 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8387E19D6FEDF00C8E610 /* background@2x.png */; };
 		EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8387F19D6FEDF00C8E610 /* multiRockets.png */; };
-		EBF8388719D6FEDF00C8E610 /* shadow1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8388019D6FEDF00C8E610 /* shadow1.png */; };
-		EBF8388819D6FEDF00C8E610 /* shadow2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8388119D6FEDF00C8E610 /* shadow2.png */; };
-		EBF8388919D6FEDF00C8E610 /* shadow3.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8388219D6FEDF00C8E610 /* shadow3.png */; };
 		EBF8388A19D6FEDF00C8E610 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8388319D6FEDF00C8E610 /* spark.png */; };
 		EBF88FD719603A05007B8812 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF88FD619603A05007B8812 /* iAd.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB11875A19E943AD00994023 /* defaultPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefs.plist; sourceTree = "<group>"; };
 		EB212E321945A748000D1A3E /* AEMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEMenuScene.h; sourceTree = "<group>"; };
 		EB212E331945A748000D1A3E /* AEMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEMenuScene.m; sourceTree = "<group>"; };
 		EB212E351945E053000D1A3E /* AEGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEGameOverScene.h; path = ../AEGameOverScene.h; sourceTree = "<group>"; };
@@ -169,9 +168,6 @@
 		EBF8387D19D6FEDF00C8E610 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		EBF8387E19D6FEDF00C8E610 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		EBF8387F19D6FEDF00C8E610 /* multiRockets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multiRockets.png; sourceTree = "<group>"; };
-		EBF8388019D6FEDF00C8E610 /* shadow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow1.png; sourceTree = "<group>"; };
-		EBF8388119D6FEDF00C8E610 /* shadow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow2.png; sourceTree = "<group>"; };
-		EBF8388219D6FEDF00C8E610 /* shadow3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow3.png; sourceTree = "<group>"; };
 		EBF8388319D6FEDF00C8E610 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		EBF88FD619603A05007B8812 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -419,6 +415,7 @@
 			children = (
 				EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */,
 				EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */,
+				EB11875A19E943AD00994023 /* defaultPrefs.plist */,
 			);
 			path = "Plist Files";
 			sourceTree = "<group>";
@@ -442,9 +439,6 @@
 				EBF8387D19D6FEDF00C8E610 /* background.png */,
 				EBF8387E19D6FEDF00C8E610 /* background@2x.png */,
 				EBF8387F19D6FEDF00C8E610 /* multiRockets.png */,
-				EBF8388019D6FEDF00C8E610 /* shadow1.png */,
-				EBF8388119D6FEDF00C8E610 /* shadow2.png */,
-				EBF8388219D6FEDF00C8E610 /* shadow3.png */,
 				EBF8388319D6FEDF00C8E610 /* spark.png */,
 				EBF8386519D6FAF800C8E610 /* hangarButton.png */,
 				EBF8386619D6FAF800C8E610 /* playButton.png */,
@@ -565,7 +559,6 @@
 				EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
-				EBF8388719D6FEDF00C8E610 /* shadow1.png in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */,
 				EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */,
@@ -577,7 +570,6 @@
 				EB46619119D6C965006FE649 /* README.txt in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
-				EBF8388819D6FEDF00C8E610 /* shadow2.png in Resources */,
 				EBF8388A19D6FEDF00C8E610 /* spark.png in Resources */,
 				EBF8387019D6FAF800C8E610 /* bulletHit.sks in Resources */,
 				EBF8387419D6FAF800C8E610 /* hangarButton.png in Resources */,
@@ -586,7 +578,7 @@
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 				EB46619019D6C965006FE649 /* If.ttf in Resources */,
 				EBF8388519D6FEDF00C8E610 /* background@2x.png in Resources */,
-				EBF8388919D6FEDF00C8E610 /* shadow3.png in Resources */,
+				EB11875B19E943AD00994023 /* defaultPrefs.plist in Resources */,
 				EBF8387519D6FAF800C8E610 /* playButton.png in Resources */,
 				EBF8387319D6FAF800C8E610 /* Fire.sks in Resources */,
 			);

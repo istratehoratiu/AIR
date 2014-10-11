@@ -94,7 +94,7 @@
         
         _numberOfMissileOnScreen = [[AEButtonNode alloc] initWithImageNamedNormal:nil selected:nil];
         [_numberOfMissileOnScreen setPosition:CGPointMake(self.size.width - 100, 100)];
-        [_numberOfMissileOnScreen.title setFontName:@"Chalkduster"];
+        [_numberOfMissileOnScreen.title setFontName:@"if"];
         [_numberOfMissileOnScreen.title setFontSize:40.0];
         [_numberOfMissileOnScreen.title setText:@"0"];
         [self addChild:_numberOfMissileOnScreen];

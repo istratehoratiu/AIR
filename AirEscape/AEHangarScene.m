@@ -51,12 +51,16 @@
         backButton.zPosition = 1000;
         [self addChild:backButton];
         
-            
-        _changeDisplayedItemsButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        
+        NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
+        
+        _changeDisplayedItemsButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"missileBackgroundButton" selected:@"missileBackgroundButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
         [_changeDisplayedItemsButton.title setFontName:@"Chalkduster"];
         [_changeDisplayedItemsButton.title setFontSize:40.0];
-        [_changeDisplayedItemsButton.title setText:@"Credits"];
-        [_changeDisplayedItemsButton setPosition:CGPointMake(self.size.width - 150, size.height - 100)];
+        [_changeDisplayedItemsButton.title setFontColor:[UIColor darkGrayColor]];
+        [_changeDisplayedItemsButton.title setText:credits];
+        [_changeDisplayedItemsButton.title setPosition:CGPointZero];
+        [_changeDisplayedItemsButton setPosition:CGPointMake(self.size.width - 150, size.height - 50)];
         [_changeDisplayedItemsButton setTouchUpInsideTarget:self action:@selector(changeDisplayedItemsButtonPressed)];
         _changeDisplayedItemsButton.zPosition = 1000;
         [self addChild:_changeDisplayedItemsButton];
@@ -223,7 +227,15 @@
     
     [_hintLabel setHidden:!(_hangarItemsDisplayed == AEHangarItemsCredits)];
     
-    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"Airplanes" : @"Credits"];
+    NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
+    
+    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"" : credits];
+    [_changeDisplayedItemsButton setNormalTexture:((_hangarItemsDisplayed != AEHangarItemsCredits) ?
+                                                   [SKTexture textureWithImageNamed:@"missileBackgroundButton"] :
+                                                   [SKTexture textureWithImageNamed:@"airplaneButtonBackground2"])];
+    [_changeDisplayedItemsButton setSelectedTexture:((_hangarItemsDisplayed != AEHangarItemsCredits) ?
+                                                     [SKTexture textureWithImageNamed:@"missileBackgroundButton"] :
+                                                     [SKTexture textureWithImageNamed:@"airplaneButtonBackground2"])];
     
     _shopItemsDictionary = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] creditsPlistPath]]  : [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
     

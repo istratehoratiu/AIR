@@ -41,7 +41,7 @@
         [self setIsSelected:NO];
         
         _title = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        [_title setVerticalAlignmentMode:verticalAlignmentMode];
+        [_title setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
         [_title setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         
         [self addChild:_title];
