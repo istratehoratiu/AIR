@@ -42,11 +42,8 @@
 
         [self addChild:_airplaneScrollingStrip];
         
-        AEButtonNode *backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [backButton.title setFontName:@"Chalkduster"];
-        [backButton.title setFontSize:40.0];
-        [backButton.title setText:@"Back"];
-        [backButton setPosition:CGPointMake(backButton.size.width * 0.5 + 10, size.height - 100)];
+        AEButtonNode *backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"backArrow" selected:@"backArrow" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        [backButton setPosition:CGPointMake(backButton.size.width * 0.5 + 10, size.height - 50)];
         [backButton setTouchUpInsideTarget:self action:@selector(backButton)];
         backButton.zPosition = 1000;
         [self addChild:backButton];
@@ -232,10 +229,10 @@
     [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"" : credits];
     [_changeDisplayedItemsButton setNormalTexture:((_hangarItemsDisplayed != AEHangarItemsCredits) ?
                                                    [SKTexture textureWithImageNamed:@"missileBackgroundButton"] :
-                                                   [SKTexture textureWithImageNamed:@"airplaneButtonBackground2"])];
+                                                   [SKTexture textureWithImageNamed:@"airplaneButtonBackground"])];
     [_changeDisplayedItemsButton setSelectedTexture:((_hangarItemsDisplayed != AEHangarItemsCredits) ?
                                                      [SKTexture textureWithImageNamed:@"missileBackgroundButton"] :
-                                                     [SKTexture textureWithImageNamed:@"airplaneButtonBackground2"])];
+                                                     [SKTexture textureWithImageNamed:@"airplaneButtonBackground"])];
     
     _shopItemsDictionary = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] creditsPlistPath]]  : [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
     

@@ -38,7 +38,11 @@ typedef enum {
 typedef enum {
     AEAirplaneTypeAlbatros = 0,
     AEAirplaneTypeSpitfire,
-    AEAirplaneTypeF22
+    AEAirplaneTypeF22,
+    AEAirplaneTypeZero,
+    AEAirplaneTypeMeserchmit,
+    AEAirplaneTypeF117,
+    AEAirplaneTypeBlackbird
 } AEAirplaneType;
 
 // Gameplay

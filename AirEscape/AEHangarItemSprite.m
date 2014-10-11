@@ -34,13 +34,6 @@
         [_buyItemButton.title setText:@"Buy"];
         [_buyItemButton setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
         
-        _selectItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton"];
-        [_selectItemButton setTouchUpInsideTarget:self action:@selector(buyOrSelectShopItem)];
-        [_selectItemButton.title setFontName:@"Chalkduster"];
-        [_selectItemButton.title setFontSize:40.0];
-        [_selectItemButton.title setText:@"Select"];
-        [_selectItemButton setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
-        
         _selectedItemLabel = [[SKLabelNode alloc] init];
         [_selectedItemLabel setFontName:@"Chalkduster"];
         [_selectedItemLabel setFontSize:40];
@@ -50,16 +43,26 @@
         _missileSprite = [[SKSpriteNode alloc] initWithImageNamed:@"priceIndicator"];
         [_missileSprite setPosition:CGPointMake(_buyItemButton.position.x, _buyItemButton.position.y)];
         
-        [self addChild:_selectedItemLabel];
+        _selectedAirplaneCheckmarkSprite = [[SKSpriteNode alloc] initWithImageNamed:@"checkmark"];
+        [_selectedAirplaneCheckmarkSprite setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
+        
+        //[self addChild:_selectedItemLabel];
+        [self addChild:_selectedAirplaneCheckmarkSprite];
         [self addChild:_itemNameLabel];
         [self addChild:_buyItemButton];
-        [self addChild:_selectItemButton];
+        //[self addChild:_selectItemButton];
         //[self addChild:_missileSprite];
     }
     
     return self;
 }
 
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if ([self.shopItem isBought]) {
+        [self buyOrSelectShopItem];
+    }
+}
 
 #pragma mark - Setter/Getter Methods -
 
@@ -69,17 +72,24 @@
     
     [_itemNameLabel setText:_shopItem.title];
     [_buyItemButton setHidden:_shopItem.isBought];
-    [_selectItemButton setHidden:!(!_shopItem.isUsed && _shopItem.isBought)];
-    [_selectedItemLabel setHidden:!_shopItem.isUsed];
+    [_selectedAirplaneCheckmarkSprite setHidden:!_shopItem.isUsed];
+    //[_selectedItemLabel setHidden:!_shopItem.isUsed];
     [_buyItemButton.title setText:[_shopItem.price stringValue]];
     [_missileSprite setHidden:_shopItem.isBought];
     
     CGFloat offesetForMissileIndicator = _buyItemButton.title.text.length * 22;
     [_missileSprite setPosition:CGPointMake(_buyItemButton.position.x + offesetForMissileIndicator, _buyItemButton.position.y)];
     
-    if (_shopItem.thumbnails) {
-        _itemThumbnailSprite = [[SKSpriteNode alloc] initWithImageNamed:_shopItem.thumbnails];
-        [self addChild:_itemThumbnailSprite];
+    if (_shopItem.isBought) {
+        if (_shopItem.thumbnails) {
+            _itemThumbnailSprite = [[SKSpriteNode alloc] initWithImageNamed:_shopItem.thumbnails];
+            [self addChild:_itemThumbnailSprite];
+        }
+    } else {
+        if (_shopItem.lockedThumbnails) {
+            _itemThumbnailSprite = [[SKSpriteNode alloc] initWithImageNamed:_shopItem.lockedThumbnails];
+            [self addChild:_itemThumbnailSprite];
+        }
     }
 }
 
@@ -103,11 +113,9 @@
                 [updatedDictionary setValue:[NSNumber numberWithBool:YES] forKey:@"isBought"];
                 
                 [_airplanesShopItemsDictionary setValue:updatedDictionary forKey:_shopItem.keyValue];
-                
                 [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
                 
                 [_missileSprite setHidden:YES];
-                
                 
                 NSNumber *remainingMissiles = [NSNumber numberWithInteger:(totalCreditsInteger - priceInteger)];
                 [[NSUserDefaults standardUserDefaults] setValue:remainingMissiles forKey:kAETotalScoreKey];

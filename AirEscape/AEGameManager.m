@@ -117,13 +117,9 @@ static AEGameManager *sharedMyManager = nil;
         if ([[currentDictionary valueForKey:@"isUsed"] boolValue]) {
             
             NSString *nameOfStraightFlyTexture  = [currentDictionary valueForKey:@"straightFlyImage"];
-            NSString *nameOfLeftFlyTexture      = [currentDictionary valueForKey:@"leftFlyImage"];
-            NSString *nameOfRightFlyTexture     = [currentDictionary valueForKey:@"rightFlyImage"];
             NSString *nameOfShadowTexture       = [currentDictionary valueForKey:@"shadow"];
             
             _straighFlightTexture   = [[[self appDelegate] atlas] textureNamed:nameOfStraightFlyTexture];
-            _leftFlightTexture      = [[[self appDelegate] atlas] textureNamed:nameOfLeftFlyTexture];
-            _rightFlightTexture     = [[[self appDelegate] atlas] textureNamed:nameOfRightFlyTexture];
             _shadowTexture          = [[[self appDelegate] atlas] textureNamed:nameOfShadowTexture];
             
             return;

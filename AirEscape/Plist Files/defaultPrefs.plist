@@ -5,6 +5,6 @@
 	<key>com.AirEscape.kSGBestScoreKey</key>
 	<integer>0</integer>
 	<key>com.AirEscape.kAETotalScoreKey</key>
-	<integer>2000</integer>
+	<real>200000000</real>
 </dict>
 </plist>

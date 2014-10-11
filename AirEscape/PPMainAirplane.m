@@ -227,6 +227,22 @@
             mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_3_N.png"];
             break;
         }
+        case AEAirplaneTypeZero: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_4_N.png"];
+            break;
+        }
+        case AEAirplaneTypeMeserchmit: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_5_N.png"];
+            break;
+        }
+        case AEAirplaneTypeBlackbird: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_6_N.png"];
+            break;
+        }
+        case AEAirplaneTypeF117: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_7_N.png"];
+            break;
+        }
         default:
             break;
     }
@@ -249,6 +265,22 @@
         }
         case AEAirplaneTypeF22: {
             mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow3.png"];
+            break;
+        }
+        case AEAirplaneTypeZero: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow4.png"];
+            break;
+        }
+        case AEAirplaneTypeMeserchmit: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow5.png"];
+            break;
+        }
+        case AEAirplaneTypeBlackbird: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow6.png"];
+            break;
+        }
+        case AEAirplaneTypeF117: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow7.png"];
             break;
         }
         default:

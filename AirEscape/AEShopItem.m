@@ -22,6 +22,7 @@
         self.isUsed = [[dictionary valueForKey:@"isUsed"] boolValue];
         self.thumbnails = [dictionary valueForKey:@"thumbnailImage"];
         self.price = [dictionary valueForKey:@"price"];
+        self.lockedThumbnails = [dictionary valueForKey:@"lockedThumbnailImage"];
     }
     
     return self;
