@@ -95,14 +95,8 @@
         
         CGPoint positionInMainView = [_airplaneScrollingStrip.parent convertPoint:childSprite.position fromNode:_airplaneScrollingStrip];
        
-    
         CGFloat distanceFromCenter = self.size.width * 0.5 - positionInMainView.x;
         distanceFromCenter = (distanceFromCenter < 0) ? (distanceFromCenter * -1) : distanceFromCenter;
-        
-        //childSprite.scale = ((self.size.width * 0.5) - distanceFromCenter) / (self.size.width * 0.5) ;
-        
-        
-        //NSLog(@">>>> %f %f >>>>>>> %f", positionInMainView.x, positionInMainView.y, (self.size.width * 0.5 - distanceFromCenter) / self.size.width * 0.5);
     }
 }
 
@@ -227,12 +221,13 @@
     NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
     
     [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"" : credits];
-    [_changeDisplayedItemsButton setNormalTexture:((_hangarItemsDisplayed != AEHangarItemsCredits) ?
-                                                   [SKTexture textureWithImageNamed:@"missileBackgroundButton"] :
-                                                   [SKTexture textureWithImageNamed:@"airplaneButtonBackground"])];
-    [_changeDisplayedItemsButton setSelectedTexture:((_hangarItemsDisplayed != AEHangarItemsCredits) ?
-                                                     [SKTexture textureWithImageNamed:@"missileBackgroundButton"] :
-                                                     [SKTexture textureWithImageNamed:@"airplaneButtonBackground"])];
+    
+    SKTexture *displayedItemsNormalButtonTexture = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [SKTexture textureWithImageNamed:@"airplaneButtonBackground"] : [SKTexture textureWithImageNamed:@"missileBackgroundButton"];
+    SKTexture *displayedItemsSelectedButtonTexture = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [SKTexture textureWithImageNamed:@"airplaneButtonBackground"] : [SKTexture textureWithImageNamed:@"missileBackgroundButton"];
+    
+    [_changeDisplayedItemsButton setNormalTexture:displayedItemsNormalButtonTexture];
+    [_changeDisplayedItemsButton setSelectedTexture:displayedItemsSelectedButtonTexture];
+    [_changeDisplayedItemsButton setTexture:displayedItemsNormalButtonTexture];
     
     _shopItemsDictionary = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] creditsPlistPath]]  : [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
     
@@ -246,6 +241,7 @@
         [currentItem setKeyValue:[NSString stringWithFormat:@"%i", i]];
         
         AEHangarItemSprite *shopItem = [[AEHangarItemSprite alloc] init];
+        [shopItem setShopItemType:_hangarItemsDisplayed];
         [shopItem setShopItem:currentItem];
 
         if (i == 0) {
@@ -269,6 +265,15 @@
 - (void)changeDisplayedItemsButtonPressed {
     //_hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
     [self changeDisplayedItemsForType:((_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes)];
+}
+
+
+#pragma mark - UIAlertViewDelegate 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self changeDisplayedItemsButtonPressed];
+    }
 }
 
 #pragma mark - Helper Methods -

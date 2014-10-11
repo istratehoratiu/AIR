@@ -4,6 +4,8 @@
 <dict>
 	<key>0</key>
 	<dict>
+		<key>value</key>
+		<integer>200</integer>
 		<key>ID</key>
 		<integer>0</integer>
 		<key>Title</key>
@@ -19,6 +21,8 @@
 	</dict>
 	<key>1</key>
 	<dict>
+		<key>value</key>
+		<string>100000</string>
 		<key>ID</key>
 		<integer>1</integer>
 		<key>Title</key>
@@ -34,6 +38,8 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>value</key>
+		<string>1000</string>
 		<key>ID</key>
 		<integer>2</integer>
 		<key>Title</key>

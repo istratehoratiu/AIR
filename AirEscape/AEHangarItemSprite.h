@@ -22,7 +22,7 @@
 @property (nonatomic, retain) AEButtonNode *buyItemButton;
 @property (nonatomic, retain) SKLabelNode *selectedItemLabel;
 @property (nonatomic, retain) SKSpriteNode *backgroundSprite;
-@property (nonatomic, retain) SKSpriteNode *itemThumbnailSprite;
+@property (nonatomic, retain) AEButtonNode *itemThumbnailSprite;
 @property (nonatomic, retain) SKSpriteNode *selectedAirplaneCheckmarkSprite;
 @property (nonatomic, retain) SKLabelNode *itemPriceLabel;
 @property (nonatomic, retain) SKSpriteNode *missileSprite;

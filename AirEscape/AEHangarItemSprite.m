@@ -40,9 +40,6 @@
         [_selectedItemLabel setText:@"Selected"];
         [_selectedItemLabel setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
         
-        _missileSprite = [[SKSpriteNode alloc] initWithImageNamed:@"priceIndicator"];
-        [_missileSprite setPosition:CGPointMake(_buyItemButton.position.x, _buyItemButton.position.y)];
-        
         _selectedAirplaneCheckmarkSprite = [[SKSpriteNode alloc] initWithImageNamed:@"checkmark"];
         [_selectedAirplaneCheckmarkSprite setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
         
@@ -59,6 +56,10 @@
 
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self selectItemIfAvailable];
+}
+
+- (void)selectItemIfAvailable {
     if ([self.shopItem isBought]) {
         [self buyOrSelectShopItem];
     }
@@ -80,14 +81,17 @@
     CGFloat offesetForMissileIndicator = _buyItemButton.title.text.length * 22;
     [_missileSprite setPosition:CGPointMake(_buyItemButton.position.x + offesetForMissileIndicator, _buyItemButton.position.y)];
     
-    if (_shopItem.isBought) {
+    // If we are either presenting a non bought airplane or credits, present the normal thumbnail.
+    if (_shopItem.isBought || _shopItemType == AEHangarItemsCredits) {
         if (_shopItem.thumbnails) {
-            _itemThumbnailSprite = [[SKSpriteNode alloc] initWithImageNamed:_shopItem.thumbnails];
+            _itemThumbnailSprite = [[AEButtonNode alloc] initWithImageNamedNormal:_shopItem.thumbnails selected:_shopItem.thumbnails];
+            [_itemThumbnailSprite setTouchUpInsideTarget:self action:@selector(selectItemIfAvailable)];
             [self addChild:_itemThumbnailSprite];
         }
     } else {
         if (_shopItem.lockedThumbnails) {
-            _itemThumbnailSprite = [[SKSpriteNode alloc] initWithImageNamed:_shopItem.lockedThumbnails];
+            _itemThumbnailSprite = [[AEButtonNode alloc] initWithImageNamedNormal:_shopItem.lockedThumbnails selected:_shopItem.lockedThumbnails];
+            [_itemThumbnailSprite setTouchUpInsideTarget:self action:@selector(selectItemIfAvailable)];
             [self addChild:_itemThumbnailSprite];
         }
     }
@@ -100,13 +104,12 @@
 
     if (_shopItemType == AEHangarItemsAirplanes) {
         if (!_shopItem.isBought) {
-            
+
             NSNumber *totalCredits = [[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey];
             NSInteger totalCreditsInteger = [totalCredits integerValue];
             NSInteger priceInteger = [_shopItem.price integerValue];
-            
+
             if (priceInteger < totalCreditsInteger) {
-                
                 NSMutableDictionary *_airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
                 
                 NSMutableDictionary *updatedDictionary = [NSMutableDictionary dictionaryWithDictionary:_shopItem.representedDictionary];
@@ -120,8 +123,10 @@
                 NSNumber *remainingMissiles = [NSNumber numberWithInteger:(totalCreditsInteger - priceInteger)];
                 [[NSUserDefaults standardUserDefaults] setValue:remainingMissiles forKey:kAETotalScoreKey];
                 [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kSGUpdateHangarScreenNotification object:nil];
             } else {
-                UIAlertView *notEnoughtCreaditsAlert = [[UIAlertView alloc] initWithTitle:@"Not Enought Missiles" message:@"Get more missiles?" delegate:self.appDelegate cancelButtonTitle:@"Cancel" otherButtonTitles:@"Get Credits", nil];
+                UIAlertView *notEnoughtCreaditsAlert = [[UIAlertView alloc] initWithTitle:@"Not Enought Missiles" message:@"Get more missiles?" delegate:self.scene cancelButtonTitle:@"Cancel" otherButtonTitles:@"Get Credits", nil];
                 [notEnoughtCreaditsAlert show];
             }
         } else {
@@ -145,6 +150,8 @@
             
             [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:kSGUpdateHangarScreenNotification object:nil];
+            
             [[AEGameManager sharedManager] updateMainAirplaneImages];
         }
     } else {
@@ -152,8 +159,6 @@
     
         
     }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kSGUpdateHangarScreenNotification object:nil];
 }
 
 @end

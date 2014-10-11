@@ -20,7 +20,7 @@
 #import "ShadowLabelNode.h"
 
 
-#define kNumberOfDecorAirplanes 9
+#define kNumberOfDecorAirplanes 7
 
 @implementation AEMenuScene
 
@@ -37,7 +37,7 @@
         _arrayOfDecorAirplanes = [NSMutableArray array];
         
         for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
-            PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplaneOfType:(AEAirplaneType)getRandomNumberBetween(0, 7)];
+            PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplaneOfType:(AEAirplaneType)getRandomNumberBetween(0, 6)];
             decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
             decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
             decorAirplane.zRotation = getRandomNumberBetween(0, 3);
