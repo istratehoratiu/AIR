@@ -2,6 +2,52 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>5</key>
+	<dict>
+		<key>shadow</key>
+		<string>shadow6.png</string>
+		<key>straightFlyImage</key>
+		<string>plane_6_N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_6_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_6_R.png</string>
+		<key>ID</key>
+		<integer>6</integer>
+		<key>title</key>
+		<string>Blackbird</string>
+		<key>thumbnailImage</key>
+		<string>plane_6_N.png</string>
+		<key>price</key>
+		<integer>400</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>shadow</key>
+		<string>shadow5.png</string>
+		<key>straightFlyImage</key>
+		<string>plane_5_N.png</string>
+		<key>leftFlyImage</key>
+		<string>plane_5_L.png</string>
+		<key>rightFlyImage</key>
+		<string>plane_5_R.png</string>
+		<key>ID</key>
+		<integer>5</integer>
+		<key>title</key>
+		<string>Messerschmitt</string>
+		<key>thumbnailImage</key>
+		<string>plane_5_N.png</string>
+		<key>price</key>
+		<integer>400</integer>
+		<key>isBought</key>
+		<false/>
+		<key>isUsed</key>
+		<false/>
+	</dict>
 	<key>3</key>
 	<dict>
 		<key>shadow</key>

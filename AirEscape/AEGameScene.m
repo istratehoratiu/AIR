@@ -146,6 +146,7 @@
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"AEGameScene DEALLOC");
 }
 
@@ -347,8 +348,6 @@
         
         [missile updateOrientationVector];
     }];
-    
-
 }
 
 - (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {

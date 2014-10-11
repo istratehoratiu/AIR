@@ -11,6 +11,7 @@
 #import "AEShopItem.h"
 #import "AEAppDelegate.h"
 #import "NSObject+Additions.h"
+#import "AEGameManager.h"
 
 
 @implementation AEHangarItemSprite
@@ -96,6 +97,8 @@
             [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
             
             [_missileSprite setHidden:YES];
+            
+            [[AEGameManager sharedManager] updateMainAirplaneImages];
             
         } else {
             

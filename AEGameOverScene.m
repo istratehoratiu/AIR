@@ -89,6 +89,7 @@
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"AEGameOverScene DEALLOC");
 }
 

@@ -28,6 +28,7 @@
 @property (nonatomic, retain) SKTexture *straighFlightTexture;
 @property (nonatomic, retain) SKTexture *leftFlightTexture;
 @property (nonatomic, retain) SKTexture *rightFlightTexture;
+@property (nonatomic, retain) SKTexture *shadowTexture;
 
 @property (nonatomic, assign) CGFloat mainAirplaneAcceleration;
 @property (nonatomic, assign) CGFloat missileAcceleration;

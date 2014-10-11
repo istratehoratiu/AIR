@@ -85,6 +85,7 @@
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"AEHangarScene DEALLOC");
 }
 
