@@ -64,16 +64,11 @@
     _shopItem = shopItem;
     
     [_itemNameLabel setText:_shopItem.title];
-    
     [_buyItemButton setHidden:_shopItem.isBought];
-    
     [_selectItemButton setHidden:!(!_shopItem.isUsed && _shopItem.isBought)];
-    
     [_selectedItemLabel setHidden:!_shopItem.isUsed];
-    
     [_buyItemButton.title setText:[_shopItem.price stringValue]];
-    
-    
+    [_missileSprite setHidden:_shopItem.isBought];
     
     CGFloat offesetForMissileIndicator = _buyItemButton.title.text.length * 22;
     [_missileSprite setPosition:CGPointMake(_buyItemButton.position.x + offesetForMissileIndicator, _buyItemButton.position.y)];
@@ -99,6 +94,8 @@
             [_airplanesShopItemsDictionary setValue:updatedDictionary forKey:_shopItem.keyValue];
             
             [_airplanesShopItemsDictionary writeToFile:[[self appDelegate] airplanePListPath] atomically:NO];
+            
+            [_missileSprite setHidden:YES];
             
         } else {
             

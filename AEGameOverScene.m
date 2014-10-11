@@ -88,13 +88,16 @@
     return self;
 }
 
+- (void)dealloc {
+    NSLog(@"AEGameOverScene DEALLOC");
+}
+
 #pragma mark Handle touches
 
 - (void)showHangar {
     SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
     AEHangarScene *newScene = [[AEHangarScene alloc] initWithSize: self.size];
-    newScene.score = _score;
     //  Optionally, insert code to configure the new scene.
     [self.scene.view presentScene: newScene transition: crossFade];
 }

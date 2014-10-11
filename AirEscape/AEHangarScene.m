@@ -70,6 +70,11 @@
         NSString *hangarItemsCreditsPlistPath = [[NSBundle mainBundle] pathForResource:@"hangarItemsCredits" ofType:@"plist"];
         _creditsShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:hangarItemsCreditsPlistPath];
         
+        _hintLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        [_hintLabel setFontSize:20];
+        [_hintLabel setText:@"* Aquiring any missile pack will remove the in-game Ads!"];
+        [_hintLabel setPosition:CGPointMake((self.size.width * 0.5), 50)];
+        [self addChild:_hintLabel];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateScreen:) name:kSGUpdateHangarScreenNotification object:nil];
         
@@ -77,6 +82,10 @@
     }
     
     return self;
+}
+
+- (void)dealloc {
+    NSLog(@"AEHangarScene DEALLOC");
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -99,6 +108,15 @@
     UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
     
     [[self view] addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)willMoveFromView:(SKView *)view {
+    
+    if (self.view.gestureRecognizers && ([self.view.gestureRecognizers count] > 0)) {
+        for (UIGestureRecognizer *gestureRecognizer in self.view.gestureRecognizers) {
+            [[self view] removeGestureRecognizer:gestureRecognizer];
+        }
+    }
 }
 
 - (void)handleTouchFrom:(UIPanGestureRecognizer *)recognizer {
@@ -169,7 +187,6 @@
             
         }
         
-        
         SKAction *moveTo = [SKAction moveTo:newPos duration:scrollDuration];
         [moveTo setTimingMode:SKActionTimingEaseOut];
         [_airplaneScrollingStrip runAction:moveTo];
@@ -195,13 +212,17 @@
 }
 
 - (void)changeDisplayedItemsForType:(AEHangarItems)itemTypes {
+    // If the user swtiched between the different Hangar screens, reset the scrollview.
+    if (itemTypes != _hangarItemsDisplayed) {
+        _airplaneScrollingStrip.position = CGPointZero;
+    }
     
     // Update the button and the current displayed items.
-    
     _hangarItemsDisplayed = itemTypes;
     
-    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"Airplanes" : @"Credits"];
+    [_hintLabel setHidden:!(_hangarItemsDisplayed == AEHangarItemsCredits)];
     
+    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"Airplanes" : @"Credits"];
     
     _shopItemsDictionary = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] creditsPlistPath]]  : [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
     
@@ -236,8 +257,8 @@
 }
 
 - (void)changeDisplayedItemsButtonPressed {
-    _hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
-    [self changeDisplayedItemsForType:_hangarItemsDisplayed];
+    //_hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
+    [self changeDisplayedItemsForType:((_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes)];
 }
 
 #pragma mark - Helper Methods -

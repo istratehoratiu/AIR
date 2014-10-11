@@ -27,13 +27,14 @@
 @implementation AEViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
 
     [[AEGameManager sharedManager] addObserver:self forKeyPath:@"currentScene" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
 }
 
 - (void)dealloc {
-    [[AEGameManager sharedManager] removeObserver:self forKeyPath:@"cuurentScene"];
+    [[AEGameManager sharedManager] removeObserver:self forKeyPath:@"currentScene"];
 }
 
 
@@ -60,7 +61,6 @@
         [self.banner sizeToFit];
         _addBannerIsHidden = YES;
         [self.view addSubview:_banner];
-        self.canDisplayBannerAds = YES;
         
         // Create and configure the scene.
         SKScene * scene = [[AEMenuScene alloc] initWithSize:skView.bounds.size];

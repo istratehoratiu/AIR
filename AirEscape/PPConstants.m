@@ -14,5 +14,6 @@ CGFloat kPPRotationSpeedOfBomber = .15;
 CGFloat kPPRateOfFireForMainAirplane = 0.5;
 
 NSString *const kSGBestScoreKey = @"com.AirEscape.kSGBestScoreKey";
+NSString *const kAETotalScoreKey = @"com.AirEscape.kAETotalScoreKey";
 
 NSString *const kSGUpdateHangarScreenNotification = @"com.AirEscape.kSGUpdateHangarScreenNotification";

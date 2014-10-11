@@ -78,6 +78,10 @@
     return self;
 }
 
+- (void)dealloc {
+    NSLog(@"AEMenuScene DEALLOC");
+}
+
 
 #pragma mark -
 #pragma mark Handle touches

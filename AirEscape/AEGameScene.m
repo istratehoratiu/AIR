@@ -145,6 +145,10 @@
     return self;
 }
 
+- (void)dealloc {
+    NSLog(@"AEGameScene DEALLOC");
+}
+
 - (void)restartScene {
     
     SKTransition *crossFade = [SKTransition fadeWithDuration:0];
