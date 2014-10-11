@@ -23,6 +23,7 @@
         self.thumbnails = [dictionary valueForKey:@"thumbnailImage"];
         self.price = [dictionary valueForKey:@"price"];
         self.lockedThumbnails = [dictionary valueForKey:@"lockedThumbnailImage"];
+        self.value = [dictionary valueForKey:@"value"];
     }
     
     return self;

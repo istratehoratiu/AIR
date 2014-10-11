@@ -8,8 +8,8 @@
 		<integer>200</integer>
 		<key>ID</key>
 		<integer>0</integer>
-		<key>Title</key>
-		<string>100</string>
+		<key>title</key>
+		<string>+1000</string>
 		<key>thumbnailImage</key>
 		<string>missile.png</string>
 		<key>price</key>
@@ -22,11 +22,11 @@
 	<key>1</key>
 	<dict>
 		<key>value</key>
-		<string>100000</string>
+		<integer>100000</integer>
 		<key>ID</key>
 		<integer>1</integer>
-		<key>Title</key>
-		<string>200</string>
+		<key>title</key>
+		<string>+20000</string>
 		<key>thumbnailImage</key>
 		<string>missile2.png</string>
 		<key>price</key>
@@ -39,11 +39,11 @@
 	<key>2</key>
 	<dict>
 		<key>value</key>
-		<string>1000</string>
+		<integer>30000000</integer>
 		<key>ID</key>
 		<integer>2</integer>
-		<key>Title</key>
-		<string>300</string>
+		<key>title</key>
+		<string>+30000000</string>
 		<key>thumbnailImage</key>
 		<string>missile3.png</string>
 		<key>price</key>

@@ -88,6 +88,10 @@
             [_itemThumbnailSprite setTouchUpInsideTarget:self action:@selector(selectItemIfAvailable)];
             [self addChild:_itemThumbnailSprite];
         }
+        
+        if (_shopItemType == AEHangarItemsCredits) {
+            [_itemNameLabel setFontName:@"Chalkduster"];
+        }
     } else {
         if (_shopItem.lockedThumbnails) {
             _itemThumbnailSprite = [[AEButtonNode alloc] initWithImageNamedNormal:_shopItem.lockedThumbnails selected:_shopItem.lockedThumbnails];
