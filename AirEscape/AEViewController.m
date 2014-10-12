@@ -103,6 +103,12 @@
 
 - (void)showADDS {
     
+    BOOL userBoughtItems = [[[NSUserDefaults standardUserDefaults] valueForKey:kAEUserBuyedSomethingKey] boolValue];
+
+    if (userBoughtItems) {
+        return;
+    }
+    
     AEScene currentScene = [AEGameManager sharedManager].currentScene;
     
     if (_addBannerIsHidden && (currentScene != AESceneHangar) && (currentScene != AESceneGame)) {
@@ -142,11 +148,14 @@
     if ([keyPath isEqualToString:@"currentScene"]) {
         switch ([object currentScene]) {
             case AESceneMenu:
-            case AESceneGameOver:
-
-                [self requestInterstitialAdPresentation];
+            case AESceneGameOver: {
+                BOOL userBoughtItems = [[[NSUserDefaults standardUserDefaults] valueForKey:kAEUserBuyedSomethingKey] boolValue];
                 
+                if (!userBoughtItems) {
+                    [self requestInterstitialAdPresentation];
+                }
                 break;
+            }
             case AESceneHangar:
             case AESceneGame:
                 [self hideADDS];

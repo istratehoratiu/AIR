@@ -15,5 +15,6 @@ CGFloat kPPRateOfFireForMainAirplane = 0.5;
 
 NSString *const kSGBestScoreKey = @"com.AirEscape.kSGBestScoreKey";
 NSString *const kAETotalScoreKey = @"com.AirEscape.kAETotalScoreKey";
+NSString *const kAEUserBuyedSomethingKey = @"com.AirEscape.kAEUserBuyedSomethingKey";
 
 NSString *const kSGUpdateHangarScreenNotification = @"com.AirEscape.kSGUpdateHangarScreenNotification";

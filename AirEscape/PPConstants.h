@@ -75,5 +75,6 @@ static const NSUInteger enemyMissileCategory              =  7;
 
 extern NSString *const kSGBestScoreKey;
 extern NSString *const kAETotalScoreKey;
+extern NSString *const kAEUserBuyedSomethingKey;
 
 extern NSString *const kSGUpdateHangarScreenNotification;

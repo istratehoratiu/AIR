@@ -108,34 +108,43 @@
         
         _gameIsPaused = NO;
         
-        SKAction *enlarge = [SKAction scaleTo:.5 duration:1];
+        SKAction *enlarge = [SKAction scaleTo:1 duration:1];
         
-        SKSpriteNode *firstNumber = [SKSpriteNode spriteNodeWithImageNamed:@"1.png"];
-        [firstNumber setScale:0];
-        firstNumber.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-        [self addChild:firstNumber];
+        SKLabelNode *firstNumberLabel = [SKLabelNode labelNodeWithFontNamed:@"if"];
+        [firstNumberLabel setText:@"1"];
+        [firstNumberLabel setFontSize:150];
+        [firstNumberLabel setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
+        [firstNumberLabel setScale:0];
+        firstNumberLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
+        [self addChild:firstNumberLabel];
         
-        SKSpriteNode *secondNumber = [SKSpriteNode spriteNodeWithImageNamed:@"2.png"];
-        [secondNumber setScale:0];
-        secondNumber.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-        [self addChild:secondNumber];
+        SKLabelNode *secondNumberLabel = [SKLabelNode labelNodeWithFontNamed:@"if"];
+        [secondNumberLabel setText:@"2"];
+        [secondNumberLabel setFontSize:150];
+        [secondNumberLabel setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
+        [secondNumberLabel setScale:0];
+        secondNumberLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
+        [self addChild:secondNumberLabel];
         
-        SKSpriteNode *thirdNumber = [SKSpriteNode spriteNodeWithImageNamed:@"3.png"];
-        [thirdNumber setScale:0];
-        thirdNumber.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-        [self addChild:thirdNumber];
+        SKLabelNode *thirdNumberLabel = [SKLabelNode labelNodeWithFontNamed:@"if"];
+        [thirdNumberLabel setText:@"3"];
+        [thirdNumberLabel setFontSize:150];
+        [thirdNumberLabel setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
+        [thirdNumberLabel setScale:0];
+        thirdNumberLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
+        [self addChild:thirdNumberLabel];
         
         
-        [firstNumber runAction:enlarge completion:^{
+        [firstNumberLabel runAction:enlarge completion:^{
             
-            [firstNumber removeFromParent];
+            [firstNumberLabel removeFromParent];
             
-            [secondNumber runAction:enlarge completion:^{
+            [secondNumberLabel runAction:enlarge completion:^{
                 
-                [secondNumber removeFromParent];
+                [secondNumberLabel removeFromParent];
                 
-                [thirdNumber runAction:enlarge completion:^{
-                    [thirdNumber removeFromParent];
+                [thirdNumberLabel runAction:enlarge completion:^{
+                    [thirdNumberLabel removeFromParent];
                 }];
                 
             }];
