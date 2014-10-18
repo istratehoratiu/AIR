@@ -10,6 +10,7 @@
 #import "Appirater.h"
 #import "AEGameManager.h"
 #import "SKProduct+Additions.h"
+#import "RageIAPHelper.h"
 
 @implementation AEAppDelegate
 
@@ -18,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [RageIAPHelper sharedInstance];
+    
     _atlas = [SKTextureAtlas atlasNamed:@"sprite"];
     
     [Appirater setAppId:@"931203917"];
@@ -65,22 +69,55 @@
         [self.backgroundMusicPlayer play];
     }
     
-    
-    NSSet *productIdentifiers1 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles1"];
-    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers1];
-    productsRequest.delegate = self;
-    [productsRequest start];
-    
-    NSSet *productIdentifiers2 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles2"];
-    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers2];
-    productsRequest.delegate = self;
-    [productsRequest start];
-    
-    NSSet *productIdentifiers3 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles3"];
-    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers3];
-    productsRequest.delegate = self;
-    [productsRequest start];
-    
+    [[RageIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            
+            NSMutableDictionary *_creditsShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:_creditsPlistPath];
+            
+            NSArray *keyArray = [_creditsShopItemsDictionary allKeys];
+            for (SKProduct *product in products) {
+                for (NSString *key in keyArray) {
+                    
+                    NSMutableDictionary *currentDictionary = [_creditsShopItemsDictionary valueForKey:key];
+                    
+                    if ([[currentDictionary valueForKey:@"ID"] isEqualToString:product.productIdentifier]) {
+                        [currentDictionary setValue:product.price forKey:@"price"];
+                        [currentDictionary setValue:product.localizedTitle forKey:@"title"];
+                        [currentDictionary setValue:product.localizedPrice forKey:@"localizedPrice"];
+                        
+//                        if ([[currentDictionary valueForKey:@"ID"] isEqualToString:@"com.istratehoratiu.missileevasion.missiles1"]) {
+//                            self.product1 = [products count] == 1 ? [products firstObject] : nil;
+//                        } else if ([[currentDictionary valueForKey:@"ID"] isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
+//                            self.product2 = [products count] == 1 ? [products firstObject] : nil;
+//                        } else {
+//                            self.product3 = [products count] == 1 ? [products firstObject] : nil;
+//                        }
+                        
+                        break;
+                    }
+                }
+            }
+
+            
+            [_creditsShopItemsDictionary writeToFile:_creditsPlistPath atomically:NO];
+            
+        }
+    }];
+//    NSSet *productIdentifiers1 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles1"];
+//    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers1];
+//    productsRequest.delegate = self;
+//    [productsRequest start];
+//    
+//    NSSet *productIdentifiers2 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles2"];
+//    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers2];
+//    productsRequest.delegate = self;
+//    [productsRequest start];
+//    
+//    NSSet *productIdentifiers3 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles3"];
+//    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers3];
+//    productsRequest.delegate = self;
+//    [productsRequest start];
+//    
     //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     
     return YES;
@@ -147,9 +184,6 @@
     }
     
     [_creditsShopItemsDictionary writeToFile:_creditsPlistPath atomically:NO];
-    
-    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 

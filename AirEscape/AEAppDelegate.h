@@ -12,7 +12,7 @@
 
 @import AVFoundation;
 
-@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver> {
+@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate> {
 
     SKTextureAtlas* _atlas;
     SKProductsRequest *productsRequest;

@@ -19,6 +19,8 @@
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
 		EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3426E519F2A0190060F9E7 /* StoreKit.framework */; };
 		EB3426E919F2C8E10060F9E7 /* SKProduct+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */; };
+		EB3426EF19F2FEFE0060F9E7 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3426EE19F2FEFE0060F9E7 /* IAPHelper.m */; };
+		EB3426F219F2FF190060F9E7 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3426F119F2FF190060F9E7 /* RageIAPHelper.m */; };
 		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
 		EB46618F19D6C965006FE649 /* 1001fonts-if-eula.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB46617019D6C965006FE649 /* 1001fonts-if-eula.txt */; };
 		EB46619019D6C965006FE649 /* If.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB46617219D6C965006FE649 /* If.ttf */; };
@@ -106,6 +108,10 @@
 		EB3426E519F2A0190060F9E7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EB3426E719F2C8E10060F9E7 /* SKProduct+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Additions.h"; sourceTree = "<group>"; };
 		EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Additions.m"; sourceTree = "<group>"; };
+		EB3426ED19F2FEFE0060F9E7 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		EB3426EE19F2FEFE0060F9E7 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		EB3426F019F2FF190060F9E7 /* RageIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RageIAPHelper.h; sourceTree = "<group>"; };
+		EB3426F119F2FF190060F9E7 /* RageIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RageIAPHelper.m; sourceTree = "<group>"; };
 		EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		EB46617019D6C965006FE649 /* 1001fonts-if-eula.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1001fonts-if-eula.txt"; sourceTree = "<group>"; };
 		EB46617219D6C965006FE649 /* If.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = If.ttf; path = IF/If.ttf; sourceTree = "<group>"; };
@@ -255,6 +261,10 @@
 		EB16158F1971626D00B9C35C /* Supporting Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB3426ED19F2FEFE0060F9E7 /* IAPHelper.h */,
+				EB3426EE19F2FEFE0060F9E7 /* IAPHelper.m */,
+				EB3426F019F2FF190060F9E7 /* RageIAPHelper.h */,
+				EB3426F119F2FF190060F9E7 /* RageIAPHelper.m */,
 				EB48A2F21986C6A5003EE36C /* AEShopItem.h */,
 				EB48A2F31986C6A5003EE36C /* AEShopItem.m */,
 				EB87BD6618E0DEA60080FA55 /* PPMath.h */,
@@ -644,6 +654,8 @@
 				EB87BD6E18E0DEA60080FA55 /* AEButtonNode.m in Sources */,
 				EB26ED13195C82F8008FF5A1 /* AEGameOverStatisticsSprite.m in Sources */,
 				EB66E8A1198959A700690375 /* AEHangarScene.m in Sources */,
+				EB3426F219F2FF190060F9E7 /* RageIAPHelper.m in Sources */,
+				EB3426EF19F2FEFE0060F9E7 /* IAPHelper.m in Sources */,
 				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
 				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
 				EB743D16198CFD4800E5CE3D /* AEHangarItemSprite.m in Sources */,

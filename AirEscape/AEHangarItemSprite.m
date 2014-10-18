@@ -12,6 +12,7 @@
 #import "AEAppDelegate.h"
 #import "NSObject+Additions.h"
 #import "AEGameManager.h"
+#import "RageIAPHelper.h"
 
 
 @implementation AEHangarItemSprite
@@ -162,23 +163,7 @@
         }
     } else {
     
-        SKProduct *product = nil;
-        
-        if ([_shopItem.ID isEqualToString:@"com.istratehoratiu.missileevasion.missiles1"]) {
-            product = self.appDelegate.product1;
-        } else if ([_shopItem.ID isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
-            product = self.appDelegate.product2;
-        } else {
-            product = self.appDelegate.product3;
-        }
-        
-        SKPayment *payment = [SKPayment paymentWithProduct:product];
-
-        [[SKPaymentQueue defaultQueue] addPayment:payment];
-        
-        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+        [[RageIAPHelper sharedInstance] buyProductWithIdentifier:_shopItem.ID];
     }
 }
 
