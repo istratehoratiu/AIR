@@ -73,6 +73,13 @@
         [self addChild:playButton];
         [self addChild:hangarButton];
         [self addChild:rateButton];
+    
+        SKAction *fadeIn = [SKAction fadeInWithDuration: 1.0];
+        
+        [playButton runAction:fadeIn];
+        [hangarButton runAction:fadeIn];
+        [rateButton runAction:fadeIn];
+        
     }
     
     return self;

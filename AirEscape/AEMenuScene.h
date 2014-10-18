@@ -7,14 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
+#import "AEScene.h"
 
 @class AEButtonNode;
 @class PPMainAirplane;
 @class SKBlade;
 @class ShadowLabelNode;
 
-@interface AEMenuScene : SKScene {
+@interface AEMenuScene : AEScene {
 
     SKSpriteNode *background;
     ShadowLabelNode *gameNameLabel;

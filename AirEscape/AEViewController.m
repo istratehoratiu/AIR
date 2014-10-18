@@ -13,7 +13,6 @@
 #import <iAd/iAd.h>
 #import "AEGameManager.h"
 
-
 #define ADDBannerWidth 320
 #define ADDBannerHeight 50
 
@@ -21,6 +20,7 @@
 
 @property (nonatomic, assign) BOOL addBannerIsHidden;
 @property (nonatomic, strong) ADBannerView *banner;
+
 
 @end
 
@@ -109,7 +109,7 @@
         return;
     }
     
-    AEScene currentScene = [AEGameManager sharedManager].currentScene;
+    AESceneType currentScene = [AEGameManager sharedManager].currentScene;
     
     if (_addBannerIsHidden && (currentScene != AESceneHangar) && (currentScene != AESceneGame)) {
         

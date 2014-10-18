@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import <StoreKit/StoreKit.h>
 
-@interface AEAppDelegate : UIResponder <UIApplicationDelegate> {
+@import AVFoundation;
+
+@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate> {
 
     SKTextureAtlas* _atlas;
+    SKProduct *proUpgradeProduct;
+    SKProductsRequest *productsRequest;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) SKTextureAtlas* atlas;
 @property (nonatomic, strong) NSString *airplanePListPath;
 @property (nonatomic, strong) NSString *creditsPlistPath;
+@property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
 
 @end

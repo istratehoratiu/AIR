@@ -20,7 +20,7 @@
 {
     _atlas = [SKTextureAtlas atlasNamed:@"sprite"];
     
-    [Appirater setAppId:@"552035781"];
+    [Appirater setAppId:@"931203917"];
     //[Appirater userDidSignificantEvent:NO];
     
     NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"defaultPrefs" ofType:@"plist"];
@@ -53,9 +53,37 @@
     
     
     [[AEGameManager sharedManager] updateMainAirplaneImages];
+    
+    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"background-music-aac" withExtension:@"caf"];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    
+    BOOL shouldPlaySound = [[[NSUserDefaults standardUserDefaults] valueForKey:kAESoundIsEnabledKey] boolValue];
+    
+    if (shouldPlaySound) {
+        [self.backgroundMusicPlayer play];
+    }
+    
+    
+    NSSet *productIdentifiers1 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles1"];
+    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers1];
+    productsRequest.delegate = self;
+    [productsRequest start];
+    
+    NSSet *productIdentifiers2 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles2"];
+    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers2];
+    productsRequest.delegate = self;
+    [productsRequest start];
+    
+    NSSet *productIdentifiers3 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles3"];
+    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers3];
+    productsRequest.delegate = self;
+    [productsRequest start];
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -82,6 +110,35 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
+    
+    NSArray *products = response.products;
+    proUpgradeProduct = [products count] == 1 ? [products firstObject] : nil;
+    
+    
+    NSMutableDictionary *_creditsShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:_creditsPlistPath];
+    
+    NSArray *keyArray = [_creditsShopItemsDictionary allKeys];
+    
+    for (NSString *key in keyArray) {
+        
+        NSMutableDictionary *currentDictionary = [_creditsShopItemsDictionary valueForKey:key];
+        
+        if ([[currentDictionary valueForKey:@"ID"] isEqualToString:proUpgradeProduct.productIdentifier]) {
+            [currentDictionary setValue:[proUpgradeProduct.price stringValue] forKey:@"price"];
+            [currentDictionary setValue:proUpgradeProduct.localizedTitle forKey:@"title"];
+            
+            break;
+        }
+    }
+    
+    [_creditsShopItemsDictionary writeToFile:_creditsPlistPath atomically:NO];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

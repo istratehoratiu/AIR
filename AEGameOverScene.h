@@ -7,11 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "AEScene.h"
 
 @class AEButtonNode;
 @class AEGameOverStatisticsSprite;
 
-@interface AEGameOverScene : SKScene {
+@interface AEGameOverScene : AEScene {
     
 }
 

@@ -17,6 +17,7 @@
 		EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED21195C8343008FF5A1 /* CHANGELOG.md */; };
 		EB26ED96195C8343008FF5A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED5E195C8343008FF5A1 /* README.md */; };
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
+		EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3426E519F2A0190060F9E7 /* StoreKit.framework */; };
 		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
 		EB46618F19D6C965006FE649 /* 1001fonts-if-eula.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB46617019D6C965006FE649 /* 1001fonts-if-eula.txt */; };
 		EB46619019D6C965006FE649 /* If.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB46617219D6C965006FE649 /* If.ttf */; };
@@ -53,6 +54,9 @@
 		EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */; };
 		EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */; };
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
+		EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCD919EA7F1400799826 /* background-music-aac.caf */; };
+		EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */; };
+		EBAADCDF19EA810300799826 /* AEScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAADCDE19EA810300799826 /* AEScene.m */; };
 		EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEGameManager.m */; };
 		EBF8385C19D6F60600C8E610 /* ShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */; };
 		EBF8387019D6FAF800C8E610 /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386019D6FAF800C8E610 /* bulletHit.sks */; };
@@ -98,6 +102,7 @@
 		EB26ED5E195C8343008FF5A1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
 		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
+		EB3426E519F2A0190060F9E7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		EB46617019D6C965006FE649 /* 1001fonts-if-eula.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1001fonts-if-eula.txt"; sourceTree = "<group>"; };
 		EB46617219D6C965006FE649 /* If.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = If.ttf; path = IF/If.ttf; sourceTree = "<group>"; };
@@ -153,6 +158,10 @@
 		EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsAirplanes.plist; sourceTree = "<group>"; };
 		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joystick.h; path = AirEscape/Joystick.h; sourceTree = "<group>"; };
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joystick.m; path = AirEscape/Joystick.m; sourceTree = "<group>"; };
+		EBAADCD919EA7F1400799826 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		EBAADCDD19EA810300799826 /* AEScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEScene.h; sourceTree = "<group>"; };
+		EBAADCDE19EA810300799826 /* AEScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEScene.m; sourceTree = "<group>"; };
 		EBD57B8018E21CAD00D5A61E /* AEGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEGameManager.h; sourceTree = "<group>"; };
 		EBD57B8118E21CAD00D5A61E /* AEGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEGameManager.m; sourceTree = "<group>"; };
 		EBF8385A19D6F60600C8E610 /* ShadowLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabelNode.h; path = AirEscape/ShadowLabelNode.h; sourceTree = "<group>"; };
@@ -177,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */,
 				EBF88FD719603A05007B8812 /* iAd.framework in Frameworks */,
 				EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */,
 				EB87BD1F18E09E220080FA55 /* UIKit.framework in Frameworks */,
@@ -270,6 +280,8 @@
 				EB212E331945A748000D1A3E /* AEMenuScene.m */,
 				EB212E351945E053000D1A3E /* AEGameOverScene.h */,
 				EB212E361945E053000D1A3E /* AEGameOverScene.m */,
+				EBAADCDD19EA810300799826 /* AEScene.h */,
+				EBAADCDE19EA810300799826 /* AEScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -329,6 +341,7 @@
 		EB87BD1918E09E220080FA55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB3426E519F2A0190060F9E7 /* StoreKit.framework */,
 				EBF88FD619603A05007B8812 /* iAd.framework */,
 				EB87BD1A18E09E220080FA55 /* Foundation.framework */,
 				EB87BD1C18E09E220080FA55 /* CoreGraphics.framework */,
@@ -371,6 +384,8 @@
 				EB87BD2518E09E220080FA55 /* InfoPlist.strings */,
 				EB87BD2818E09E220080FA55 /* main.m */,
 				EB87BD2A18E09E220080FA55 /* AirEscape-Prefix.pch */,
+				EBAADCD919EA7F1400799826 /* background-music-aac.caf */,
+				EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -495,6 +510,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Horatiu Istrate";
 				TargetAttributes = {
+					EB87BD1618E09E220080FA55 = {
+						DevelopmentTeam = T8347X58ME;
+					};
 					EB87BD4118E09E220080FA55 = {
 						TestTargetID = EB87BD1618E09E220080FA55;
 					};
@@ -557,10 +575,12 @@
 			files = (
 				EBF8387C19D6FAF800C8E610 /* trail.sks in Resources */,
 				EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */,
+				EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */,
+				EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */,
 				EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */,
 				EBF8387619D6FAF800C8E610 /* rateButton.png in Resources */,
 				EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */,
@@ -621,6 +641,7 @@
 				EB87BD6C18E0DEA60080FA55 /* PPMath.m in Sources */,
 				EB87BD5C18E0DD9F0080FA55 /* SKSpriteNode+Additions.m in Sources */,
 				EB743D16198CFD4800E5CE3D /* AEHangarItemSprite.m in Sources */,
+				EBAADCDF19EA810300799826 /* AEScene.m in Sources */,
 				EB87BD6518E0DE960080FA55 /* PPSpriteNode.m in Sources */,
 				EB48A2F41986C6A5003EE36C /* AEShopItem.m in Sources */,
 				EB87BD2918E09E220080FA55 /* main.m in Sources */,
@@ -758,11 +779,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
 				INFOPLIST_FILE = "AirEscape/AirEscape-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -774,11 +798,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirEscape/AirEscape-Prefix.pch";
 				INFOPLIST_FILE = "AirEscape/AirEscape-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

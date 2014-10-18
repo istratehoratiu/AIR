@@ -23,7 +23,7 @@
     
 }
 
-@property (nonatomic, assign) AEScene currentScene;
+@property (nonatomic, assign) AESceneType currentScene;
 
 @property (nonatomic, retain) SKTexture *straighFlightTexture;
 @property (nonatomic, retain) SKTexture *leftFlightTexture;

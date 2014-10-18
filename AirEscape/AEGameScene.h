@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "AEScene.h"
 
 @class PPSpriteNode;
 @class PPMainAirplane;
@@ -17,7 +18,7 @@
 @class JCImageJoystick;
 @class Joystick;
 
-@interface AEGameScene : SKScene {
+@interface AEGameScene : AEScene {
     
     SKSpriteNode *background;
     

@@ -239,6 +239,9 @@
         [_userAirplane setHealth:_userAirplane.health - 50];
         
         if ([_userAirplane health] <= 0) {
+            [self runAction:[SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO]];
+
+            
             [_userAirplane removeFromParent];
             [self performSelector:@selector(restartScene) withObject:nil afterDelay:2];
         }
