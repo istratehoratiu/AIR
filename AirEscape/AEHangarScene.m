@@ -193,18 +193,24 @@
 #pragma mark - Button Callbacks -
 
 - (void)backButton {
-    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
-
-    SKScene *newScene = nil;
     
-    if (_score > 0) {
-        newScene = [[AEGameOverScene alloc] initWithSize: self.size score:_score];
+    if (_hangarItemsDisplayed ==  AEHangarItemsCredits) {
+        [self changeDisplayedItemsButtonPressed];
     } else {
-        newScene = [[AEMenuScene alloc] initWithSize: self.size];
-    }
     
+        SKTransition *crossFade = [SKTransition fadeWithDuration:1];
+
+        SKScene *newScene = nil;
+        
+        if (_score > 0) {
+            newScene = [[AEGameOverScene alloc] initWithSize: self.size score:_score];
+        } else {
+            newScene = [[AEMenuScene alloc] initWithSize: self.size];
+        }
+        
     //  Optionally, insert code to configure the new scene.
-    [self.scene.view presentScene: newScene transition: crossFade];
+        [self.scene.view presentScene: newScene transition: crossFade];
+    }
 }
 
 - (void)changeDisplayedItemsForType:(AEHangarItems)itemTypes {
@@ -219,15 +225,15 @@
     [_hintLabel setHidden:!(_hangarItemsDisplayed == AEHangarItemsCredits)];
     
     NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
-    
-    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"" : credits];
-    
-    SKTexture *displayedItemsNormalButtonTexture = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [SKTexture textureWithImageNamed:@"airplaneButtonBackground"] : [SKTexture textureWithImageNamed:@"missileBackgroundButton"];
-    SKTexture *displayedItemsSelectedButtonTexture = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [SKTexture textureWithImageNamed:@"airplaneButtonBackground"] : [SKTexture textureWithImageNamed:@"missileBackgroundButton"];
-    
-    [_changeDisplayedItemsButton setNormalTexture:displayedItemsNormalButtonTexture];
-    [_changeDisplayedItemsButton setSelectedTexture:displayedItemsSelectedButtonTexture];
-    [_changeDisplayedItemsButton setTexture:displayedItemsNormalButtonTexture];
+    [_changeDisplayedItemsButton.title setText:credits];
+//    [_changeDisplayedItemsButton.title setText:(_hangarItemsDisplayed == AEHangarItemsCredits) ? @"" : credits];
+//    
+//    SKTexture *displayedItemsNormalButtonTexture = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [SKTexture textureWithImageNamed:@"airplaneButtonBackground"] : [SKTexture textureWithImageNamed:@"missileBackgroundButton"];
+//    SKTexture *displayedItemsSelectedButtonTexture = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [SKTexture textureWithImageNamed:@"airplaneButtonBackground"] : [SKTexture textureWithImageNamed:@"missileBackgroundButton"];
+//    
+//    [_changeDisplayedItemsButton setNormalTexture:displayedItemsNormalButtonTexture];
+//    [_changeDisplayedItemsButton setSelectedTexture:displayedItemsSelectedButtonTexture];
+//    [_changeDisplayedItemsButton setTexture:displayedItemsNormalButtonTexture];
     
     _shopItemsDictionary = (_hangarItemsDisplayed == AEHangarItemsCredits) ? [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] creditsPlistPath]]  : [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
     

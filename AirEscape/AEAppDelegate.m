@@ -9,7 +9,7 @@
 #import "AEAppDelegate.h"
 #import "Appirater.h"
 #import "AEGameManager.h"
-
+#import "SKProduct+Additions.h"
 
 @implementation AEAppDelegate
 
@@ -81,6 +81,8 @@
     productsRequest.delegate = self;
     [productsRequest start];
     
+    //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    
     return YES;
 }
 
@@ -116,7 +118,7 @@
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
     
     NSArray *products = response.products;
-    proUpgradeProduct = [products count] == 1 ? [products firstObject] : nil;
+    SKProduct *proUpgradeProduct = [products count] == 1 ? [products firstObject] : nil;
     
     
     NSMutableDictionary *_creditsShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:_creditsPlistPath];
@@ -128,8 +130,17 @@
         NSMutableDictionary *currentDictionary = [_creditsShopItemsDictionary valueForKey:key];
         
         if ([[currentDictionary valueForKey:@"ID"] isEqualToString:proUpgradeProduct.productIdentifier]) {
-            [currentDictionary setValue:[proUpgradeProduct.price stringValue] forKey:@"price"];
+            [currentDictionary setValue:proUpgradeProduct.price forKey:@"price"];
             [currentDictionary setValue:proUpgradeProduct.localizedTitle forKey:@"title"];
+            [currentDictionary setValue:proUpgradeProduct.localizedPrice forKey:@"localizedPrice"];
+            
+            if ([[currentDictionary valueForKey:@"ID"] isEqualToString:@"com.istratehoratiu.missileevasion.missiles1"]) {
+                self.product1 = [products count] == 1 ? [products firstObject] : nil;
+            } else if ([[currentDictionary valueForKey:@"ID"] isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
+                self.product2 = [products count] == 1 ? [products firstObject] : nil;
+            } else {
+                self.product3 = [products count] == 1 ? [products firstObject] : nil;
+            }
             
             break;
         }
@@ -140,5 +151,31 @@
     [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+
+//- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
+//{
+//    for (SKPaymentTransaction *transaction in transactions)
+//    {
+//        switch (transaction.transactionState)
+//        {
+//            case SKPaymentTransactionStatePurchased: {
+//                
+//                break;
+//            }
+//            case SKPaymentTransactionStateFailed: {
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:transaction.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//                [alert show];
+//                break;
+//            }
+//            case SKPaymentTransactionStateRestored: {
+//                
+//                break;
+//            }
+//            default:
+//                break;
+//        }
+//    }
+//}
 
 @end

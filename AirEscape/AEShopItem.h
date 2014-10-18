@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSString *lockedThumbnails;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSNumber *value;
+@property (nonatomic, strong) NSString *localizedPrice;
+@property (nonatomic, strong) NSString *ID;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -4,18 +4,20 @@
 <dict>
 	<key>0</key>
 	<dict>
+		<key>localizedPrice</key>
+		<string></string>
 		<key>isUpdated</key>
 		<false/>
 		<key>value</key>
 		<integer>200</integer>
 		<key>ID</key>
-		<string>com.istratehoratiu.missileevasion.missile1</string>
+		<string>com.istratehoratiu.missileevasion.missiles1</string>
 		<key>title</key>
 		<string></string>
 		<key>thumbnailImage</key>
 		<string>missile.png</string>
 		<key>price</key>
-		<string>0</string>
+		<integer>0</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -23,18 +25,20 @@
 	</dict>
 	<key>1</key>
 	<dict>
+		<key>localizedPrice</key>
+		<string></string>
 		<key>isUpdated</key>
 		<false/>
 		<key>value</key>
 		<integer>500</integer>
 		<key>ID</key>
-		<string>com.istratehoratiu.missileevasion.missile2</string>
+		<string>com.istratehoratiu.missileevasion.missiles2</string>
 		<key>title</key>
 		<string></string>
 		<key>thumbnailImage</key>
 		<string>missile2.png</string>
 		<key>price</key>
-		<string>0</string>
+		<integer>0</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -42,18 +46,20 @@
 	</dict>
 	<key>2</key>
 	<dict>
+		<key>localizedPrice</key>
+		<string></string>
 		<key>isUpdated</key>
 		<false/>
 		<key>value</key>
 		<integer>1000</integer>
 		<key>ID</key>
-		<string>com.istratehoratiu.missileevasion.missile3</string>
+		<string>com.istratehoratiu.missileevasion.missiles3</string>
 		<key>title</key>
 		<string></string>
 		<key>thumbnailImage</key>
 		<string>missile3.png</string>
 		<key>price</key>
-		<string>0</string>
+		<integer>0</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>

@@ -30,7 +30,7 @@
         [_buyItemButton.title setFontName:@"Chalkduster"];
         //[_buyItemButton.title setFontColor:[UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1]];
         [_buyItemButton.title setFontColor:[UIColor darkGrayColor]];
-        [_buyItemButton.title setFontSize:40.0];
+        [_buyItemButton.title setFontSize:25.0];
         [_buyItemButton.title setText:@"Buy"];
         [_buyItemButton setPosition:CGPointMake(0, 60 - (self.size.height *  0.5))];
         
@@ -75,7 +75,7 @@
     [_buyItemButton setHidden:_shopItem.isBought];
     [_selectedAirplaneCheckmarkSprite setHidden:!_shopItem.isUsed];
     //[_selectedItemLabel setHidden:!_shopItem.isUsed];
-    [_buyItemButton.title setText:[_shopItem.price stringValue]];
+    [_buyItemButton.title setText: (_shopItemType == AEHangarItemsAirplanes) ? [_shopItem.price stringValue] : _shopItem.localizedPrice];
     [_missileSprite setHidden:_shopItem.isBought];
     
     CGFloat offesetForMissileIndicator = _buyItemButton.title.text.length * 22;
@@ -162,6 +162,20 @@
         }
     } else {
     
+        SKProduct *product = nil;
+        
+        if ([_shopItem.ID isEqualToString:@"com.istratehoratiu.missileevasion.missiles1"]) {
+            product = self.appDelegate.product1;
+        } else if ([_shopItem.ID isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
+            product = self.appDelegate.product2;
+        } else {
+            product = self.appDelegate.product3;
+        }
+        
+        SKPayment *payment = [SKPayment paymentWithProduct:product];
+
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+        
         [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         

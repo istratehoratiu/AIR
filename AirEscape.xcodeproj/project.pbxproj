@@ -18,6 +18,7 @@
 		EB26ED96195C8343008FF5A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED5E195C8343008FF5A1 /* README.md */; };
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
 		EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3426E519F2A0190060F9E7 /* StoreKit.framework */; };
+		EB3426E919F2C8E10060F9E7 /* SKProduct+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */; };
 		EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */; };
 		EB46618F19D6C965006FE649 /* 1001fonts-if-eula.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB46617019D6C965006FE649 /* 1001fonts-if-eula.txt */; };
 		EB46619019D6C965006FE649 /* If.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB46617219D6C965006FE649 /* If.ttf */; };
@@ -103,6 +104,8 @@
 		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
 		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
 		EB3426E519F2A0190060F9E7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EB3426E719F2C8E10060F9E7 /* SKProduct+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Additions.h"; sourceTree = "<group>"; };
+		EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Additions.m"; sourceTree = "<group>"; };
 		EB35D7CC18E1ED1D0008BC0C /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		EB46617019D6C965006FE649 /* 1001fonts-if-eula.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1001fonts-if-eula.txt"; sourceTree = "<group>"; };
 		EB46617219D6C965006FE649 /* If.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = If.ttf; path = IF/If.ttf; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */,
 				EB7966D018E1FF5D00D2669C /* NSObject+Additions.h */,
 				EB7966D118E1FF5D00D2669C /* NSObject+Additions.m */,
+				EB3426E719F2C8E10060F9E7 /* SKProduct+Additions.h */,
+				EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB26ED16195C82F8008FF5A1 /* AEButtonNode+Additions.m in Sources */,
+				EB3426E919F2C8E10060F9E7 /* SKProduct+Additions.m in Sources */,
 				EB87BD6D18E0DEA60080FA55 /* PPConstants.m in Sources */,
 				EBA040C918E3980D004B708A /* Joystick.m in Sources */,
 				EB87BD2D18E09E220080FA55 /* AEAppDelegate.m in Sources */,

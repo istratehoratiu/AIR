@@ -12,10 +12,9 @@
 
 @import AVFoundation;
 
-@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate> {
+@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver> {
 
     SKTextureAtlas* _atlas;
-    SKProduct *proUpgradeProduct;
     SKProductsRequest *productsRequest;
 }
 
@@ -24,5 +23,8 @@
 @property (nonatomic, strong) NSString *airplanePListPath;
 @property (nonatomic, strong) NSString *creditsPlistPath;
 @property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
+@property (nonatomic, strong) SKProduct *product1;
+@property (nonatomic, strong) SKProduct *product2;
+@property (nonatomic, strong) SKProduct *product3;
 
 @end
