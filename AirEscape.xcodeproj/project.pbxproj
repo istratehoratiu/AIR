@@ -64,6 +64,8 @@
 		EBE0721419F3B7790038E02C /* hangarButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721119F3B7790038E02C /* hangarButtonPressed.png */; };
 		EBE0721519F3B7790038E02C /* playButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721219F3B7790038E02C /* playButtonPressed.png */; };
 		EBE0721619F3B7790038E02C /* rateButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721319F3B7790038E02C /* rateButtonPressed.png */; };
+		EBE0721819F3D95B0038E02C /* restoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721719F3D95B0038E02C /* restoreButton.png */; };
+		EBE0721A19F3DA2F0038E02C /* restoreButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721919F3DA2F0038E02C /* restoreButtonPressed.png */; };
 		EBF8385C19D6F60600C8E610 /* ShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */; };
 		EBF8387019D6FAF800C8E610 /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386019D6FAF800C8E610 /* bulletHit.sks */; };
 		EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386119D6FAF800C8E610 /* DamageSmoke.sks */; };
@@ -179,6 +181,8 @@
 		EBE0721119F3B7790038E02C /* hangarButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangarButtonPressed.png; sourceTree = "<group>"; };
 		EBE0721219F3B7790038E02C /* playButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButtonPressed.png; sourceTree = "<group>"; };
 		EBE0721319F3B7790038E02C /* rateButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rateButtonPressed.png; sourceTree = "<group>"; };
+		EBE0721719F3D95B0038E02C /* restoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restoreButton.png; sourceTree = "<group>"; };
+		EBE0721919F3DA2F0038E02C /* restoreButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restoreButtonPressed.png; sourceTree = "<group>"; };
 		EBF8385A19D6F60600C8E610 /* ShadowLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabelNode.h; path = AirEscape/ShadowLabelNode.h; sourceTree = "<group>"; };
 		EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabelNode.m; path = AirEscape/ShadowLabelNode.m; sourceTree = "<group>"; };
 		EBF8386019D6FAF800C8E610 /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
@@ -472,6 +476,7 @@
 		EBF8386419D6FAF800C8E610 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EBE0721919F3DA2F0038E02C /* restoreButtonPressed.png */,
 				EBE0721119F3B7790038E02C /* hangarButtonPressed.png */,
 				EBE0721219F3B7790038E02C /* playButtonPressed.png */,
 				EBE0721319F3B7790038E02C /* rateButtonPressed.png */,
@@ -482,6 +487,7 @@
 				EBF8386519D6FAF800C8E610 /* hangarButton.png */,
 				EBF8386619D6FAF800C8E610 /* playButton.png */,
 				EBF8386719D6FAF800C8E610 /* rateButton.png */,
+				EBE0721719F3D95B0038E02C /* restoreButton.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */,
 				EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
+				EBE0721819F3D95B0038E02C /* restoreButton.png in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */,
@@ -625,6 +632,7 @@
 				EB87BD2718E09E220080FA55 /* InfoPlist.strings in Resources */,
 				EB46619019D6C965006FE649 /* If.ttf in Resources */,
 				EBF8388519D6FEDF00C8E610 /* background@2x.png in Resources */,
+				EBE0721A19F3DA2F0038E02C /* restoreButtonPressed.png in Resources */,
 				EB11875B19E943AD00994023 /* defaultPrefs.plist in Resources */,
 				EBF8387519D6FAF800C8E610 /* playButton.png in Resources */,
 				EBF8387319D6FAF800C8E610 /* Fire.sks in Resources */,

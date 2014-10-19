@@ -62,7 +62,7 @@
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
         _userAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
         _scaleAirplane = 1.0;
-        _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+        _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height - 100);
         _userAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_userAirplane.size.width * 0.5]; // 1
         _userAirplane.physicsBody.dynamic = YES; // 2
         _userAirplane.physicsBody.categoryBitMask = userAirplaneCategory; // 3
@@ -302,26 +302,26 @@
             // Left Wall
         case 0: {
             missileStartingPosition = CGPointMake(0, getRandomNumberBetween(0, self.size.height));
-            missileAlertPosition = CGPointMake(50, missileStartingPosition.y);
+            missileAlertPosition = CGPointMake(25, missileStartingPosition.y);
             
             break;
         }
             // Top Wall
         case 1: {
             missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
-            missileAlertPosition = CGPointMake(missileStartingPosition.x, 50);
+            missileAlertPosition = CGPointMake(missileStartingPosition.x, 25);
             break;
         }
             // Right Wall
         case 2: {
             missileStartingPosition = CGPointMake(self.size.width, getRandomNumberBetween(0, self.size.height));
-            missileAlertPosition = CGPointMake(self.size.width - 50, missileStartingPosition.y);;
+            missileAlertPosition = CGPointMake(self.size.width - 25, missileStartingPosition.y);;
             break;
         }
             // Bottom Wall
         case 3: {
             missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
-            missileAlertPosition = CGPointMake(missileStartingPosition.x, self.size.height - 50);
+            missileAlertPosition = CGPointMake(missileStartingPosition.x, self.size.height - 25);
             break;
         }
         default:
@@ -352,13 +352,12 @@
         missile.physicsBody.collisionBitMask = 0; // 5
         missile.position = missileStartingPosition;
         
+        [missile updateOrientationVector];
         
         [self addChild:missile];
         [_arrayOfCurrentMissilesOnScreen addObject:missile];
         
         [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
-        
-        [missile updateOrientationVector];
     }];
 }
 

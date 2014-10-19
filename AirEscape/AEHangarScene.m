@@ -49,8 +49,8 @@
         backButton.zPosition = 1000;
         [self addChild:backButton];
         
-        _restoreButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [_restoreButton setPosition:CGPointMake(backButton.position.x + backButton.size.width * 0.5 + 200, size.height - 50)];
+        _restoreButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"restoreButton" selected:@"restoreButtonPressed" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        [_restoreButton setPosition:CGPointMake(backButton.position.x + backButton.size.width * 0.5 + 500, size.height - 50)];
         [_restoreButton setTouchUpInsideTarget:self action:@selector(restorePurchases)];
         _restoreButton.zPosition = 1000;
         [_restoreButton.title setText:@"Restore"];

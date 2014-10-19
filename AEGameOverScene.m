@@ -38,22 +38,22 @@
     
     self.score = score;
     
-    _ratebutton = [AEButtonNode getRateButton];
-    [_ratebutton setPosition:CGPointMake(self.size.width / 2 - 200, self.size.height / 2 - 200)];
-    [_ratebutton setAlpha:0.0];
-    [_ratebutton setTouchUpInsideTarget:self action:@selector(rateGame)];
-    [self addChild:_ratebutton];
-    [_ratebutton runAction:[SKAction fadeInWithDuration:1]];
-    
     _restartButton = [AEButtonNode getPlayButton];
-    [_restartButton setPosition:CGPointMake(self.size.width / 2, self.size.height / 2 - 200)];
+        [_restartButton setPosition:CGPointMake(self.size.width / 2.0, self.size.height / 2.0 - 150.0)];
     [_restartButton setAlpha:0.0];
     [_restartButton setTouchUpInsideTarget:self action:@selector(restartGame)];
     [self addChild:_restartButton];
     [_restartButton runAction:[SKAction fadeInWithDuration:1]];
     
+    _ratebutton = [AEButtonNode getRateButton];
+    [_ratebutton setPosition:CGPointMake(_restartButton.position.x - 250.0, _restartButton.position.y)];
+    [_ratebutton setAlpha:0.0];
+    [_ratebutton setTouchUpInsideTarget:self action:@selector(rateGame)];
+    [self addChild:_ratebutton];
+    [_ratebutton runAction:[SKAction fadeInWithDuration:1]];
+    
     _hangarButton = [AEButtonNode getHangarButton];
-    [_hangarButton setPosition:CGPointMake(self.size.width / 2 + 200, self.size.height / 2 - 200)];
+    [_hangarButton setPosition:CGPointMake(_restartButton.position.x + 250.0, _restartButton.position.y)];
     [_hangarButton setAlpha:0.0];
     [_hangarButton setTouchUpInsideTarget:self action:@selector(showHangar)];
     [self addChild:_hangarButton];

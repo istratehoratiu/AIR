@@ -39,7 +39,7 @@
         for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
             PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplaneOfType:(AEAirplaneType)getRandomNumberBetween(0, 6)];
             decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
-            decorAirplane.position = CGPointMake(getRandomNumberBetween(0, self.size.width), getRandomNumberBetween(0, self.size.height));
+            decorAirplane.position = [self getDummyAirplaneStartingPosition];
             decorAirplane.zRotation = getRandomNumberBetween(0, 3);
             //decorAirplane.isDecorActor = YES;
             decorAirplane.isAutopilotON = YES;
@@ -159,6 +159,38 @@
         actor.position = CGPointMake(actor.position.x, -airplaneOffset);
         return;
     }
+}
+
+- (CGPoint)getDummyAirplaneStartingPosition {
+    
+    CGPoint airplaneSource = CGPointZero;
+    
+    switch (getRandomNumberBetween(0, 3)) {
+            // Left Wall
+        case 0: {
+            airplaneSource = CGPointMake(0, getRandomNumberBetween(0, self.size.height));
+            break;
+        }
+            // Top Wall
+        case 1: {
+            airplaneSource = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
+            break;
+        }
+            // Right Wall
+        case 2: {
+            airplaneSource = CGPointMake(self.size.width, getRandomNumberBetween(0, self.size.height));
+            break;
+        }
+            // Bottom Wall
+        case 3: {
+            airplaneSource = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
+            break;
+        }
+        default:
+            break;
+    }
+    
+    return airplaneSource;
 }
 
 @end
