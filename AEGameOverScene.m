@@ -64,7 +64,7 @@
     [_gameOverLabel setFontSize:40];
     [_gameOverLabel setText:@"Game Over"];
     [_gameOverLabel setPosition:CGPointMake(self.size.width / 2, self.size.height)];
-    [self addChild:_gameOverLabel];
+    //[self addChild:_gameOverLabel];
     
     
     //schedule game over label;
@@ -72,14 +72,14 @@
     SKAction *moveToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, 600 ) duration:kAEDurationOfGameOverLabelAnimation];
     SKAction *moveGameOverLabelAfterWaiting = [SKAction sequence:@[wait,moveToPosition]];
     
-    [_gameOverLabel runAction:moveGameOverLabelAfterWaiting];
+    //[_gameOverLabel runAction:moveGameOverLabelAfterWaiting];
     
     //--------
     _gameOverStatistic = [[AEGameOverStatisticsSprite alloc] initGameOverSceneWithScore:score];
     [_gameOverStatistic setPosition:CGPointMake(self.size.width / 2, -200)];
     [self addChild:_gameOverStatistic];
     
-    SKAction *moveStatisticsToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height /2 ) duration:kAEDurationOfGameOverLabelAnimation];
+    SKAction *moveStatisticsToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height /2 + 100 ) duration:kAEDurationOfGameOverLabelAnimation];
     SKAction *moveStatiscticsAfterWaiting = [SKAction sequence:@[wait,moveStatisticsToPosition]];
     
     [_gameOverStatistic runAction:moveStatiscticsAfterWaiting];
