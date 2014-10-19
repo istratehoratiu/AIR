@@ -61,6 +61,9 @@
 		EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */; };
 		EBAADCDF19EA810300799826 /* AEScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAADCDE19EA810300799826 /* AEScene.m */; };
 		EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEGameManager.m */; };
+		EBE0721419F3B7790038E02C /* hangarButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721119F3B7790038E02C /* hangarButtonPressed.png */; };
+		EBE0721519F3B7790038E02C /* playButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721219F3B7790038E02C /* playButtonPressed.png */; };
+		EBE0721619F3B7790038E02C /* rateButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721319F3B7790038E02C /* rateButtonPressed.png */; };
 		EBF8385C19D6F60600C8E610 /* ShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */; };
 		EBF8387019D6FAF800C8E610 /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386019D6FAF800C8E610 /* bulletHit.sks */; };
 		EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386119D6FAF800C8E610 /* DamageSmoke.sks */; };
@@ -173,6 +176,9 @@
 		EBAADCDE19EA810300799826 /* AEScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEScene.m; sourceTree = "<group>"; };
 		EBD57B8018E21CAD00D5A61E /* AEGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEGameManager.h; sourceTree = "<group>"; };
 		EBD57B8118E21CAD00D5A61E /* AEGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEGameManager.m; sourceTree = "<group>"; };
+		EBE0721119F3B7790038E02C /* hangarButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangarButtonPressed.png; sourceTree = "<group>"; };
+		EBE0721219F3B7790038E02C /* playButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButtonPressed.png; sourceTree = "<group>"; };
+		EBE0721319F3B7790038E02C /* rateButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rateButtonPressed.png; sourceTree = "<group>"; };
 		EBF8385A19D6F60600C8E610 /* ShadowLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabelNode.h; path = AirEscape/ShadowLabelNode.h; sourceTree = "<group>"; };
 		EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabelNode.m; path = AirEscape/ShadowLabelNode.m; sourceTree = "<group>"; };
 		EBF8386019D6FAF800C8E610 /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
@@ -466,6 +472,9 @@
 		EBF8386419D6FAF800C8E610 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EBE0721119F3B7790038E02C /* hangarButtonPressed.png */,
+				EBE0721219F3B7790038E02C /* playButtonPressed.png */,
+				EBE0721319F3B7790038E02C /* rateButtonPressed.png */,
 				EBF8387D19D6FEDF00C8E610 /* background.png */,
 				EBF8387E19D6FEDF00C8E610 /* background@2x.png */,
 				EBF8387F19D6FEDF00C8E610 /* multiRockets.png */,
@@ -595,14 +604,17 @@
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */,
+				EBE0721419F3B7790038E02C /* hangarButtonPressed.png in Resources */,
 				EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */,
 				EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */,
 				EBF8387619D6FAF800C8E610 /* rateButton.png in Resources */,
 				EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */,
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
 				EBF8388419D6FEDF00C8E610 /* background.png in Resources */,
+				EBE0721519F3B7790038E02C /* playButtonPressed.png in Resources */,
 				EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */,
 				EB46619119D6C965006FE649 /* README.txt in Resources */,
+				EBE0721619F3B7790038E02C /* rateButtonPressed.png in Resources */,
 				EB87BD3318E09E220080FA55 /* Main_iPad.storyboard in Resources */,
 				EB35D7CD18E1ED1D0008BC0C /* sprite.atlas in Resources */,
 				EBF8388A19D6FEDF00C8E610 /* spark.png in Resources */,

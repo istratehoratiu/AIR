@@ -16,6 +16,7 @@
 #import "NSObject+Additions.h"
 #import "AEAppDelegate.h"
 #import "AEGameManager.h"
+#import "RageIAPHelper.h"
 
 
 #define SHOP_ITEMS_DISTANCE 30
@@ -42,16 +43,22 @@
 
         [self addChild:_airplaneScrollingStrip];
         
-        AEButtonNode *backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"backArrow" selected:@"backArrow" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        AEButtonNode *backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"backArrow" selected:@"backArrowPressed" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
         [backButton setPosition:CGPointMake(backButton.size.width * 0.5 + 10, size.height - 50)];
         [backButton setTouchUpInsideTarget:self action:@selector(backButton)];
         backButton.zPosition = 1000;
         [self addChild:backButton];
         
+        _restoreButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"transparentButton" selected:@"transparentButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        [_restoreButton setPosition:CGPointMake(backButton.position.x + backButton.size.width * 0.5 + 200, size.height - 50)];
+        [_restoreButton setTouchUpInsideTarget:self action:@selector(restorePurchases)];
+        _restoreButton.zPosition = 1000;
+        [_restoreButton.title setText:@"Restore"];
+        [self addChild:_restoreButton];
         
         NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
         
-        _changeDisplayedItemsButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"missileBackgroundButton" selected:@"missileBackgroundButton" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        _changeDisplayedItemsButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"missileBackgroundButton" selected:@"missileBackgroundButtonPressed" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
         [_changeDisplayedItemsButton.title setFontName:@"Chalkduster"];
         [_changeDisplayedItemsButton.title setFontSize:40.0];
         [_changeDisplayedItemsButton.title setFontColor:[UIColor darkGrayColor]];
@@ -192,6 +199,10 @@
 
 #pragma mark - Button Callbacks -
 
+- (void)restorePurchases {
+    [[RageIAPHelper sharedInstance] restoreCompletedTransactions];
+}
+
 - (void)backButton {
     
     if (_hangarItemsDisplayed ==  AEHangarItemsCredits) {
@@ -223,6 +234,7 @@
     _hangarItemsDisplayed = itemTypes;
     
     [_hintLabel setHidden:!(_hangarItemsDisplayed == AEHangarItemsCredits)];
+    [_restoreButton setHidden:!(_hangarItemsDisplayed == AEHangarItemsCredits)];
     
     NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
     [_changeDisplayedItemsButton.title setText:credits];

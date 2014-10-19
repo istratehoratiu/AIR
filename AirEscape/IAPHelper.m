@@ -130,12 +130,16 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
         {
             case SKPaymentTransactionStatePurchased:
                 [self completeTransaction:transaction];
+                [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 break;
             case SKPaymentTransactionStateFailed:
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:transaction];
+                [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
             default:
                 break;
         }

@@ -26,7 +26,7 @@
         [_itemNameLabel setPosition:CGPointMake(0, self.size.height *  0.5 - 60)];
         _itemNameLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
         
-        _buyItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"missileBackgroundButton" selected:@"missileBackgroundButton"];
+        _buyItemButton = [[AEButtonNode alloc] initWithImageNamedNormal:@"missileBackgroundButton" selected:@"missileBackgroundButtonPressed"];
         [_buyItemButton setTouchUpInsideTarget:self action:@selector(buyOrSelectShopItem)];
         [_buyItemButton.title setFontName:@"Chalkduster"];
         //[_buyItemButton.title setFontColor:[UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1]];
