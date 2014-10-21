@@ -18,6 +18,8 @@
 
 @interface 	AEViewController () <ADBannerViewDelegate>
 
+@property (nonatomic, strong) UIView *activityOverlay;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, assign) BOOL addBannerIsHidden;
 @property (nonatomic, strong) ADBannerView *banner;
 
@@ -28,9 +30,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _activityOverlay = [[UIView alloc] initWithFrame: self.view.bounds];
+    [self.activityOverlay setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8]];
 
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.activityIndicator setCenter:CGPointMake(self.activityOverlay.bounds.size.width / 2, self.activityOverlay.bounds.size.height / 2)];
+    [self.activityIndicator startAnimating];
+    [self.activityOverlay addSubview:self.activityIndicator];
+    
+    [self.activityOverlay setHidden:YES];
+    [self.view addSubview:self.activityOverlay];
+    
+    
     [[AEGameManager sharedManager] addObserver:self forKeyPath:@"currentScene" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showActivityOverlay) name:kSGStartPurchaseNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideActivityOverlay) name:kSGPurchaseDonedNotification object:nil];
 }
 
 - (void)dealloc {
@@ -167,5 +184,17 @@
     }
     
 }
+
+
+#pragma mark - Notifications
+
+- (void)showActivityOverlay {
+    [self.activityOverlay setHidden:NO];
+}
+
+- (void)hideActivityOverlay {
+    [self.activityOverlay setHidden:YES];
+}
+
 
 @end

@@ -355,11 +355,25 @@
         [missile updateOrientationVector];
         
         [self addChild:missile];
+//        [self rotateNode:missile toFaceNode:missile.targetAirplane];
+//        
         [_arrayOfCurrentMissilesOnScreen addObject:missile];
         
         [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
     }];
 }
+
+
+//- (void)rotateNode:(SKNode *)nodeA toFaceNode:(SKNode *)nodeB {
+//    
+//    double angle = atan2(nodeB.position.y - nodeA.position.y, nodeB.position.x - nodeA.position.x);
+//    
+//    if (nodeA.zRotation < 0) {
+//        nodeA.zRotation = nodeA.zRotation + M_PI * 2;
+//    }
+//    
+//    [nodeA setZRotation:degreesToRadians(angle)];
+//}
 
 - (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {
     // Check with X

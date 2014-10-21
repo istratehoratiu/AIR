@@ -75,6 +75,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     for (SKProduct *product in self.products) {
         if ([product.productIdentifier isEqualToString:identifier]) {
             [self buyProduct:product];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kSGStartPurchaseNotification object:nil];
             break;
         }
     }
@@ -128,18 +130,27 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     for (SKPaymentTransaction * transaction in transactions) {
         switch (transaction.transactionState)
         {
-            case SKPaymentTransactionStatePurchased:
+            case SKPaymentTransactionStatePurchased: {
                 [self completeTransaction:transaction];
                 [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
                 [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kSGPurchaseDonedNotification object:nil];
+            }
                 break;
-            case SKPaymentTransactionStateFailed:
+            case SKPaymentTransactionStateFailed: {
                 [self failedTransaction:transaction];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kSGPurchaseDonedNotification object:nil];
+            }
                 break;
-            case SKPaymentTransactionStateRestored:
+            case SKPaymentTransactionStateRestored: {
                 [self restoreTransaction:transaction];
                 [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kAEUserBuyedSomethingKey];
                 [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kSGPurchaseDonedNotification object:nil];
+            }
             default:
                 break;
         }

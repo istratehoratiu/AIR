@@ -56,6 +56,8 @@
 		EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */; };
 		EB88F78F19BE67CF004E7EAD /* hangarItemsCredits.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */; };
 		EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */; };
+		EB97344319F6FA1A004E2098 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EB97344219F6FA1A004E2098 /* Reachability.m */; };
+		EB97344519F6FA7A004E2098 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB97344419F6FA7A004E2098 /* SystemConfiguration.framework */; };
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
 		EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCD919EA7F1400799826 /* background-music-aac.caf */; };
 		EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */; };
@@ -170,6 +172,9 @@
 		EB87BD7018E0DF8F0080FA55 /* SKEmitterNode+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+Utilities.m"; sourceTree = "<group>"; };
 		EB88F78C19BE67CF004E7EAD /* hangarItemsCredits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsCredits.plist; sourceTree = "<group>"; };
 		EB88F79219BE74C3004E7EAD /* hangarItemsAirplanes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hangarItemsAirplanes.plist; sourceTree = "<group>"; };
+		EB97344119F6FA1A004E2098 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EB97344219F6FA1A004E2098 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		EB97344419F6FA7A004E2098 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EBA040C518E3980D004B708A /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joystick.h; path = AirEscape/Joystick.h; sourceTree = "<group>"; };
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joystick.m; path = AirEscape/Joystick.m; sourceTree = "<group>"; };
 		EBAADCD919EA7F1400799826 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
@@ -205,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB97344519F6FA7A004E2098 /* SystemConfiguration.framework in Frameworks */,
 				EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */,
 				EBF88FD719603A05007B8812 /* iAd.framework in Frameworks */,
 				EB87BD1D18E09E220080FA55 /* CoreGraphics.framework in Frameworks */,
@@ -271,6 +277,8 @@
 		EB16158F1971626D00B9C35C /* Supporting Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB97344119F6FA1A004E2098 /* Reachability.h */,
+				EB97344219F6FA1A004E2098 /* Reachability.m */,
 				EB3426ED19F2FEFE0060F9E7 /* IAPHelper.h */,
 				EB3426EE19F2FEFE0060F9E7 /* IAPHelper.m */,
 				EB3426F019F2FF190060F9E7 /* RageIAPHelper.h */,
@@ -364,6 +372,7 @@
 		EB87BD1918E09E220080FA55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB97344419F6FA7A004E2098 /* SystemConfiguration.framework */,
 				EB3426E519F2A0190060F9E7 /* StoreKit.framework */,
 				EBF88FD619603A05007B8812 /* iAd.framework */,
 				EB87BD1A18E09E220080FA55 /* Foundation.framework */,
@@ -658,6 +667,7 @@
 				EB212E341945A748000D1A3E /* AEMenuScene.m in Sources */,
 				EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */,
 				EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */,
+				EB97344319F6FA1A004E2098 /* Reachability.m in Sources */,
 				EB87BD7118E0DF8F0080FA55 /* SKEmitterNode+Utilities.m in Sources */,
 				EB7966D218E1FF5D00D2669C /* NSObject+Additions.m in Sources */,
 				EB26ED16195C82F8008FF5A1 /* AEButtonNode+Additions.m in Sources */,

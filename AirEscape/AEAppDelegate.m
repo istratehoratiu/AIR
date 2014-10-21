@@ -22,6 +22,8 @@
     
     [RageIAPHelper sharedInstance];
     
+    [self testInternetConnection];
+    
     _atlas = [SKTextureAtlas atlasNamed:@"sprite"];
     
     [Appirater setAppId:@"931203917"];
@@ -211,5 +213,25 @@
 //        }
 //    }
 //}
+- (void)testInternetConnection
+{
+    self.internetReachable = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    // Internet is reachable
+    self.internetReachable.reachableBlock = ^(Reachability*reach)
+    {
+        weakSelf.internetIsReachable = YES;
+    };
+    
+    // Internet is not reachable
+    self.internetReachable.unreachableBlock = ^(Reachability*reach)
+    {
+        weakSelf.internetIsReachable = NO;
+    };
+    
+    [self.internetReachable startNotifier];
+}
 
 @end

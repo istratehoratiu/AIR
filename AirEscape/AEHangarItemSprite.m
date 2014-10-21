@@ -109,11 +109,11 @@
 
     if (_shopItemType == AEHangarItemsAirplanes) {
         if (!_shopItem.isBought) {
-            NSLog(@"111111111111111");
+
             NSNumber *totalCredits = [[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey];
             NSInteger totalCreditsInteger = [totalCredits integerValue];
             NSInteger priceInteger = [_shopItem.price integerValue];
-            NSLog(@"22222222222222");
+
             if (priceInteger < totalCreditsInteger) {
                 NSMutableDictionary *_airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
                 
@@ -131,10 +131,10 @@
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:kSGUpdateHangarScreenNotification object:nil];
             } else {
-                NSLog(@"333333333333");
+
                 UIAlertView *notEnoughtCreaditsAlert = [[UIAlertView alloc] initWithTitle:@"Not Enought Missiles" message:@"Get more missiles?" delegate:self.scene cancelButtonTitle:@"Cancel" otherButtonTitles:@"Get Credits", nil];
                 [notEnoughtCreaditsAlert show];
-                NSLog(@"44444444444");
+
             }
         } else {
             

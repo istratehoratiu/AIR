@@ -78,4 +78,12 @@ extern NSString *const kAETotalScoreKey;
 extern NSString *const kAEUserBuyedSomethingKey;
 extern NSString *const kAESoundIsEnabledKey;
 
+extern NSString *const kSGPurchaseDonedNotification;
+extern NSString *const kAEBoughtItemIdentifierKey;
+extern NSString *const kSGItemBoughtNotification;
+extern NSString *const kSGStartPurchaseNotification;
 extern NSString *const kSGUpdateHangarScreenNotification;
+
+
+
+

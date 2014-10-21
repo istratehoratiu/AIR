@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import <StoreKit/StoreKit.h>
+#import "Reachability.h"
+
 
 @import AVFoundation;
 
@@ -18,6 +20,8 @@
     SKProductsRequest *productsRequest;
 }
 
+@property (nonatomic, assign) BOOL internetIsReachable;
+@property (nonatomic, strong) Reachability *internetReachable;
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) SKTextureAtlas* atlas;
 @property (nonatomic, strong) NSString *airplanePListPath;

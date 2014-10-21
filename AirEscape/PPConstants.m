@@ -17,6 +17,10 @@ NSString *const kSGBestScoreKey = @"com.AirEscape.kSGBestScoreKey";
 NSString *const kAETotalScoreKey = @"com.AirEscape.kAETotalScoreKey";
 NSString *const kAEUserBuyedSomethingKey = @"com.AirEscape.kAEUserBuyedSomethingKey";
 NSString *const kAESoundIsEnabledKey = @"com.AirEscape.kAESoundIsEnabledKey";
+NSString *const kAEBoughtItemIdentifierKey = @"com.AirEscape.kAEBoughtItemIdentifierKey";
 
 
+NSString *const kSGPurchaseDonedNotification = @"com.AirEscape.kSGPurchaseDonedNotification";
+NSString *const kSGStartPurchaseNotification = @"com.AirEscape.kSGStartPurchaseNotification";
 NSString *const kSGUpdateHangarScreenNotification = @"com.AirEscape.kSGUpdateHangarScreenNotification";
+NSString *const kSGItemBoughtNotification = @"com.AirEscape.kSGItemBoughtNotification";
