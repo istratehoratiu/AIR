@@ -156,8 +156,7 @@
 
             newPos = CGPointMake(_leftMarginOFHangarScrollView, newPos.y);
         
-        }
-        else if (newPos.x + _rightMarginOFHangarScrollView < self.size.width) {
+        } else if (newPos.x + _rightMarginOFHangarScrollView < self.size.width) {
 
             newPos = CGPointMake(self.size.width - _rightMarginOFHangarScrollView, newPos.y);
          
