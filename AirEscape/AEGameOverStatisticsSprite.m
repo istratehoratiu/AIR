@@ -26,11 +26,11 @@
         
         ShadowLabelNode *gameOverLabel = [[ShadowLabelNode alloc] initWithFontNamed:@"If"];
         gameOverLabel.text = @"Game Over";
-        gameOverLabel.fontSize = 40;
+        gameOverLabel.fontSize = 60;
         gameOverLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
         gameOverLabel.position = CGPointMake(0, 50);
         gameOverLabel.zPosition = 1000;
-        gameOverLabel.offset = CGPointMake(5, -5);
+        gameOverLabel.offset = CGPointMake(10, -10);
         [self addChild:gameOverLabel];
         
         //----------- Current Score
