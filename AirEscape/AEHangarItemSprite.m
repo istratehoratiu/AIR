@@ -114,7 +114,7 @@
             NSInteger totalCreditsInteger = [totalCredits integerValue];
             NSInteger priceInteger = [_shopItem.price integerValue];
 
-            if (priceInteger < totalCreditsInteger) {
+            if (priceInteger <= totalCreditsInteger) {
                 NSMutableDictionary *_airplanesShopItemsDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[[self appDelegate] airplanePListPath]];
                 
                 NSMutableDictionary *updatedDictionary = [NSMutableDictionary dictionaryWithDictionary:_shopItem.representedDictionary];

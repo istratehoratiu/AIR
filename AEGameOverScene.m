@@ -69,8 +69,8 @@
     
     //schedule game over label;
     SKAction *wait = [SKAction waitForDuration:0.5];
-    SKAction *moveToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, 600 ) duration:kAEDurationOfGameOverLabelAnimation];
-    SKAction *moveGameOverLabelAfterWaiting = [SKAction sequence:@[wait,moveToPosition]];
+//    SKAction *moveToPosition =[SKAction moveTo:CGPointMake(self.size.width / 2, 600 ) duration:kAEDurationOfGameOverLabelAnimation];
+//    SKAction *moveGameOverLabelAfterWaiting = [SKAction sequence:@[wait,moveToPosition]];
     
     //[_gameOverLabel runAction:moveGameOverLabelAfterWaiting];
     

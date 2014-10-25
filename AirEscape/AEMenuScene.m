@@ -50,7 +50,7 @@
         }
 
         gameNameLabel = [[ShadowLabelNode alloc] initWithFontNamed:@"If"];
-        gameNameLabel.text = @"Missile Evasion";
+        gameNameLabel.text = @"Air Evasion";
         gameNameLabel.fontSize = 100;
         gameNameLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
         gameNameLabel.position = CGPointMake(self.size.width / 2, self.size.height / 2 + 100);

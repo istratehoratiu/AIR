@@ -191,11 +191,11 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     NSInteger boughtScour = 0;
     
     if ([productIdentifier isEqualToString:@"com.istratehoratiu.missileevasion.missiles1"]) {
-        boughtScour = 200;
-    } else if ([productIdentifier isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
         boughtScour = 500;
-    } else {
+    } else if ([productIdentifier isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
         boughtScour = 1100;
+    } else {
+        boughtScour = 2500;
     }
     
     currentTotalScore = currentTotalScore + boughtScour;

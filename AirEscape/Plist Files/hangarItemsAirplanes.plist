@@ -13,11 +13,11 @@
 		<key>ID</key>
 		<string>0</string>
 		<key>title</key>
-		<string>Albatros</string>
+		<string>B2</string>
 		<key>thumbnailImage</key>
 		<string>plane_9_N.png</string>
 		<key>price</key>
-		<integer>0</integer>
+		<integer>2500</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -34,11 +34,11 @@
 		<key>ID</key>
 		<string>0</string>
 		<key>title</key>
-		<string>B 2</string>
+		<string>F-117</string>
 		<key>thumbnailImage</key>
 		<string>plane_8_N.png</string>
 		<key>price</key>
-		<integer>1300</integer>
+		<integer>2000</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -55,11 +55,11 @@
 		<key>ID</key>
 		<string>7</string>
 		<key>title</key>
-		<string>F-117</string>
+		<string>Blackbird</string>
 		<key>thumbnailImage</key>
 		<string>plane_7_N.png</string>
 		<key>price</key>
-		<integer>1300</integer>
+		<real>1700</real>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -76,11 +76,11 @@
 		<key>ID</key>
 		<string>6</string>
 		<key>title</key>
-		<string>Blackbird</string>
+		<string>Sukhoi Su-35</string>
 		<key>thumbnailImage</key>
 		<string>plane_6_N.png</string>
 		<key>price</key>
-		<integer>1000</integer>
+		<real>1500</real>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -97,11 +97,11 @@
 		<key>ID</key>
 		<string>5</string>
 		<key>title</key>
-		<string>Messerschmitt</string>
+		<string>F 22</string>
 		<key>thumbnailImage</key>
 		<string>plane_5_N.png</string>
 		<key>price</key>
-		<integer>800</integer>
+		<integer>1000</integer>
 		<key>isBought</key>
 		<false/>
 		<key>isUsed</key>
@@ -181,7 +181,7 @@
 		<key>ID</key>
 		<string>2</string>
 		<key>title</key>
-		<string>F 22</string>
+		<string>Messerschmitt</string>
 		<key>thumbnailImage</key>
 		<string>plane_3_N.png</string>
 		<key>price</key>

@@ -291,6 +291,14 @@
             mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow7.png"];
             break;
         }
+        case AEAirplaneTypeSuhoi: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow8.png"];
+            break;
+        }
+        case AEAirplaneTypeB2: {
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow9.png"];
+            break;
+        }
         default:
             break;
     }
