@@ -93,9 +93,20 @@
         _smokeEmitter = [SKEmitterNode emitterNamed:@"DamageSmoke"];
         _smokeEmitter.position = CGPointMake(0, 70);
         [_smokeEmitter setParticleColor:[SKColor blackColor]];
+        [_smokeEmitter setParticleColorBlendFactor:1];
+        _smokeEmitter.particleColorSequence = nil;
         [self.parent addChild:_smokeEmitter];
         _smokeEmitter.targetNode = self.parent;
     }
+    
+    CGFloat speed = kAEMaxMainAirplaneSpeed - [[AEGameManager sharedManager] getMainAirplaneSpeed];
+    CGFloat maxDif = kAEMaxMainAirplaneSpeed - kAEMainAirplaneSpeed;
+    
+    CGFloat actualDif = maxDif - speed;
+    
+    [_smokeEmitter setParticleColor:[UIColor colorWithRed:1  green:1 -  (actualDif / maxDif) blue:1 -  (actualDif / maxDif)  alpha:1]];
+    
+    NSLog(@"%f --- %f = %f", actualDif, maxDif, actualDif / maxDif);
     
     _shadow.position = CGPointMake(self.position.x + 20, self.position.y + 20);
     
