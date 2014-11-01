@@ -25,5 +25,6 @@
 @property (nonatomic, strong) NSDictionary *creditsShopItemsDictionary;
 @property (nonatomic, strong) AEButtonNode *changeDisplayedItemsButton;
 @property (nonatomic, strong) SKLabelNode *hintLabel;
+@property (nonatomic, strong) AEButtonNode *backButton;
 @property (nonatomic, strong) AEButtonNode *restoreButton;
 @end

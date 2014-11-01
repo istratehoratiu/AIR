@@ -43,14 +43,14 @@
 
         [self addChild:_airplaneScrollingStrip];
         
-        AEButtonNode *backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"backArrow" selected:@"backArrowPressed" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [backButton setPosition:CGPointMake(backButton.size.width * 0.5 + 10, size.height - 50)];
-        [backButton setTouchUpInsideTarget:self action:@selector(backButton)];
-        backButton.zPosition = 1000;
-        [self addChild:backButton];
+        _backButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"backArrow" selected:@"backArrowPressed" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
+        [_backButton setPosition:CGPointMake(_backButton.size.width * 0.5 + 10, size.height - 50)];
+        [_backButton setTouchUpInsideTarget:self action:@selector(backButtonPressed)];
+        _backButton.zPosition = 1000;
+        [self addChild:_backButton];
         
         _restoreButton =  [[AEButtonNode alloc] initWithImageNamedNormal:@"restoreButton" selected:@"restoreButtonPressed" disabled:nil itleVerticalAlignmentMode:SKLabelVerticalAlignmentModeBottom];
-        [_restoreButton setPosition:CGPointMake(backButton.position.x + backButton.size.width * 0.5 + 500, size.height - 50)];
+        [_restoreButton setPosition:CGPointMake(_backButton.position.x + _backButton.size.width * 0.5 + 500, size.height - 50)];
         [_restoreButton setTouchUpInsideTarget:self action:@selector(restorePurchases)];
         _restoreButton.zPosition = 1000;
         [_restoreButton.title setText:@"Restore"];
@@ -146,6 +146,18 @@
         
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
         
+        if (_changeDisplayedItemsButton.isSelected) {
+            [_changeDisplayedItemsButton setIsSelected:NO];
+        }
+        
+        if (_restoreButton.isSelected) {
+            [_restoreButton setIsSelected:NO];
+        }
+        
+        if (_backButton.isSelected) {
+            [_backButton setIsSelected:NO];
+        }
+        
         CGPoint translation = [recognizer translationInView:recognizer.view];
         translation = CGPointMake(translation.x, -translation.y);
         
@@ -202,7 +214,7 @@
     [[RageIAPHelper sharedInstance] restoreCompletedTransactions];
 }
 
-- (void)backButton {
+- (void)backButtonPressed {
     
     if (_hangarItemsDisplayed ==  AEHangarItemsCredits) {
         [self changeDisplayedItemsButtonPressed];
