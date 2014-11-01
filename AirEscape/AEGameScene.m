@@ -309,7 +309,7 @@
             // Top Wall
         case 1: {
             missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
-            missileAlertPosition = CGPointMake(missileStartingPosition.x, 25);
+            missileAlertPosition = CGPointMake(missileStartingPosition.x, missileStartingPosition.y - 25);
             break;
         }
             // Right Wall
@@ -320,8 +320,8 @@
         }
             // Bottom Wall
         case 3: {
-            missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), self.size.height);
-            missileAlertPosition = CGPointMake(missileStartingPosition.x, self.size.height - 25);
+            missileStartingPosition = CGPointMake(getRandomNumberBetween(0, self.size.width), 0);
+            missileAlertPosition = CGPointMake(missileStartingPosition.x, 25);
             break;
         }
         default:
@@ -351,12 +351,10 @@
         missile.physicsBody.contactTestBitMask = userAirplaneCategory; // 4
         missile.physicsBody.collisionBitMask = 0; // 5
         missile.position = missileStartingPosition;
-        
-        [missile updateOrientationVector];
-        
+
         [self addChild:missile];
-//        [self rotateNode:missile toFaceNode:missile.targetAirplane];
-//        
+        [self rotateNode:missile toFaceNode:missile.targetAirplane];
+        
         [_arrayOfCurrentMissilesOnScreen addObject:missile];
         
         [_numberOfMissileOnScreen.title setText:[NSString stringWithFormat:@"%lu", (unsigned long)[_arrayOfCurrentMissilesOnScreen count]]];
@@ -364,16 +362,15 @@
 }
 
 
-//- (void)rotateNode:(SKNode *)nodeA toFaceNode:(SKNode *)nodeB {
-//    
-//    double angle = atan2(nodeB.position.y - nodeA.position.y, nodeB.position.x - nodeA.position.x);
-//    
-//    if (nodeA.zRotation < 0) {
-//        nodeA.zRotation = nodeA.zRotation + M_PI * 2;
-//    }
-//    
-//    [nodeA setZRotation:degreesToRadians(angle)];
-//}
+- (void)rotateNode:(SKNode *)nodeA toFaceNode:(SKNode *)nodeB {
+    
+    float deltaX = nodeB.position.x - nodeA.position.x;
+    float deltaY = nodeB.position.y - nodeA.position.y;
+    
+    float angle = atan2f(deltaY, deltaX);
+    
+    [nodeA setZRotation:angle - M_PI_2];
+}
 
 - (void)checkWithMarginsOfScreenActor:(PPSpriteNode *)actor {
     // Check with X

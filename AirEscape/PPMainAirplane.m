@@ -105,9 +105,7 @@
     CGFloat actualDif = maxDif - speed;
     
     [_smokeEmitter setParticleColor:[UIColor colorWithRed:1  green:1 -  (actualDif / maxDif) blue:1 -  (actualDif / maxDif)  alpha:1]];
-    
-    NSLog(@"%f --- %f = %f", actualDif, maxDif, actualDif / maxDif);
-    
+
     _shadow.position = CGPointMake(self.position.x + 20, self.position.y + 20);
     
     if (_smokeEmitter.parent) {
