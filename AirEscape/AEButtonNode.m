@@ -11,6 +11,8 @@
 
 @implementation AEButtonNode
 
+@synthesize normalTexture = _normalTexture;
+
 #pragma mark Texture Initializer
 
 /**
