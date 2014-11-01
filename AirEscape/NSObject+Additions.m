@@ -12,7 +12,7 @@
 @implementation NSObject (Additions)
 
 - (AEAppDelegate *)appDelegate {
-    return [[UIApplication sharedApplication] delegate];
+    return (AEAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 @end

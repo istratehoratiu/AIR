@@ -18,7 +18,7 @@
 @class JCImageJoystick;
 @class Joystick;
 
-@interface AEGameScene : AEScene {
+@interface AEGameScene : AEScene <SKPhysicsContactDelegate>{
     
     SKSpriteNode *background;
     
