@@ -60,7 +60,6 @@
 //        
         // Main Actor
         _userAirplane = [[PPMainAirplane alloc] initMainAirplane];
-        _userAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.23 : 0.1;
         _scaleAirplane = 1.0;
         _userAirplane.position = CGPointMake(self.size.width / 2, self.size.height - 100);
         _userAirplane.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_userAirplane.size.width * 0.5]; // 1
@@ -341,7 +340,6 @@
         
         PPMissile *missile = [[PPMissile alloc] initMissileNode];
         missile.targetAirplane = _userAirplane;
-        missile.scale = 0.15;
         
         missile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:missile.frame.size]; // 1
         missile.physicsBody.dynamic = YES; // 2

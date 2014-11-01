@@ -7,9 +7,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_9_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow9.png</string>
+		<string>shadow9_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_9_N.png</string>
+		<string>plane_9_N_small.png</string>
 		<key>ID</key>
 		<string>0</string>
 		<key>title</key>
@@ -28,9 +28,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_8_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow8.png</string>
+		<string>shadow8_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_8_N.png</string>
+		<string>plane_8_N_small.png</string>
 		<key>ID</key>
 		<string>0</string>
 		<key>title</key>
@@ -49,9 +49,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_7_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow7.png</string>
+		<string>shadow7_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_7_N.png</string>
+		<string>plane_7_N_small.png</string>
 		<key>ID</key>
 		<string>7</string>
 		<key>title</key>
@@ -70,9 +70,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_6_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow6.png</string>
+		<string>shadow6_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_6_N.png</string>
+		<string>plane_6_N_small.png</string>
 		<key>ID</key>
 		<string>6</string>
 		<key>title</key>
@@ -91,9 +91,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_5_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow5.png</string>
+		<string>shadow5_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_5_N.png</string>
+		<string>plane_5_N_small.png</string>
 		<key>ID</key>
 		<string>5</string>
 		<key>title</key>
@@ -112,9 +112,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_4_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow4.png</string>
+		<string>shadow4_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_4_N.png</string>
+		<string>plane_4_N_small.png</string>
 		<key>ID</key>
 		<string>4</string>
 		<key>title</key>
@@ -133,9 +133,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_1_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow1.png</string>
+		<string>shadow1_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_1_N.png</string>
+		<string>plane_1_N_small.png</string>
 		<key>ID</key>
 		<string>0</string>
 		<key>title</key>
@@ -154,9 +154,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_2_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow2.png</string>
+		<string>shadow2_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_2_N.png</string>
+		<string>plane_2_N_small.png</string>
 		<key>ID</key>
 		<string>1</string>
 		<key>title</key>
@@ -175,9 +175,9 @@
 		<key>lockedThumbnailImage</key>
 		<string>plane_3_Locked.png</string>
 		<key>shadow</key>
-		<string>shadow3.png</string>
+		<string>shadow3_small.png</string>
 		<key>straightFlyImage</key>
-		<string>plane_3_N.png</string>
+		<string>plane_3_N_small.png</string>
 		<key>ID</key>
 		<string>2</string>
 		<key>title</key>

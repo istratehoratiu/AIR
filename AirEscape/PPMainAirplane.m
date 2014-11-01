@@ -84,7 +84,6 @@
     
     if (!_shadow.parent) {
         
-        _shadow.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.15 : 0.09;
         _shadow.zPosition = 0;
         [self.parent addChild:_shadow];
     }
@@ -225,39 +224,39 @@
     
     switch (airplaneType) {
         case AEAirplaneTypeAlbatros: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_1_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_1_N_small.png"];
             break;
         }
         case AEAirplaneTypeSpitfire: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_2_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_2_N_small.png"];
             break;
         }
         case AEAirplaneTypeF22: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_3_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_3_N_small.png"];
             break;
         }
         case AEAirplaneTypeZero: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_4_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_4_N_small.png"];
             break;
         }
         case AEAirplaneTypeMeserchmit: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_5_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_5_N_small.png"];
             break;
         }
         case AEAirplaneTypeBlackbird: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_6_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_6_N_small.png"];
             break;
         }
         case AEAirplaneTypeF117: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_7_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_7_N_small.png"];
             break;
         }
         case AEAirplaneTypeSuhoi: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_8_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_8_N_small.png"];
             break;
         }
         case AEAirplaneTypeB2: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_9_N.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"plane_9_N_small.png"];
             break;
         }
         default:
@@ -273,39 +272,39 @@
     
     switch (airplaneType) {
         case AEAirplaneTypeAlbatros: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow1.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow1_small.png"];
             break;
         }
         case AEAirplaneTypeSpitfire: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow2.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow2_small.png"];
             break;
         }
         case AEAirplaneTypeF22: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow3.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow3_small.png"];
             break;
         }
         case AEAirplaneTypeZero: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow4.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow4_small.png"];
             break;
         }
         case AEAirplaneTypeMeserchmit: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow5.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow5_small.png"];
             break;
         }
         case AEAirplaneTypeBlackbird: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow6.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow6_small.png"];
             break;
         }
         case AEAirplaneTypeF117: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow7.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow7_small.png"];
             break;
         }
         case AEAirplaneTypeSuhoi: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow8.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow8_small.png"];
             break;
         }
         case AEAirplaneTypeB2: {
-            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow9.png"];
+            mainAirplaneTexture = [[[self appDelegate] atlas] textureNamed:@"shadow9_small.png"];
             break;
         }
         default:

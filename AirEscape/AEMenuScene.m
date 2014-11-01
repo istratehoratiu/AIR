@@ -38,7 +38,6 @@
         
         for (int i = 0; i < kNumberOfDecorAirplanes; i++) {
             PPMainAirplane *decorAirplane = [[PPMainAirplane alloc] initMainAirplaneOfType:(AEAirplaneType)getRandomNumberBetween(0, 8)];
-            decorAirplane.scale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.2 : 0.1;
             decorAirplane.position = [self getDummyAirplaneStartingPosition];
             decorAirplane.zRotation = getRandomNumberBetween(0, 3);
             //decorAirplane.isDecorActor = YES;

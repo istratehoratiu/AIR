@@ -20,7 +20,7 @@
 
 - (id)initMissileNode {
     
-    self = [super initWithImageNamed:@"missile.png"];
+    self = [super initWithImageNamed:@"missile_small.png"];
     
     if (self) {
         
