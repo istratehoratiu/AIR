@@ -229,10 +229,8 @@
         ((contact.bodyA.categoryBitMask ==  userAirplaneCategory) && (contact.bodyB.categoryBitMask == enemyMissileCategory))) {
         // Remove bullet from scene.
         if (contact.bodyA.categoryBitMask ==  enemyMissileCategory) {
-            [_arrayOfCurrentMissilesOnScreen removeObject:firstNode];
             [firstNode removeFromParent];
         } else {
-            [_arrayOfCurrentMissilesOnScreen removeObject:secondNode];
             [secondNode removeFromParent];
         }
         
