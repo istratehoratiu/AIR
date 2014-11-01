@@ -80,15 +80,12 @@
         [self addChild:totalScoreText];
         
         NSInteger currentTotalScore = [[NSUserDefaults standardUserDefaults] integerForKey:kAETotalScoreKey];
-        
-        NSLog(@">>>>>>>> %ld + %ld", (long)currentTotalScore, (long)currentScore);
         currentTotalScore = currentTotalScore + currentScore;
-        NSLog(@">>>>>>>> %ld", currentTotalScore);
         
         SKLabelNode *totalScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"If"];
         [totalScoreLabel setFontSize:40];
         totalScoreLabel.fontColor = [UIColor colorWithRed:(122.0 / 255.0) green:(255.0 / 255.0) blue:(35.0 / 255.0) alpha:1];
-        [totalScoreLabel setText:[NSString stringWithFormat:@"%ld",currentTotalScore]];
+        [totalScoreLabel setText:[NSString stringWithFormat:@"%ld",(long)currentTotalScore]];
         [totalScoreLabel setPosition:CGPointMake(200, self.size.height - 400)];
         [self addChild:totalScoreLabel];
         
