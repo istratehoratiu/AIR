@@ -17,6 +17,7 @@
 		EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED21195C8343008FF5A1 /* CHANGELOG.md */; };
 		EB26ED96195C8343008FF5A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED5E195C8343008FF5A1 /* README.md */; };
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
+		EB313C9E1A04EB5F003576AE /* spark2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB313C9D1A04EB5E003576AE /* spark2.png */; };
 		EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3426E519F2A0190060F9E7 /* StoreKit.framework */; };
 		EB3426E919F2C8E10060F9E7 /* SKProduct+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */; };
 		EB3426EF19F2FEFE0060F9E7 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3426EE19F2FEFE0060F9E7 /* IAPHelper.m */; };
@@ -112,6 +113,7 @@
 		EB26ED5E195C8343008FF5A1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
 		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
+		EB313C9D1A04EB5E003576AE /* spark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark2.png; sourceTree = "<group>"; };
 		EB3426E519F2A0190060F9E7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EB3426E719F2C8E10060F9E7 /* SKProduct+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Additions.h"; sourceTree = "<group>"; };
 		EB3426E819F2C8E10060F9E7 /* SKProduct+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Additions.m"; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				EBF8387E19D6FEDF00C8E610 /* background@2x.png */,
 				EBF8387F19D6FEDF00C8E610 /* multiRockets.png */,
 				EBF8388319D6FEDF00C8E610 /* spark.png */,
+				EB313C9D1A04EB5E003576AE /* spark2.png */,
 				EBF8386519D6FAF800C8E610 /* hangarButton.png */,
 				EBF8386619D6FAF800C8E610 /* playButton.png */,
 				EBF8386719D6FAF800C8E610 /* rateButton.png */,
@@ -616,6 +619,7 @@
 				EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */,
 				EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
+				EB313C9E1A04EB5F003576AE /* spark2.png in Resources */,
 				EBE0721819F3D95B0038E02C /* restoreButton.png in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
