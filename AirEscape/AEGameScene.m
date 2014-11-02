@@ -155,7 +155,6 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"AEGameScene DEALLOC");
 }
 
 - (void)restartScene {

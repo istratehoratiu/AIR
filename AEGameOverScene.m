@@ -90,7 +90,6 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"AEGameOverScene DEALLOC");
 }
 
 #pragma mark Handle touches

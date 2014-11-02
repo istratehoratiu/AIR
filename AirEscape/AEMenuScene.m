@@ -86,7 +86,6 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"AEMenuScene DEALLOC");
 }
 
 

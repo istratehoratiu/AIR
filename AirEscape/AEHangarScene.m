@@ -94,7 +94,6 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"AEHangarScene DEALLOC");
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -130,7 +129,6 @@
         touchLocation = [self convertPointFromView:touchLocation];
         
         if ([[self nodeAtPoint:touchLocation] isKindOfClass:[AEButtonNode class]]) {
-            NSLog(@"asdasdasdasdas");
         }
     }
 }
