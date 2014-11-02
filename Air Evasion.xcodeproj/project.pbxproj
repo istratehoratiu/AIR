@@ -77,7 +77,6 @@
 		EBF8387419D6FAF800C8E610 /* hangarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386519D6FAF800C8E610 /* hangarButton.png */; };
 		EBF8387519D6FAF800C8E610 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386619D6FAF800C8E610 /* playButton.png */; };
 		EBF8387619D6FAF800C8E610 /* rateButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386719D6FAF800C8E610 /* rateButton.png */; };
-		EBF8387C19D6FAF800C8E610 /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386D19D6FAF800C8E610 /* trail.sks */; };
 		EBF8388419D6FEDF00C8E610 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8387D19D6FEDF00C8E610 /* background.png */; };
 		EBF8388519D6FEDF00C8E610 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8387E19D6FEDF00C8E610 /* background@2x.png */; };
 		EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8387F19D6FEDF00C8E610 /* multiRockets.png */; };
@@ -199,7 +198,6 @@
 		EBF8386519D6FAF800C8E610 /* hangarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangarButton.png; sourceTree = "<group>"; };
 		EBF8386619D6FAF800C8E610 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		EBF8386719D6FAF800C8E610 /* rateButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rateButton.png; sourceTree = "<group>"; };
-		EBF8386D19D6FAF800C8E610 /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
 		EBF8387D19D6FEDF00C8E610 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		EBF8387E19D6FEDF00C8E610 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		EBF8387F19D6FEDF00C8E610 /* multiRockets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multiRockets.png; sourceTree = "<group>"; };
@@ -479,7 +477,6 @@
 				EBF8386219D6FAF800C8E610 /* explosion.sks */,
 				EBF8386319D6FAF800C8E610 /* Fire.sks */,
 				EBF8386419D6FAF800C8E610 /* Images */,
-				EBF8386D19D6FAF800C8E610 /* trail.sks */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -615,7 +612,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBF8387C19D6FAF800C8E610 /* trail.sks in Resources */,
 				EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */,
 				EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
@@ -786,7 +782,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -819,7 +815,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

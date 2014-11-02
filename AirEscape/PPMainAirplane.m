@@ -89,7 +89,7 @@
     }
     
     if (!_smokeEmitter.parent) {
-        _smokeEmitter = [SKEmitterNode emitterNamed:@"DamageSmoke"];
+        _smokeEmitter = [SKEmitterNode emitterNamed:@"Fire"];
         _smokeEmitter.position = CGPointMake(0, 70);
         [_smokeEmitter setParticleColor:[SKColor blackColor]];
         [_smokeEmitter setParticleColorBlendFactor:1];
