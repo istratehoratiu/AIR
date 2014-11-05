@@ -14,7 +14,7 @@
 
 @import AVFoundation;
 
-@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate> {
+@interface AEAppDelegate : UIResponder <UIApplicationDelegate, SKProductsRequestDelegate, AVAudioPlayerDelegate> {
 
     SKTextureAtlas* _atlas;
     SKProductsRequest *productsRequest;
@@ -30,5 +30,8 @@
 @property (nonatomic, strong) SKProduct *product1;
 @property (nonatomic, strong) SKProduct *product2;
 @property (nonatomic, strong) SKProduct *product3;
+
+@property (nonatomic, strong) NSArray *arrayOfSoundtracks;
+@property (nonatomic, assign) NSInteger currentTrackIndex;
 
 @end

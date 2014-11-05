@@ -36,6 +36,8 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
+        self.isPlayingMissileSound = NO;
+        
         [[AEGameManager sharedManager] setCurrentScene:AESceneGame];
         
         background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
@@ -203,12 +205,25 @@
 
     [self checkWithMarginsOfScreenActor:_userAirplane];
     
-    for (PPSpriteNode *missile in _arrayOfCurrentMissilesOnScreen) {
+    for (PPMissile *missile in _arrayOfCurrentMissilesOnScreen) {
         [missile updateMove:_deltaTime];
         [missile updateRotation:_deltaTime];
         [missile setTargetPoint:_userAirplane.position];
         [missile updateOrientationVector];
         [self checkWithMarginsOfScreenActor:missile];
+    
+        if (missile.missileHasGoneHaywire) {
+            CGFloat distanceFormMainAirplane = distanceBetweenPoint(missile.position, self.userAirplane.position);
+        
+            if (distanceFormMainAirplane < 100 && !self.isPlayingMissileSound && self.userAirplane.health > 0) {
+                
+                self.isPlayingMissileSound = YES;
+                
+                [self runAction:[SKAction playSoundFileNamed:@"missile01.mp3" waitForCompletion:YES] completion:^{
+                    self.isPlayingMissileSound = NO;
+                }];
+            }
+        }
     }
 }
 
@@ -235,7 +250,7 @@
         [_userAirplane setHealth:_userAirplane.health - 50];
         
         if ([_userAirplane health] <= 0) {
-            [self runAction:[SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO]];
+            [self runAction:[SKAction playSoundFileNamed:@"explosion.mp3" waitForCompletion:NO]];
 
             
             [_userAirplane removeFromParent];
@@ -323,6 +338,8 @@
         default:
             break;
     }
+    
+    //[self runAction:[SKAction playSoundFileNamed:@"Alert.mp3" waitForCompletion:NO]];
     
     SKSpriteNode *alertSprite = [SKSpriteNode spriteNodeWithImageNamed:@"alert.png"];
     alertSprite.position = missileAlertPosition;

@@ -31,6 +31,7 @@
 @property (nonatomic, retain)AEButtonNode* pauseButton;
 @property (nonatomic, retain)AEButtonNode* playButton;
 @property (nonatomic, assign) BOOL gameIsPaused;
+@property (nonatomic, assign) BOOL isPlayingMissileSound;
 @property (nonatomic, retain) PPPositionIndicator *positionIndicator;
 @property (nonatomic, retain) PPMainAirplane *userAirplane;
 @property (nonatomic, assign) CGRect screenRect;

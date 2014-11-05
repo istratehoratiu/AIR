@@ -54,7 +54,7 @@
         [_restoreButton setTouchUpInsideTarget:self action:@selector(restorePurchases)];
         _restoreButton.zPosition = 1000;
         [_restoreButton.title setText:@"Restore"];
-        [self addChild:_restoreButton];
+        //[self addChild:_restoreButton];
         
         NSString *credits = [[[NSUserDefaults standardUserDefaults] valueForKey:kAETotalScoreKey] stringValue];
         
@@ -214,6 +214,8 @@
 
 - (void)backButtonPressed {
     
+    [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
+    
     if (_hangarItemsDisplayed ==  AEHangarItemsCredits) {
         [self changeDisplayedItemsButtonPressed];
     } else {
@@ -290,6 +292,7 @@
 }
 
 - (void)changeDisplayedItemsButtonPressed {
+    [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
     //_hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
     [self changeDisplayedItemsForType:((_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes)];
 }

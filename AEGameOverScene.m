@@ -95,6 +95,8 @@
 #pragma mark Handle touches
 
 - (void)showHangar {
+    [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
+    
     SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
     AEHangarScene *newScene = [[AEHangarScene alloc] initWithSize: self.size];
@@ -103,6 +105,8 @@
 }
 
 - (void)restartGame {
+    [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
+    
     SKTransition *crossFade = [SKTransition fadeWithDuration:1];
     
     AEGameScene *newScene = [[AEGameScene alloc] initWithSize: self.size];
@@ -111,6 +115,8 @@
 }
 
 - (void)rateGame {
+    [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
+    
     [Appirater rateApp];
 }
 

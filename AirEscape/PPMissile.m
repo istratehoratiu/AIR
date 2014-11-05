@@ -52,6 +52,9 @@
     if (![_smokeTrail parent]) {
         [self.parent addChild:_smokeTrail];
         _smokeTrail.targetNode = self.parent;
+        [_smokeTrail setParticleColorBlendFactor:1];
+        _smokeTrail.particleColorSequence = nil;
+        [_smokeTrail setParticleColor:[UIColor whiteColor]];
     }
     _smokeTrail.position = actualTarget;
 
@@ -135,6 +138,12 @@
 
 - (void)removeLockOn {
     
+}
+
+- (void)setMissileHasGoneHaywire:(BOOL)missileHasGoneHaywire {
+    _missileHasGoneHaywire = missileHasGoneHaywire;
+    
+     [_smokeTrail setParticleColor:[UIColor redColor]];
 }
 
 @end

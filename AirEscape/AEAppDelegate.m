@@ -60,10 +60,17 @@
     
     [[AEGameManager sharedManager] updateMainAirplaneImages];
     
-    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"background-music-aac" withExtension:@"caf"];
-    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
-    self.backgroundMusicPlayer.numberOfLoops = -1;
-    [self.backgroundMusicPlayer prepareToPlay];
+    _currentTrackIndex = 0;
+    
+    _arrayOfSoundtracks = [NSArray arrayWithObjects:[[NSBundle mainBundle] URLForResource:@"Enter the Party" withExtension:@"mp3"],
+                                                    [[NSBundle mainBundle] URLForResource:@"justin_mahar2" withExtension:@"mp3"],
+                                                    [[NSBundle mainBundle] URLForResource:@"Electrodoodle" withExtension:@"mp3"],
+                                                    [[NSBundle mainBundle] URLForResource:@"justin_mahar" withExtension:@"mp3"],
+                                                    [[NSBundle mainBundle] URLForResource:@"Pamgaea" withExtension:@"mp3"],
+                                                    [[NSBundle mainBundle] URLForResource:@"Cut Trance" withExtension:@"mp3"],nil];
+    
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[self.arrayOfSoundtracks objectAtIndex:self.currentTrackIndex] error:&error];
+    self.backgroundMusicPlayer.delegate = self;
     
     BOOL shouldPlaySound = [[[NSUserDefaults standardUserDefaults] valueForKey:kAESoundIsEnabledKey] boolValue];
     
@@ -87,14 +94,6 @@
                         [currentDictionary setValue:product.localizedTitle forKey:@"title"];
                         [currentDictionary setValue:product.localizedPrice forKey:@"localizedPrice"];
                         
-//                        if ([[currentDictionary valueForKey:@"ID"] isEqualToString:@"com.istratehoratiu.missileevasion.missiles1"]) {
-//                            self.product1 = [products count] == 1 ? [products firstObject] : nil;
-//                        } else if ([[currentDictionary valueForKey:@"ID"] isEqualToString:@"com.istratehoratiu.missileevasion.missiles2"]) {
-//                            self.product2 = [products count] == 1 ? [products firstObject] : nil;
-//                        } else {
-//                            self.product3 = [products count] == 1 ? [products firstObject] : nil;
-//                        }
-                        
                         break;
                     }
                 }
@@ -105,23 +104,7 @@
             
         }
     }];
-//    NSSet *productIdentifiers1 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles1"];
-//    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers1];
-//    productsRequest.delegate = self;
-//    [productsRequest start];
-//    
-//    NSSet *productIdentifiers2 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles2"];
-//    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers2];
-//    productsRequest.delegate = self;
-//    [productsRequest start];
-//    
-//    NSSet *productIdentifiers3 = [NSSet setWithObject:@"com.istratehoratiu.missileevasion.missiles3"];
-//    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers3];
-//    productsRequest.delegate = self;
-//    [productsRequest start];
-//    
-    //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-    
+
     return YES;
 }
 
@@ -188,31 +171,6 @@
     [_creditsShopItemsDictionary writeToFile:_creditsPlistPath atomically:NO];
 }
 
-
-//- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
-//{
-//    for (SKPaymentTransaction *transaction in transactions)
-//    {
-//        switch (transaction.transactionState)
-//        {
-//            case SKPaymentTransactionStatePurchased: {
-//                
-//                break;
-//            }
-//            case SKPaymentTransactionStateFailed: {
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:transaction.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                [alert show];
-//                break;
-//            }
-//            case SKPaymentTransactionStateRestored: {
-//                
-//                break;
-//            }
-//            default:
-//                break;
-//        }
-//    }
-//}
 - (void)testInternetConnection
 {
     self.internetReachable = [Reachability reachabilityWithHostname:@"www.google.com"];
@@ -232,6 +190,34 @@
     };
     
     [self.internetReachable startNotifier];
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    ++self.currentTrackIndex;
+    
+    if (self.currentTrackIndex >= [self.arrayOfSoundtracks count]) {
+        self.currentTrackIndex = 0;
+    }
+    
+    NSError *error;
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[self.arrayOfSoundtracks objectAtIndex:self.currentTrackIndex] error:&error];
+    self.backgroundMusicPlayer.delegate = self;
+    
+    BOOL shouldPlaySound = [[[NSUserDefaults standardUserDefaults] valueForKey:kAESoundIsEnabledKey] boolValue];
+    
+    if (shouldPlaySound) {
+        [self.backgroundMusicPlayer play];
+    }
+}
+
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player{
+    [self.backgroundMusicPlayer pause];
+}
+
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags {
+    if ([[[NSUserDefaults standardUserDefaults] valueForKey:kAESoundIsEnabledKey] boolValue]) {
+        [self.backgroundMusicPlayer play];
+    }
 }
 
 @end

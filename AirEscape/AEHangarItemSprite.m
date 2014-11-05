@@ -106,7 +106,9 @@
 #pragma mark - Button Methods -
 
 - (void)buyOrSelectShopItem {
-
+    
+    [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
+    
     if (_shopItemType == AEHangarItemsAirplanes) {
         if (!_shopItem.isBought) {
 
