@@ -66,8 +66,8 @@
     // Configure the view.
     SKView * skView = (SKView *)self.originalContentView;
     if (!skView.scene) {
-        skView.showsFPS = YES;
-        skView.showsNodeCount = YES;
+//        skView.showsFPS = YES;
+//        skView.showsNodeCount = YES;
         
         _banner = [[ADBannerView alloc] initWithFrame:CGRectZero];
         [_banner setFrame:CGRectMake((self.view.bounds.size.width - _banner.frame.size.width) * 0.5,
@@ -128,7 +128,7 @@
     
     AESceneType currentScene = [AEGameManager sharedManager].currentScene;
     
-    if (_addBannerIsHidden && (currentScene != AESceneHangar) && (currentScene != AESceneGame)) {
+    if (_addBannerIsHidden && (currentScene == AESceneGameOver)) {
         
         SKView * skView = (SKView *)self.originalContentView;
         if (
@@ -164,7 +164,6 @@
 
     if ([keyPath isEqualToString:@"currentScene"]) {
         switch ([object currentScene]) {
-            case AESceneMenu:
             case AESceneGameOver: {
                 BOOL userBoughtItems = [[[NSUserDefaults standardUserDefaults] valueForKey:kAEUserBuyedSomethingKey] boolValue];
                 
@@ -173,6 +172,7 @@
                 }
                 break;
             }
+            case AESceneMenu:
             case AESceneHangar:
             case AESceneGame:
                 [self hideADDS];

@@ -545,9 +545,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EB87BD1618E09E220080FA55 /* AirEscape */ = {
+		EB87BD1618E09E220080FA55 /* Air Evasion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB87BD5318E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscape" */;
+			buildConfigurationList = EB87BD5318E09E220080FA55 /* Build configuration list for PBXNativeTarget "Air Evasion" */;
 			buildPhases = (
 				EB87BD1318E09E220080FA55 /* Sources */,
 				EB87BD1418E09E220080FA55 /* Frameworks */,
@@ -557,7 +557,7 @@
 			);
 			dependencies = (
 			);
-			name = AirEscape;
+			name = "Air Evasion";
 			productName = AirEscape;
 			productReference = EB87BD1718E09E220080FA55 /* Air Evasion.app */;
 			productType = "com.apple.product-type.application";
@@ -642,7 +642,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EB87BD1618E09E220080FA55 /* AirEscape */,
+				EB87BD1618E09E220080FA55 /* Air Evasion */,
 				EB87BD4118E09E220080FA55 /* AirEscapeTests */,
 			);
 		};
@@ -761,7 +761,7 @@
 /* Begin PBXTargetDependency section */
 		EB87BD4818E09E220080FA55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EB87BD1618E09E220080FA55 /* AirEscape */;
+			target = EB87BD1618E09E220080FA55 /* Air Evasion */;
 			targetProxy = EB87BD4718E09E220080FA55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -964,7 +964,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB87BD5318E09E220080FA55 /* Build configuration list for PBXNativeTarget "AirEscape" */ = {
+		EB87BD5318E09E220080FA55 /* Build configuration list for PBXNativeTarget "Air Evasion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB87BD5418E09E220080FA55 /* Debug */,

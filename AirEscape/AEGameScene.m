@@ -212,18 +212,18 @@
         [missile updateOrientationVector];
         [self checkWithMarginsOfScreenActor:missile];
     
-        if (missile.missileHasGoneHaywire) {
-            CGFloat distanceFormMainAirplane = distanceBetweenPoint(missile.position, self.userAirplane.position);
-        
-            if (distanceFormMainAirplane < 100 && !self.isPlayingMissileSound && self.userAirplane.health > 0) {
-                
-                self.isPlayingMissileSound = YES;
-                
-                [self runAction:[SKAction playSoundFileNamed:@"missile01.mp3" waitForCompletion:YES] completion:^{
-                    self.isPlayingMissileSound = NO;
-                }];
-            }
-        }
+//        if (missile.missileHasGoneHaywire) {
+//            CGFloat distanceFormMainAirplane = distanceBetweenPoint(missile.position, self.userAirplane.position);
+//        
+//            if (distanceFormMainAirplane < 100 && !self.isPlayingMissileSound && self.userAirplane.health > 0) {
+//                
+//                self.isPlayingMissileSound = YES;
+//                
+//                [self runAction:[SKAction playSoundFileNamed:@"missile01.mp3" waitForCompletion:YES] completion:^{
+//                    self.isPlayingMissileSound = NO;
+//                }];
+//            }
+//        }
     }
 }
 
@@ -294,6 +294,7 @@
     for (PPMissile *missile in _arrayOfCurrentMissilesOnScreen) {
         if (!missile.missileHasGoneHaywire) {
             [missile setMissileHasGoneHaywire:YES];
+            [self runAction:[SKAction playSoundFileNamed:@"missile01.mp3" waitForCompletion:YES]];
             return;
         }
     }

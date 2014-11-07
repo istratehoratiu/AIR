@@ -108,7 +108,7 @@
     _shadow.position = CGPointMake(self.position.x + 20, self.position.y + 20);
     
     if (_smokeEmitter.parent) {
-        _smokeEmitter.position = self.position;
+        _smokeEmitter.position = [self.parent convertPoint:CGPointMake(0, -self.size.height * 0.5) fromNode:self];
     }
     
     CGPoint destinationPoint = [self.parent convertPoint:CGPointMake(0, 30) fromNode:self];

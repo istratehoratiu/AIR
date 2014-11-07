@@ -56,8 +56,8 @@
         _smokeTrail.particleColorSequence = nil;
         [_smokeTrail setParticleColor:[UIColor whiteColor]];
     }
-    _smokeTrail.position = actualTarget;
-
+    
+    _smokeTrail.position = [self.parent convertPoint:CGPointMake(0, -20) fromNode:self];
 }
 
 - (void)removeFromParent {
