@@ -62,17 +62,13 @@
 		EBA040C918E3980D004B708A /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA040C618E3980D004B708A /* Joystick.m */; };
 		EBA9F8F91A0AA09000BAD394 /* Cut Trance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBA9F8F81A0AA09000BAD394 /* Cut Trance.mp3 */; };
 		EBA9F8FB1A0AA3CE00BAD394 /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBA9F8FA1A0AA3CE00BAD394 /* Click.mp3 */; };
-		EBA9F8FD1A0AA76F00BAD394 /* Alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBA9F8FC1A0AA76F00BAD394 /* Alert.mp3 */; };
 		EBA9F9001A0AB0D500BAD394 /* missile01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBA9F8FE1A0AB0D500BAD394 /* missile01.mp3 */; };
-		EBA9F9011A0AB0D500BAD394 /* missile02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBA9F8FF1A0AB0D500BAD394 /* missile02.mp3 */; };
 		EBAA834C1A06591D00FC7C67 /* justin_mahar2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA83461A06591D00FC7C67 /* justin_mahar2.mp3 */; };
 		EBAA834D1A06591D00FC7C67 /* Electrodoodle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA83471A06591D00FC7C67 /* Electrodoodle.mp3 */; };
 		EBAA834E1A06591D00FC7C67 /* justin_mahar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA83481A06591D00FC7C67 /* justin_mahar.mp3 */; };
 		EBAA834F1A06591D00FC7C67 /* Pamgaea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA83491A06591D00FC7C67 /* Pamgaea.mp3 */; };
 		EBAA83501A06591D00FC7C67 /* Enter the Party.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA834A1A06591D00FC7C67 /* Enter the Party.mp3 */; };
 		EBAA83511A06591D00FC7C67 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA834B1A06591D00FC7C67 /* explosion.mp3 */; };
-		EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCD919EA7F1400799826 /* background-music-aac.caf */; };
-		EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */; };
 		EBAADCDF19EA810300799826 /* AEScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAADCDE19EA810300799826 /* AEScene.m */; };
 		EBD57B8218E21CAD00D5A61E /* AEGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD57B8118E21CAD00D5A61E /* AEGameManager.m */; };
 		EBE0721419F3B7790038E02C /* hangarButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721119F3B7790038E02C /* hangarButtonPressed.png */; };
@@ -81,7 +77,6 @@
 		EBE0721819F3D95B0038E02C /* restoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721719F3D95B0038E02C /* restoreButton.png */; };
 		EBE0721A19F3DA2F0038E02C /* restoreButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE0721919F3DA2F0038E02C /* restoreButtonPressed.png */; };
 		EBF8385C19D6F60600C8E610 /* ShadowLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */; };
-		EBF8387019D6FAF800C8E610 /* bulletHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386019D6FAF800C8E610 /* bulletHit.sks */; };
 		EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386119D6FAF800C8E610 /* DamageSmoke.sks */; };
 		EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386219D6FAF800C8E610 /* explosion.sks */; };
 		EBF8387319D6FAF800C8E610 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBF8386319D6FAF800C8E610 /* Fire.sks */; };
@@ -191,17 +186,13 @@
 		EBA040C618E3980D004B708A /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joystick.m; path = AirEscape/Joystick.m; sourceTree = "<group>"; };
 		EBA9F8F81A0AA09000BAD394 /* Cut Trance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cut Trance.mp3"; sourceTree = "<group>"; };
 		EBA9F8FA1A0AA3CE00BAD394 /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
-		EBA9F8FC1A0AA76F00BAD394 /* Alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alert.mp3; sourceTree = "<group>"; };
 		EBA9F8FE1A0AB0D500BAD394 /* missile01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missile01.mp3; sourceTree = "<group>"; };
-		EBA9F8FF1A0AB0D500BAD394 /* missile02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = missile02.mp3; sourceTree = "<group>"; };
 		EBAA83461A06591D00FC7C67 /* justin_mahar2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = justin_mahar2.mp3; sourceTree = "<group>"; };
 		EBAA83471A06591D00FC7C67 /* Electrodoodle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Electrodoodle.mp3; sourceTree = "<group>"; };
 		EBAA83481A06591D00FC7C67 /* justin_mahar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = justin_mahar.mp3; sourceTree = "<group>"; };
 		EBAA83491A06591D00FC7C67 /* Pamgaea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pamgaea.mp3; sourceTree = "<group>"; };
 		EBAA834A1A06591D00FC7C67 /* Enter the Party.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Enter the Party.mp3"; sourceTree = "<group>"; };
 		EBAA834B1A06591D00FC7C67 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
-		EBAADCD919EA7F1400799826 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
-		EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		EBAADCDD19EA810300799826 /* AEScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEScene.h; sourceTree = "<group>"; };
 		EBAADCDE19EA810300799826 /* AEScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEScene.m; sourceTree = "<group>"; };
 		EBD57B8018E21CAD00D5A61E /* AEGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEGameManager.h; sourceTree = "<group>"; };
@@ -213,7 +204,6 @@
 		EBE0721919F3DA2F0038E02C /* restoreButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restoreButtonPressed.png; sourceTree = "<group>"; };
 		EBF8385A19D6F60600C8E610 /* ShadowLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowLabelNode.h; path = AirEscape/ShadowLabelNode.h; sourceTree = "<group>"; };
 		EBF8385B19D6F60600C8E610 /* ShadowLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowLabelNode.m; path = AirEscape/ShadowLabelNode.m; sourceTree = "<group>"; };
-		EBF8386019D6FAF800C8E610 /* bulletHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bulletHit.sks; sourceTree = "<group>"; };
 		EBF8386119D6FAF800C8E610 /* DamageSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DamageSmoke.sks; sourceTree = "<group>"; };
 		EBF8386219D6FAF800C8E610 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		EBF8386319D6FAF800C8E610 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
@@ -494,8 +484,6 @@
 			isa = PBXGroup;
 			children = (
 				EBA9F8FE1A0AB0D500BAD394 /* missile01.mp3 */,
-				EBA9F8FF1A0AB0D500BAD394 /* missile02.mp3 */,
-				EBA9F8FC1A0AA76F00BAD394 /* Alert.mp3 */,
 				EBA9F8FA1A0AA3CE00BAD394 /* Click.mp3 */,
 				EBA9F8F81A0AA09000BAD394 /* Cut Trance.mp3 */,
 				EBAA83461A06591D00FC7C67 /* justin_mahar2.mp3 */,
@@ -504,8 +492,6 @@
 				EBAA83491A06591D00FC7C67 /* Pamgaea.mp3 */,
 				EBAA834A1A06591D00FC7C67 /* Enter the Party.mp3 */,
 				EBAA834B1A06591D00FC7C67 /* explosion.mp3 */,
-				EBAADCD919EA7F1400799826 /* background-music-aac.caf */,
-				EBAADCDA19EA7F1400799826 /* pew-pew-lei.caf */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -513,7 +499,6 @@
 		EBF8385D19D6FAF800C8E610 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EBF8386019D6FAF800C8E610 /* bulletHit.sks */,
 				EBF8386119D6FAF800C8E610 /* DamageSmoke.sks */,
 				EBF8386219D6FAF800C8E610 /* explosion.sks */,
 				EBF8386319D6FAF800C8E610 /* Fire.sks */,
@@ -654,17 +639,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF8388619D6FEDF00C8E610 /* multiRockets.png in Resources */,
-				EBAADCDB19EA801B00799826 /* background-music-aac.caf in Resources */,
 				EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */,
 				EB313C9E1A04EB5F003576AE /* spark2.png in Resources */,
-				EBA9F8FD1A0AA76F00BAD394 /* Alert.mp3 in Resources */,
 				EBE0721819F3D95B0038E02C /* restoreButton.png in Resources */,
 				EBA9F8F91A0AA09000BAD394 /* Cut Trance.mp3 in Resources */,
 				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */,
 				EBE0721419F3B7790038E02C /* hangarButtonPressed.png in Resources */,
-				EBAADCDC19EA801E00799826 /* pew-pew-lei.caf in Resources */,
 				EBA9F8FB1A0AA3CE00BAD394 /* Click.mp3 in Resources */,
 				EBF8387119D6FAF800C8E610 /* DamageSmoke.sks in Resources */,
 				EBF8387619D6FAF800C8E610 /* rateButton.png in Resources */,
@@ -672,7 +654,6 @@
 				EB87BD3D18E09E220080FA55 /* Images.xcassets in Resources */,
 				EBF8388419D6FEDF00C8E610 /* background.png in Resources */,
 				EBE0721519F3B7790038E02C /* playButtonPressed.png in Resources */,
-				EBA9F9011A0AB0D500BAD394 /* missile02.mp3 in Resources */,
 				EB88F79319BE74C3004E7EAD /* hangarItemsAirplanes.plist in Resources */,
 				EB46619119D6C965006FE649 /* README.txt in Resources */,
 				EBE0721619F3B7790038E02C /* rateButtonPressed.png in Resources */,
@@ -683,7 +664,6 @@
 				EBAA83511A06591D00FC7C67 /* explosion.mp3 in Resources */,
 				EBAA834C1A06591D00FC7C67 /* justin_mahar2.mp3 in Resources */,
 				EBAA834D1A06591D00FC7C67 /* Electrodoodle.mp3 in Resources */,
-				EBF8387019D6FAF800C8E610 /* bulletHit.sks in Resources */,
 				EBF8387419D6FAF800C8E610 /* hangarButton.png in Resources */,
 				EB46618F19D6C965006FE649 /* 1001fonts-if-eula.txt in Resources */,
 				EBAA834E1A06591D00FC7C67 /* justin_mahar.mp3 in Resources */,
