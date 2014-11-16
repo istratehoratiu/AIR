@@ -30,8 +30,11 @@
 @property (nonatomic, strong) SKProduct *product1;
 @property (nonatomic, strong) SKProduct *product2;
 @property (nonatomic, strong) SKProduct *product3;
+@property (nonatomic, assign) BOOL productsFetched;
 
 @property (nonatomic, strong) NSArray *arrayOfSoundtracks;
 @property (nonatomic, assign) NSInteger currentTrackIndex;
+
+- (void)requestProducts;
 
 @end

@@ -295,7 +295,13 @@
     [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
     //_hangarItemsDisplayed = (_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes;
     if (self.appDelegate.internetIsReachable) {
-        [self changeDisplayedItemsForType:((_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes)];
+        
+        if (!self.appDelegate.productsFetched) {
+            [self.appDelegate requestProducts];
+            [self changeDisplayedItemsForType:((_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes)];
+        } else {    
+            [self changeDisplayedItemsForType:((_hangarItemsDisplayed == AEHangarItemsAirplanes) ? AEHangarItemsCredits : AEHangarItemsAirplanes)];
+        }
     } else {
         UIAlertView *internetAlert = [[UIAlertView alloc] initWithTitle:@"No Internet!" message:@"Please enable Internet access." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [internetAlert show];

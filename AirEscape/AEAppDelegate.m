@@ -78,6 +78,12 @@
         [self.backgroundMusicPlayer play];
     }
     
+    [self requestProducts];
+
+    return YES;
+}
+
+- (void)requestProducts {
     [[RageIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             
@@ -98,14 +104,15 @@
                     }
                 }
             }
-
-            
+            _productsFetched = YES;
             [_creditsShopItemsDictionary writeToFile:_creditsPlistPath atomically:NO];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kSGUpdateHangarScreenNotification object:nil];
+        } else {
+            _productsFetched = NO;
             
         }
     }];
-
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
