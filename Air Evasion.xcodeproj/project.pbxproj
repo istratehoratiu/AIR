@@ -15,7 +15,6 @@
 		EB26ED7D195C8343008FF5A1 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = EB26ED18195C8343008FF5A1 /* Appirater.m */; };
 		EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED19195C8343008FF5A1 /* Appirater.podspec */; };
 		EB26ED81195C8343008FF5A1 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED21195C8343008FF5A1 /* CHANGELOG.md */; };
-		EB26ED96195C8343008FF5A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EB26ED5E195C8343008FF5A1 /* README.md */; };
 		EB2F342D18E83E240043FAAE /* SKShapeNode+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */; };
 		EB313C9E1A04EB5F003576AE /* spark2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB313C9D1A04EB5E003576AE /* spark2.png */; };
 		EB3426E619F2A0190060F9E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3426E519F2A0190060F9E7 /* StoreKit.framework */; };
@@ -115,7 +114,6 @@
 		EB26ED19195C8343008FF5A1 /* Appirater.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appirater.podspec; sourceTree = "<group>"; };
 		EB26ED1A195C8343008FF5A1 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
 		EB26ED21195C8343008FF5A1 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		EB26ED5E195C8343008FF5A1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EB2F342B18E83E240043FAAE /* SKShapeNode+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKShapeNode+Additions.h"; sourceTree = "<group>"; };
 		EB2F342C18E83E240043FAAE /* SKShapeNode+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKShapeNode+Additions.m"; sourceTree = "<group>"; };
 		EB313C9D1A04EB5E003576AE /* spark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark2.png; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				EB26ED21195C8343008FF5A1 /* CHANGELOG.md */,
-				EB26ED5E195C8343008FF5A1 /* README.md */,
 				EB26ED1A195C8343008FF5A1 /* AppiraterDelegate.h */,
 				EB26ED17195C8343008FF5A1 /* Appirater.h */,
 				EB26ED18195C8343008FF5A1 /* Appirater.m */,
@@ -643,7 +640,6 @@
 				EB313C9E1A04EB5F003576AE /* spark2.png in Resources */,
 				EBE0721819F3D95B0038E02C /* restoreButton.png in Resources */,
 				EBA9F8F91A0AA09000BAD394 /* Cut Trance.mp3 in Resources */,
-				EB26ED96195C8343008FF5A1 /* README.md in Resources */,
 				EB26ED7E195C8343008FF5A1 /* Appirater.podspec in Resources */,
 				EBF8387219D6FAF800C8E610 /* explosion.sks in Resources */,
 				EBE0721419F3B7790038E02C /* hangarButtonPressed.png in Resources */,

@@ -13,6 +13,7 @@
 #import "Appirater.h"
 #import "AEHangarScene.h"
 #import "AEGameManager.h"
+#import "NSObject+Additions.h"
 
 
 #define kAEDurationOfGameOverLabelAnimation 1

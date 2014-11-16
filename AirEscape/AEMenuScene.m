@@ -103,16 +103,12 @@
 
 - (void)goToHangar {
     [self runAction:[SKAction playSoundFileNamed:@"Click.mp3" waitForCompletion:NO]];
-    if (self.appDelegate.internetIsReachable) {
-        SKTransition *crossFade = [SKTransition fadeWithDuration:1];
-        
-        AEHangarScene *newScene = [[AEHangarScene alloc] initWithSize: self.size];
-        //  Optionally, insert code to configure the new scene.
-        [self.scene.view presentScene: newScene transition: crossFade];
-    } else {
-        UIAlertView *internetAlert = [[UIAlertView alloc] initWithTitle:@"No Internet!" message:@"Please enable Internet access." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [internetAlert show];
-    }
+  
+    SKTransition *crossFade = [SKTransition fadeWithDuration:1];
+    
+    AEHangarScene *newScene = [[AEHangarScene alloc] initWithSize: self.size];
+    //  Optionally, insert code to configure the new scene.
+    [self.scene.view presentScene: newScene transition: crossFade];
 }
 
 - (void)rateGame {

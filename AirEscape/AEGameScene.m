@@ -104,7 +104,7 @@
         SKSpriteNode *jsThumb = [SKSpriteNode spriteNodeWithImageNamed:@"joystick"];
         SKSpriteNode *jsBackdrop = [SKSpriteNode spriteNodeWithImageNamed:@"dpad"];
         _joistick = [Joystick joystickWithThumb:jsThumb andBackdrop:jsBackdrop];
-        _joistick.position = CGPointMake(jsBackdrop.size.width, jsBackdrop.size.height + 200);
+        _joistick.position = CGPointMake(jsBackdrop.size.width + 30, jsBackdrop.size.height + 20);
         [self addChild:_joistick];
         
         _gameIsPaused = NO;
@@ -266,17 +266,17 @@
 #pragma mark -
 #pragma mark  User Interaction
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    for (UITouch *touch in touches) {
-        
-        CGPoint location = [touch locationInNode:self];
-        
-        self.joistick.position = location;
-        
-        [self.joistick touchesBegan:touches withEvent:event];
-    }
-}
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    
+//    for (UITouch *touch in touches) {
+//        
+//        CGPoint location = [touch locationInNode:self];
+//        
+//        self.joistick.position = location;
+//        
+//        [self.joistick touchesBegan:touches withEvent:event];
+//    }
+//}
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.joistick touchesMoved:touches withEvent:event];
